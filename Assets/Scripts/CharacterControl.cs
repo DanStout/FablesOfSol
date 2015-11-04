@@ -6,6 +6,8 @@ public class CharacterControl : MonoBehaviour
     public float speed = 5;
     public float jumpSpeed = 10;
     public float gravity = 10;
+	public float health = 100;
+	public GameObject leftClickItem = null;
 
     private CharacterController control;
 
@@ -29,5 +31,26 @@ public class CharacterControl : MonoBehaviour
         vec.y -= gravity * Time.deltaTime;
 
         control.Move(vec * speed * Time.deltaTime);
+		if (Input.GetMouseButtonDown) {
+			//use right click assigned item.
+		}
     }
+
+	void OnCollisionEnter(Collision collisionInfo){
+		if(collisionInfo.collider.tag == "PlayerDamageSource"){
+			TakeDamage(collisionInfo.collider.gameObject.Damage/*Damage a constant on each ememy*/);
+		}
+		if (collisionInfo.collider.tag == "Item") {
+			//pick up item
+		}
+	}
+
+	private void TakeDamage(float damage){
+		if (health - damage > 0) {
+			health = health - damage;
+		} else {
+			//Kill player.
+			//Go to death screen.
+		}
+	}
 }
