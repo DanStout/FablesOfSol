@@ -6,8 +6,8 @@ public class CharacterControl : MonoBehaviour
     public float speed = 5;
     public float jumpSpeed = 10;
     public float gravity = 10;
-	public float health = 100;
-	public GameObject leftClickItem = null;
+    public float health = 100;
+    public GameObject leftClickItem = null;
 
     private CharacterController control;
 
@@ -21,7 +21,7 @@ public class CharacterControl : MonoBehaviour
         var xMov = Input.GetAxis("Horizontal");
         var yMov = Input.GetAxis("Vertical");
         var isJumping = Input.GetButton("Jump");
-        
+
         var vec = new Vector3(xMov, 0, yMov);
         vec = transform.TransformDirection(vec);
 
@@ -31,26 +31,31 @@ public class CharacterControl : MonoBehaviour
         vec.y -= gravity * Time.deltaTime;
 
         control.Move(vec * speed * Time.deltaTime);
-		if (Input.GetMouseButtonDown) {
-			//use right click assigned item.
-		}
+
+        if (Input.GetMouseButtonDown(1)) //0 = left, 1 = right, 2 = middle
+        {
+            //use right click assigned item.
+        }
     }
 
-	void OnCollisionEnter(Collision collisionInfo){
-		if(collisionInfo.collider.tag == "PlayerDamageSource"){
-			TakeDamage(collisionInfo.collider.gameObject.Damage/*Damage a constant on each ememy*/);
-		}
-		if (collisionInfo.collider.tag == "Item") {
-			//pick up item
-		}
-	}
+    void OnCollisionEnter(Collision collisionInfo)
+    {
+        switch(collisionInfo.collider.tag)
+        {
+            case "PlayerDamageSource":
+                var enemyScript = collisionInfo.collider.gameObject.GetComponent<Enemy>();
+                TakeDamage(enemyScript.damage);
+                break;
+            case "Item":
+                break;
+        }
+    }
 
-	private void TakeDamage(float damage){
-		if (health - damage > 0) {
-			health = health - damage;
-		} else {
-			//Kill player.
-			//Go to death screen.
-		}
-	}
+    private void TakeDamage(float damage)
+    {
+        health -= damage;
+
+        if (health < 0)
+            ; //kill
+    }
 }
