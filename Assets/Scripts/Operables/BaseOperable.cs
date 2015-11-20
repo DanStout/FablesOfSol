@@ -7,14 +7,14 @@ public abstract class BaseOperable : MonoBehaviour
     private Camera _camera;
     public float textBoxPadding = 10;
 
-    private Vector2 _actionTextSize;
     private Rect _labelRect;
     private bool _doPrintActionText = false;
+    private Vector3 _screenPoint;
 
     void OnTriggerEnter(Collider other)
     {
-        var scrPt = _camera.WorldToScreenPoint(transform.position);
-        _labelRect = new Rect(scrPt.x, scrPt.y, _actionTextSize.x + textBoxPadding, _actionTextSize.y);
+        _screenPoint = _camera.WorldToScreenPoint(transform.position);
+        
         _doPrintActionText = true;
     }
 
@@ -31,11 +31,11 @@ public abstract class BaseOperable : MonoBehaviour
 
     void OnGUI()
     {
-        _actionTextSize = GUI.skin.label.CalcSize(new GUIContent(ActionText));
-
         if (_doPrintActionText)
         {
-            GUI.Box(_labelRect, ActionText);
+            var actionTextSize = GUI.skin.label.CalcSize(new GUIContent(ActionText));
+            var rect = new Rect(_screenPoint.x, _screenPoint.y, actionTextSize.x + textBoxPadding, actionTextSize.y);
+            GUI.Box(rect, ActionText);
         }
     }
 

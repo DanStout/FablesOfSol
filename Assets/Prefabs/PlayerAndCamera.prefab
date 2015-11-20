@@ -512,6 +512,7 @@ GameObject:
   - 95: {fileID: 9527568}
   - 143: {fileID: 14348928}
   - 114: {fileID: 11401664}
+  - 114: {fileID: 11410174}
   m_Layer: 0
   m_Name: player
   m_TagString: Untagged
@@ -1211,6 +1212,17 @@ MonoBehaviour:
   terminalVelocity: -10
   minimumFallSpeed: -1.5
   fallSpeedMultiplier: 5
+--- !u!114 &11410174
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 183142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88747d4b2e659a949b56892461017610, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11469648
 MonoBehaviour:
   m_ObjectHideFlags: 1

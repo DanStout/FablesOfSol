@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class OperableLabHatch : BaseOperable
+public class LabHatch : BaseOperable
 {
     public override void Operate()
     {
