@@ -52,4 +52,8 @@ public class CharacterControl : MonoBehaviour
         movement *= Time.deltaTime;
         _charController.Move(movement);
     }
+
+    void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+    }
 }
