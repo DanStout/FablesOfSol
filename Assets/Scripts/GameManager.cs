@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
+        //Make sure we only ever have one of this object across all scenes
         if (mgr)
         {
             DestroyImmediate(gameObject);
