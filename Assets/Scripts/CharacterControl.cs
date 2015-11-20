@@ -3,59 +3,53 @@ using System.Collections;
 
 public class CharacterControl : MonoBehaviour
 {
-    public float speed = 5;
-    public float jumpSpeed = 10;
-    public float gravity = 10;
-    public float health = 100;
-    public GameObject leftClickItem = null;
+    public float moveSpeed = 6f;
+    public float rotationSpeed = 10f;
+    public float jumpSpeed = 15f;
+    public float gravity = -9.8f;
+    public float terminalVelocity = -10f;
+    public float minimumFallSpeed = -1.5f;
+    public float fallSpeedMultiplier = 5f;
 
-    private CharacterController control;
+    private CharacterController _charController;
+    private float _vertSpeed;
 
     void Start()
     {
-        control = GetComponent<CharacterController>();
+        _vertSpeed = minimumFallSpeed;
+        _charController = GetComponent<CharacterController>();
     }
 
     void Update()
     {
-        var xMov = Input.GetAxis("Horizontal");
-        var yMov = Input.GetAxis("Vertical");
-        var isJumping = Input.GetButton("Jump");
+        var horiInput = Input.GetAxis("Horizontal");
+        var vertInput = Input.GetAxis("Vertical");
+        var movement = Vector3.zero;
 
-        var vec = new Vector3(xMov, 0, yMov);
-        vec = transform.TransformDirection(vec);
-
-        if (control.isGrounded && isJumping)
-            vec.y = jumpSpeed;
-
-        vec.y -= gravity * Time.deltaTime;
-
-        control.Move(vec * speed * Time.deltaTime);
-
-        if (Input.GetMouseButtonDown(1)) //0 = left, 1 = right, 2 = middle
+        if (horiInput != 0 || vertInput != 0)
         {
-            //use right click assigned item.
-        }
-    }
+            movement.x = horiInput * moveSpeed;
+            movement.z = vertInput * moveSpeed;
+            movement = Vector3.ClampMagnitude(movement, moveSpeed);
 
-    void OnCollisionEnter(Collision collisionInfo)
-    {
-        switch(collisionInfo.collider.tag)
+            var dir = Quaternion.LookRotation(movement);
+            transform.rotation = Quaternion.Lerp(transform.rotation, dir, rotationSpeed * Time.deltaTime);
+        };
+
+        if (_charController.isGrounded)
         {
-            case "PlayerDamageSource":
-                var enemyScript = collisionInfo.collider.gameObject.GetComponent<Enemy>();
-                TakeDamage(enemyScript.damage);
-                break;
-            case "Item":
-                break;
+            _vertSpeed = Input.GetButton("Jump") ? jumpSpeed : minimumFallSpeed;
         }
-    }
+        else
+        {
+            _vertSpeed += gravity * fallSpeedMultiplier * Time.deltaTime;
+            if (_vertSpeed < terminalVelocity)
+                _vertSpeed = terminalVelocity;
+        }
 
-    private void TakeDamage(float damage)
-    {
-        health -= damage;
+        movement.y = _vertSpeed;
 
-        if (health < 0)
-            ; //kill
+        movement *= Time.deltaTime;
+        _charController.Move(movement);
     }
 }
