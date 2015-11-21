@@ -346,12 +346,7 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 143290, guid: 35c988f22b99405488d37ca9fcc2ef7a, type: 2}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 11410174, guid: 35c988f22b99405488d37ca9fcc2ef7a, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 35c988f22b99405488d37ca9fcc2ef7a, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &311321895 stripped
