@@ -25,7 +25,7 @@ public abstract class BaseOperable : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        if (Input.GetButtonDown("Submit"))
+        if (Input.GetButtonDown("Activate"))
             Operate();
     }
 
