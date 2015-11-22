@@ -3,13 +3,17 @@ using System.Collections;
 
 public abstract class BaseOperable : MonoBehaviour
 {
-    [SerializeField]
     private Camera _camera;
     public float textBoxPadding = 10;
 
     private Rect _labelRect;
     private bool _doPrintActionText = false;
     private Vector3 _screenPoint;
+
+    void Start()
+    {
+        _camera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+    }
 
     void OnTriggerEnter(Collider other)
     {

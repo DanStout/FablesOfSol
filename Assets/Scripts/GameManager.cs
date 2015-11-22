@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
     {
         if (_redirectTag != null)
         {
-            var player = GameObject.FindGameObjectWithTag("Player");
+            var player = GameObject.FindGameObjectWithTag("PlayerAndCamera");
             var obj = GameObject.FindGameObjectWithTag(_redirectTag);
             player.transform.position = obj.transform.position;
             _redirectTag = null;

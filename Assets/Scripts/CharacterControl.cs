@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEditor;
 
 public class CharacterControl : MonoBehaviour
 {
@@ -12,12 +13,16 @@ public class CharacterControl : MonoBehaviour
     public float fallSpeedMultiplier = 5f;
 
     private CharacterController _charController;
+    private Animator _animator;
     private float _vertSpeed;
+
+    private bool feetOnGround;
 
     void Start()
     {
         _vertSpeed = minimumFallSpeed;
         _charController = GetComponent<CharacterController>();
+        _animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -36,7 +41,16 @@ public class CharacterControl : MonoBehaviour
             transform.rotation = Quaternion.Lerp(transform.rotation, dir, rotationSpeed * Time.deltaTime);
         };
 
-        if (_charController.isGrounded)
+        _animator.SetFloat("speed", movement.sqrMagnitude);
+
+        feetOnGround = false;
+        RaycastHit hit;
+        if (_vertSpeed < 0 && Physics.Raycast(transform.position, Vector3.down, out hit))
+        {
+            feetOnGround = hit.distance <= 0.1;
+        }
+
+        if (feetOnGround)
         {
             _vertSpeed = Input.GetButton("Jump") ? jumpSpeed : minimumFallSpeed;
         }
@@ -47,6 +61,7 @@ public class CharacterControl : MonoBehaviour
                 _vertSpeed = terminalVelocity;
         }
 
+        _animator.SetFloat("vertSpeed", _vertSpeed);
         movement.y = _vertSpeed;
 
         movement *= Time.deltaTime;
