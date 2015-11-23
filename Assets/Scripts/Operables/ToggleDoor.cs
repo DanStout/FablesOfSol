@@ -4,22 +4,33 @@ using System.Collections.Generic;
 
 public class ToggleDoor : BaseOperable
 {
-    public GameObject otherObject;
-    public Vector3 downPosition;
+    public ToggleDoor[] otherDoors;
 
-    private bool selfIsOpen = false;
+    public Transform ownDoor;
+    public Vector3 positionAddition;
+    private bool isToggled;
 
-    public override void Operate()
+    public void Toggle()
     {
-        if (selfIsOpen)
+        if (isToggled)
         {
-            transform.position -= downPosition;
+            ownDoor.localPosition -= positionAddition;
         }
         else
         {
-            transform.position += downPosition;
+            ownDoor.localPosition += positionAddition;
         }
-        selfIsOpen = !selfIsOpen;
+        isToggled = !isToggled;
+    }
+
+    public override void Operate()
+    {
+        Toggle();
+
+        foreach(var door in otherDoors)
+        {
+            door.Toggle();
+        }
     }
 
     public override string ActionText

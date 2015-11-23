@@ -3,7 +3,6 @@ using System.Collections;
 
 public abstract class BaseOperable : MonoBehaviour
 {
-    private Camera _camera;
     public float textBoxPadding = 10;
 
     private Rect _labelRect;
@@ -12,13 +11,10 @@ public abstract class BaseOperable : MonoBehaviour
 
     void Start()
     {
-        _camera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
     }
 
     void OnTriggerEnter(Collider other)
     {
-        _screenPoint = _camera.WorldToScreenPoint(transform.position);
-        
         _doPrintActionText = true;
     }
 
@@ -29,12 +25,17 @@ public abstract class BaseOperable : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
+        _screenPoint = Camera.main.WorldToScreenPoint(transform.position);
+        _screenPoint.y = Screen.height - _screenPoint.y;
+
         if (Input.GetButtonDown("Activate"))
             Operate();
     }
 
     void OnGUI()
     {
+        //GUI.Box(new Rect(_screenPoint.x, _screenPoint.y + 25, 100, 25), string.Format("({0:F0}, {1:F0})", _screenPoint.x, _screenPoint.y));
+
         if (_doPrintActionText)
         {
             var actionTextSize = GUI.skin.label.CalcSize(new GUIContent(ActionText));
