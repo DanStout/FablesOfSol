@@ -17,7 +17,8 @@ public class PlayerLife : MonoBehaviour
     void Start()
     {
         healthSlider.maxValue = fullHealth;
-        currentHealth = PlayerPrefs.GetFloat(Constants.Prefs_Health, fullHealth);
+        currentHealth = fullHealth;
+        //currentHealth = PlayerPrefs.GetFloat(Constants.Prefs_Health, fullHealth);
         healthSlider.value = currentHealth;
     }
 
