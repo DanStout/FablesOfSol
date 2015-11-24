@@ -4,28 +4,13 @@ using System.Collections.Generic;
 
 public class ToggleDoor : BaseOperable
 {
-    public ToggleDoor[] otherDoors;
+    public PositionToggleable[] otherDoors;
 
-    public Transform ownDoor;
-    public Vector3 positionAddition;
-    private bool isToggled;
-
-    public void Toggle()
-    {
-        if (isToggled)
-        {
-            ownDoor.localPosition -= positionAddition;
-        }
-        else
-        {
-            ownDoor.localPosition += positionAddition;
-        }
-        isToggled = !isToggled;
-    }
+    public PositionToggleable ownDoor;
 
     public override void Operate()
     {
-        Toggle();
+        ownDoor.Toggle();
 
         foreach(var door in otherDoors)
         {

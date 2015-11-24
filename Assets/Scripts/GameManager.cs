@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(this);
             mgr = this;
         }
     }
