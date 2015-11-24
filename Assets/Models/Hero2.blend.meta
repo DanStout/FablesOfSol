@@ -1321,7 +1321,7 @@ ModelImporter:
   tangentSpace:
     normalSmoothAngle: 62
     splitTangentsAcrossUV: 1
-    normalImportMode: 1
+    normalImportMode: 0
     tangentImportMode: 1
   importAnimation: 1
   copyAvatar: 0
