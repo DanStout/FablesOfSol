@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class PlayerControl : MonoBehaviour
 {
@@ -22,6 +23,9 @@ public class PlayerControl : MonoBehaviour
     private bool feetOnGround = true;
     private Vector3 fallOrigin;
 
+	private IItem activeItem;
+	private List<IItem> inventory;
+
     public bool DoIgnoreNextFall
     {
         get;
@@ -41,6 +45,14 @@ public class PlayerControl : MonoBehaviour
         var horiInput = Input.GetAxis("Horizontal");
         var vertInput = Input.GetAxis("Vertical");
         var movement = Vector3.zero;
+		var attack = Input.GetAxis ("Fire1");
+
+		if(attack != 0)
+		{
+			if(activeItem != null)
+				activeItem.Use();
+			else print ("Nothing equipped");
+		}
 
         if (horiInput != 0 || vertInput != 0)
         {
@@ -98,5 +110,24 @@ public class PlayerControl : MonoBehaviour
 
     void OnControllerColliderHit(ControllerColliderHit hit)
     {
+		//If we have collided with an item, add to inventory
+		if(hit.gameObject.tag == "item")
+		{
+			IItem newItem = (IItem)hit.gameObject.GetComponent(typeof(IItem));
+			pickup(newItem);
+			Destroy(hit.gameObject);
+		}
     }
+
+	void pickup(IItem item)
+	{
+		inventory.Add (item);
+
+		//If we have no item equiped, equip item
+		if(activeItem != null)
+		{
+			print ("equipped " + item.getName());
+			activeItem = item;
+		}
+	}
 }
