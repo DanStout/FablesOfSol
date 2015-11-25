@@ -2840,7 +2840,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   yMin: -20
-  respawnPoint: {fileID: 697973672}
+  respawnPoint: {fileID: 697973674}
+  fallDamage: 2
 --- !u!4 &697973674
 Transform:
   m_ObjectHideFlags: 0

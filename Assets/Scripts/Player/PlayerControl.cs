@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CharacterControl : MonoBehaviour
+public class PlayerControl : MonoBehaviour
 {
     public float moveSpeed = 6f;
     public float rotationSpeed = 10f;
@@ -21,6 +21,12 @@ public class CharacterControl : MonoBehaviour
     private bool wasOnGround = true;
     private bool feetOnGround = true;
     private Vector3 fallOrigin;
+
+    public bool DoIgnoreNextFall
+    {
+        get;
+        set;
+    }
 
     void Start()
     {
@@ -63,7 +69,10 @@ public class CharacterControl : MonoBehaviour
                 var fallDistance = Vector3.Distance(fallOrigin, transform.position);
                 if (fallDistance > minimumFallDamageDistance)
                 {
-                    _playerLife.TakeDamage(fallDistance * fallDamageMultiplier);
+                    if (DoIgnoreNextFall)
+                        DoIgnoreNextFall = false;
+                    else
+                        _playerLife.TakeDamage(fallDistance * fallDamageMultiplier);
                 }
             }
         }
