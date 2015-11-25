@@ -33,13 +33,11 @@ public class DogAI : MonoBehaviour, IEnemy
 
     void Update()
     {
-        if (isDead) return;
-
         var playerLoc = player.transform.position;
         var playerDist = Vector3.Distance(transform.position, playerLoc);
         var movement = Vector3.zero;
 
-        if (playerDist <= sightRange)
+        if (!isDead && playerDist <= sightRange)
         {
             var posDiff = playerLoc - transform.position;
             posDiff.y = 0;
