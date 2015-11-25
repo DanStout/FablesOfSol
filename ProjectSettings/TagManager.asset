@@ -6,6 +6,7 @@ TagManager:
   tags:
   - BauLabEntrance
   - PlayerAndCamera
+  - WeaponTrigger
   layers:
   - Default
   - TransparentFX

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class DogAI : MonoBehaviour
+public class DogAI : MonoBehaviour, IEnemy
 {
     public float speed = 5;
     public float attackDamage = 5;
@@ -50,6 +50,15 @@ public class DogAI : MonoBehaviour
         {
             playerLife.TakeDamage(attackDamage);
             lastAttackTime = Time.time;
+        }
+    }
+
+    public void TakeDamage(float amount)
+    {
+        currHealth -= amount;
+        if (currHealth <= 0)
+        {
+            Destroy(this.gameObject);
         }
     }
 }
