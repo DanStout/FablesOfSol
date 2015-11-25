@@ -53,7 +53,7 @@ public class PlayerControl : MonoBehaviour
         var movement = Vector3.zero;
 
 
-		if(attack != 0)
+		if(Input.GetButtonDown("Attack"))
 		{
 			if(activeItem != null)
 				activeItem.Use();
