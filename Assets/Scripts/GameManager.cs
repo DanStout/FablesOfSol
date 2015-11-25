@@ -1,6 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
+/// <summary>
+/// Handles any information which needs to be retained between scenes
+/// </summary>
 public class GameManager : MonoBehaviour
 {
     private static GameManager mgr;

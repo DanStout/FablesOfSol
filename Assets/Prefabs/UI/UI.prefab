@@ -8,7 +8,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 224: {fileID: 22480902}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: HealthUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - 224: {fileID: 22443988}
   - 114: {fileID: 11487218}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - 224: {fileID: 22471500}
   - 222: {fileID: 22246138}
   - 114: {fileID: 11401930}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: DamageImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   - 224: {fileID: 22460072}
   - 222: {fileID: 22238166}
   - 114: {fileID: 11488648}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -111,7 +111,7 @@ GameObject:
   - 222: {fileID: 22233232}
   - 114: {fileID: 11418764}
   - 114: {fileID: 11401894}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,7 +129,7 @@ GameObject:
   - 222: {fileID: 22292810}
   - 114: {fileID: 11484718}
   - 114: {fileID: 11483826}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Button (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,7 +148,7 @@ GameObject:
   - 114: {fileID: 11445024}
   - 114: {fileID: 11419104}
   - 225: {fileID: 22543938}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: HUD Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -165,7 +165,7 @@ GameObject:
   - 224: {fileID: 22438694}
   - 222: {fileID: 22292270}
   - 114: {fileID: 11458302}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Heart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -181,7 +181,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 413064}
   - 114: {fileID: 11458538}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -216,7 +216,7 @@ GameObject:
   - 224: {fileID: 22445052}
   - 222: {fileID: 22287822}
   - 114: {fileID: 11429928}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -234,7 +234,7 @@ GameObject:
   - 222: {fileID: 22257170}
   - 114: {fileID: 11416402}
   - 114: {fileID: 11418112}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -251,7 +251,7 @@ GameObject:
   - 224: {fileID: 22477014}
   - 222: {fileID: 22279688}
   - 114: {fileID: 11471078}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: InventoryPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -269,7 +269,7 @@ GameObject:
   - 114: {fileID: 11495848}
   - 114: {fileID: 11426652}
   - 114: {fileID: 11419458}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: EventSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -321,7 +321,7 @@ GameObject:
   - 224: {fileID: 22406468}
   - 222: {fileID: 22256798}
   - 114: {fileID: 11486842}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -357,7 +357,7 @@ GameObject:
   - 222: {fileID: 22255086}
   - 114: {fileID: 11437824}
   - 114: {fileID: 11417590}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Button (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -374,7 +374,7 @@ GameObject:
   - 224: {fileID: 22419554}
   - 222: {fileID: 22261636}
   - 114: {fileID: 11411382}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -461,7 +461,7 @@ GameObject:
   - 224: {fileID: 22426576}
   - 222: {fileID: 22291032}
   - 114: {fileID: 11490680}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -479,7 +479,7 @@ GameObject:
   - 222: {fileID: 22295212}
   - 114: {fileID: 11439100}
   - 114: {fileID: 11472246}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Button (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -497,7 +497,7 @@ GameObject:
   - 222: {fileID: 22296578}
   - 114: {fileID: 11498030}
   - 114: {fileID: 11473756}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -549,7 +549,7 @@ GameObject:
   - 224: {fileID: 22464752}
   - 222: {fileID: 22279518}
   - 114: {fileID: 11459734}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -617,7 +617,7 @@ GameObject:
   m_Component:
   - 224: {fileID: 22433274}
   - 114: {fileID: 11411316}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: HealthSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -632,7 +632,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 224: {fileID: 22480384}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -736,7 +736,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: .735294104, g: .178416952, b: .178416952, a: 0}
+  m_Color: {r: 1, g: 0, b: 0, a: .472000003}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2966,7 +2966,7 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 375.799988, y: 276.100006}
+  m_AnchoredPosition: {x: 364, y: 263.5}
   m_SizeDelta: {x: -760.299988, y: -561.900024}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22477438
@@ -3023,7 +3023,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -575, y: 319}
+  m_AnchoredPosition: {x: -612, y: 298}
   m_SizeDelta: {x: 266, y: 69}
   m_Pivot: {x: 0, y: 1}
 --- !u!224 &22481874

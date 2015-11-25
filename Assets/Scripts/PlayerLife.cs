@@ -4,18 +4,20 @@ using UnityEngine.UI;
 
 public class PlayerLife : MonoBehaviour
 {
-    public float fullHealth = 100;
+    public float fullHealth = 20;
     public Slider healthSlider;
     public Image damageImage;
-    public float flashSpeed;
-    public Color flashColor = new Color(1, 0, 0, 0.1f);
+    public float flashSpeed; //higher = shorter damage flash
 
     private float currentHealth;
     private bool isDead;
     private bool isHurt;
+    private Color originalColor;
 
     void Start()
     {
+        originalColor = damageImage.color;
+        damageImage.color = Color.clear;
         healthSlider.maxValue = fullHealth;
         currentHealth = fullHealth;
         //currentHealth = PlayerPrefs.GetFloat(Constants.Prefs_Health, fullHealth);
@@ -26,7 +28,7 @@ public class PlayerLife : MonoBehaviour
     {
         if (isHurt)
         {
-            damageImage.color = flashColor;
+            damageImage.color = originalColor;
         }
         else
         {
@@ -37,7 +39,6 @@ public class PlayerLife : MonoBehaviour
 
     public void TakeDamage(float amount)
     {
-        print("Took damage: " + amount);
         isHurt = true;
         currentHealth -= amount;
         healthSlider.value = currentHealth;
