@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 81a3addf071c49640a1d0c3f8ea17bae
-timeCreated: 1448401700
+timeCreated: 1448416965
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -13,23 +13,30 @@ ModelImporter:
     100010: BackLeg2_R
     100012: BackLeg3_L
     100014: BackLeg3_R
-    100016: Dog
-    100018: FrontFoot_L
-    100020: FrontFoot_R
-    100022: FrontLeg1_L
-    100024: FrontLeg1_R
-    100026: FrontLeg2_L
-    100028: FrontLeg2_R
-    100030: Head
-    100032: Neck
-    100034: Skeleton
-    100036: Spine1
-    100038: Spine2
-    100040: Spine3
-    100042: //RootNode
-    100044: Tail
-    100046: Tail1
-    100048: Tail2
+    100016: BackLegIK_L
+    100018: BackLegIK_R
+    100020: Dog
+    100022: FrontFoot_L
+    100024: FrontFoot_R
+    100026: FrontLeg1_L
+    100028: FrontLeg1_R
+    100030: FrontLeg2_L
+    100032: FrontLeg2_R
+    100034: FrontLegIK_L
+    100036: FrontLegIK_R
+    100038: Head
+    100040: Mouth
+    100042: Neck
+    100044: Skeleton
+    100046: Spine1
+    100048: Spine2
+    100050: Spine3
+    100052: //RootNode
+    100054: Tail
+    100056: Tail1
+    100058: Tail2
+    100060: Torso_L
+    100062: Torso_R
     400000: BackFoot_L
     400002: BackFoot_R
     400004: BackLeg1_L
@@ -38,29 +45,38 @@ ModelImporter:
     400010: BackLeg2_R
     400012: BackLeg3_L
     400014: BackLeg3_R
-    400016: Dog
-    400018: FrontFoot_L
-    400020: FrontFoot_R
-    400022: FrontLeg1_L
-    400024: FrontLeg1_R
-    400026: FrontLeg2_L
-    400028: FrontLeg2_R
-    400030: Head
-    400032: Neck
-    400034: Skeleton
-    400036: Spine1
-    400038: Spine2
-    400040: Spine3
-    400042: //RootNode
-    400044: Tail
-    400046: Tail1
-    400048: Tail2
-    2300000: Dog
-    3300000: Dog
+    400016: BackLegIK_L
+    400018: BackLegIK_R
+    400020: Dog
+    400022: FrontFoot_L
+    400024: FrontFoot_R
+    400026: FrontLeg1_L
+    400028: FrontLeg1_R
+    400030: FrontLeg2_L
+    400032: FrontLeg2_R
+    400034: FrontLegIK_L
+    400036: FrontLegIK_R
+    400038: Head
+    400040: Mouth
+    400042: Neck
+    400044: Skeleton
+    400046: Spine1
+    400048: Spine2
+    400050: Spine3
+    400052: //RootNode
+    400054: Tail
+    400056: Tail1
+    400058: Tail2
+    400060: Torso_L
+    400062: Torso_R
     4300000: Dog
     7400000: Default Take
-    7400002: SkeletonAction
+    7400002: Dog_Death
+    7400004: DogAttack
+    7400006: DogIdle
+    7400008: DogRun
     9500000: //RootNode
+    13700000: Dog
   materials:
     importMaterials: 1
     materialName: 0
@@ -84,7 +100,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: .200000003
+    globalScale: .25
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
