@@ -83,6 +83,7 @@ ModelImporter:
     100150: Toes_L
     100152: Toes_R
     100154: Tongue_M_GeoRndr
+    100156: Hammer
     400000: Ankle_L
     400002: Ankle_R
     400004: Arm1_L
@@ -161,6 +162,9 @@ ModelImporter:
     400150: Toes_L
     400152: Toes_R
     400154: Tongue_M_GeoRndr
+    400156: Hammer
+    2300000: Hammer
+    3300000: Hammer
     4300000: Body_M_GeoRndr
     4300002: GumsUpper_M_GeoRndr
     4300004: TeethUpper_M_GeoRndr
@@ -171,6 +175,7 @@ ModelImporter:
     4300014: InnerEye_R_GeoRndr
     4300016: OuterEye_R_GeoRndr
     4300018: OuterEye_L_GeoRndr
+    4300020: Hammer
     7400000: Default Take
     7400002: ATTACK
     7400004: IDLE
