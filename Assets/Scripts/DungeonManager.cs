@@ -4,19 +4,30 @@ using System.Collections;
 public class DungeonManager : MonoBehaviour
 {
     public float yMin = -40;
-    public GameObject respawnPoint;
+    public Transform respawnPoint;
     private GameObject player;
+    private GameObject playerAndCam;
+    private CameraControl camCtrl;
+    private PlayerControl playCtrl;
+    private PlayerLife playLife;
+    public float fallDamage = 2;
 
-    // Use this for initialization
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        camCtrl = Camera.main.GetComponent<CameraControl>();
+        playCtrl = player.GetComponent<PlayerControl>();
+        playLife = player.GetComponent<PlayerLife>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (player.transform.position.y < yMin)
-            player.transform.position = respawnPoint.transform.position;
+        {
+            playCtrl.DoIgnoreNextFall = true;
+            player.transform.position = respawnPoint.position;
+            camCtrl.RecenterOnPlayer();
+            playLife.TakeDamage(fallDamage);
+        }
     }
 }

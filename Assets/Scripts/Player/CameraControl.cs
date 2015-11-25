@@ -7,14 +7,14 @@ public class CameraControl : MonoBehaviour
     private GameObject player;
 
     private Transform playerTransform;
-    private CharacterControl playerControl;
+    private PlayerControl playerControl;
     private Vector3 initialOffset;
     private float speed;
 
     void Start()
     {
         playerTransform = player.transform;
-        playerControl = player.GetComponent<CharacterControl>();
+        playerControl = player.GetComponent<PlayerControl>();
         speed = playerControl.moveSpeed;
         initialOffset = transform.position - playerTransform.position;
     }
@@ -34,5 +34,10 @@ public class CameraControl : MonoBehaviour
 
             transform.position = Vector3.MoveTowards(current, target, increment);
         }
+    }
+
+    public void RecenterOnPlayer()
+    {
+        transform.position = playerTransform.position + initialOffset;
     }
 }
