@@ -12,7 +12,7 @@ public class ToggleDoor : BaseOperable
     {
         ownDoor.Toggle();
 
-        foreach(var door in otherDoors)
+        foreach (var door in otherDoors)
         {
             door.Toggle();
         }

@@ -11,11 +11,15 @@ public class DogAI : MonoBehaviour, IEnemy
     public float sightRange = 15;
     public float attackRange = 1;
     public float downwardForce = -1.5f;
+    public float chaseDelay = 1; //seconds between raycasts
+    public LayerMask seeThroughLayers;
+
     private float currHealth;
     private GameObject player;
     private PlayerLife playerLife;
     private float lastAttackTime;
     private CharacterController charControl;
+    private bool isChasing = false;
 
     void Start()
     {
@@ -28,6 +32,7 @@ public class DogAI : MonoBehaviour, IEnemy
     {
         var playerLoc = player.transform.position;
         var playerDist = Vector3.Distance(transform.position, playerLoc);
+        var movement = Vector3.zero;
 
         if (playerDist <= sightRange)
         {
@@ -36,11 +41,39 @@ public class DogAI : MonoBehaviour, IEnemy
             var rotVec = Quaternion.LookRotation(posDiff, Vector3.up);
             transform.rotation = Quaternion.Slerp(transform.rotation, rotVec, Time.deltaTime * rotationSpeed);
 
-            var movement = (playerLoc - transform.position).normalized * speed * Time.deltaTime;
-            movement = Vector3.ClampMagnitude(movement, speed);
-            movement.y = downwardForce;
-            charControl.Move(movement);
+
+            if (!isChasing)
+            {
+                isChasing = CanSeePlayer();
+            }
+
+            if (isChasing)
+            {
+                movement = (playerLoc - transform.position).normalized * speed * Time.deltaTime;
+                movement = Vector3.ClampMagnitude(movement, speed);
+            }
+
         }
+        else
+        {
+            isChasing = false;
+        }
+
+        movement.y = downwardForce;
+        charControl.Move(movement);
+    }
+
+    private bool CanSeePlayer()
+    {
+        var rayEndpt = player.transform.position;
+        rayEndpt.y += 1;
+        var ray = new Ray(transform.position, rayEndpt - transform.position);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, sightRange, seeThroughLayers))
+        {
+            return hit.collider.gameObject.CompareTag("Player");
+        }
+        return false;
     }
 
     void OnControllerColliderHit(ControllerColliderHit hit)
