@@ -11,12 +11,13 @@ public class Scientist : MonoBehaviour
     private GameObject player;
     private CharacterController charControl;
     private Animator anim;
+    private NavMeshAgent agent;
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        charControl = GetComponent<CharacterController>();
         anim = GetComponent<Animator>();
+        agent = GetComponent<NavMeshAgent>();
     }
 
     void Update()
@@ -26,22 +27,14 @@ public class Scientist : MonoBehaviour
 
         if (playerDist <= sightRange)
         {
-            var posDiff = playerPos - transform.position;
-            posDiff.y = 0;
-            var rotVec = Quaternion.LookRotation(posDiff, Vector3.up);
-            transform.rotation = Quaternion.Slerp(transform.rotation, rotVec, Time.deltaTime * rotationSpeed);
-
-            var movement = Vector3.zero;
-            if (playerDist >= minPlayerDist)
-            {
-                movement = (playerPos - transform.position).normalized * speed;
-            }
-
-            anim.SetFloat("speed", movement.sqrMagnitude);
-            movement.y = gravity;
-            movement *= Time.deltaTime;
-            movement = Vector3.ClampMagnitude(movement, speed);
-            charControl.Move(movement);
+            agent.destination = playerPos;
         }
+        else
+        {
+            agent.destination = transform.position;
+        }
+
+        var speed = Vector3.SqrMagnitude(agent.velocity);
+        anim.SetFloat("speed", speed);
     }
 }
