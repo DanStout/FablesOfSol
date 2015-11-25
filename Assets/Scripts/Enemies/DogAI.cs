@@ -12,7 +12,7 @@ public class DogAI : MonoBehaviour, IEnemy
     public float attackRange = 1;
     public float downwardForce = -1.5f;
     public float chaseDelay = 1; //seconds between raycasts
-    public LayerMask seeThroughLayers;
+    public LayerMask visibleLayers;
 
     private float currHealth;
     private GameObject player;
@@ -20,12 +20,14 @@ public class DogAI : MonoBehaviour, IEnemy
     private float lastAttackTime;
     private CharacterController charControl;
     private bool isChasing = false;
+    private Animator anim;
 
     void Start()
     {
         currHealth = maxHealth;
         player = GameObject.FindGameObjectWithTag("Player");
         charControl = GetComponent<CharacterController>();
+        anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -49,7 +51,7 @@ public class DogAI : MonoBehaviour, IEnemy
 
             if (isChasing)
             {
-                movement = (playerLoc - transform.position).normalized * speed * Time.deltaTime;
+                movement = (playerLoc - transform.position).normalized * speed;
                 movement = Vector3.ClampMagnitude(movement, speed);
             }
 
@@ -59,7 +61,9 @@ public class DogAI : MonoBehaviour, IEnemy
             isChasing = false;
         }
 
+        anim.SetFloat("speed", movement.sqrMagnitude);
         movement.y = downwardForce;
+        movement *= Time.deltaTime;
         charControl.Move(movement);
     }
 
@@ -69,7 +73,7 @@ public class DogAI : MonoBehaviour, IEnemy
         rayEndpt.y += 1;
         var ray = new Ray(transform.position, rayEndpt - transform.position);
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, sightRange, seeThroughLayers))
+        if (Physics.Raycast(ray, out hit, sightRange, visibleLayers))
         {
             return hit.collider.gameObject.CompareTag("Player");
         }
@@ -91,7 +95,8 @@ public class DogAI : MonoBehaviour, IEnemy
         currHealth -= amount;
         if (currHealth <= 0)
         {
-            Destroy(this.gameObject);
+            anim.SetBool("isDead", true);
+            //Destroy(this.gameObject);
         }
     }
 }
