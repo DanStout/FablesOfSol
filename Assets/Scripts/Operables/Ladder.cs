@@ -9,8 +9,8 @@ public class Ladder : BaseOperable
         Application.LoadLevel("1 - Bau");
     }
 
-    public override string ActionText
-    {
-        get { return "Climb Ladder to Bau"; }
-    }
+    //public override string ActionText
+    //{
+    //    get { return "Climb Ladder to Bau"; }
+    //}
 }

@@ -18,8 +18,8 @@ public class ToggleDoor : BaseOperable
         }
     }
 
-    public override string ActionText
-    {
-        get { return "Toggle Door"; }
-    }
+    //public override string ActionText
+    //{
+    //    get { return "Toggle Door"; }
+    //}
 }

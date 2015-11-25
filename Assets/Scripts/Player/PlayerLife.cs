@@ -16,6 +16,7 @@ public class PlayerLife : MonoBehaviour
 
     void Start()
     {
+        damageImage.gameObject.SetActive(true);
         originalColor = damageImage.color;
         damageImage.color = Color.clear;
         healthSlider.maxValue = fullHealth;
@@ -52,6 +53,7 @@ public class PlayerLife : MonoBehaviour
 
     private void Die()
     {
+        //todo: death
         isDead = true;
         Time.timeScale = 0;
     }

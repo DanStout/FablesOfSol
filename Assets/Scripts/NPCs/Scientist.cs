@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Scientist : BaseOperable
+public class Scientist : MonoBehaviour
 {
     public float speed = 2;
     public float sightRange = 5;
@@ -43,17 +43,5 @@ public class Scientist : BaseOperable
             movement = Vector3.ClampMagnitude(movement, speed);
             charControl.Move(movement);
         }
-
-    
-    }
-
-    public override void Operate()
-    {
-        print("Blah blah blah");
-    }
-
-    public override string ActionText
-    {
-        get { return "Speak to Scientist"; }
     }
 }

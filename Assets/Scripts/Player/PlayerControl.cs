@@ -24,13 +24,9 @@ public class PlayerControl : MonoBehaviour
     private Vector3 fallOrigin;
 
 	private IItem activeItem;
-	private List<IItem> inventory;
+    //private List<IItem> inventory;
 
-    public bool DoIgnoreNextFall
-    {
-        get;
-        set;
-    }
+    public bool DoIgnoreNextFall { get; set; }
 
     void Start()
     {
@@ -51,7 +47,7 @@ public class PlayerControl : MonoBehaviour
 		{
 			if(activeItem != null)
 				activeItem.Use();
-			else print ("Nothing equipped");
+            //else print ("Nothing equipped");
 		}
 
         if (horiInput != 0 || vertInput != 0)
@@ -121,7 +117,7 @@ public class PlayerControl : MonoBehaviour
 
 	void pickup(IItem item)
 	{
-		inventory.Add (item);
+        //inventory.Add (item);
 
 		//If we have no item equiped, equip item
 		if(activeItem != null)
