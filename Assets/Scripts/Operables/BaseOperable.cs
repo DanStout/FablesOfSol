@@ -10,6 +10,12 @@ public abstract class BaseOperable : MonoBehaviour
     private bool isWithinRange = false;
     private Vector3 _screenPoint;
 
+	private float radius = 1f;
+    void Start()
+    {
+    }
+
+
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
@@ -26,12 +32,7 @@ public abstract class BaseOperable : MonoBehaviour
     {
         _screenPoint = Camera.main.WorldToScreenPoint(transform.position);
         _screenPoint.y = (Screen.height - _screenPoint.y);
-
-        if (isWithinRange)
-        {
-            if (Input.GetButtonDown("Activate"))
-                Operate();
-        }
+		
     }
 
     void OnGUI()
@@ -41,6 +42,11 @@ public abstract class BaseOperable : MonoBehaviour
             var actionTextSize = GUI.skin.label.CalcSize(new GUIContent(ActionText));
             var rect = new Rect(_screenPoint.x, _screenPoint.y, actionTextSize.x + textBoxPadding, actionTextSize.y);
             GUI.Box(rect, ActionText);
+
+			if (Input.GetButtonDown("Activate"))
+			{
+				Operate();
+			}
         }
     }
 

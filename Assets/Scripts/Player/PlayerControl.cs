@@ -23,8 +23,10 @@ public class PlayerControl : MonoBehaviour
     private bool feetOnGround = true;
     private Vector3 fallOrigin;
 
+	//Variables to store current items and active items
 	private IItem activeItem;
-    //private List<IItem> inventory;
+	public List<IItem> inventory;
+
 
     public bool DoIgnoreNextFall { get; set; }
 
@@ -34,6 +36,14 @@ public class PlayerControl : MonoBehaviour
         _charController = GetComponent<CharacterController>();
         _animator = GetComponent<Animator>();
         _playerLife = GetComponent<PlayerLife>();
+
+		//Initialize inventory with hammer
+		inventory = new List<IItem>();
+		Hammer hammer = this.gameObject.AddComponent<Hammer>();
+
+		inventory.Add (hammer);
+		activeItem = hammer;
+
     }
 
     void Update()
@@ -41,13 +51,12 @@ public class PlayerControl : MonoBehaviour
         var horiInput = Input.GetAxis("Horizontal");
         var vertInput = Input.GetAxis("Vertical");
         var movement = Vector3.zero;
-		var attack = Input.GetAxis ("Fire1");
+
 
 		if(attack != 0)
 		{
 			if(activeItem != null)
 				activeItem.Use();
-            //else print ("Nothing equipped");
 		}
 
         if (horiInput != 0 || vertInput != 0)
@@ -115,15 +124,29 @@ public class PlayerControl : MonoBehaviour
 		}
     }
 
+	//When we collide with an item, pick it up
 	void pickup(IItem item)
 	{
-        //inventory.Add (item);
+
+		//Update inventory UI
+
+		//Add item to inventory
+		inventory.Add (item);
 
 		//If we have no item equiped, equip item
-		if(activeItem != null)
+		if(activeItem == null)
 		{
 			print ("equipped " + item.getName());
 			activeItem = item;
 		}
+	}
+
+	//Used by attack script to trigger the active item
+	public void useItem()
+	{
+		if (activeItem != null)
+			activeItem.Use ();
+		else
+			print ("Nothing equipped!");
 	}
 }

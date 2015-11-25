@@ -44,4 +44,5 @@ public class Scientist : MonoBehaviour
             charControl.Move(movement);
         }
     }
+
 }
