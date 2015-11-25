@@ -31,6 +31,7 @@ public class PlayerAttack : MonoBehaviour
             var enemy = col.GetComponent<IEnemy>();
             if (enemy != null)
             {
+                print("Hit an enemy!");
                 enemy.TakeDamage(damage);
             }
         }

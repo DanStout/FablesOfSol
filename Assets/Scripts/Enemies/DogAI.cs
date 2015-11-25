@@ -21,6 +21,7 @@ public class DogAI : MonoBehaviour, IEnemy
     private CharacterController charControl;
     private bool isChasing = false;
     private Animator anim;
+    private bool isDead = false;
 
     void Start()
     {
@@ -32,6 +33,8 @@ public class DogAI : MonoBehaviour, IEnemy
 
     void Update()
     {
+        if (isDead) return;
+
         var playerLoc = player.transform.position;
         var playerDist = Vector3.Distance(transform.position, playerLoc);
         var movement = Vector3.zero;
@@ -95,8 +98,16 @@ public class DogAI : MonoBehaviour, IEnemy
         currHealth -= amount;
         if (currHealth <= 0)
         {
+            isDead = true;
             anim.SetBool("isDead", true);
-            //Destroy(this.gameObject);
+            StartCoroutine(DestroyAfterTime(15));
         }
     }
+
+    private IEnumerator DestroyAfterTime(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        Destroy(this.gameObject);
+    }
+    
 }
