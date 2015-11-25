@@ -245,6 +245,8 @@ ModelImporter:
         weight: 1
       - path: GumsUpper_M_GeoRndr
         weight: 1
+      - path: Hammer
+        weight: 1
       - path: InnerEye_L_GeoRndr
         weight: 1
       - path: InnerEye_R_GeoRndr
@@ -426,6 +428,8 @@ ModelImporter:
       - path: GumsLower_M_GeoRndr
         weight: 1
       - path: GumsUpper_M_GeoRndr
+        weight: 1
+      - path: Hammer
         weight: 1
       - path: InnerEye_L_GeoRndr
         weight: 1
@@ -609,6 +613,8 @@ ModelImporter:
         weight: 1
       - path: GumsUpper_M_GeoRndr
         weight: 1
+      - path: Hammer
+        weight: 1
       - path: InnerEye_L_GeoRndr
         weight: 1
       - path: InnerEye_R_GeoRndr
@@ -790,6 +796,8 @@ ModelImporter:
       - path: GumsLower_M_GeoRndr
         weight: 1
       - path: GumsUpper_M_GeoRndr
+        weight: 1
+      - path: Hammer
         weight: 1
       - path: InnerEye_L_GeoRndr
         weight: 1
@@ -973,6 +981,8 @@ ModelImporter:
         weight: 1
       - path: GumsUpper_M_GeoRndr
         weight: 1
+      - path: Hammer
+        weight: 1
       - path: InnerEye_L_GeoRndr
         weight: 1
       - path: InnerEye_R_GeoRndr
@@ -1154,6 +1164,8 @@ ModelImporter:
       - path: GumsLower_M_GeoRndr
         weight: 1
       - path: GumsUpper_M_GeoRndr
+        weight: 1
+      - path: Hammer
         weight: 1
       - path: InnerEye_L_GeoRndr
         weight: 1
