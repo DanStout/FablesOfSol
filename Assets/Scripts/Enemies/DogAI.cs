@@ -29,6 +29,7 @@ public class DogAI : MonoBehaviour, IEnemy
         player = GameObject.FindGameObjectWithTag("Player");
         charControl = GetComponent<CharacterController>();
         anim = GetComponent<Animator>();
+		tag = "enemy"; //For items to detect and deliver damage
     }
 
     void Update()
@@ -107,5 +108,11 @@ public class DogAI : MonoBehaviour, IEnemy
         yield return new WaitForSeconds(seconds);
         Destroy(this.gameObject);
     }
+
+	// Magnet gun uses this to determine how to interact with other gameobjects
+	public string getMaterial()
+	{
+		return "flesh";
+	}
     
 }

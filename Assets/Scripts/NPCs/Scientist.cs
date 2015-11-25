@@ -32,4 +32,5 @@ public class Scientist : MonoBehaviour
         var speed = Vector3.SqrMagnitude(agent.velocity);
         anim.SetFloat("speed", speed);
     }
+
 }

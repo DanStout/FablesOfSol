@@ -68,6 +68,7 @@ public class Dialog : MonoBehaviour
 
     public void NextButtonClicked()
     {
+        StopCoroutine(lastCoroutine);
         convIndex++;
 
         if (convIndex >= conversation.Count)
