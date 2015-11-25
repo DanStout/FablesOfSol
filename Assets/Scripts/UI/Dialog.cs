@@ -20,10 +20,20 @@ public class Dialog : MonoBehaviour
     private List<string> conversation;
     private int convIndex;
 
+    private Coroutine lastCoroutine;
+
     public string ActiveNpcName
     {
         get { return npcNameText.text; }
         set { npcNameText.text = value; }
+    }
+
+    public void CloseDialog()
+    {
+        SetVisible(false);
+        conversation.Clear();
+        convIndex = 0;
+        StopCoroutine(lastCoroutine);
     }
 
     private void SetVisible(bool isVisible)
@@ -40,17 +50,20 @@ public class Dialog : MonoBehaviour
 
     public void AddLine(string text)
     {
-        if (conversation.Count == 0)
-            SetVisible(true);
-      
         conversation.Add(text);
-        DisplayLine(convIndex);
+
+        if (conversation.Count == 1)
+        {
+            SetVisible(true);
+            DisplayLine();
+        }
+      
     }
 
-    private void DisplayLine(int index)
+    private void DisplayLine()
     {
-        var conv = conversation[index];
-        StartCoroutine(DisplayLetterByLetter(conv));
+        var conv = conversation[convIndex];
+        lastCoroutine = StartCoroutine(DisplayLetterByLetter(conv));
     }
 
     public void NextButtonClicked()
@@ -59,13 +72,11 @@ public class Dialog : MonoBehaviour
 
         if (convIndex >= conversation.Count)
         {
-            SetVisible(false);
-            conversation.Clear();
-            convIndex = 0;
+            CloseDialog();
             return;
         }
 
-        DisplayLine(convIndex);
+        DisplayLine();
     }
 
     public void PrevButtonClicked()
@@ -78,7 +89,7 @@ public class Dialog : MonoBehaviour
             return;
         }
 
-        DisplayLine(convIndex);
+        DisplayLine();
     }
 
     private IEnumerator DisplayLetterByLetter(string text)

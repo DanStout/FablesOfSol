@@ -3,13 +3,8 @@ using System.Collections;
 
 public class Scientist : MonoBehaviour
 {
-    public float speed = 2;
     public float sightRange = 5;
-    public float minPlayerDist = 2;
-    public float rotationSpeed = 1.5f;
-    public float gravity = -9.8f;
     private GameObject player;
-    private CharacterController charControl;
     private Animator anim;
     private NavMeshAgent agent;
 

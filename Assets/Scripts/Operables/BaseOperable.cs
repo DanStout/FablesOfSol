@@ -5,24 +5,35 @@ public abstract class BaseOperable : MonoBehaviour
 {
     public string ActionText;
     public float textBoxPadding = 10;
+    public float reactOutsideDistance;
 
     private Rect _labelRect;
     private bool isWithinRange = false;
     private Vector3 _screenPoint;
+    private bool wasWithinRange = false;
+    private GameObject player;
 
-    void OnTriggerEnter(Collider other)
+    protected virtual void Start()
     {
-        if (other.gameObject.CompareTag("Player"))
-            isWithinRange = true;
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    void OnTriggerExit(Collider other)
+    protected virtual void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            isWithinRange = true;
+            wasWithinRange = true;
+        }
+    }
+
+    protected virtual void OnTriggerExit(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
             isWithinRange = false;
     }
 
-    void Update()
+    protected virtual void Update()
     {
         _screenPoint = Camera.main.WorldToScreenPoint(transform.position);
         _screenPoint.y = (Screen.height - _screenPoint.y);
@@ -30,7 +41,18 @@ public abstract class BaseOperable : MonoBehaviour
         if (isWithinRange)
         {
             if (Input.GetButtonDown("Activate"))
+            {
                 Operate();
+            }
+        }
+
+        var playerPos = player.transform.position;
+        var playerDist = Vector3.Distance(transform.position, playerPos);
+
+        if (wasWithinRange && playerDist >= reactOutsideDistance)
+        {
+            ReactLeftRange();
+            wasWithinRange = false;
         }
     }
 
@@ -45,4 +67,9 @@ public abstract class BaseOperable : MonoBehaviour
     }
 
     public abstract void Operate();
+
+    protected virtual void ReactLeftRange()
+    {
+
+    }
 }

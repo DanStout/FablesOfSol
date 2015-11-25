@@ -4950,11 +4950,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab64a8f2500a08e4dab4bae5e7cd5365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.5
   sightRange: 20
-  minPlayerDist: 2
-  rotationSpeed: 3
-  gravity: -1.5
 --- !u!195 &1245622832
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -5019,6 +5015,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ActionText: Climb ladder to Bau surface
   textBoxPadding: 10
+  reactOutsideDistance: 0
 --- !u!23 &1302381742
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6161,6 +6158,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ActionText: Talk to Scientist
   textBoxPadding: 10
+  reactOutsideDistance: 5
   DisplayName: Scientist
 --- !u!23 &1800744747
 MeshRenderer:
