@@ -13,6 +13,10 @@ public class DogAI : MonoBehaviour, IEnemy
     public float downwardForce = -1.5f;
     public float chaseDelay = 1; //seconds between raycasts
     public LayerMask visibleLayers;
+    public float damageColorDuration = 2;
+
+    public Color damageColor;
+    private Color originalColor;
 
     private float currHealth;
     private GameObject player;
@@ -22,6 +26,7 @@ public class DogAI : MonoBehaviour, IEnemy
     private bool isChasing = false;
     private Animator anim;
     private bool isDead = false;
+    private SkinnedMeshRenderer meshRend;
 
     void Start()
     {
@@ -29,7 +34,9 @@ public class DogAI : MonoBehaviour, IEnemy
         player = GameObject.FindGameObjectWithTag("Player");
         charControl = GetComponent<CharacterController>();
         anim = GetComponent<Animator>();
-		tag = "enemy"; //For items to detect and deliver damage
+        meshRend = GetComponentInChildren<SkinnedMeshRenderer>();
+        originalColor = meshRend.material.color;
+        tag = "enemy"; //For items to detect and deliver damage
     }
 
     void Update()
@@ -84,6 +91,8 @@ public class DogAI : MonoBehaviour, IEnemy
 
     void OnControllerColliderHit(ControllerColliderHit hit)
     {
+        if (isDead) return;
+
         var playerLife = hit.gameObject.GetComponent<PlayerLife>();
         if (playerLife != null && Time.time - lastAttackTime > attackDelay)
         {
@@ -94,6 +103,7 @@ public class DogAI : MonoBehaviour, IEnemy
 
     public void TakeDamage(float amount)
     {
+        StartCoroutine(HurtFlashForTime(damageColorDuration));
         currHealth -= amount;
         if (currHealth <= 0)
         {
@@ -107,6 +117,13 @@ public class DogAI : MonoBehaviour, IEnemy
     {
         yield return new WaitForSeconds(seconds);
         Destroy(this.gameObject);
+    }
+
+    private IEnumerator HurtFlashForTime(float seconds)
+    {
+        meshRend.material.color = damageColor;
+        yield return new WaitForSeconds(seconds);
+        meshRend.material.color = originalColor;
     }
 
 	// Magnet gun uses this to determine how to interact with other gameobjects

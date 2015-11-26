@@ -33,7 +33,15 @@ public class Dialog : MonoBehaviour
         SetVisible(false);
         conversation.Clear();
         convIndex = 0;
-        StopCoroutine(lastCoroutine);
+        CancelDisplayLine();
+    }
+
+    private void CancelDisplayLine()
+    {
+        if (lastCoroutine != null)
+        {
+            StopCoroutine(lastCoroutine);
+        }
     }
 
     private void SetVisible(bool isVisible)
@@ -68,7 +76,7 @@ public class Dialog : MonoBehaviour
 
     public void NextButtonClicked()
     {
-        StopCoroutine(lastCoroutine);
+        CancelDisplayLine();
         convIndex++;
 
         if (convIndex >= conversation.Count)

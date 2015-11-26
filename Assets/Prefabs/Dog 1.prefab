@@ -668,7 +668,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 144878}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.14499998, y: 2.89599991, z: -12.415}
+  m_LocalPosition: {x: 11.0900002, y: 20.1410007, z: -20.9899998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 461016}
@@ -955,8 +955,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 223906940a4cf5d438207ea4cb011660, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  attackDamage: 5
+  speed: 2.5
+  attackDamage: 3
   maxHealth: 10
   attackDelay: 1
   rotationSpeed: 5
@@ -967,6 +967,8 @@ MonoBehaviour:
   visibleLayers:
     serializedVersion: 2
     m_Bits: 4294967035
+  damageColorDuration: .200000003
+  damageColor: {r: .977941155, g: 0, b: 0, a: 0}
 --- !u!137 &13706342
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
