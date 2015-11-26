@@ -8,15 +8,22 @@ public class SettingsMenu : MonoBehaviour
     public void Open()
     {
         gameObject.SetActive(true);
+        GameManager.Pause();
     }
 
     public void Close()
     {
+        GameManager.Resume();
         gameObject.SetActive(false);
     }
 
-    public void Toggle()
+    public void OnQuitClicked()
     {
-        gameObject.SetActive(!gameObject.activeSelf);
+        Application.Quit();
+    }
+
+    public void OnResumeClicked()
+    {
+        Close();
     }
 }

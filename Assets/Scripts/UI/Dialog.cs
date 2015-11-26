@@ -18,6 +18,7 @@ public class Dialog : MonoBehaviour
     private GameObject dialogChild;
 
     private List<string> conversation;
+
     private int convIndex;
 
     private Coroutine lastCoroutine;
@@ -26,6 +27,11 @@ public class Dialog : MonoBehaviour
     {
         get { return npcNameText.text; }
         set { npcNameText.text = value; }
+    }
+
+    public bool IsDoneDisplaying()
+    {
+        return conversation.Count == 0 || convIndex == conversation.Count - 1;
     }
 
     public void CloseDialog()

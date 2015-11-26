@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 {
     private static GameManager mgr;
     private static string _redirectTag;
+    private static float originalTimeScale;
 
     void Awake()
     {
@@ -38,6 +39,17 @@ public class GameManager : MonoBehaviour
             player.transform.position = obj.transform.position;
             _redirectTag = null;
         }
+    }
+
+    public static void Pause()
+    {
+        originalTimeScale = Time.timeScale;
+        Time.timeScale = 0;
+    }
+
+    public static void Resume()
+    {
+        Time.timeScale = originalTimeScale;
     }
 
 

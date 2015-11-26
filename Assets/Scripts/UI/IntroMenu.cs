@@ -3,15 +3,20 @@ using System.Collections;
 
 public class IntroMenu : MonoBehaviour
 {
-
-    void Start()
-    {
-        Time.timeScale = 0;
-    }
-
     public void OkClicked()
     {
-        Time.timeScale = 1;
+        Close();   
+    }
+
+    public void Open()
+    {
+        gameObject.SetActive(true);
+        GameManager.Pause();
+    }
+
+    public void Close()
+    {
+        GameManager.Resume();
         Destroy(gameObject);
     }
 
@@ -19,6 +24,6 @@ public class IntroMenu : MonoBehaviour
     void Update()
     {
         if (Input.GetButton("Cancel"))
-            OkClicked();
+            Close();
     }
 }

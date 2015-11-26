@@ -10,6 +10,7 @@ TagManager:
   - DialogText
   - NpcNameText
   - PlayerAndCamera
+  - GameManager
   layers:
   - Default
   - TransparentFX
