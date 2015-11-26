@@ -6,10 +6,6 @@ public class UIController : MonoBehaviour
     [SerializeField]
     private SettingsMenu settingsMenu;
 
-    void Start()
-    {
-    }
-
     void Update()
     {
         if (Input.GetButtonUp("Cancel"))

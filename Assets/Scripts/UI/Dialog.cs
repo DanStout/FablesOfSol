@@ -15,7 +15,7 @@ public class Dialog : MonoBehaviour
     [SerializeField]
     private Text dialogText;
 
-    private GameObject dialogChild;
+    public GameObject DialogChild;
 
     private List<string> conversation;
 
@@ -52,13 +52,12 @@ public class Dialog : MonoBehaviour
 
     private void SetVisible(bool isVisible)
     {
-        dialogChild.SetActive(isVisible);   
+        DialogChild.SetActive(isVisible);
     }
 
     void Start()
     {
         conversation = new List<string>();
-        dialogChild = transform.FindChild("DialogChild").gameObject;
         SetVisible(false);
     }
 
