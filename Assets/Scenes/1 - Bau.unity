@@ -1769,6 +1769,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ActionText: Enter Laboratory
   textBoxPadding: 10
+  reactOutsideDistance: 0
 --- !u!1001 &1477421445
 Prefab:
   m_ObjectHideFlags: 0
@@ -2201,22 +2202,6 @@ Prefab:
       propertyPath: m_Name
       value: PlayerAndCamera
       objectReference: {fileID: 0}
-    - target: {fileID: 13725462, guid: ebaddb537c2380d4388ba36c1e94e497, type: 2}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 3f031074745a43547b984e885da96804, type: 2}
-    - target: {fileID: 9596734, guid: ebaddb537c2380d4388ba36c1e94e497, type: 2}
-      propertyPath: m_ApplyRootMotion
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2315392, guid: ebaddb537c2380d4388ba36c1e94e497, type: 2}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 42e2e97664c626740a401bcf9e30de75, type: 2}
-    - target: {fileID: 9596734, guid: ebaddb537c2380d4388ba36c1e94e497, type: 2}
-      propertyPath: m_Avatar
-      value: 
-      objectReference: {fileID: 9000000, guid: 33fc1fd641936674981ee2957662b6da, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ebaddb537c2380d4388ba36c1e94e497, type: 2}
   m_IsPrefabParent: 0

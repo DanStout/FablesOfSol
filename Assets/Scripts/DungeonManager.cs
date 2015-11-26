@@ -1,14 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// Manage resetting the player's position if they fall off
+/// </summary>
 public class DungeonManager : MonoBehaviour
 {
     public float yMin = -40;
     public Transform respawnPoint;
     private GameObject player;
-    private GameObject playerAndCam;
     private CameraControl camCtrl;
-    private PlayerControl playCtrl;
+    private PlayerMovement playMove;
     private PlayerLife playLife;
     public float fallDamage = 2;
 
@@ -16,7 +18,7 @@ public class DungeonManager : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         camCtrl = Camera.main.GetComponent<CameraControl>();
-        playCtrl = player.GetComponent<PlayerControl>();
+        playMove = player.GetComponent<PlayerMovement>();
         playLife = player.GetComponent<PlayerLife>();
     }
 
@@ -24,7 +26,7 @@ public class DungeonManager : MonoBehaviour
     {
         if (player.transform.position.y < yMin)
         {
-            playCtrl.DoIgnoreNextFall = true;
+            playMove.DoIgnoreNextFall = true;
             player.transform.position = respawnPoint.position;
             camCtrl.RecenterOnPlayer();
             playLife.TakeDamage(fallDamage);

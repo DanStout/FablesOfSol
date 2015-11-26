@@ -3,19 +3,17 @@ using System.Collections;
 
 public class CameraControl : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject player;
-
     private Transform playerTransform;
-    private PlayerControl playerControl;
+    private PlayerMovement playerMove;
     private Vector3 initialOffset;
     private float speed;
 
     void Start()
     {
+        var player = GameObject.FindGameObjectWithTag("Player");
         playerTransform = player.transform;
-        playerControl = player.GetComponent<PlayerControl>();
-        speed = playerControl.moveSpeed;
+        playerMove = player.GetComponent<PlayerMovement>();
+        speed = playerMove.moveSpeed;
         initialOffset = transform.position - playerTransform.position;
     }
 

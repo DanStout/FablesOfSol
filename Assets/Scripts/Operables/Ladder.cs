@@ -8,9 +8,4 @@ public class Ladder : BaseOperable
         GameManager.RelocatePlayerToTagOnNextLevel("BauLabEntrance");
         Application.LoadLevel("1 - Bau");
     }
-
-    //public override string ActionText
-    //{
-    //    get { return "Climb Ladder to Bau"; }
-    //}
 }

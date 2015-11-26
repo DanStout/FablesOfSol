@@ -4,5 +4,6 @@ using System.Collections;
 public interface IItem
 {
 	void Use();
-	string getName();
+    void Equip();
+    string Name { get; }
 }

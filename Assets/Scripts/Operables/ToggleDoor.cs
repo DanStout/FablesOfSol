@@ -17,9 +17,4 @@ public class ToggleDoor : BaseOperable
             door.Toggle();
         }
     }
-
-    //public override string ActionText
-    //{
-    //    get { return "Toggle Door"; }
-    //}
 }

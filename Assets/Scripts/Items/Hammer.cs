@@ -2,52 +2,55 @@
 using System.Collections;
 
 
-public class Hammer : MonoBehaviour, IItem {
+public class Hammer : MonoBehaviour, IItem
+{
+    private GameObject owner;
+    private float radius = 1;
+    private float damage = 5;
 
-	private GameObject owner;
-	private bool attacking = false;
-	private float radius = 1;
-	private float damage = 5;
+    void Start()
+    {
+        owner = GameObject.FindGameObjectWithTag("Player");
+    }
 
+    public void Use()
+    {
+        //Trigger player animation
 
-	// Use this for initialization
-	void Start () {
-		owner = GameObject.FindGameObjectWithTag("Player");
-	}
+        //Find all colliders in a given radius of the player
+        Collider[] cols = Physics.OverlapSphere(owner.transform.position, radius);
+        foreach (Collider col in cols)
+        {
+            print(col);
+            //If we are in range of an enemy
+            if (col && col.tag == "enemy")
+            {
 
-	
+                //Find dot product of the vectors of player and enemy to determine direction
+                Vector3 forward = owner.transform.TransformDirection(Vector3.forward);
+                Vector3 toOther = col.transform.position - owner.transform.position;
 
-	public void Use()
-	{
-		//Trigger player animation
+                //If enemy is in front of player, deal damage
+                if (Vector3.Dot(forward, toOther) > 0)
+                {
+                    var enemy = col.GetComponent<IEnemy>();
+                    if (enemy != null)
+                    {
+                        enemy.TakeDamage(damage);
+                    }
+                }
+            }
+        }
 
-		//Find all colliders in a given radius of the player
-		Collider[] cols = Physics.OverlapSphere(owner.transform.position, radius);
-		foreach (Collider col in cols){
-			//If we are in range of an enemy
-			if (col && col.tag == "enemy"){
+    }
 
-				//Find dot product of the vectors of player and enemy to determine direction
-				Vector3 forward = owner.transform.TransformDirection(Vector3.forward);
-				Vector3 toOther = col.transform.position - owner.transform.position;
+    public void Equip()
+    {
+        //Change character model to be using the hammer. Currently base model already has hammer equipped
+    }
 
-				//If enemy is in front of player, deal damage
-				if (Vector3.Dot(forward, toOther) > 0)
-				{
-
-					var enemy = col.GetComponent<IEnemy>();
-					if (enemy != null)
-					{
-						enemy.TakeDamage(damage);
-					}
-				}
-			}
-		}
-
-	}
-
-	public string getName()
-	{
-		return "Hammer";
-	}
+    public string Name
+    {
+        get { return "Hammer"; }
+    }
 }
