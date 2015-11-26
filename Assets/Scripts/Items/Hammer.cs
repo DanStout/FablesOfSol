@@ -4,14 +4,20 @@ using System.Collections;
 
 public class Hammer : MonoBehaviour, IItem
 {
+
     private GameObject owner;
+    private bool attacking = false;
     private float radius = 1;
     private float damage = 5;
 
+
+    // Use this for initialization
     void Start()
     {
         owner = GameObject.FindGameObjectWithTag("Player");
     }
+
+
 
     public void Use()
     {
@@ -32,6 +38,7 @@ public class Hammer : MonoBehaviour, IItem
                 //If enemy is in front of player, deal damage
                 if (Vector3.Dot(forward, toOther) > 0)
                 {
+
                     var enemy = col.GetComponent<IEnemy>();
                     if (enemy != null)
                     {
@@ -43,13 +50,8 @@ public class Hammer : MonoBehaviour, IItem
 
     }
 
-    public void Equip()
+    public string getName()
     {
-        //Change character model to be using the hammer. Currently base model already has hammer equipped
-    }
-
-    public string Name
-    {
-        get { return "Hammer"; }
+        return "Hammer";
     }
 }
