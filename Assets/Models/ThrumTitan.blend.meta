@@ -1,0 +1,133 @@
+fileFormatVersion: 2
+guid: 212277f7aaa41094c8c1ffe93ed47dc6
+timeCreated: 1448928137
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Arm1_L
+    100002: Arm1_R
+    100004: Arm2_L
+    100006: Arm2_R
+    100008: Armature
+    100010: ArmIK_L
+    100012: ArmIK_R
+    100014: Hand_L
+    100016: Hand_R
+    100018: Hip
+    100020: Neck
+    100022: Shoulder_L
+    100024: Shoulder_R
+    100026: Spine
+    100028: ThrumTitan
+    100030: //RootNode
+    100032: ThrumTitan_MeshPart0
+    100034: ThrumTitan_MeshPart1
+    100036: ThrumTitan_MeshPart2
+    100038: ThrumTitan_MeshPart3
+    100040: ThrumTitan_MeshPart4
+    100042: ThrumTitan_MeshPart5
+    400000: Arm1_L
+    400002: Arm1_R
+    400004: Arm2_L
+    400006: Arm2_R
+    400008: Armature
+    400010: ArmIK_L
+    400012: ArmIK_R
+    400014: Hand_L
+    400016: Hand_R
+    400018: Hip
+    400020: Neck
+    400022: Shoulder_L
+    400024: Shoulder_R
+    400026: Spine
+    400028: //RootNode
+    400030: ThrumTitan
+    400032: ThrumTitan_MeshPart0
+    400034: ThrumTitan_MeshPart1
+    400036: ThrumTitan_MeshPart2
+    400038: ThrumTitan_MeshPart3
+    400040: ThrumTitan_MeshPart4
+    400042: ThrumTitan_MeshPart5
+    4300000: ThrumTitan_MeshPart0
+    4300002: ThrumTitan_MeshPart1
+    4300004: ThrumTitan_MeshPart2
+    4300006: ThrumTitan_MeshPart3
+    4300008: ThrumTitan_MeshPart4
+    4300010: ThrumTitan_MeshPart5
+    7400000: Default Take
+    7400002: TITAN_ATTACK_BREATH_FIRE
+    7400004: TITAN_ATTACK_LEFT_PUNCH
+    7400006: TITAN_ATTACK_RIGHT_PUNCH
+    7400008: TITAN_DEATH
+    9500000: //RootNode
+    13700000: ThrumTitan_MeshPart0
+    13700002: ThrumTitan_MeshPart1
+    13700004: ThrumTitan_MeshPart2
+    13700006: ThrumTitan_MeshPart3
+    13700008: ThrumTitan_MeshPart4
+    13700010: ThrumTitan_MeshPart5
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
