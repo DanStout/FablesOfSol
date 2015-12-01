@@ -19,11 +19,13 @@ ModelImporter:
     400010: //RootNode
     4300000: ThrobModel_MeshPart0
     4300002: ThrobModel_MeshPart1
+    4300004: ThrobModel
     7400000: Default Take
     7400002: THRUM_MOVE
     9500000: //RootNode
     13700000: ThrobModel_MeshPart0
     13700002: ThrobModel_MeshPart1
+    13700004: ThrobModel
   materials:
     importMaterials: 1
     materialName: 0
