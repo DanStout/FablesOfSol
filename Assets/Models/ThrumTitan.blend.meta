@@ -55,6 +55,7 @@ ModelImporter:
     4300006: ThrumTitan_MeshPart3
     4300008: ThrumTitan_MeshPart4
     4300010: ThrumTitan_MeshPart5
+    4300012: ThrumTitan
     7400000: Default Take
     7400002: TITAN_ATTACK_BREATH_FIRE
     7400004: TITAN_ATTACK_LEFT_PUNCH
@@ -67,6 +68,7 @@ ModelImporter:
     13700006: ThrumTitan_MeshPart3
     13700008: ThrumTitan_MeshPart4
     13700010: ThrumTitan_MeshPart5
+    13700012: ThrumTitan
   materials:
     importMaterials: 1
     materialName: 0
