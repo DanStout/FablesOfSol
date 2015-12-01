@@ -2478,10 +2478,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6779433c89f33e940b3f695b21038d63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fullHealth: 100
+  fullHealth: 10
   healthSlider: {fileID: 0}
   damageImage: {fileID: 0}
   flashSpeed: 1
+  deathGameOverDelay: 2
 --- !u!114 &11460234
 MonoBehaviour:
   m_ObjectHideFlags: 1
