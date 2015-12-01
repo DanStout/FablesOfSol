@@ -18,7 +18,6 @@ public class PlayerAttack : MonoBehaviour
         {
             GetComponentInParent<PlayerMovement>().useItem();
             anim.SetBool("attacking", true);
-
         }
         else anim.SetBool("attacking", false);
     }

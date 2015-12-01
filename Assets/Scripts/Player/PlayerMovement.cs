@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
     //Variables to store current items and active items
     private IItem activeItem;
     public List<IItem> inventory;
-
+    private bool isDead = false;
 
     public bool DoIgnoreNextFall { get; set; }
 
@@ -48,6 +48,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        if (isDead) return;
         var horiInput = Input.GetAxis("Horizontal");
         var vertInput = Input.GetAxis("Vertical");
         var movement = Vector3.zero;
@@ -148,5 +149,10 @@ public class PlayerMovement : MonoBehaviour
             activeItem.Use();
         else
             print("Nothing equipped!");
+    }
+
+    public void Die()
+    {
+        isDead = true;
     }
 }

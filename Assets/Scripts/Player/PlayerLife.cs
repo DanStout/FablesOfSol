@@ -8,11 +8,14 @@ public class PlayerLife : MonoBehaviour
     public Slider healthSlider;
     public Image damageImage;
     public float flashSpeed; //higher = shorter damage flash
+    public float deathGameOverDelay = 2; // seconds to wait after death before display game over screen
 
+    private Animator anim;
     private float currentHealth;
     private bool isDead;
     private bool isHurt;
     private Color originalColor;
+    private PlayerMovement playMove; 
 
     void Start()
     {
@@ -23,6 +26,8 @@ public class PlayerLife : MonoBehaviour
         currentHealth = fullHealth;
         //currentHealth = PlayerPrefs.GetFloat(Constants.Prefs_Health, fullHealth);
         healthSlider.value = currentHealth;
+        anim = GetComponent<Animator>();
+        playMove = GetComponent<PlayerMovement>();
     }
 
     void Update()
@@ -47,14 +52,14 @@ public class PlayerLife : MonoBehaviour
 
         if (currentHealth <= 0 && !isDead)
         {
+            isDead = true;
             Die();
         }
     }
 
     private void Die()
     {
-        //todo: death
-        isDead = true;
-        Time.timeScale = 0;
+        anim.SetTrigger("die");
+        playMove.Die();
     }
 }

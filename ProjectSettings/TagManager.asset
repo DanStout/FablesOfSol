@@ -11,6 +11,7 @@ TagManager:
   - NpcNameText
   - PlayerAndCamera
   - GameManager
+  - GameOverScreen
   layers:
   - Default
   - TransparentFX
