@@ -968,6 +968,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967035
   damageColorDuration: .200000003
+  destroyAfterSeconds: 2
+  DroppableItems:
+  - {fileID: 179620, guid: 93edd76634863b142bd5d12b27999ff2, type: 2}
+  - {fileID: 132876, guid: 1c383c555d38a584b95c20cedb8c180e, type: 2}
   damageColor: {r: .977941155, g: 0, b: 0, a: 0}
 --- !u!137 &13706342
 SkinnedMeshRenderer:

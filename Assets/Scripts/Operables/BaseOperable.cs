@@ -70,6 +70,6 @@ public abstract class BaseOperable : MonoBehaviour
 
     protected virtual void ReactLeftRange()
     {
-
+        //optionally overridden by subclasses
     }
 }

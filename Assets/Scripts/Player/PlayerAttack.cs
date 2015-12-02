@@ -5,10 +5,12 @@ public class PlayerAttack : MonoBehaviour
 {
     private Animator anim;
     public float damage = 5;
+    private PlayerInventory inventory;
 
     void Start()
     {
         anim = GetComponentInParent<Animator>();
+        inventory = GetComponentInParent<PlayerInventory>();
     }
 
     void Update()
@@ -16,7 +18,7 @@ public class PlayerAttack : MonoBehaviour
         //If the attack button is down, use the equipped item
         if (Input.GetButtonDown("Attack"))
         {
-            GetComponentInParent<PlayerMovement>().useItem();
+            inventory.useItem();
             anim.SetBool("attacking", true);
         }
         else anim.SetBool("attacking", false);

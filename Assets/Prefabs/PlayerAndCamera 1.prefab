@@ -106,25 +106,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &110340
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 422726}
-  - 33: {fileID: 3340318}
-  - 135: {fileID: 13589896}
-  - 23: {fileID: 2312924}
-  - 114: {fileID: 11490920}
-  m_Layer: 8
-  m_Name: Sphere
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &111250
 GameObject:
   m_ObjectHideFlags: 1
@@ -425,6 +406,7 @@ GameObject:
   - 143: {fileID: 14388002}
   - 114: {fileID: 11414536}
   - 114: {fileID: 11429572}
+  - 114: {fileID: 11422296}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -487,6 +469,8 @@ GameObject:
   - 4: {fileID: 494852}
   - 33: {fileID: 3386156}
   - 23: {fileID: 2315392}
+  - 135: {fileID: 13514530}
+  - 114: {fileID: 11413076}
   m_Layer: 0
   m_Name: Hammer
   m_TagString: Untagged
@@ -1509,18 +1493,6 @@ Transform:
   - {fileID: 471906}
   m_Father: {fileID: 431654}
   m_RootOrder: 0
---- !u!4 &422726
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 110340}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.59800005, y: -.433999985, z: 0}
-  m_LocalScale: {x: 3, y: 1.5, z: 1.5}
-  m_Children: []
-  m_Father: {fileID: 494852}
-  m_RootOrder: 0
 --- !u!4 &424546
 Transform:
   m_ObjectHideFlags: 1
@@ -1892,7 +1864,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 176380}
   m_LocalRotation: {x: .52247417, y: 0, z: 0, w: .852655172}
-  m_LocalPosition: {x: 0, y: 9, z: -4}
+  m_LocalPosition: {x: 0, y: 6.51000023, z: -3.0999999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 426902}
@@ -2265,8 +2237,7 @@ Transform:
   m_LocalRotation: {x: .665493906, y: -.149806127, z: .708881915, w: -.179339111}
   m_LocalPosition: {x: .157999992, y: 1.24600029, z: .393996269}
   m_LocalScale: {x: .450000346, y: .904362381, z: .483829558}
-  m_Children:
-  - {fileID: 422726}
+  m_Children: []
   m_Father: {fileID: 492964}
   m_RootOrder: 3
 --- !u!4 &495086
@@ -2354,30 +2325,6 @@ Camera:
   m_StereoConvergence: 10
   m_StereoSeparation: .0219999999
   m_StereoMirrorMode: 0
---- !u!23 &2312924
-MeshRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 110340}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_Materials:
-  - {fileID: 2100000, guid: 24a824adb2350da4eb484a49fd3b32f6, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 1
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
 --- !u!23 &2315392
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -2402,13 +2349,6 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!33 &3340318
-MeshFilter:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 110340}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &3386156
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -2447,6 +2387,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11413076
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 136204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bb2fc3f477520a499ba0d7c4dda457a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 5
 --- !u!114 &11414536
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2467,6 +2419,17 @@ MonoBehaviour:
   fallSpeedMultiplier: 5
   minimumFallDamageDistance: 10
   fallDamageMultiplier: 1
+--- !u!114 &11422296
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 132650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dee6d31831fb7844bf629c0f0aa8999, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11429572
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2478,10 +2441,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6779433c89f33e940b3f695b21038d63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fullHealth: 10
   healthSlider: {fileID: 0}
   damageImage: {fileID: 0}
-  flashSpeed: 1
+  healingImage: {fileID: 0}
+  fullHealth: 10
+  damageFlashSpeed: 0
+  healingFlashSpeed: 0
   deathGameOverDelay: 2
 --- !u!114 &11460234
 MonoBehaviour:
@@ -2494,18 +2459,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cc5ec1060eb62a4280920b7df42216d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &11490920
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 110340}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bb2fc3f477520a499ba0d7c4dda457a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 5
 --- !u!124 &12479254
 Behaviour:
   m_ObjectHideFlags: 1
@@ -2513,18 +2466,18 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 176380}
   m_Enabled: 1
---- !u!135 &13589896
+--- !u!135 &13514530
 SphereCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 110340}
+  m_GameObject: {fileID: 136204}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: .5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: .857987702
+  m_Center: {x: -1.36000001, y: .00705683138, z: -.0500000007}
 --- !u!137 &13702620
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

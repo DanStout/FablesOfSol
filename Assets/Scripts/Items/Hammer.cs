@@ -17,8 +17,6 @@ public class Hammer : MonoBehaviour, IItem
         owner = GameObject.FindGameObjectWithTag("Player");
     }
 
-
-
     public void Use()
     {
         //Trigger player animation

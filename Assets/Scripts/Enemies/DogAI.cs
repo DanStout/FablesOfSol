@@ -14,6 +14,8 @@ public class DogAI : MonoBehaviour, IEnemy
     public float chaseDelay = 1; //seconds between raycasts
     public LayerMask visibleLayers;
     public float damageColorDuration = 2;
+    public float destroyAfterSeconds = 2;
+    public GameObject[] DroppableItems;
 
     public Color damageColor;
     private Color originalColor;
@@ -27,6 +29,7 @@ public class DogAI : MonoBehaviour, IEnemy
     private Animator anim;
     private bool isDead = false;
     private SkinnedMeshRenderer meshRend;
+
 
     void Start()
     {
@@ -109,14 +112,18 @@ public class DogAI : MonoBehaviour, IEnemy
         {
             isDead = true;
             anim.SetBool("isDead", true);
-            StartCoroutine(DestroyAfterTime(15));
+            StartCoroutine(DestroyAfterTime());
         }
     }
 
-    private IEnumerator DestroyAfterTime(float seconds)
+    private IEnumerator DestroyAfterTime()
     {
-        yield return new WaitForSeconds(seconds);
+        yield return new WaitForSeconds(destroyAfterSeconds);
         Destroy(this.gameObject);
+
+        var itemIndex = Random.Range(0, DroppableItems.Length);
+        var item = DroppableItems[itemIndex];
+        Instantiate(item, transform.position, Quaternion.identity);
     }
 
     private IEnumerator HurtFlashForTime(float seconds)

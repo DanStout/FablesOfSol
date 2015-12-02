@@ -23,9 +23,6 @@ public class PlayerMovement : MonoBehaviour
     private bool feetOnGround = true;
     private Vector3 fallOrigin;
 
-    //Variables to store current items and active items
-    private IItem activeItem;
-    public List<IItem> inventory;
     private bool isDead = false;
 
     public bool DoIgnoreNextFall { get; set; }
@@ -36,14 +33,6 @@ public class PlayerMovement : MonoBehaviour
         _charController = GetComponent<CharacterController>();
         _animator = GetComponent<Animator>();
         _playerLife = GetComponent<PlayerLife>();
-
-        //Initialize inventory with hammer
-        inventory = new List<IItem>();
-        Hammer hammer = this.gameObject.AddComponent<Hammer>();
-
-        inventory.Add(hammer);
-        activeItem = hammer;
-
     }
 
     void Update()
@@ -52,13 +41,6 @@ public class PlayerMovement : MonoBehaviour
         var horiInput = Input.GetAxis("Horizontal");
         var vertInput = Input.GetAxis("Vertical");
         var movement = Vector3.zero;
-
-
-        if (Input.GetButtonDown("Attack"))
-        {
-            if (activeItem != null)
-                activeItem.Use();
-        }
 
         if (horiInput != 0 || vertInput != 0)
         {
@@ -112,43 +94,6 @@ public class PlayerMovement : MonoBehaviour
 
         movement *= Time.deltaTime;
         _charController.Move(movement);
-    }
-
-    void OnControllerColliderHit(ControllerColliderHit hit)
-    {
-        //If we have collided with an item, add to inventory
-        if (hit.gameObject.tag == "item")
-        {
-            IItem newItem = (IItem)hit.gameObject.GetComponent(typeof(IItem));
-            pickup(newItem);
-            Destroy(hit.gameObject);
-        }
-    }
-
-    //When we collide with an item, pick it up
-    void pickup(IItem item)
-    {
-
-        //Update inventory UI
-
-        //Add item to inventory
-        inventory.Add(item);
-
-        //If we have no item equiped, equip item
-        if (activeItem == null)
-        {
-            print("equipped " + item.getName());
-            activeItem = item;
-        }
-    }
-
-    //Used by attack script to trigger the active item
-    public void useItem()
-    {
-        if (activeItem != null)
-            activeItem.Use();
-        else
-            print("Nothing equipped!");
     }
 
     public void Die()
