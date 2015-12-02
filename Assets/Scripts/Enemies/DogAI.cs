@@ -12,10 +12,11 @@ public class DogAI : MonoBehaviour, IEnemy
     public float attackRange = 1;
     public float downwardForce = -1.5f;
     public float chaseDelay = 1; //seconds between raycasts
-    public LayerMask visibleLayers;
+    public LayerMask visibleLayers; //Cannot see objects on trigger layer
     public float damageColorDuration = 2;
     public float destroyAfterSeconds = 2;
-    public GameObject[] DroppableItems;
+    public GameObject[] droppableItems;
+    public ParticleSystem deathParticleSystem;
 
     public Color damageColor;
     private Color originalColor;
@@ -83,10 +84,12 @@ public class DogAI : MonoBehaviour, IEnemy
     {
         var rayEndpt = player.transform.position;
         rayEndpt.y += 1;
+        Debug.DrawRay(transform.position, rayEndpt);
         var ray = new Ray(transform.position, rayEndpt - transform.position);
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, sightRange, visibleLayers))
         {
+            print("I see: " + hit.collider.gameObject.name);
             return hit.collider.gameObject.CompareTag("Player");
         }
         return false;
@@ -121,8 +124,14 @@ public class DogAI : MonoBehaviour, IEnemy
         yield return new WaitForSeconds(destroyAfterSeconds);
         Destroy(this.gameObject);
 
-        var itemIndex = Random.Range(0, DroppableItems.Length);
-        var item = DroppableItems[itemIndex];
+        var itemIndex = Random.Range(0, droppableItems.Length);
+        var item = droppableItems[itemIndex];
+
+        var system = Instantiate(deathParticleSystem);
+        system.transform.position = transform.position;
+        system.Play();
+        Destroy(system.gameObject, system.duration);
+
         Instantiate(item, transform.position, Quaternion.identity);
     }
 

@@ -687,22 +687,6 @@ Prefab:
       propertyPath: m_Name
       value: Dog 1 (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 11485680, guid: 8150121878d2add4ebb777165cf22815, type: 2}
-      propertyPath: speed
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 11485680, guid: 8150121878d2add4ebb777165cf22815, type: 2}
-      propertyPath: attackDamage
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 9596820, guid: 8150121878d2add4ebb777165cf22815, type: 2}
-      propertyPath: m_Avatar
-      value: 
-      objectReference: {fileID: 9000000, guid: 81a3addf071c49640a1d0c3f8ea17bae, type: 3}
-    - target: {fileID: 144878, guid: 8150121878d2add4ebb777165cf22815, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8150121878d2add4ebb777165cf22815, type: 2}
   m_IsPrefabParent: 0
@@ -1818,7 +1802,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 426902, guid: ebaddb537c2380d4388ba36c1e94e497, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11429572, guid: ebaddb537c2380d4388ba36c1e94e497, type: 2}
       propertyPath: healthSlider
@@ -1828,21 +1812,17 @@ Prefab:
       propertyPath: damageImage
       value: 
       objectReference: {fileID: 4365723}
-    - target: {fileID: 136898, guid: ebaddb537c2380d4388ba36c1e94e497, type: 2}
-      propertyPath: m_Name
-      value: PlayerAndCamera
-      objectReference: {fileID: 0}
     - target: {fileID: 11429572, guid: ebaddb537c2380d4388ba36c1e94e497, type: 2}
       propertyPath: healingImage
       value: 
       objectReference: {fileID: 791525206}
-    - target: {fileID: 11429572, guid: ebaddb537c2380d4388ba36c1e94e497, type: 2}
-      propertyPath: damageFlashSpeed
-      value: 2
+    - target: {fileID: 136898, guid: ebaddb537c2380d4388ba36c1e94e497, type: 2}
+      propertyPath: m_Name
+      value: PlayerAndCamera
       objectReference: {fileID: 0}
-    - target: {fileID: 11429572, guid: ebaddb537c2380d4388ba36c1e94e497, type: 2}
-      propertyPath: healingFlashSpeed
-      value: 3
+    - target: {fileID: 136204, guid: ebaddb537c2380d4388ba36c1e94e497, type: 2}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ebaddb537c2380d4388ba36c1e94e497, type: 2}
