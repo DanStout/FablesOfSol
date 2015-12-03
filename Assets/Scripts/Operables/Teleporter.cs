@@ -3,8 +3,12 @@ using System.Collections;
 
 public class Teleporter : BaseOperable
 {
+    public string respawnDestinationTag;
+    public string sceneToLoad;
+    
     public override void Operate()
     {
-        Application.LoadLevel("2 - Cronon");
+        GameManager.RelocatePlayerToTagOnNextLevel(respawnDestinationTag);
+        Application.LoadLevel(sceneToLoad);
     }
 }

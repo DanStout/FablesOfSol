@@ -10,7 +10,6 @@ public class Hammer : MonoBehaviour, IItem
     private float radius = 1;
     private float damage = 5;
 
-
     // Use this for initialization
     void Start()
     {
@@ -28,7 +27,6 @@ public class Hammer : MonoBehaviour, IItem
             }
         }
     }
-
 
     public void Use()
     {

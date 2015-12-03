@@ -15,6 +15,7 @@ TagManager:
   - UI
   - InventoryUI
   - item
+  - Teleporter
   layers:
   - Default
   - TransparentFX
