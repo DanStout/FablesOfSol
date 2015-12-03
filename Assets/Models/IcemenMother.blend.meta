@@ -1,0 +1,163 @@
+fileFormatVersion: 2
+guid: 393d7d131eba8104597f5251d51e4ecc
+timeCreated: 1449110617
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Armature
+    100002: BackLeg1_L
+    100004: BackLeg1_R_001
+    100006: BackLeg2_L
+    100008: BackLeg2_R
+    100010: BackLeg3_L
+    100012: BackLeg3_R
+    100014: BackLeg4_L
+    100016: BackLeg4_R
+    100018: BackLeg5_L
+    100020: BackLeg5_R
+    100022: BackLeg6_L
+    100024: BackLeg6_R
+    100026: BackLegIK_L
+    100028: BackLegIK_R
+    100030: Bone
+    100032: Bone_001
+    100034: Bone_002
+    100036: FrontLeg1_L
+    100038: FrontLeg1_R
+    100040: FrontLeg2_L
+    100042: FrontLeg2_R
+    100044: FrontLeg3_L
+    100046: FrontLeg3_R
+    100048: FrontLeg4_L
+    100050: FrontLeg4_R
+    100052: FrontLeg5_L
+    100054: FrontLeg5_R
+    100056: FrontLeg6_L
+    100058: FrontLeg6_R
+    100060: FrontLeg7_L
+    100062: FrontLeg7_R
+    100064: FrontLeg8_L
+    100066: FrontLeg8_R
+    100068: FrontLegIK_L
+    100070: FrontLegIK_R
+    100072: IcemanMother
+    100074: //RootNode
+    100076: Icosphere
+    100078: Sphere
+    400000: Armature
+    400002: BackLeg1_L
+    400004: BackLeg1_R_001
+    400006: BackLeg2_L
+    400008: BackLeg2_R
+    400010: BackLeg3_L
+    400012: BackLeg3_R
+    400014: BackLeg4_L
+    400016: BackLeg4_R
+    400018: BackLeg5_L
+    400020: BackLeg5_R
+    400022: BackLeg6_L
+    400024: BackLeg6_R
+    400026: BackLegIK_L
+    400028: BackLegIK_R
+    400030: Bone
+    400032: Bone_001
+    400034: Bone_002
+    400036: FrontLeg1_L
+    400038: FrontLeg1_R
+    400040: FrontLeg2_L
+    400042: FrontLeg2_R
+    400044: FrontLeg3_L
+    400046: FrontLeg3_R
+    400048: FrontLeg4_L
+    400050: FrontLeg4_R
+    400052: FrontLeg5_L
+    400054: FrontLeg5_R
+    400056: FrontLeg6_L
+    400058: FrontLeg6_R
+    400060: FrontLeg7_L
+    400062: FrontLeg7_R
+    400064: FrontLeg8_L
+    400066: FrontLeg8_R
+    400068: FrontLegIK_L
+    400070: FrontLegIK_R
+    400072: IcemanMother
+    400074: //RootNode
+    400076: Icosphere
+    400078: Sphere
+    4300000: IcemanMother
+    4300002: Sphere
+    4300004: Icosphere
+    7400000: Default Take
+    7400002: MOTHER_DEATH
+    7400004: MOTHER_HIT
+    7400006: MOTHER_JUMP
+    7400008: MOTHER_SMASH
+    9500000: //RootNode
+    13700000: IcemanMother
+    13700002: Icosphere
+    13700004: Sphere
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
