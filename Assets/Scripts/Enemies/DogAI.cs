@@ -83,13 +83,11 @@ public class DogAI : MonoBehaviour, IEnemy
     private bool CanSeePlayer()
     {
         var rayEndpt = player.transform.position;
-        rayEndpt.y += 1;
-        Debug.DrawRay(transform.position, rayEndpt);
+        rayEndpt.y += 1; //otherwise it's too low..
         var ray = new Ray(transform.position, rayEndpt - transform.position);
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, sightRange, visibleLayers))
         {
-            print("I see: " + hit.collider.gameObject.name);
             return hit.collider.gameObject.CompareTag("Player");
         }
         return false;
@@ -109,6 +107,8 @@ public class DogAI : MonoBehaviour, IEnemy
 
     public void TakeDamage(float amount)
     {
+        if (isDead) return;
+
         StartCoroutine(HurtFlashForTime(damageColorDuration));
         currHealth -= amount;
         if (currHealth <= 0)
