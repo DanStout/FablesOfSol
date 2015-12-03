@@ -249,6 +249,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 413064}
   - 114: {fileID: 11458538}
+  - 114: {fileID: 11450330}
   m_Layer: 5
   m_Name: UI
   m_TagString: UI
@@ -303,7 +304,7 @@ GameObject:
   - 114: {fileID: 11471078}
   m_Layer: 5
   m_Name: InventoryPanel
-  m_TagString: Untagged
+  m_TagString: InventoryUI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1937,6 +1938,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ForceModuleActive: 0
+--- !u!114 &11450330
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 132360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 235ff5c7257984243b7a3da4900dbfa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroySystem: {fileID: 0}
 --- !u!114 &11454818
 MonoBehaviour:
   m_ObjectHideFlags: 1

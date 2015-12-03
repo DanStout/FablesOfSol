@@ -13,6 +13,7 @@ TagManager:
   - GameManager
   - GameOverScreen
   - UI
+  - InventoryUI
   layers:
   - Default
   - TransparentFX
