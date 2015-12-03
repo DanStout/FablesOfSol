@@ -64,17 +64,17 @@ public class PlayerMovement : MonoBehaviour
         if (feetOnGround)
         {
             _vertSpeed = Input.GetButton("Jump") ? jumpSpeed : minimumFallSpeed;
-            if (!wasOnGround)
-            {
-                var fallDistance = Vector3.Distance(fallOrigin, transform.position);
-                if (fallDistance > minimumFallDamageDistance)
-                {
-                    if (DoIgnoreNextFall)
-                        DoIgnoreNextFall = false;
-                    else
-                        _playerLife.TakeDamage(fallDistance * fallDamageMultiplier);
-                }
-            }
+            //if (!wasOnGround)
+            //{
+            //    var fallDistance = Vector3.Distance(fallOrigin, transform.position);
+            //    if (fallDistance > minimumFallDamageDistance)
+            //    {
+            //        if (DoIgnoreNextFall)
+            //            DoIgnoreNextFall = false;
+            //        else
+            //            _playerLife.TakeDamage(fallDistance * fallDamageMultiplier);
+            //    }
+            //}
         }
         else
         {

@@ -18,6 +18,7 @@ public class ScientistTrigger : BaseOperable
         dialog.ActiveNpcName = DisplayName;
         dialog.AddLine("Thank god you're here! I was beginning to worry I would have to go to Floe and Cronon to get those samples myself!");
         dialog.AddLine("Oh. You've already got a hammer.. Looks like I won't be very useful after all..");
+        dialog.AddLine("Unfortunately the way to the Cronon teleporter was blocked when some rocks fell from the ceiling. You look like you might be strong enough to break them with that hammer, though.");
         dialog.AddLine("Good luck!");
         didOperate = true;
     }
