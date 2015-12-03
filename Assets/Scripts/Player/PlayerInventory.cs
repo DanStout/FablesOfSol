@@ -1,15 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class PlayerInventory : MonoBehaviour
 {
     //Variables to store current items and active items
     private IItem activeItem;
     public List<IItem> inventory;
+	private GameObject UI;
 
     void Start()
     {
+		//Find inventory UI
+		UI = GameObject.FindGameObjectWithTag ("InventoryUI");
+
         //Initialize inventory with hammer
         inventory = new List<IItem>();
         Hammer hammer = this.gameObject.AddComponent<Hammer>();
@@ -32,9 +37,13 @@ public class PlayerInventory : MonoBehaviour
         //If we have collided with an item, add to inventory
         if (hit.gameObject.tag == "item")
         {
-            IItem newItem = (IItem)hit.gameObject.GetComponent(typeof(IItem));
-            pickup(newItem);
-            Destroy(hit.gameObject);
+			//Add item script to inventory
+			IItem newItem = (IItem)hit.gameObject.GetComponent(typeof(IItem));
+			pickup(newItem);
+			Destroy(hit.gameObject);
+
+
+
         }
     }
 
@@ -43,6 +52,29 @@ public class PlayerInventory : MonoBehaviour
     {
 
         //Update inventory UI
+		try
+		{
+			GameObject button = (GameObject)Instantiate(Resources.Load("ButtonPrefab"));
+			Button b = (Button) button.GetComponent(typeof(Button));
+			if(b != null)
+			{
+				b.onClick.AddListener(() => {
+					print ("setActive");
+					setActive((IItem)b.GetComponent(typeof(IItem)));
+				});
+			}
+			
+			Text text = (Text)button.GetComponentInChildren(typeof(Text));
+			text.text = "";
+			
+			
+			button.AddComponent(item.GetType());
+			button.transform.SetParent(UI.transform);
+		}
+		catch(UnityException e)
+		{
+			print (e.GetBaseException());
+		}
 
         //Add item to inventory
         inventory.Add(item);
@@ -54,6 +86,11 @@ public class PlayerInventory : MonoBehaviour
             activeItem = item;
         }
     }
+
+	public void setActive(IItem item)
+	{
+		activeItem = item;
+	}
 
     public void PickupItem(BaseItem item)
     {
