@@ -3,21 +3,15 @@ using System.Collections;
 
 public class Destroyable : MonoBehaviour
 {
-    public int hitsRequired = 2;
-    private int hitsLeft;
-
-    void Start()
-    {
-        hitsLeft = hitsRequired;
-    }
+    public ParticleSystem destroySystem;
 
     public void TakeHit()
     {
-        hitsLeft--;
-        if (hitsLeft == 0)
-        {
-            Destroy(gameObject);
-        }
+        var system = Instantiate(destroySystem);
+        system.transform.position = transform.position;
+        system.Play();
+        Destroy(system.gameObject, system.duration);
+        Destroy(gameObject);
     }
 
     
