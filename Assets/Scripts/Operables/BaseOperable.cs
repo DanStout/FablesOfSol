@@ -35,7 +35,9 @@ public abstract class BaseOperable : MonoBehaviour
 
     protected virtual void Update()
     {
-        _screenPoint = Camera.main.WorldToScreenPoint(transform.position);
+        var worldPoint = transform.position;
+        worldPoint.y = player.transform.position.y;
+        _screenPoint = Camera.main.WorldToScreenPoint(worldPoint);
         _screenPoint.y = (Screen.height - _screenPoint.y);
 
         if (isWithinRange)

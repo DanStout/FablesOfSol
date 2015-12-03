@@ -12,6 +12,7 @@ TagManager:
   - PlayerAndCamera
   - GameManager
   - GameOverScreen
+  - UI
   layers:
   - Default
   - TransparentFX

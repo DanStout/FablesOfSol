@@ -17,6 +17,19 @@ public class Hammer : MonoBehaviour, IItem
         owner = GameObject.FindGameObjectWithTag("Player");
     }
 
+    void OnTriggerEnter(Collider col)
+    {
+        if (Input.GetButton("Attack"))
+        {
+            var dest = col.gameObject.GetComponent<Destroyable>();
+            if (dest != null)
+            {
+                dest.TakeHit();
+            }
+        }
+    }
+
+
     public void Use()
     {
         //Trigger player animation

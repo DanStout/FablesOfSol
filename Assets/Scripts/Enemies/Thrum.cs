@@ -6,6 +6,7 @@ public class Thrum : MonoBehaviour
     private NavMeshAgent navAgent;
     private GameObject player;
     private Animator anim;
+    public float damage = 1;    
 
     void Start()
     {
