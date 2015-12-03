@@ -42,31 +42,6 @@ public class PlayerInventory : MonoBehaviour
 			pickup(newItem);
 			Destroy(hit.gameObject);
 
-			//Create inventory UI element
-			try
-			{
-				GameObject button = (GameObject)Instantiate(Resources.Load("ButtonPrefab"));
-				Button b = (Button) button.GetComponent(typeof(Button));
-				if(b != null)
-				{
-					b.onClick.AddListener(() => {
-						print ("setActive");
-						setActive((IItem)b.GetComponent(typeof(IItem)));
-					});
-				}
-
-				Text text = (Text)button.GetComponentInChildren(typeof(Text));
-				text.text = "";
-		
-
-				button.AddComponent(newItem.GetType());
-				button.transform.SetParent(UI.transform);
-			}
-			catch(UnityException e)
-			{
-				print (e.GetBaseException());
-			}
-
 
 
         }
@@ -77,6 +52,29 @@ public class PlayerInventory : MonoBehaviour
     {
 
         //Update inventory UI
+		try
+		{
+			GameObject button = (GameObject)Instantiate(Resources.Load("ButtonPrefab"));
+			Button b = (Button) button.GetComponent(typeof(Button));
+			if(b != null)
+			{
+				b.onClick.AddListener(() => {
+					print ("setActive");
+					setActive((IItem)b.GetComponent(typeof(IItem)));
+				});
+			}
+			
+			Text text = (Text)button.GetComponentInChildren(typeof(Text));
+			text.text = "";
+			
+			
+			button.AddComponent(item.GetType());
+			button.transform.SetParent(UI.transform);
+		}
+		catch(UnityException e)
+		{
+			print (e.GetBaseException());
+		}
 
         //Add item to inventory
         inventory.Add(item);
