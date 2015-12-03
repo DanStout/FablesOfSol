@@ -172,7 +172,7 @@ Transform:
   - {fileID: 1360096074}
   - {fileID: 341570802}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!1001 &587044494
 Prefab:
   m_ObjectHideFlags: 0
@@ -242,7 +242,7 @@ Light:
   serializedVersion: 6
   m_Type: 1
   m_Color: {r: 1, g: .956862748, b: .839215696, a: 1}
-  m_Intensity: 1.09000003
+  m_Intensity: 1.80999994
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -275,7 +275,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!1 &787891629 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: 780611a67e8e941a2b3aa96e5915a793, type: 2}
@@ -520,4 +520,62 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c967252d01273b84a92d42fed67b96dc, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1001 &1732020746
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 434426, guid: 9fbc5a317832b7c4ab9fcc3937001c66, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 69.5360413
+      objectReference: {fileID: 0}
+    - target: {fileID: 434426, guid: 9fbc5a317832b7c4ab9fcc3937001c66, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 12.9200001
+      objectReference: {fileID: 0}
+    - target: {fileID: 434426, guid: 9fbc5a317832b7c4ab9fcc3937001c66, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 165.795288
+      objectReference: {fileID: 0}
+    - target: {fileID: 434426, guid: 9fbc5a317832b7c4ab9fcc3937001c66, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 434426, guid: 9fbc5a317832b7c4ab9fcc3937001c66, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 434426, guid: 9fbc5a317832b7c4ab9fcc3937001c66, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 434426, guid: 9fbc5a317832b7c4ab9fcc3937001c66, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 434426, guid: 9fbc5a317832b7c4ab9fcc3937001c66, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11473844, guid: 9fbc5a317832b7c4ab9fcc3937001c66, type: 2}
+      propertyPath: ActionText
+      value: Teleport back to Cronon
+      objectReference: {fileID: 0}
+    - target: {fileID: 157132, guid: 9fbc5a317832b7c4ab9fcc3937001c66, type: 2}
+      propertyPath: m_TagString
+      value: FloeTeleporter
+      objectReference: {fileID: 0}
+    - target: {fileID: 11473844, guid: 9fbc5a317832b7c4ab9fcc3937001c66, type: 2}
+      propertyPath: respawnDestinationTag
+      value: CrononTeleporter2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11473844, guid: 9fbc5a317832b7c4ab9fcc3937001c66, type: 2}
+      propertyPath: sceneToLoad
+      value: 2 - Cronon
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 9fbc5a317832b7c4ab9fcc3937001c66, type: 2}
   m_IsPrefabParent: 0

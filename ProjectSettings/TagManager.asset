@@ -15,7 +15,11 @@ TagManager:
   - UI
   - InventoryUI
   - item
+  - CrononTeleporter1
+  - BauLabTeleporter
   - Teleporter
+  - FloeTeleporter
+  - CrononTeleporter2
   layers:
   - Default
   - TransparentFX

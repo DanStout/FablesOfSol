@@ -4,7 +4,6 @@ using System.Collections;
 
 public class Hammer : MonoBehaviour, IItem
 {
-
     private GameObject owner;
     private bool attacking = false;
     private float radius = 1;
