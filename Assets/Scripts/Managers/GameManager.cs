@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         //Make sure we only ever have one of this object across all scenes
-        if (mgr)
+        if (mgr != null)
         {
             DestroyImmediate(gameObject);
         }
@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
 
     public static void RelocatePlayerToTagOnNextLevel(string tag)
     {
+        print("Set redirect tag: {0}".FormatWith(tag));
         _redirectTag = tag;
     }
 
@@ -34,9 +35,10 @@ public class GameManager : MonoBehaviour
     {
         if (_redirectTag != null)
         {
+            print("Redirecting to tag '{0}'".FormatWith(_redirectTag));
             var player = GameObject.FindGameObjectWithTag("PlayerAndCamera");
             var obj = GameObject.FindGameObjectWithTag(_redirectTag);
-            if (obj == null) print("Object with tag {0} was not found".F(_redirectTag));
+            if (obj == null) print("Object with tag {0} was not found".FormatWith(_redirectTag));
             player.transform.position = obj.transform.position;
             _redirectTag = null;
         }
@@ -52,8 +54,4 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = originalTimeScale;
     }
-
-
-
-
 }

@@ -97,11 +97,551 @@ ModelImporter:
     animationScaleError: .5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Default Take
+      takeName: Default Take
+      firstFrame: -1
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Dog
+        weight: 1
+      - path: Skeleton
+        weight: 1
+      - path: Skeleton/BackLeg1_L
+        weight: 1
+      - path: Skeleton/BackLeg1_L/BackLeg2_L
+        weight: 1
+      - path: Skeleton/BackLeg1_L/BackLeg2_L/BackLeg3_L
+        weight: 1
+      - path: Skeleton/BackLeg1_L/BackLeg2_L/BackLeg3_L/BackFoot_L
+        weight: 1
+      - path: Skeleton/BackLeg1_R
+        weight: 1
+      - path: Skeleton/BackLeg1_R/BackLeg2_R
+        weight: 1
+      - path: Skeleton/BackLeg1_R/BackLeg2_R/BackLeg3_R
+        weight: 1
+      - path: Skeleton/BackLeg1_R/BackLeg2_R/BackLeg3_R/BackFoot_R
+        weight: 1
+      - path: Skeleton/BackLegIK_L
+        weight: 1
+      - path: Skeleton/BackLegIK_R
+        weight: 1
+      - path: Skeleton/FrontLegIK_L
+        weight: 1
+      - path: Skeleton/FrontLegIK_R
+        weight: 1
+      - path: Skeleton/Mouth
+        weight: 1
+      - path: Skeleton/Neck
+        weight: 1
+      - path: Skeleton/Neck/Head
+        weight: 1
+      - path: Skeleton/Spine1
+        weight: 1
+      - path: Skeleton/Spine1/Spine2
+        weight: 1
+      - path: Skeleton/Spine1/Spine2/Spine3
+        weight: 1
+      - path: Skeleton/Tail
+        weight: 1
+      - path: Skeleton/Tail/Tail1
+        weight: 1
+      - path: Skeleton/Tail/Tail1/Tail2
+        weight: 1
+      - path: Skeleton/Torso_L
+        weight: 1
+      - path: Skeleton/Torso_L/FrontLeg1_L
+        weight: 1
+      - path: Skeleton/Torso_L/FrontLeg1_L/FrontLeg2_L
+        weight: 1
+      - path: Skeleton/Torso_L/FrontLeg1_L/FrontLeg2_L/FrontFoot_L
+        weight: 1
+      - path: Skeleton/Torso_R
+        weight: 1
+      - path: Skeleton/Torso_R/FrontLeg1_R
+        weight: 1
+      - path: Skeleton/Torso_R/FrontLeg1_R/FrontLeg2_R
+        weight: 1
+      - path: Skeleton/Torso_R/FrontLeg1_R/FrontLeg2_R/FrontFoot_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Dog_Death
+      takeName: Dog_Death
+      firstFrame: -1
+      lastFrame: 14
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Dog
+        weight: 1
+      - path: Skeleton
+        weight: 1
+      - path: Skeleton/BackLeg1_L
+        weight: 1
+      - path: Skeleton/BackLeg1_L/BackLeg2_L
+        weight: 1
+      - path: Skeleton/BackLeg1_L/BackLeg2_L/BackLeg3_L
+        weight: 1
+      - path: Skeleton/BackLeg1_L/BackLeg2_L/BackLeg3_L/BackFoot_L
+        weight: 1
+      - path: Skeleton/BackLeg1_R
+        weight: 1
+      - path: Skeleton/BackLeg1_R/BackLeg2_R
+        weight: 1
+      - path: Skeleton/BackLeg1_R/BackLeg2_R/BackLeg3_R
+        weight: 1
+      - path: Skeleton/BackLeg1_R/BackLeg2_R/BackLeg3_R/BackFoot_R
+        weight: 1
+      - path: Skeleton/BackLegIK_L
+        weight: 1
+      - path: Skeleton/BackLegIK_R
+        weight: 1
+      - path: Skeleton/FrontLegIK_L
+        weight: 1
+      - path: Skeleton/FrontLegIK_R
+        weight: 1
+      - path: Skeleton/Mouth
+        weight: 1
+      - path: Skeleton/Neck
+        weight: 1
+      - path: Skeleton/Neck/Head
+        weight: 1
+      - path: Skeleton/Spine1
+        weight: 1
+      - path: Skeleton/Spine1/Spine2
+        weight: 1
+      - path: Skeleton/Spine1/Spine2/Spine3
+        weight: 1
+      - path: Skeleton/Tail
+        weight: 1
+      - path: Skeleton/Tail/Tail1
+        weight: 1
+      - path: Skeleton/Tail/Tail1/Tail2
+        weight: 1
+      - path: Skeleton/Torso_L
+        weight: 1
+      - path: Skeleton/Torso_L/FrontLeg1_L
+        weight: 1
+      - path: Skeleton/Torso_L/FrontLeg1_L/FrontLeg2_L
+        weight: 1
+      - path: Skeleton/Torso_L/FrontLeg1_L/FrontLeg2_L/FrontFoot_L
+        weight: 1
+      - path: Skeleton/Torso_R
+        weight: 1
+      - path: Skeleton/Torso_R/FrontLeg1_R
+        weight: 1
+      - path: Skeleton/Torso_R/FrontLeg1_R/FrontLeg2_R
+        weight: 1
+      - path: Skeleton/Torso_R/FrontLeg1_R/FrontLeg2_R/FrontFoot_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: DOG_HOWL
+      takeName: DOG_HOWL
+      firstFrame: -1
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Dog
+        weight: 1
+      - path: Skeleton
+        weight: 1
+      - path: Skeleton/BackLeg1_L
+        weight: 1
+      - path: Skeleton/BackLeg1_L/BackLeg2_L
+        weight: 1
+      - path: Skeleton/BackLeg1_L/BackLeg2_L/BackLeg3_L
+        weight: 1
+      - path: Skeleton/BackLeg1_L/BackLeg2_L/BackLeg3_L/BackFoot_L
+        weight: 1
+      - path: Skeleton/BackLeg1_R
+        weight: 1
+      - path: Skeleton/BackLeg1_R/BackLeg2_R
+        weight: 1
+      - path: Skeleton/BackLeg1_R/BackLeg2_R/BackLeg3_R
+        weight: 1
+      - path: Skeleton/BackLeg1_R/BackLeg2_R/BackLeg3_R/BackFoot_R
+        weight: 1
+      - path: Skeleton/BackLegIK_L
+        weight: 1
+      - path: Skeleton/BackLegIK_R
+        weight: 1
+      - path: Skeleton/FrontLegIK_L
+        weight: 1
+      - path: Skeleton/FrontLegIK_R
+        weight: 1
+      - path: Skeleton/Mouth
+        weight: 1
+      - path: Skeleton/Neck
+        weight: 1
+      - path: Skeleton/Neck/Head
+        weight: 1
+      - path: Skeleton/Spine1
+        weight: 1
+      - path: Skeleton/Spine1/Spine2
+        weight: 1
+      - path: Skeleton/Spine1/Spine2/Spine3
+        weight: 1
+      - path: Skeleton/Tail
+        weight: 1
+      - path: Skeleton/Tail/Tail1
+        weight: 1
+      - path: Skeleton/Tail/Tail1/Tail2
+        weight: 1
+      - path: Skeleton/Torso_L
+        weight: 1
+      - path: Skeleton/Torso_L/FrontLeg1_L
+        weight: 1
+      - path: Skeleton/Torso_L/FrontLeg1_L/FrontLeg2_L
+        weight: 1
+      - path: Skeleton/Torso_L/FrontLeg1_L/FrontLeg2_L/FrontFoot_L
+        weight: 1
+      - path: Skeleton/Torso_R
+        weight: 1
+      - path: Skeleton/Torso_R/FrontLeg1_R
+        weight: 1
+      - path: Skeleton/Torso_R/FrontLeg1_R/FrontLeg2_R
+        weight: 1
+      - path: Skeleton/Torso_R/FrontLeg1_R/FrontLeg2_R/FrontFoot_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: DogAttack
+      takeName: DogAttack
+      firstFrame: -1
+      lastFrame: 19
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Dog
+        weight: 1
+      - path: Skeleton
+        weight: 1
+      - path: Skeleton/BackLeg1_L
+        weight: 1
+      - path: Skeleton/BackLeg1_L/BackLeg2_L
+        weight: 1
+      - path: Skeleton/BackLeg1_L/BackLeg2_L/BackLeg3_L
+        weight: 1
+      - path: Skeleton/BackLeg1_L/BackLeg2_L/BackLeg3_L/BackFoot_L
+        weight: 1
+      - path: Skeleton/BackLeg1_R
+        weight: 1
+      - path: Skeleton/BackLeg1_R/BackLeg2_R
+        weight: 1
+      - path: Skeleton/BackLeg1_R/BackLeg2_R/BackLeg3_R
+        weight: 1
+      - path: Skeleton/BackLeg1_R/BackLeg2_R/BackLeg3_R/BackFoot_R
+        weight: 1
+      - path: Skeleton/BackLegIK_L
+        weight: 1
+      - path: Skeleton/BackLegIK_R
+        weight: 1
+      - path: Skeleton/FrontLegIK_L
+        weight: 1
+      - path: Skeleton/FrontLegIK_R
+        weight: 1
+      - path: Skeleton/Mouth
+        weight: 1
+      - path: Skeleton/Neck
+        weight: 1
+      - path: Skeleton/Neck/Head
+        weight: 1
+      - path: Skeleton/Spine1
+        weight: 1
+      - path: Skeleton/Spine1/Spine2
+        weight: 1
+      - path: Skeleton/Spine1/Spine2/Spine3
+        weight: 1
+      - path: Skeleton/Tail
+        weight: 1
+      - path: Skeleton/Tail/Tail1
+        weight: 1
+      - path: Skeleton/Tail/Tail1/Tail2
+        weight: 1
+      - path: Skeleton/Torso_L
+        weight: 1
+      - path: Skeleton/Torso_L/FrontLeg1_L
+        weight: 1
+      - path: Skeleton/Torso_L/FrontLeg1_L/FrontLeg2_L
+        weight: 1
+      - path: Skeleton/Torso_L/FrontLeg1_L/FrontLeg2_L/FrontFoot_L
+        weight: 1
+      - path: Skeleton/Torso_R
+        weight: 1
+      - path: Skeleton/Torso_R/FrontLeg1_R
+        weight: 1
+      - path: Skeleton/Torso_R/FrontLeg1_R/FrontLeg2_R
+        weight: 1
+      - path: Skeleton/Torso_R/FrontLeg1_R/FrontLeg2_R/FrontFoot_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: DogIdle
+      takeName: DogIdle
+      firstFrame: -1
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Dog
+        weight: 1
+      - path: Skeleton
+        weight: 1
+      - path: Skeleton/BackLeg1_L
+        weight: 1
+      - path: Skeleton/BackLeg1_L/BackLeg2_L
+        weight: 1
+      - path: Skeleton/BackLeg1_L/BackLeg2_L/BackLeg3_L
+        weight: 1
+      - path: Skeleton/BackLeg1_L/BackLeg2_L/BackLeg3_L/BackFoot_L
+        weight: 1
+      - path: Skeleton/BackLeg1_R
+        weight: 1
+      - path: Skeleton/BackLeg1_R/BackLeg2_R
+        weight: 1
+      - path: Skeleton/BackLeg1_R/BackLeg2_R/BackLeg3_R
+        weight: 1
+      - path: Skeleton/BackLeg1_R/BackLeg2_R/BackLeg3_R/BackFoot_R
+        weight: 1
+      - path: Skeleton/BackLegIK_L
+        weight: 1
+      - path: Skeleton/BackLegIK_R
+        weight: 1
+      - path: Skeleton/FrontLegIK_L
+        weight: 1
+      - path: Skeleton/FrontLegIK_R
+        weight: 1
+      - path: Skeleton/Mouth
+        weight: 1
+      - path: Skeleton/Neck
+        weight: 1
+      - path: Skeleton/Neck/Head
+        weight: 1
+      - path: Skeleton/Spine1
+        weight: 1
+      - path: Skeleton/Spine1/Spine2
+        weight: 1
+      - path: Skeleton/Spine1/Spine2/Spine3
+        weight: 1
+      - path: Skeleton/Tail
+        weight: 1
+      - path: Skeleton/Tail/Tail1
+        weight: 1
+      - path: Skeleton/Tail/Tail1/Tail2
+        weight: 1
+      - path: Skeleton/Torso_L
+        weight: 1
+      - path: Skeleton/Torso_L/FrontLeg1_L
+        weight: 1
+      - path: Skeleton/Torso_L/FrontLeg1_L/FrontLeg2_L
+        weight: 1
+      - path: Skeleton/Torso_L/FrontLeg1_L/FrontLeg2_L/FrontFoot_L
+        weight: 1
+      - path: Skeleton/Torso_R
+        weight: 1
+      - path: Skeleton/Torso_R/FrontLeg1_R
+        weight: 1
+      - path: Skeleton/Torso_R/FrontLeg1_R/FrontLeg2_R
+        weight: 1
+      - path: Skeleton/Torso_R/FrontLeg1_R/FrontLeg2_R/FrontFoot_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: DogRun
+      takeName: DogRun
+      firstFrame: -1
+      lastFrame: 13
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Dog
+        weight: 1
+      - path: Skeleton
+        weight: 1
+      - path: Skeleton/BackLeg1_L
+        weight: 1
+      - path: Skeleton/BackLeg1_L/BackLeg2_L
+        weight: 1
+      - path: Skeleton/BackLeg1_L/BackLeg2_L/BackLeg3_L
+        weight: 1
+      - path: Skeleton/BackLeg1_L/BackLeg2_L/BackLeg3_L/BackFoot_L
+        weight: 1
+      - path: Skeleton/BackLeg1_R
+        weight: 1
+      - path: Skeleton/BackLeg1_R/BackLeg2_R
+        weight: 1
+      - path: Skeleton/BackLeg1_R/BackLeg2_R/BackLeg3_R
+        weight: 1
+      - path: Skeleton/BackLeg1_R/BackLeg2_R/BackLeg3_R/BackFoot_R
+        weight: 1
+      - path: Skeleton/BackLegIK_L
+        weight: 1
+      - path: Skeleton/BackLegIK_R
+        weight: 1
+      - path: Skeleton/FrontLegIK_L
+        weight: 1
+      - path: Skeleton/FrontLegIK_R
+        weight: 1
+      - path: Skeleton/Mouth
+        weight: 1
+      - path: Skeleton/Neck
+        weight: 1
+      - path: Skeleton/Neck/Head
+        weight: 1
+      - path: Skeleton/Spine1
+        weight: 1
+      - path: Skeleton/Spine1/Spine2
+        weight: 1
+      - path: Skeleton/Spine1/Spine2/Spine3
+        weight: 1
+      - path: Skeleton/Tail
+        weight: 1
+      - path: Skeleton/Tail/Tail1
+        weight: 1
+      - path: Skeleton/Tail/Tail1/Tail2
+        weight: 1
+      - path: Skeleton/Torso_L
+        weight: 1
+      - path: Skeleton/Torso_L/FrontLeg1_L
+        weight: 1
+      - path: Skeleton/Torso_L/FrontLeg1_L/FrontLeg2_L
+        weight: 1
+      - path: Skeleton/Torso_L/FrontLeg1_L/FrontLeg2_L/FrontFoot_L
+        weight: 1
+      - path: Skeleton/Torso_R
+        weight: 1
+      - path: Skeleton/Torso_R/FrontLeg1_R
+        weight: 1
+      - path: Skeleton/Torso_R/FrontLeg1_R/FrontLeg2_R
+        weight: 1
+      - path: Skeleton/Torso_R/FrontLeg1_R/FrontLeg2_R/FrontFoot_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: .25
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1

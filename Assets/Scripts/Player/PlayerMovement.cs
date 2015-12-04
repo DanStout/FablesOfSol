@@ -74,7 +74,17 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        //check for fall damage
+        CheckForFallDamage();
+
+        _animator.SetFloat("vertSpeed", _vertSpeed);
+        movement.y = _vertSpeed;
+        movement *= Time.deltaTime;
+
+        _charController.Move(movement);
+    }
+
+    private void CheckForFallDamage()
+    {
         if (_charController.isGrounded)
         {
             if (!wasOnGround)
@@ -99,12 +109,6 @@ public class PlayerMovement : MonoBehaviour
             }
             wasOnGround = false;
         }
-
-        _animator.SetFloat("vertSpeed", _vertSpeed);
-        movement.y = _vertSpeed;
-        movement *= Time.deltaTime;
-
-        _charController.Move(movement);
     }
 
     public void Die()

@@ -85,11 +85,251 @@ ModelImporter:
     animationScaleError: .5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: DONKA_ATTACK
+      takeName: DONKA_ATTACK
+      firstFrame: 0
+      lastFrame: 34
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Donka
+        weight: 1
+      - path: Skeleton
+        weight: 1
+      - path: Skeleton/Bone
+        weight: 1
+      - path: Skeleton/Bone/Bone_001
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Bone_003
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Bone_003/Bone_004
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Bone_003/Bone_004/Bone_005
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Thigh_L
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Thigh_L/Ankle_L
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Thigh_L/Ankle_L/Foot2_L
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Thigh_L/Ankle_L/Foot2_L/Foot2_L_001
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Thigh_L/Ankle_L/Foot3_L
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Thigh_L/Ankle_L/Foot3_L/Foot3_L_001
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Thigh_L/Ankle_L/Foot_L
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Thigh_L/Ankle_L/Foot_L/Foot_L_001
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Thigh_R
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Thigh_R/Ankle_R
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Thigh_R/Ankle_R/Foot2_R
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Thigh_R/Ankle_R/Foot2_R/Foot2_R_001
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Thigh_R/Ankle_R/Foot3_R
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Thigh_R/Ankle_R/Foot3_R/Foot3_R_001
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Thigh_R/Ankle_R/Foot_R
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Thigh_R/Ankle_R/Foot_R/Foot_R_001
+        weight: 1
+      - path: Skeleton/LegIK_L
+        weight: 1
+      - path: Skeleton/LegIK_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: DONKA_IDLE
+      takeName: DONKA_IDLE
+      firstFrame: 0
+      lastFrame: 79
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Donka
+        weight: 1
+      - path: Skeleton
+        weight: 1
+      - path: Skeleton/Bone
+        weight: 1
+      - path: Skeleton/Bone/Bone_001
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Bone_003
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Bone_003/Bone_004
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Bone_003/Bone_004/Bone_005
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Thigh_L
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Thigh_L/Ankle_L
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Thigh_L/Ankle_L/Foot2_L
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Thigh_L/Ankle_L/Foot2_L/Foot2_L_001
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Thigh_L/Ankle_L/Foot3_L
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Thigh_L/Ankle_L/Foot3_L/Foot3_L_001
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Thigh_L/Ankle_L/Foot_L
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Thigh_L/Ankle_L/Foot_L/Foot_L_001
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Thigh_R
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Thigh_R/Ankle_R
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Thigh_R/Ankle_R/Foot2_R
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Thigh_R/Ankle_R/Foot2_R/Foot2_R_001
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Thigh_R/Ankle_R/Foot3_R
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Thigh_R/Ankle_R/Foot3_R/Foot3_R_001
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Thigh_R/Ankle_R/Foot_R
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Thigh_R/Ankle_R/Foot_R/Foot_R_001
+        weight: 1
+      - path: Skeleton/LegIK_L
+        weight: 1
+      - path: Skeleton/LegIK_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: DONKA_RUN
+      takeName: DONKA_RUN
+      firstFrame: 0
+      lastFrame: 29
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Donka
+        weight: 1
+      - path: Skeleton
+        weight: 1
+      - path: Skeleton/Bone
+        weight: 1
+      - path: Skeleton/Bone/Bone_001
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Bone_003
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Bone_003/Bone_004
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Bone_003/Bone_004/Bone_005
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Thigh_L
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Thigh_L/Ankle_L
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Thigh_L/Ankle_L/Foot2_L
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Thigh_L/Ankle_L/Foot2_L/Foot2_L_001
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Thigh_L/Ankle_L/Foot3_L
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Thigh_L/Ankle_L/Foot3_L/Foot3_L_001
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Thigh_L/Ankle_L/Foot_L
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Thigh_L/Ankle_L/Foot_L/Foot_L_001
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Thigh_R
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Thigh_R/Ankle_R
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Thigh_R/Ankle_R/Foot2_R
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Thigh_R/Ankle_R/Foot2_R/Foot2_R_001
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Thigh_R/Ankle_R/Foot3_R
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Thigh_R/Ankle_R/Foot3_R/Foot3_R_001
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Thigh_R/Ankle_R/Foot_R
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Thigh_R/Ankle_R/Foot_R/Foot_R_001
+        weight: 1
+      - path: Skeleton/LegIK_L
+        weight: 1
+      - path: Skeleton/LegIK_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: .600000024
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1

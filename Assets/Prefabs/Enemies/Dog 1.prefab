@@ -147,6 +147,9 @@ GameObject:
   - 95: {fileID: 9596820}
   - 143: {fileID: 14309632}
   - 114: {fileID: 11485680}
+  - 114: {fileID: 11491794}
+  - 114: {fileID: 11451654}
+  - 114: {fileID: 11498882}
   m_Layer: 0
   m_Name: Dog 1
   m_TagString: Untagged
@@ -944,6 +947,22 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11451654
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 144878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eff42c5bfc95dd649a3788c5d55b9e5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyAfterSeconds: 2
+  droppableItems:
+  - {fileID: 179620, guid: 93edd76634863b142bd5d12b27999ff2, type: 2}
+  deathParticleSystem: {fileID: 19876540, guid: f8b43db4604bd6241bc3b35b429421b3,
+    type: 2}
 --- !u!114 &11485680
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -955,26 +974,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 223906940a4cf5d438207ea4cb011660, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2.5
   attackDamage: 3
   maxHealth: 10
-  attackDelay: 1
-  rotationSpeed: 5
+  secondsBetweenAttacks: 1
+  damageColorDuration: .200000003
+  damageColor: {r: .977941155, g: 0, b: 0, a: 0}
+--- !u!114 &11491794
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 144878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ffbb2207e8b7124297ffee5b760206d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   sightRange: 15
-  attackRange: 1
-  downwardForce: -1.5
-  chaseDelay: 1
   visibleLayers:
     serializedVersion: 2
-    m_Bits: 4294967035
-  damageColorDuration: .200000003
-  destroyAfterSeconds: 2
-  droppableItems:
-  - {fileID: 132876, guid: 1c383c555d38a584b95c20cedb8c180e, type: 2}
-  - {fileID: 179620, guid: 93edd76634863b142bd5d12b27999ff2, type: 2}
-  deathParticleSystem: {fileID: 19876540, guid: f8b43db4604bd6241bc3b35b429421b3,
-    type: 2}
-  damageColor: {r: .977941155, g: 0, b: 0, a: 0}
+    m_Bits: 4294967003
+--- !u!114 &11498882
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 144878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c7579ea6a7ae58498bedf3073f1e895, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sightRange: 15
+  speed: 5
+  downwardForce: -1.5
+  rotationSpeed: 5
 --- !u!137 &13706342
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

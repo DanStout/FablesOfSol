@@ -25,7 +25,8 @@ public class PlayerLife : MonoBehaviour
         healthUI.InitializeSlider(fullHealth, currentHealth);
     }
 
-    public void TakeDamage(float amount)
+    /// <summary> Damages the player and returns whether the player died from this hit</summary>
+    public bool TakeDamage(float amount)
     {
         currentHealth -= amount;
         healthUI.UpdateHealth(currentHealth);
@@ -34,7 +35,10 @@ public class PlayerLife : MonoBehaviour
         {
             isDead = true;
             Die();
+            return true;
         }
+
+        return false;
     }
 
     public void Heal(float amount)
