@@ -25,11 +25,6 @@ public class PlayerInventory : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Attack"))
-        {
-            if (activeItem != null)
-                activeItem.Use();
-        }
     }
 
     void OnControllerColliderHit(ControllerColliderHit hit)
@@ -94,7 +89,7 @@ public class PlayerInventory : MonoBehaviour
 
     public void PickupItem(BaseItem item)
     {
-        item.Use();
+        //item.Use();
     }
 
     //Used by attack script to trigger the active item

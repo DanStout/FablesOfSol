@@ -4,10 +4,11 @@ using System.Collections;
 public class MagnetGun : MonoBehaviour, IItem {
 
 	private GameObject owner;
-
+	private bool isOn;
 	// Use this for initialization
 	void Start(){
 		owner = GameObject.FindGameObjectWithTag("Player");
+		isOn = false;
 	}
 	
 	// Update is called once per frame
@@ -19,16 +20,19 @@ public class MagnetGun : MonoBehaviour, IItem {
 
 	public void Use()
 	{
+		print ("Use!");
 		//Spawn particle system
-		ParticleSystem[] systems = (ParticleSystem[])owner.GetComponentsInChildren (typeof(ParticleSystem));
+		ParticleSystem[] systems = owner.GetComponentsInChildren<ParticleSystem>();
 		foreach(ParticleSystem part in systems)
 		{
-			if( part != null && part.name == "MagnetGunParticle")
+			if( part != null && part.name == "MagnetGunParticle" && !isOn)
 			{
-				while(Input.GetButtonDown("Attack"))
-				{
-					part.enableEmission = true;
-				}
+				isOn = true;
+				part.enableEmission = true;
+			}
+			else if(isOn)
+			{
+				isOn = false;
 				part.enableEmission = false;
 			}
 		}
