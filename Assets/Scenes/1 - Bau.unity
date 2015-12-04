@@ -4490,7 +4490,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 426902, guid: ebaddb537c2380d4388ba36c1e94e497, type: 2}
       propertyPath: m_LocalPosition.y
-      value: .939999998
+      value: 1.24000001
       objectReference: {fileID: 0}
     - target: {fileID: 426902, guid: ebaddb537c2380d4388ba36c1e94e497, type: 2}
       propertyPath: m_LocalPosition.z
@@ -4514,13 +4514,18 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 426902, guid: ebaddb537c2380d4388ba36c1e94e497, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 136898, guid: ebaddb537c2380d4388ba36c1e94e497, type: 2}
       propertyPath: m_Name
       value: PlayerAndCamera
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 11414536, guid: ebaddb537c2380d4388ba36c1e94e497, type: 2}
+      propertyPath: fallDamageMultiplier
+      value: .200000003
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 13563292, guid: ebaddb537c2380d4388ba36c1e94e497, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: ebaddb537c2380d4388ba36c1e94e497, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1834391698

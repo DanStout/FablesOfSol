@@ -85,6 +85,7 @@ ModelImporter:
     100154: Tongue_M_GeoRndr
     100156: Hammer
     100158: Magnet_gun
+    100160: Sonic_Resonator
     400000: Ankle_L
     400002: Ankle_R
     400004: Arm1_L
@@ -165,10 +166,13 @@ ModelImporter:
     400154: Tongue_M_GeoRndr
     400156: Hammer
     400158: Magnet_gun
+    400160: Sonic_Resonator
     2300000: Hammer
     2300002: Magnet_gun
+    2300004: Sonic_Resonator
     3300000: Hammer
     3300002: Magnet_gun
+    3300004: Sonic_Resonator
     4300000: Body_M_GeoRndr
     4300002: GumsUpper_M_GeoRndr
     4300004: TeethUpper_M_GeoRndr
@@ -181,6 +185,7 @@ ModelImporter:
     4300018: OuterEye_L_GeoRndr
     4300020: Hammer
     4300022: Magnet_gun
+    4300024: Sonic_Resonator
     7400000: Default Take
     7400002: ATTACK
     7400004: IDLE

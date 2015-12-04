@@ -64,17 +64,32 @@ public class PlayerMovement : MonoBehaviour
         if (feetOnGround)
         {
             _vertSpeed = Input.GetButton("Jump") ? jumpSpeed : minimumFallSpeed;
-            //if (!wasOnGround)
-            //{
-            //    var fallDistance = Vector3.Distance(fallOrigin, transform.position);
-            //    if (fallDistance > minimumFallDamageDistance)
-            //    {
-            //        if (DoIgnoreNextFall)
-            //            DoIgnoreNextFall = false;
-            //        else
-            //            _playerLife.TakeDamage(fallDistance * fallDamageMultiplier);
-            //    }
-            //}
+        }
+        else
+        {
+            _vertSpeed += gravity * fallSpeedMultiplier * Time.deltaTime;
+            if (_vertSpeed < terminalVelocity)
+            {
+                _vertSpeed = terminalVelocity;
+            }
+        }
+
+        //check for fall damage
+        if (_charController.isGrounded)
+        {
+            if (!wasOnGround)
+            {
+                var fallDistance = Vector3.Distance(fallOrigin, transform.position);
+                if (fallDistance > minimumFallDamageDistance)
+                {
+                    if (DoIgnoreNextFall)
+                        DoIgnoreNextFall = false;
+                    else
+                        _playerLife.TakeDamage(fallDistance * fallDamageMultiplier);
+                }
+            }
+
+            wasOnGround = true;
         }
         else
         {
@@ -82,17 +97,13 @@ public class PlayerMovement : MonoBehaviour
             {
                 fallOrigin = transform.position;
             }
-            _vertSpeed += gravity * fallSpeedMultiplier * Time.deltaTime;
-            if (_vertSpeed < terminalVelocity)
-                _vertSpeed = terminalVelocity;
+            wasOnGround = false;
         }
-
-        wasOnGround = feetOnGround;
 
         _animator.SetFloat("vertSpeed", _vertSpeed);
         movement.y = _vertSpeed;
-
         movement *= Time.deltaTime;
+
         _charController.Move(movement);
     }
 
