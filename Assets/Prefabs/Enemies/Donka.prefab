@@ -166,6 +166,8 @@ GameObject:
   - 143: {fileID: 14330208}
   - 114: {fileID: 11405362}
   - 114: {fileID: 11415384}
+  - 114: {fileID: 11419506}
+  - 114: {fileID: 11421702}
   m_Layer: 0
   m_Name: Donka
   m_TagString: Untagged
@@ -515,7 +517,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 161660}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106709}
   m_LocalPosition: {x: .103256226, y: .221000001, z: -.0436761379}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -706,7 +708,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 141308}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.0559998, y: .402999997, z: 2.26699996}
+  m_LocalPosition: {x: 42.9047241, y: 37.5060005, z: 35.2071457}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 433006}
@@ -816,7 +818,7 @@ Animator:
   m_GameObject: {fileID: 141308}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 0b0c85f772d204942939bb4f600baede, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1c52b6d2a48ae86469fc30e7e1d26218, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -836,7 +838,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sightRange: 15
-  speed: 5
+  speed: 3
   downwardForce: -1.5
   rotationSpeed: 5
 --- !u!114 &11415384
@@ -854,6 +856,31 @@ MonoBehaviour:
   visibleLayers:
     serializedVersion: 2
     m_Bits: 4294967003
+--- !u!114 &11419506
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 141308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b15e18cb435ae6847bf440a9d4534846, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackDamage: 4
+  secondsBetweenAttacks: .5
+  attacksWithinRange: 2
+--- !u!114 &11421702
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 141308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dad468b7dd75f264296e908e7444b253, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!136 &13614080
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -863,10 +890,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: .119999997
-  m_Height: 1.33000004
+  m_Radius: .0900000036
+  m_Height: .850000024
   m_Direction: 0
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: -.0900000036, y: -.0399999991, z: 0}
 --- !u!136 &13621040
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -916,9 +943,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: .119999997
-  m_Height: 1.33000004
+  m_Height: .850000024
   m_Direction: 0
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: -.0900000036, y: -.0399999991, z: 0}
 --- !u!136 &13695742
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -1003,12 +1030,12 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 2
   m_Height: 2.63000011
-  m_Radius: .5
+  m_Radius: 1.36000001
   m_SlopeLimit: 45
   m_StepOffset: .300000012
   m_SkinWidth: .0799999982
   m_MinMoveDistance: .00100000005
-  m_Center: {x: 0, y: 1.32000005, z: 0}
+  m_Center: {x: 0, y: 1.65999997, z: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
