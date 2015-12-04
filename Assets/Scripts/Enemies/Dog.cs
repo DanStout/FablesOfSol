@@ -3,23 +3,18 @@ using System.Collections;
 
 public class Dog : MonoBehaviour, IEnemy
 {
-    public float attackDamage = 5;
     public float maxHealth = 10;
-    public float secondsBetweenAttacks = 1;
     public float damageColorDuration = 2;
 
     public Color damageColor;
     private Color originalColor;
 
-    private float currHealth;
-    private PlayerLife playerLife;
-    private float lastAttackTime;
     private Animator anim;
-    private bool isDead = false;
     private SkinnedMeshRenderer meshRend;
-
     private DropsItems dropper;
     private ChasesPlayer chaser;
+    private bool isDead = false;
+    private float currHealth;
 
     void Start()
     {
@@ -38,23 +33,6 @@ public class Dog : MonoBehaviour, IEnemy
         chaser.MoveTowardsPlayer();
     }
 
-    void OnControllerColliderHit(ControllerColliderHit hit)
-    {
-        if (isDead) return;
-
-        var playerLife = hit.gameObject.GetComponent<PlayerLife>();
-        if (playerLife != null && Time.time - lastAttackTime > secondsBetweenAttacks)
-        {
-            anim.SetTrigger("attack");
-            if (playerLife.TakeDamage(attackDamage))
-            {
-                anim.SetTrigger("howl");
-            }
-            
-            lastAttackTime = Time.time;
-        }
-    }
-
     public void TakeDamage(float amount)
     {
         if (isDead) return;
@@ -65,7 +43,7 @@ public class Dog : MonoBehaviour, IEnemy
         {
             isDead = true;
             chaser.Die();
-            anim.SetBool("isDead", true);
+            anim.SetTrigger("die");
             dropper.Die();
         }
     }
