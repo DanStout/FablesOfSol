@@ -377,14 +377,6 @@ Prefab:
       propertyPath: m_Name
       value: Dog 1 (4)
       objectReference: {fileID: 0}
-    - target: {fileID: 144878, guid: 8150121878d2add4ebb777165cf22815, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11498882, guid: 8150121878d2add4ebb777165cf22815, type: 2}
-      propertyPath: speed
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8150121878d2add4ebb777165cf22815, type: 2}
   m_IsPrefabParent: 0

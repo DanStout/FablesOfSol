@@ -56,11 +56,13 @@ ModelImporter:
     4300008: ThrumTitan_MeshPart4
     4300010: ThrumTitan_MeshPart5
     4300012: ThrumTitan
-    7400000: Default Take
-    7400002: TITAN_ATTACK_BREATH_FIRE
+    7400000: TITAN_IDLE
+    7400002: TITAN_ATTACK_BREATH_FIRE_STAY
     7400004: TITAN_ATTACK_LEFT_PUNCH
     7400006: TITAN_ATTACK_RIGHT_PUNCH
     7400008: TITAN_DEATH
+    7400010: TITAN_ATTACK_BREATH_FIRE_ENTER
+    7400012: TITAN_ATTACK_BREATH_FIRE_EXIT
     9500000: //RootNode
     13700000: ThrumTitan_MeshPart0
     13700002: ThrumTitan_MeshPart1
@@ -88,7 +90,413 @@ ModelImporter:
     animationScaleError: .5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: TITAN_ATTACK_BREATH_FIRE_ENTER
+      takeName: TITAN_ATTACK_BREATH_FIRE
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/ArmIK_L
+        weight: 1
+      - path: Armature/ArmIK_R
+        weight: 1
+      - path: Armature/Hip
+        weight: 1
+      - path: Armature/Hip/Spine
+        weight: 1
+      - path: Armature/Hip/Spine/Neck
+        weight: 1
+      - path: Armature/Hip/Spine/Shoulder_L
+        weight: 1
+      - path: Armature/Hip/Spine/Shoulder_L/Arm1_L
+        weight: 1
+      - path: Armature/Hip/Spine/Shoulder_L/Arm1_L/Arm2_L
+        weight: 1
+      - path: Armature/Hip/Spine/Shoulder_L/Arm1_L/Arm2_L/Hand_L
+        weight: 1
+      - path: Armature/Hip/Spine/Shoulder_R
+        weight: 1
+      - path: Armature/Hip/Spine/Shoulder_R/Arm1_R
+        weight: 1
+      - path: Armature/Hip/Spine/Shoulder_R/Arm1_R/Arm2_R
+        weight: 1
+      - path: Armature/Hip/Spine/Shoulder_R/Arm1_R/Arm2_R/Hand_R
+        weight: 1
+      - path: ThrumTitan
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: TITAN_ATTACK_LEFT_PUNCH
+      takeName: TITAN_ATTACK_LEFT_PUNCH
+      firstFrame: 0
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/ArmIK_L
+        weight: 1
+      - path: Armature/ArmIK_R
+        weight: 1
+      - path: Armature/Hip
+        weight: 1
+      - path: Armature/Hip/Spine
+        weight: 1
+      - path: Armature/Hip/Spine/Neck
+        weight: 1
+      - path: Armature/Hip/Spine/Shoulder_L
+        weight: 1
+      - path: Armature/Hip/Spine/Shoulder_L/Arm1_L
+        weight: 1
+      - path: Armature/Hip/Spine/Shoulder_L/Arm1_L/Arm2_L
+        weight: 1
+      - path: Armature/Hip/Spine/Shoulder_L/Arm1_L/Arm2_L/Hand_L
+        weight: 1
+      - path: Armature/Hip/Spine/Shoulder_R
+        weight: 1
+      - path: Armature/Hip/Spine/Shoulder_R/Arm1_R
+        weight: 1
+      - path: Armature/Hip/Spine/Shoulder_R/Arm1_R/Arm2_R
+        weight: 1
+      - path: Armature/Hip/Spine/Shoulder_R/Arm1_R/Arm2_R/Hand_R
+        weight: 1
+      - path: ThrumTitan
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: TITAN_ATTACK_RIGHT_PUNCH
+      takeName: TITAN_ATTACK_RIGHT_PUNCH
+      firstFrame: 0
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/ArmIK_L
+        weight: 1
+      - path: Armature/ArmIK_R
+        weight: 1
+      - path: Armature/Hip
+        weight: 1
+      - path: Armature/Hip/Spine
+        weight: 1
+      - path: Armature/Hip/Spine/Neck
+        weight: 1
+      - path: Armature/Hip/Spine/Shoulder_L
+        weight: 1
+      - path: Armature/Hip/Spine/Shoulder_L/Arm1_L
+        weight: 1
+      - path: Armature/Hip/Spine/Shoulder_L/Arm1_L/Arm2_L
+        weight: 1
+      - path: Armature/Hip/Spine/Shoulder_L/Arm1_L/Arm2_L/Hand_L
+        weight: 1
+      - path: Armature/Hip/Spine/Shoulder_R
+        weight: 1
+      - path: Armature/Hip/Spine/Shoulder_R/Arm1_R
+        weight: 1
+      - path: Armature/Hip/Spine/Shoulder_R/Arm1_R/Arm2_R
+        weight: 1
+      - path: Armature/Hip/Spine/Shoulder_R/Arm1_R/Arm2_R/Hand_R
+        weight: 1
+      - path: ThrumTitan
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: TITAN_DEATH
+      takeName: TITAN_DEATH
+      firstFrame: 0
+      lastFrame: 59
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/ArmIK_L
+        weight: 1
+      - path: Armature/ArmIK_R
+        weight: 1
+      - path: Armature/Hip
+        weight: 1
+      - path: Armature/Hip/Spine
+        weight: 1
+      - path: Armature/Hip/Spine/Neck
+        weight: 1
+      - path: Armature/Hip/Spine/Shoulder_L
+        weight: 1
+      - path: Armature/Hip/Spine/Shoulder_L/Arm1_L
+        weight: 1
+      - path: Armature/Hip/Spine/Shoulder_L/Arm1_L/Arm2_L
+        weight: 1
+      - path: Armature/Hip/Spine/Shoulder_L/Arm1_L/Arm2_L/Hand_L
+        weight: 1
+      - path: Armature/Hip/Spine/Shoulder_R
+        weight: 1
+      - path: Armature/Hip/Spine/Shoulder_R/Arm1_R
+        weight: 1
+      - path: Armature/Hip/Spine/Shoulder_R/Arm1_R/Arm2_R
+        weight: 1
+      - path: Armature/Hip/Spine/Shoulder_R/Arm1_R/Arm2_R/Hand_R
+        weight: 1
+      - path: ThrumTitan
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: TITAN_IDLE
+      takeName: Default Take
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/ArmIK_L
+        weight: 1
+      - path: Armature/ArmIK_R
+        weight: 1
+      - path: Armature/Hip
+        weight: 1
+      - path: Armature/Hip/Spine
+        weight: 1
+      - path: Armature/Hip/Spine/Neck
+        weight: 1
+      - path: Armature/Hip/Spine/Shoulder_L
+        weight: 1
+      - path: Armature/Hip/Spine/Shoulder_L/Arm1_L
+        weight: 1
+      - path: Armature/Hip/Spine/Shoulder_L/Arm1_L/Arm2_L
+        weight: 1
+      - path: Armature/Hip/Spine/Shoulder_L/Arm1_L/Arm2_L/Hand_L
+        weight: 1
+      - path: Armature/Hip/Spine/Shoulder_R
+        weight: 1
+      - path: Armature/Hip/Spine/Shoulder_R/Arm1_R
+        weight: 1
+      - path: Armature/Hip/Spine/Shoulder_R/Arm1_R/Arm2_R
+        weight: 1
+      - path: Armature/Hip/Spine/Shoulder_R/Arm1_R/Arm2_R/Hand_R
+        weight: 1
+      - path: ThrumTitan
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: TITAN_ATTACK_BREATH_FIRE_STAY
+      takeName: TITAN_ATTACK_BREATH_FIRE
+      firstFrame: 20
+      lastFrame: 29
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/ArmIK_L
+        weight: 1
+      - path: Armature/ArmIK_R
+        weight: 1
+      - path: Armature/Hip
+        weight: 1
+      - path: Armature/Hip/Spine
+        weight: 1
+      - path: Armature/Hip/Spine/Neck
+        weight: 1
+      - path: Armature/Hip/Spine/Shoulder_L
+        weight: 1
+      - path: Armature/Hip/Spine/Shoulder_L/Arm1_L
+        weight: 1
+      - path: Armature/Hip/Spine/Shoulder_L/Arm1_L/Arm2_L
+        weight: 1
+      - path: Armature/Hip/Spine/Shoulder_L/Arm1_L/Arm2_L/Hand_L
+        weight: 1
+      - path: Armature/Hip/Spine/Shoulder_R
+        weight: 1
+      - path: Armature/Hip/Spine/Shoulder_R/Arm1_R
+        weight: 1
+      - path: Armature/Hip/Spine/Shoulder_R/Arm1_R/Arm2_R
+        weight: 1
+      - path: Armature/Hip/Spine/Shoulder_R/Arm1_R/Arm2_R/Hand_R
+        weight: 1
+      - path: ThrumTitan
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: TITAN_ATTACK_BREATH_FIRE_EXIT
+      takeName: TITAN_ATTACK_BREATH_FIRE
+      firstFrame: 29
+      lastFrame: 39
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/ArmIK_L
+        weight: 1
+      - path: Armature/ArmIK_R
+        weight: 1
+      - path: Armature/Hip
+        weight: 1
+      - path: Armature/Hip/Spine
+        weight: 1
+      - path: Armature/Hip/Spine/Neck
+        weight: 1
+      - path: Armature/Hip/Spine/Shoulder_L
+        weight: 1
+      - path: Armature/Hip/Spine/Shoulder_L/Arm1_L
+        weight: 1
+      - path: Armature/Hip/Spine/Shoulder_L/Arm1_L/Arm2_L
+        weight: 1
+      - path: Armature/Hip/Spine/Shoulder_L/Arm1_L/Arm2_L/Hand_L
+        weight: 1
+      - path: Armature/Hip/Spine/Shoulder_R
+        weight: 1
+      - path: Armature/Hip/Spine/Shoulder_R/Arm1_R
+        weight: 1
+      - path: Armature/Hip/Spine/Shoulder_R/Arm1_R/Arm2_R
+        weight: 1
+      - path: Armature/Hip/Spine/Shoulder_R/Arm1_R/Arm2_R/Hand_R
+        weight: 1
+      - path: ThrumTitan
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []

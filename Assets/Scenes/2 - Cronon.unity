@@ -340,7 +340,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 429926, guid: c576f8409e19f9241aa01c155384ead6, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -3.68466187
+      value: -4.4460001
       objectReference: {fileID: 0}
     - target: {fileID: 429926, guid: c576f8409e19f9241aa01c155384ead6, type: 2}
       propertyPath: m_LocalPosition.y
@@ -348,7 +348,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 429926, guid: c576f8409e19f9241aa01c155384ead6, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 1.47731018
+      value: 2.81200004
       objectReference: {fileID: 0}
     - target: {fileID: 429926, guid: c576f8409e19f9241aa01c155384ead6, type: 2}
       propertyPath: m_LocalRotation.x
@@ -368,7 +368,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 429926, guid: c576f8409e19f9241aa01c155384ead6, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 160262, guid: c576f8409e19f9241aa01c155384ead6, type: 2}
+      propertyPath: m_Name
+      value: ThrumTitan
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c576f8409e19f9241aa01c155384ead6, type: 2}
@@ -383,6 +387,7 @@ GameObject:
   - 4: {fileID: 663024354}
   - 218: {fileID: 663024356}
   - 154: {fileID: 663024355}
+  - 135: {fileID: 663024357}
   m_Layer: 0
   m_Name: Terrain
   m_TagString: Untagged
@@ -443,6 +448,18 @@ Terrain:
   m_BakeLightProbesForTrees: 1
   m_ScaleInLightmap: .0511999987
   m_LightmapParameters: {fileID: 15203, guid: 0000000000000000f000000000000000, type: 0}
+--- !u!135 &663024357
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 663024353}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: .5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &733284189 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 198514, guid: 6f8daeab7390c1346a8bd5298578da79, type: 2}
@@ -527,7 +544,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 435264, guid: 6f8daeab7390c1346a8bd5298578da79, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 19577872, guid: 6f8daeab7390c1346a8bd5298578da79, type: 2}
       propertyPath: m_AngularSpeed
@@ -678,3 +695,19 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9fbc5a317832b7c4ab9fcc3937001c66, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1993198596 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 132650, guid: ebaddb537c2380d4388ba36c1e94e497, type: 2}
+  m_PrefabInternal: {fileID: 152122752}
+--- !u!114 &1993198603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1993198596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1b3b58b59c601a4499c16b396e2385d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageDelaySeconds: .5

@@ -151,6 +151,7 @@ GameObject:
   - 114: {fileID: 11451654}
   - 114: {fileID: 11498882}
   - 114: {fileID: 11486144}
+  - 114: {fileID: 11406008}
   m_Layer: 0
   m_Name: Dog 1
   m_TagString: Untagged
@@ -672,7 +673,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 144878}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.0900002, y: 20.1410007, z: -20.9899998}
+  m_LocalPosition: {x: -4.21999979, y: 19.8007336, z: -14.1400003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 461016}
@@ -948,6 +949,19 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11406008
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 144878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46335144fe9f4b74ea9190a1ea7fa635, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sightRange: 20
+  rotationSpeed: 5
 --- !u!114 &11451654
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -991,6 +1005,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackDamage: 3
   secondsBetweenAttacks: 1
+  attacksWithinRange: 2
 --- !u!114 &11491794
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1018,7 +1033,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sightRange: 15
-  speed: 5
+  speed: 2
   downwardForce: -1.5
   rotationSpeed: 5
 --- !u!137 &13706342

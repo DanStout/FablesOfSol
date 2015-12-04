@@ -13,6 +13,7 @@ public class Dog : MonoBehaviour, IEnemy
     private SkinnedMeshRenderer meshRend;
     private DropsItems dropper;
     private ChasesPlayer chaser;
+    private FacesPlayer faces;
     private bool isDead = false;
     private float currHealth;
 
@@ -21,6 +22,7 @@ public class Dog : MonoBehaviour, IEnemy
         dropper = GetComponent<DropsItems>();
         chaser = GetComponent<ChasesPlayer>();
         anim = GetComponent<Animator>();
+        faces = GetComponent<FacesPlayer>();
 
         currHealth = maxHealth;
         meshRend = GetComponentInChildren<SkinnedMeshRenderer>();
@@ -42,9 +44,10 @@ public class Dog : MonoBehaviour, IEnemy
         if (currHealth <= 0)
         {
             isDead = true;
-            chaser.Die();
             anim.SetTrigger("die");
+            chaser.Die();
             dropper.Die();
+            faces.Die();
         }
     }
 

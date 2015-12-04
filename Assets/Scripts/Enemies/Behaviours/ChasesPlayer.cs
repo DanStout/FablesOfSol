@@ -6,7 +6,6 @@ public class ChasesPlayer : MonoBehaviour
     public float sightRange = 15;
     public float speed = 5;
     public float downwardForce = -1.5f;
-    public float rotationSpeed = 5;
 
     private CharacterController charControl;
     private LooksForPlayer looks;
@@ -38,9 +37,7 @@ public class ChasesPlayer : MonoBehaviour
         if (!isDead && playerDist <= sightRange)
         {
             var posDiff = playerLoc - transform.position;
-            posDiff.y = 0;
-            var rotVec = Quaternion.LookRotation(posDiff, Vector3.up);
-            transform.rotation = Quaternion.Slerp(transform.rotation, rotVec, Time.deltaTime * rotationSpeed);
+            //posDiff.y = 0;
 
             if (!isChasing)
             {
