@@ -19,8 +19,7 @@ public class PlayerInventory : MonoBehaviour
         inventory = new List<IItem>();
         Hammer hammer = this.gameObject.AddComponent<Hammer>();
 
-        inventory.Add(hammer);
-        activeItem = hammer;
+		pickup (hammer);
     }
 
     void Update()

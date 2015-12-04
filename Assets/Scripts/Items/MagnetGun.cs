@@ -5,41 +5,62 @@ public class MagnetGun : MonoBehaviour, IItem {
 
 	private GameObject owner;
 	private bool isOn;
+	private ParticleSystem particleSys; 
+
+
 	// Use this for initialization
 	void Start(){
+
 		owner = GameObject.FindGameObjectWithTag("Player");
 		isOn = false;
+
+		ParticleSystem[] systems = owner.GetComponentsInChildren<ParticleSystem>();
+		foreach(ParticleSystem p in systems)
+		{
+			if(p.gameObject.name == "MagnetGunParticle")
+				particleSys = p;
+		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		
+		//Check if the gun is on
+		if(isOn)
+		{
+			RaycastHit hit;
+			Vector3 fwd = owner.transform.TransformDirection(Vector3.forward);
+			Vector3 pos = new Vector3(0, 1, 0);
 
-
-
+			if(Physics.Raycast(owner.transform.position + pos, fwd, out hit, 10))
+			{
+				if(hit.collider.gameObject.GetComponentInChildren<IMagnetic>() != null)
+				{
+					Vector3 cur = hit.collider.transform.position;
+					if(Vector3.Distance(cur, owner.transform.position) > 3)
+					{
+						hit.collider.transform.position =
+							Vector3.MoveTowards(cur, owner.transform.position, .15f);
+					}
+				}
+			}
+		}
 	}
 
 	public void Use()
 	{
 		print ("Use!");
 		//Spawn particle system
-		ParticleSystem[] systems = owner.GetComponentsInChildren<ParticleSystem>();
-		foreach(ParticleSystem part in systems)
+		if( particleSys != null && particleSys.name == "MagnetGunParticle" && !isOn)
 		{
-			if( part != null && part.name == "MagnetGunParticle" && !isOn)
-			{
-				isOn = true;
-				part.enableEmission = true;
-			}
-			else if(isOn)
-			{
-				isOn = false;
-				part.enableEmission = false;
-			}
+			isOn = true;
+			particleSys.enableEmission = true;
 		}
-
-		//If player is heavier, move item
-		
-		//If item is heavier, move player
+		else if(isOn)
+		{
+			isOn = false;
+			particleSys.enableEmission = false;
+		}
 	}
 
 	public string getName()
