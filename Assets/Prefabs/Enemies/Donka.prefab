@@ -165,9 +165,9 @@ GameObject:
   - 95: {fileID: 9540390}
   - 143: {fileID: 14330208}
   - 114: {fileID: 11405362}
-  - 114: {fileID: 11415384}
   - 114: {fileID: 11419506}
   - 114: {fileID: 11421702}
+  - 114: {fileID: 11470786}
   m_Layer: 0
   m_Name: Donka
   m_TagString: Untagged
@@ -707,8 +707,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 141308}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 42.9047241, y: 37.5060005, z: 35.2071457}
+  m_LocalRotation: {x: 0, y: -.707106829, z: 0, w: .707106709}
+  m_LocalPosition: {x: 58.9599991, y: -16.8099995, z: -65.5899963}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 433006}
@@ -840,22 +840,9 @@ MonoBehaviour:
   sightRange: 15
   speed: 3
   downwardForce: -1.5
-  rotationSpeed: 5
---- !u!114 &11415384
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 141308}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ffbb2207e8b7124297ffee5b760206d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sightRange: 10
   visibleLayers:
     serializedVersion: 2
-    m_Bits: 4294967003
+    m_Bits: 0
 --- !u!114 &11419506
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -881,6 +868,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dad468b7dd75f264296e908e7444b253, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11470786
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 141308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46335144fe9f4b74ea9190a1ea7fa635, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sightRange: 20
+  rotationSpeed: 5
 --- !u!136 &13614080
 CapsuleCollider:
   m_ObjectHideFlags: 1

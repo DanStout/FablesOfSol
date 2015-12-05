@@ -11,6 +11,9 @@ public class AttacksPlayer : MonoBehaviour
     private float lastAttackTime;
     private Transform playerTransform;
 
+    public delegate void PlayerDeathHandler();
+    public event PlayerDeathHandler onPlayerDeath;
+
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -28,7 +31,7 @@ public class AttacksPlayer : MonoBehaviour
 
     public void Die()
     {
-        Destroy(this);
+        enabled = false;
     }
 
     void OnControllerColliderHit(ControllerColliderHit hit)
@@ -39,7 +42,8 @@ public class AttacksPlayer : MonoBehaviour
             var playerDied = playerLife.TakeDamage(attackDamage);
             if (playerDied)
             {
-                anim.SetTrigger("howl");
+                if (onPlayerDeath != null)
+                    onPlayerDeath();
             }
             lastAttackTime = Time.time;
         }

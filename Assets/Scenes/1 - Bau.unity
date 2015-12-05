@@ -3202,18 +3202,6 @@ Prefab:
       propertyPath: m_Name
       value: Dog (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 450232, guid: 8150121878d2add4ebb777165cf22815, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 450232, guid: 8150121878d2add4ebb777165cf22815, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 450232, guid: 8150121878d2add4ebb777165cf22815, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8150121878d2add4ebb777165cf22815, type: 2}
   m_IsPrefabParent: 0
@@ -4647,18 +4635,6 @@ Prefab:
       propertyPath: m_Name
       value: Dog (5)
       objectReference: {fileID: 0}
-    - target: {fileID: 450232, guid: 8150121878d2add4ebb777165cf22815, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 450232, guid: 8150121878d2add4ebb777165cf22815, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 450232, guid: 8150121878d2add4ebb777165cf22815, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8150121878d2add4ebb777165cf22815, type: 2}
   m_IsPrefabParent: 0
@@ -5249,7 +5225,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 450232, guid: 8150121878d2add4ebb777165cf22815, type: 2}
       propertyPath: m_LocalRotation.y
-      value: -.707106829
+      value: .707106829
       objectReference: {fileID: 0}
     - target: {fileID: 450232, guid: 8150121878d2add4ebb777165cf22815, type: 2}
       propertyPath: m_LocalRotation.z

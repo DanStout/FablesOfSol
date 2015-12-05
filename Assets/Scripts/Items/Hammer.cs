@@ -3,10 +3,11 @@ using System.Collections;
 
 public class Hammer : MonoBehaviour, IItem
 {
+    public float radius = 1;
+    public float damage = 5;
+
     private GameObject owner;
     private bool attacking = false;
-    private float radius = 1;
-    private float damage = 5;
 
     // Use this for initialization
     void Start()
@@ -22,7 +23,14 @@ public class Hammer : MonoBehaviour, IItem
             if (dest != null)
             {
                 dest.TakeHit();
+                return;
             }
+
+            //var hurt = col.GetComponent<Hurtable>();
+            //if (hurt != null)
+            //{
+            //    hurt.TakeDamage(damage);
+            //}
         }
     }
 
@@ -34,10 +42,10 @@ public class Hammer : MonoBehaviour, IItem
         Collider[] cols = Physics.OverlapSphere(owner.transform.position, radius);
         foreach (Collider col in cols)
         {
+            print("Hit: " + col.gameObject.name);
             //If we are in range of an enemy
             if (col && col.tag == "enemy")
             {
-
                 //Find dot product of the vectors of player and enemy to determine direction
                 Vector3 forward = owner.transform.TransformDirection(Vector3.forward);
                 Vector3 toOther = col.transform.position - owner.transform.position;
@@ -45,11 +53,10 @@ public class Hammer : MonoBehaviour, IItem
                 //If enemy is in front of player, deal damage
                 if (Vector3.Dot(forward, toOther) > 0)
                 {
-
-                    var enemy = col.GetComponent<IEnemy>();
-                    if (enemy != null)
+                    var hurtable = col.GetComponent<Hurtable>();
+                    if (hurtable != null)
                     {
-                        enemy.TakeDamage(damage);
+                        hurtable.TakeDamage(damage);
                     }
                 }
             }

@@ -237,11 +237,11 @@ GameObject:
   - 95: {fileID: 9596820}
   - 143: {fileID: 14309632}
   - 114: {fileID: 11485680}
-  - 114: {fileID: 11491794}
   - 114: {fileID: 11451654}
   - 114: {fileID: 11498882}
   - 114: {fileID: 11486144}
   - 114: {fileID: 11406008}
+  - 114: {fileID: 11417072}
   m_Layer: 0
   m_Name: Dog 1
   m_TagString: Untagged
@@ -723,9 +723,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 144878}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.97000003, y: 19.8007336, z: -12.0699997}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalRotation: {x: 0, y: .526978672, z: 0, w: .84987849}
+  m_LocalPosition: {x: -18.6700001, y: 19.8007336, z: -22.5900002}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 491858}
   m_Father: {fileID: 0}
@@ -962,6 +962,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sightRange: 20
   rotationSpeed: 5
+--- !u!114 &11417072
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 144878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a55f6fa78e05454b9cb45bf3dbcac05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fullHealth: 10
+  damageFlashSeconds: .5
+  damagedMaterial: {fileID: 2100000, guid: 42e2e97664c626740a401bcf9e30de75, type: 2}
 --- !u!114 &11451654
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -991,7 +1005,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 10
   damageFlashSeconds: .5
-  damagedMaterial: {fileID: 2100000, guid: 42e2e97664c626740a401bcf9e30de75, type: 2}
 --- !u!114 &11486144
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1006,21 +1019,6 @@ MonoBehaviour:
   attackDamage: 3
   secondsBetweenAttacks: 1
   attacksWithinRange: 2
---- !u!114 &11491794
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 144878}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ffbb2207e8b7124297ffee5b760206d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sightRange: 15
-  visibleLayers:
-    serializedVersion: 2
-    m_Bits: 4294967003
 --- !u!114 &11498882
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1035,6 +1033,9 @@ MonoBehaviour:
   sightRange: 15
   speed: 2
   downwardForce: -1.5
+  visibleLayers:
+    serializedVersion: 2
+    m_Bits: 4294967035
 --- !u!137 &13706434
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

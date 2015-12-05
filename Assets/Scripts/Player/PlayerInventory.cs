@@ -35,9 +35,6 @@ public class PlayerInventory : MonoBehaviour
 			IItem newItem = (IItem)hit.gameObject.GetComponent(typeof(IItem));
 			pickup(newItem);
 			Destroy(hit.gameObject);
-
-
-
         }
     }
 

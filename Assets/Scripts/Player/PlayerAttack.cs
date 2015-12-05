@@ -29,17 +29,4 @@ public class PlayerAttack : MonoBehaviour
         }
         else anim.SetBool("attacking", false);
     }
-
-    //    void OnTriggerEnter(Collider col)
-    //    {
-    //        if (Input.GetButton("Attack"))
-    //        {
-    //            var enemy = col.GetComponent<IEnemy>();
-    //            if (enemy != null)
-    //            {
-    //                print("Hit an enemy!");
-    //                enemy.TakeDamage(damage);
-    //            }
-    //        }
-    //    }
 }
