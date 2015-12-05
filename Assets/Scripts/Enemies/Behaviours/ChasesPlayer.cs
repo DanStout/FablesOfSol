@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[RequireComponent(typeof(CharacterController), typeof(Animator))]
 public class ChasesPlayer : MonoBehaviour
 {
     public float sightRange = 15;
@@ -45,7 +46,6 @@ public class ChasesPlayer : MonoBehaviour
         var playerLoc = player.transform.position;
         var playerDist = Vector3.Distance(transform.position, playerLoc);
         var movement = Vector3.zero;
-
 
         if (!isDead && playerDist <= sightRange)
         {

@@ -3,26 +3,62 @@ using System.Collections;
 
 public class Thrum : MonoBehaviour
 {
-    private NavMeshAgent navAgent;
-    private GameObject player;
+    public float chaseRange = 4;
+    public float attackDamage = 5;
+    public float secondsBetweenAttacks = 1;
+    public float attacksWithinRange = 2f;
+
+    private float lastAttackTime;
+    private MovesRandomly randMov;
+    private Transform playerTrans;
+    private NavMeshAgent agent;
     private Animator anim;
-    public float damage = 1;    
+    private DropsItems drops;
+    private Hurtable hurt;
 
     void Start()
     {
-        navAgent = GetComponent<NavMeshAgent>();
+        playerTrans = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
-        player = GameObject.FindGameObjectWithTag("Player");
+        randMov = GetComponent<MovesRandomly>();
+        drops = GetComponent<DropsItems>();
+        hurt = GetComponent<Hurtable>();
+        hurt.onDeath += hurt_onDeath;
+    }
+
+    void hurt_onDeath()
+    {
+        randMov.Die();
+        drops.Die();
+        enabled = false;
     }
 
     void Update()
     {
-        var playerDist = Vector3.Distance(transform.position, player.transform.position);
-        if (playerDist > 1)
-            navAgent.SetDestination(player.transform.position);
+        var playerPos = playerTrans.position;
+        var playerDist = Vector3.Distance(playerPos, transform.position);
+        if (playerDist <= chaseRange)
+        {
+            agent.destination = playerPos;
+            randMov.enabled = false;
+        }
+        else
+        {
+            randMov.enabled = true;
+        }
 
-        var speed = Vector3.SqrMagnitude(navAgent.velocity);
-        anim.SetFloat("speed", speed);
+        anim.SetFloat("speed", agent.desiredVelocity.sqrMagnitude);
+    }
+
+    void OnCollisionStay(Collision col)
+    {
+        var playerLife = col.gameObject.GetComponent<PlayerLife>();
+        if (playerLife != null && Time.time - lastAttackTime > secondsBetweenAttacks)
+        {
+            playerLife.TakeDamage(attackDamage);
+            lastAttackTime = Time.time;
+        }
     }
 
 }

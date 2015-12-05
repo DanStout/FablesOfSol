@@ -8,6 +8,8 @@ public class Donka : MonoBehaviour, IEnemy
     private FacesPlayer faces;
     private DropsItems drops;
 
+    public GameObject activateOnDeath;
+
     void Start()
     {
         chaser = GetComponent<ChasesPlayer>();
@@ -25,6 +27,8 @@ public class Donka : MonoBehaviour, IEnemy
         hurt.Die();
         faces.Die();
         drops.Die();
+
+        activateOnDeath.SetActive(true);
     }
 
     void Update()

@@ -164,10 +164,13 @@ GameObject:
   - 4: {fileID: 485316}
   - 95: {fileID: 9540390}
   - 143: {fileID: 14330208}
+  - 135: {fileID: 13557920}
   - 114: {fileID: 11405362}
   - 114: {fileID: 11419506}
   - 114: {fileID: 11421702}
   - 114: {fileID: 11470786}
+  - 114: {fileID: 11417526}
+  - 114: {fileID: 11406844}
   m_Layer: 0
   m_Name: Donka
   m_TagString: Untagged
@@ -842,7 +845,37 @@ MonoBehaviour:
   downwardForce: -1.5
   visibleLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967035
+--- !u!114 &11406844
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 141308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eff42c5bfc95dd649a3788c5d55b9e5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyAfterSeconds: 2
+  droppableItems:
+  - {fileID: 132876, guid: 1c383c555d38a584b95c20cedb8c180e, type: 2}
+  deathParticleSystem: {fileID: 19876540, guid: f8b43db4604bd6241bc3b35b429421b3,
+    type: 2}
+--- !u!114 &11417526
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 141308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a55f6fa78e05454b9cb45bf3dbcac05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fullHealth: 15
+  damageFlashSeconds: .5
+  damagedMaterial: {fileID: 2100000, guid: 42e2e97664c626740a401bcf9e30de75, type: 2}
 --- !u!114 &11419506
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -854,8 +887,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b15e18cb435ae6847bf440a9d4534846, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDamage: 4
-  secondsBetweenAttacks: .5
+  attackDamage: 5
+  secondsBetweenAttacks: 1
   attacksWithinRange: 2
 --- !u!114 &11421702
 MonoBehaviour:
@@ -868,6 +901,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dad468b7dd75f264296e908e7444b253, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  activateOnDeath: {fileID: 0}
 --- !u!114 &11470786
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -881,6 +915,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sightRange: 20
   rotationSpeed: 5
+--- !u!135 &13557920
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 141308}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.77999997
+  m_Center: {x: 0, y: 1.66999996, z: 0}
 --- !u!136 &13614080
 CapsuleCollider:
   m_ObjectHideFlags: 1

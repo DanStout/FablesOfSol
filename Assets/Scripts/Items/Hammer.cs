@@ -42,7 +42,6 @@ public class Hammer : MonoBehaviour, IItem
         Collider[] cols = Physics.OverlapSphere(owner.transform.position, radius);
         foreach (Collider col in cols)
         {
-            print("Hit: " + col.gameObject.name);
             //If we are in range of an enemy
             if (col && col.tag == "enemy")
             {

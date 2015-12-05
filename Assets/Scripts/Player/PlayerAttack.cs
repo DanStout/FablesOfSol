@@ -22,7 +22,6 @@ public class PlayerAttack : MonoBehaviour
         if (Input.GetButtonDown("Attack") && attacking == false)
         {
 			attacking = true;
-			print ("Player attack");
             inventory.useItem();
             anim.SetBool("attacking", true);
 			attacking = false;

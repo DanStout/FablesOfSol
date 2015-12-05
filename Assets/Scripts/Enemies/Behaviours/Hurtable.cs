@@ -23,17 +23,22 @@ public class Hurtable : MonoBehaviour
 	
 	public void Die()
     {
-        enabled = false;
+        meshRend.material = originalMaterial;
+        Destroy(this);
     }
 
     public void TakeDamage(float amount)
     {
-        print("I've been hurt!");
         StartCoroutine(HurtFlashForTime(damageFlashSeconds));
         currHealth -= amount;
         if (currHealth <= 0)
         {
-            onDeath();
+            if (onDeath == null)
+            {
+                print("No event attached on {0}'s death..".FormatWith(gameObject.name));
+            }
+            else
+                onDeath();
         }
     }
 

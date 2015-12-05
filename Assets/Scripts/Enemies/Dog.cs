@@ -20,7 +20,6 @@ public class Dog : MonoBehaviour, IEnemy
         dropper = GetComponent<DropsItems>();
         chaser = GetComponent<ChasesPlayer>();
         faces = GetComponent<FacesPlayer>();
-
         hurt = GetComponent<Hurtable>();
         hurt.onDeath += hurt_onDeath;
 
@@ -28,6 +27,11 @@ public class Dog : MonoBehaviour, IEnemy
         attacks.onPlayerDeath += attacks_onPlayerDeath;
         
         tag = "enemy"; //For items to detect and deliver damage
+    }
+
+    void Update()
+    {
+        chaser.MoveTowardsPlayer();
     }
 
     void attacks_onPlayerDeath()
@@ -45,15 +49,12 @@ public class Dog : MonoBehaviour, IEnemy
         anim.SetTrigger("die");
 
         chaser.Die();
-        dropper.Die();
         faces.Die();
         hurt.Die();
+        dropper.Die();
     }
 
-    void Update()
-    {
-        chaser.MoveTowardsPlayer();
-    }
+    
 
 	// Magnet gun uses this to determine how to interact with other gameobjects
 	public string getMaterial()

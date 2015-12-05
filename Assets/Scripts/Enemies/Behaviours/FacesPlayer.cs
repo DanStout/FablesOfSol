@@ -28,6 +28,6 @@ public class FacesPlayer : MonoBehaviour
 
     public void Die()
     {
-        enabled = false;
+        Destroy(this);
     }
 }
