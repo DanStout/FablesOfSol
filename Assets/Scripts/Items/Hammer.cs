@@ -55,7 +55,12 @@ public class Hammer : MonoBehaviour, IItem
                     var hurtable = col.GetComponent<Hurtable>();
                     if (hurtable != null)
                     {
-                        hurtable.TakeDamage(damage);
+						if(col.transform.GetChild(0).tag != "Ice"){
+                        	hurtable.TakeDamage(damage);
+						}else{
+							col.transform.GetChild(0).GetComponent<ParticleSystem>().Play();
+							Destroy(col.transform.GetChild(0).gameObject);
+						}
                     }
                 }
             }

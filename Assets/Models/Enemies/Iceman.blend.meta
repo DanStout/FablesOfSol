@@ -94,6 +94,7 @@ ModelImporter:
     7400002: ICEMAN_ATTACK
     7400004: ICEMAN_IDLE
     7400006: ICEMAN_RUN
+    7400008: ICEMAN_DEATH
     9500000: //RootNode
     13700000: ChestPiece
     13700002: Iceman
@@ -112,13 +113,533 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: .5
     animationPositionError: .5
     animationScaleError: .5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Default Take
+      takeName: Default Take
+      firstFrame: 0
+      lastFrame: 49
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ChestPiece
+        weight: 1
+      - path: Iceman
+        weight: 1
+      - path: ShoulderPiece_L
+        weight: 1
+      - path: ShoulderPiece_R
+        weight: 1
+      - path: Skeleton
+        weight: 1
+      - path: Skeleton/AnkleRotCtrl_L
+        weight: 1
+      - path: Skeleton/AnkleRotCtrl_R
+        weight: 1
+      - path: Skeleton/ArmIK_L
+        weight: 1
+      - path: Skeleton/ArmIK_R
+        weight: 1
+      - path: Skeleton/Hip
+        weight: 1
+      - path: Skeleton/Hip/Spine
+        weight: 1
+      - path: Skeleton/Hip/Spine/Chest
+        weight: 1
+      - path: Skeleton/Hip/Spine/Chest/Neck
+        weight: 1
+      - path: Skeleton/Hip/Spine/Chest/Neck/Head
+        weight: 1
+      - path: Skeleton/Hip/Spine/Chest/Shoulder_L
+        weight: 1
+      - path: Skeleton/Hip/Spine/Chest/Shoulder_L/Arm1_L
+        weight: 1
+      - path: Skeleton/Hip/Spine/Chest/Shoulder_L/Arm1_L/Arm2_L
+        weight: 1
+      - path: Skeleton/Hip/Spine/Chest/Shoulder_L/Arm1_L/Arm2_L/Arm3_L
+        weight: 1
+      - path: Skeleton/Hip/Spine/Chest/Shoulder_L/Arm1_L/Arm2_L/Arm3_L/Hand_L
+        weight: 1
+      - path: Skeleton/Hip/Spine/Chest/Shoulder_R
+        weight: 1
+      - path: Skeleton/Hip/Spine/Chest/Shoulder_R/Arm1_R
+        weight: 1
+      - path: Skeleton/Hip/Spine/Chest/Shoulder_R/Arm1_R/Arm2_R
+        weight: 1
+      - path: Skeleton/Hip/Spine/Chest/Shoulder_R/Arm1_R/Arm2_R/Arm3_R
+        weight: 1
+      - path: Skeleton/Hip/Spine/Chest/Shoulder_R/Arm1_R/Arm2_R/Arm3_R/Hand_R
+        weight: 1
+      - path: Skeleton/Hip/Spine/Chest/Shoulder_R/Arm1_R/Arm2_R/Arm3_R/Hand_R/Hand_R_001
+        weight: 1
+      - path: Skeleton/Hip/Thigh_L
+        weight: 1
+      - path: Skeleton/Hip/Thigh_L/Ankle_L
+        weight: 1
+      - path: Skeleton/Hip/Thigh_L/Ankle_L/Foot_L
+        weight: 1
+      - path: Skeleton/Hip/Thigh_L/Ankle_L/Foot_L/Toes_L
+        weight: 1
+      - path: Skeleton/Hip/Thigh_R
+        weight: 1
+      - path: Skeleton/Hip/Thigh_R/Ankle_R
+        weight: 1
+      - path: Skeleton/Hip/Thigh_R/Ankle_R/Foot_R
+        weight: 1
+      - path: Skeleton/Hip/Thigh_R/Ankle_R/Foot_R/Toes_R
+        weight: 1
+      - path: Skeleton/KneeCtrl_L
+        weight: 1
+      - path: Skeleton/KneeCtrl_L/LegIK_L
+        weight: 1
+      - path: Skeleton/KneeCtrl_R
+        weight: 1
+      - path: Skeleton/KneeCtrl_R/LegIK_R
+        weight: 1
+      - path: Spear
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: ICEMAN_ATTACK
+      takeName: ICEMAN_ATTACK
+      firstFrame: 0
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ChestPiece
+        weight: 1
+      - path: Iceman
+        weight: 1
+      - path: ShoulderPiece_L
+        weight: 1
+      - path: ShoulderPiece_R
+        weight: 1
+      - path: Skeleton
+        weight: 1
+      - path: Skeleton/AnkleRotCtrl_L
+        weight: 1
+      - path: Skeleton/AnkleRotCtrl_R
+        weight: 1
+      - path: Skeleton/ArmIK_L
+        weight: 1
+      - path: Skeleton/ArmIK_R
+        weight: 1
+      - path: Skeleton/Hip
+        weight: 1
+      - path: Skeleton/Hip/Spine
+        weight: 1
+      - path: Skeleton/Hip/Spine/Chest
+        weight: 1
+      - path: Skeleton/Hip/Spine/Chest/Neck
+        weight: 1
+      - path: Skeleton/Hip/Spine/Chest/Neck/Head
+        weight: 1
+      - path: Skeleton/Hip/Spine/Chest/Shoulder_L
+        weight: 1
+      - path: Skeleton/Hip/Spine/Chest/Shoulder_L/Arm1_L
+        weight: 1
+      - path: Skeleton/Hip/Spine/Chest/Shoulder_L/Arm1_L/Arm2_L
+        weight: 1
+      - path: Skeleton/Hip/Spine/Chest/Shoulder_L/Arm1_L/Arm2_L/Arm3_L
+        weight: 1
+      - path: Skeleton/Hip/Spine/Chest/Shoulder_L/Arm1_L/Arm2_L/Arm3_L/Hand_L
+        weight: 1
+      - path: Skeleton/Hip/Spine/Chest/Shoulder_R
+        weight: 1
+      - path: Skeleton/Hip/Spine/Chest/Shoulder_R/Arm1_R
+        weight: 1
+      - path: Skeleton/Hip/Spine/Chest/Shoulder_R/Arm1_R/Arm2_R
+        weight: 1
+      - path: Skeleton/Hip/Spine/Chest/Shoulder_R/Arm1_R/Arm2_R/Arm3_R
+        weight: 1
+      - path: Skeleton/Hip/Spine/Chest/Shoulder_R/Arm1_R/Arm2_R/Arm3_R/Hand_R
+        weight: 1
+      - path: Skeleton/Hip/Spine/Chest/Shoulder_R/Arm1_R/Arm2_R/Arm3_R/Hand_R/Hand_R_001
+        weight: 1
+      - path: Skeleton/Hip/Thigh_L
+        weight: 1
+      - path: Skeleton/Hip/Thigh_L/Ankle_L
+        weight: 1
+      - path: Skeleton/Hip/Thigh_L/Ankle_L/Foot_L
+        weight: 1
+      - path: Skeleton/Hip/Thigh_L/Ankle_L/Foot_L/Toes_L
+        weight: 1
+      - path: Skeleton/Hip/Thigh_R
+        weight: 1
+      - path: Skeleton/Hip/Thigh_R/Ankle_R
+        weight: 1
+      - path: Skeleton/Hip/Thigh_R/Ankle_R/Foot_R
+        weight: 1
+      - path: Skeleton/Hip/Thigh_R/Ankle_R/Foot_R/Toes_R
+        weight: 1
+      - path: Skeleton/KneeCtrl_L
+        weight: 1
+      - path: Skeleton/KneeCtrl_L/LegIK_L
+        weight: 1
+      - path: Skeleton/KneeCtrl_R
+        weight: 1
+      - path: Skeleton/KneeCtrl_R/LegIK_R
+        weight: 1
+      - path: Spear
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: ICEMAN_IDLE
+      takeName: ICEMAN_IDLE
+      firstFrame: 0
+      lastFrame: 44
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ChestPiece
+        weight: 1
+      - path: Iceman
+        weight: 1
+      - path: ShoulderPiece_L
+        weight: 1
+      - path: ShoulderPiece_R
+        weight: 1
+      - path: Skeleton
+        weight: 1
+      - path: Skeleton/AnkleRotCtrl_L
+        weight: 1
+      - path: Skeleton/AnkleRotCtrl_R
+        weight: 1
+      - path: Skeleton/ArmIK_L
+        weight: 1
+      - path: Skeleton/ArmIK_R
+        weight: 1
+      - path: Skeleton/Hip
+        weight: 1
+      - path: Skeleton/Hip/Spine
+        weight: 1
+      - path: Skeleton/Hip/Spine/Chest
+        weight: 1
+      - path: Skeleton/Hip/Spine/Chest/Neck
+        weight: 1
+      - path: Skeleton/Hip/Spine/Chest/Neck/Head
+        weight: 1
+      - path: Skeleton/Hip/Spine/Chest/Shoulder_L
+        weight: 1
+      - path: Skeleton/Hip/Spine/Chest/Shoulder_L/Arm1_L
+        weight: 1
+      - path: Skeleton/Hip/Spine/Chest/Shoulder_L/Arm1_L/Arm2_L
+        weight: 1
+      - path: Skeleton/Hip/Spine/Chest/Shoulder_L/Arm1_L/Arm2_L/Arm3_L
+        weight: 1
+      - path: Skeleton/Hip/Spine/Chest/Shoulder_L/Arm1_L/Arm2_L/Arm3_L/Hand_L
+        weight: 1
+      - path: Skeleton/Hip/Spine/Chest/Shoulder_R
+        weight: 1
+      - path: Skeleton/Hip/Spine/Chest/Shoulder_R/Arm1_R
+        weight: 1
+      - path: Skeleton/Hip/Spine/Chest/Shoulder_R/Arm1_R/Arm2_R
+        weight: 1
+      - path: Skeleton/Hip/Spine/Chest/Shoulder_R/Arm1_R/Arm2_R/Arm3_R
+        weight: 1
+      - path: Skeleton/Hip/Spine/Chest/Shoulder_R/Arm1_R/Arm2_R/Arm3_R/Hand_R
+        weight: 1
+      - path: Skeleton/Hip/Spine/Chest/Shoulder_R/Arm1_R/Arm2_R/Arm3_R/Hand_R/Hand_R_001
+        weight: 1
+      - path: Skeleton/Hip/Thigh_L
+        weight: 1
+      - path: Skeleton/Hip/Thigh_L/Ankle_L
+        weight: 1
+      - path: Skeleton/Hip/Thigh_L/Ankle_L/Foot_L
+        weight: 1
+      - path: Skeleton/Hip/Thigh_L/Ankle_L/Foot_L/Toes_L
+        weight: 1
+      - path: Skeleton/Hip/Thigh_R
+        weight: 1
+      - path: Skeleton/Hip/Thigh_R/Ankle_R
+        weight: 1
+      - path: Skeleton/Hip/Thigh_R/Ankle_R/Foot_R
+        weight: 1
+      - path: Skeleton/Hip/Thigh_R/Ankle_R/Foot_R/Toes_R
+        weight: 1
+      - path: Skeleton/KneeCtrl_L
+        weight: 1
+      - path: Skeleton/KneeCtrl_L/LegIK_L
+        weight: 1
+      - path: Skeleton/KneeCtrl_R
+        weight: 1
+      - path: Skeleton/KneeCtrl_R/LegIK_R
+        weight: 1
+      - path: Spear
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: ICEMAN_RUN
+      takeName: ICEMAN_RUN
+      firstFrame: 0
+      lastFrame: 35
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ChestPiece
+        weight: 1
+      - path: Iceman
+        weight: 1
+      - path: ShoulderPiece_L
+        weight: 1
+      - path: ShoulderPiece_R
+        weight: 1
+      - path: Skeleton
+        weight: 1
+      - path: Skeleton/AnkleRotCtrl_L
+        weight: 1
+      - path: Skeleton/AnkleRotCtrl_R
+        weight: 1
+      - path: Skeleton/ArmIK_L
+        weight: 1
+      - path: Skeleton/ArmIK_R
+        weight: 1
+      - path: Skeleton/Hip
+        weight: 1
+      - path: Skeleton/Hip/Spine
+        weight: 1
+      - path: Skeleton/Hip/Spine/Chest
+        weight: 1
+      - path: Skeleton/Hip/Spine/Chest/Neck
+        weight: 1
+      - path: Skeleton/Hip/Spine/Chest/Neck/Head
+        weight: 1
+      - path: Skeleton/Hip/Spine/Chest/Shoulder_L
+        weight: 1
+      - path: Skeleton/Hip/Spine/Chest/Shoulder_L/Arm1_L
+        weight: 1
+      - path: Skeleton/Hip/Spine/Chest/Shoulder_L/Arm1_L/Arm2_L
+        weight: 1
+      - path: Skeleton/Hip/Spine/Chest/Shoulder_L/Arm1_L/Arm2_L/Arm3_L
+        weight: 1
+      - path: Skeleton/Hip/Spine/Chest/Shoulder_L/Arm1_L/Arm2_L/Arm3_L/Hand_L
+        weight: 1
+      - path: Skeleton/Hip/Spine/Chest/Shoulder_R
+        weight: 1
+      - path: Skeleton/Hip/Spine/Chest/Shoulder_R/Arm1_R
+        weight: 1
+      - path: Skeleton/Hip/Spine/Chest/Shoulder_R/Arm1_R/Arm2_R
+        weight: 1
+      - path: Skeleton/Hip/Spine/Chest/Shoulder_R/Arm1_R/Arm2_R/Arm3_R
+        weight: 1
+      - path: Skeleton/Hip/Spine/Chest/Shoulder_R/Arm1_R/Arm2_R/Arm3_R/Hand_R
+        weight: 1
+      - path: Skeleton/Hip/Spine/Chest/Shoulder_R/Arm1_R/Arm2_R/Arm3_R/Hand_R/Hand_R_001
+        weight: 1
+      - path: Skeleton/Hip/Thigh_L
+        weight: 1
+      - path: Skeleton/Hip/Thigh_L/Ankle_L
+        weight: 1
+      - path: Skeleton/Hip/Thigh_L/Ankle_L/Foot_L
+        weight: 1
+      - path: Skeleton/Hip/Thigh_L/Ankle_L/Foot_L/Toes_L
+        weight: 1
+      - path: Skeleton/Hip/Thigh_R
+        weight: 1
+      - path: Skeleton/Hip/Thigh_R/Ankle_R
+        weight: 1
+      - path: Skeleton/Hip/Thigh_R/Ankle_R/Foot_R
+        weight: 1
+      - path: Skeleton/Hip/Thigh_R/Ankle_R/Foot_R/Toes_R
+        weight: 1
+      - path: Skeleton/KneeCtrl_L
+        weight: 1
+      - path: Skeleton/KneeCtrl_L/LegIK_L
+        weight: 1
+      - path: Skeleton/KneeCtrl_R
+        weight: 1
+      - path: Skeleton/KneeCtrl_R/LegIK_R
+        weight: 1
+      - path: Spear
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: ICEMAN_DEATH
+      takeName: ICEMAN_DEATH
+      firstFrame: 0
+      lastFrame: 19
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ChestPiece
+        weight: 1
+      - path: Iceman
+        weight: 1
+      - path: ShoulderPiece_L
+        weight: 1
+      - path: ShoulderPiece_R
+        weight: 1
+      - path: Skeleton
+        weight: 1
+      - path: Skeleton/AnkleRotCtrl_L
+        weight: 1
+      - path: Skeleton/AnkleRotCtrl_R
+        weight: 1
+      - path: Skeleton/ArmIK_L
+        weight: 1
+      - path: Skeleton/ArmIK_R
+        weight: 1
+      - path: Skeleton/Hip
+        weight: 1
+      - path: Skeleton/Hip/Spine
+        weight: 1
+      - path: Skeleton/Hip/Spine/Chest
+        weight: 1
+      - path: Skeleton/Hip/Spine/Chest/Neck
+        weight: 1
+      - path: Skeleton/Hip/Spine/Chest/Neck/Head
+        weight: 1
+      - path: Skeleton/Hip/Spine/Chest/Shoulder_L
+        weight: 1
+      - path: Skeleton/Hip/Spine/Chest/Shoulder_L/Arm1_L
+        weight: 1
+      - path: Skeleton/Hip/Spine/Chest/Shoulder_L/Arm1_L/Arm2_L
+        weight: 1
+      - path: Skeleton/Hip/Spine/Chest/Shoulder_L/Arm1_L/Arm2_L/Arm3_L
+        weight: 1
+      - path: Skeleton/Hip/Spine/Chest/Shoulder_L/Arm1_L/Arm2_L/Arm3_L/Hand_L
+        weight: 1
+      - path: Skeleton/Hip/Spine/Chest/Shoulder_R
+        weight: 1
+      - path: Skeleton/Hip/Spine/Chest/Shoulder_R/Arm1_R
+        weight: 1
+      - path: Skeleton/Hip/Spine/Chest/Shoulder_R/Arm1_R/Arm2_R
+        weight: 1
+      - path: Skeleton/Hip/Spine/Chest/Shoulder_R/Arm1_R/Arm2_R/Arm3_R
+        weight: 1
+      - path: Skeleton/Hip/Spine/Chest/Shoulder_R/Arm1_R/Arm2_R/Arm3_R/Hand_R
+        weight: 1
+      - path: Skeleton/Hip/Spine/Chest/Shoulder_R/Arm1_R/Arm2_R/Arm3_R/Hand_R/Hand_R_001
+        weight: 1
+      - path: Skeleton/Hip/Thigh_L
+        weight: 1
+      - path: Skeleton/Hip/Thigh_L/Ankle_L
+        weight: 1
+      - path: Skeleton/Hip/Thigh_L/Ankle_L/Foot_L
+        weight: 1
+      - path: Skeleton/Hip/Thigh_L/Ankle_L/Foot_L/Toes_L
+        weight: 1
+      - path: Skeleton/Hip/Thigh_R
+        weight: 1
+      - path: Skeleton/Hip/Thigh_R/Ankle_R
+        weight: 1
+      - path: Skeleton/Hip/Thigh_R/Ankle_R/Foot_R
+        weight: 1
+      - path: Skeleton/Hip/Thigh_R/Ankle_R/Foot_R/Toes_R
+        weight: 1
+      - path: Skeleton/KneeCtrl_L
+        weight: 1
+      - path: Skeleton/KneeCtrl_L/LegIK_L
+        weight: 1
+      - path: Skeleton/KneeCtrl_R
+        weight: 1
+      - path: Skeleton/KneeCtrl_R/LegIK_R
+        weight: 1
+      - path: Spear
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []

@@ -20,6 +20,7 @@ TagManager:
   - Teleporter
   - FloeTeleporter
   - CrononTeleporter2
+  - Ice
   layers:
   - Default
   - TransparentFX

@@ -44,8 +44,10 @@ public class Hurtable : MonoBehaviour
 
     private IEnumerator HurtFlashForTime(float seconds)
     {
-        meshRend.material = damagedMaterial;
-        yield return new WaitForSeconds(seconds);
-        meshRend.material = originalMaterial;
+		if(meshRend != null){
+        	meshRend.material = damagedMaterial;
+        	yield return new WaitForSeconds(seconds);
+        	meshRend.material = originalMaterial;
+		}
     }
 }
