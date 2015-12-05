@@ -4,10 +4,10 @@ using System.Collections;
 public class Dog : MonoBehaviour, IEnemy
 {
     public float maxHealth = 10;
-    public float damageColorDuration = 2;
+    public float damageFlashSeconds = 0.5f;
 
-    public Color damageColor;
-    private Color originalColor;
+    public Material damagedMaterial;
+    private Material originalMaterial;
 
     private Animator anim;
     private SkinnedMeshRenderer meshRend;
@@ -26,7 +26,7 @@ public class Dog : MonoBehaviour, IEnemy
 
         currHealth = maxHealth;
         meshRend = GetComponentInChildren<SkinnedMeshRenderer>();
-        originalColor = meshRend.material.color;
+        originalMaterial = meshRend.material;
         tag = "enemy"; //For items to detect and deliver damage
     }
 
@@ -39,7 +39,7 @@ public class Dog : MonoBehaviour, IEnemy
     {
         if (isDead) return;
 
-        StartCoroutine(HurtFlashForTime(damageColorDuration));
+        StartCoroutine(HurtFlashForTime(damageFlashSeconds));
         currHealth -= amount;
         if (currHealth <= 0)
         {
@@ -53,9 +53,9 @@ public class Dog : MonoBehaviour, IEnemy
 
     private IEnumerator HurtFlashForTime(float seconds)
     {
-        meshRend.material.color = damageColor;
+        meshRend.material = damagedMaterial;
         yield return new WaitForSeconds(seconds);
-        meshRend.material.color = originalColor;
+        meshRend.material = originalMaterial;
     }
 
 	// Magnet gun uses this to determine how to interact with other gameobjects

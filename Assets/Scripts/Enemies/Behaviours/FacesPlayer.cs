@@ -28,7 +28,6 @@ public class FacesPlayer : MonoBehaviour
 
     public void Die()
     {
-        print("Disabled?");
         enabled = false;
     }
 }
