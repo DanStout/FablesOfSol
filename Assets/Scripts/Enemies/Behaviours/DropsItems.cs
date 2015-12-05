@@ -11,8 +11,8 @@ public class DropsItems : MonoBehaviour
 
     void Start()
     {
-        var itemIndex = Random.Range(0, droppableItems.Length);
-        chosenItem = droppableItems[itemIndex];
+        var itemIndex = Random.Range(0, droppableItems.Length-1);
+		chosenItem = droppableItems [itemIndex < 0 ? 0 : itemIndex];
         itemHeightOffset = chosenItem.GetComponent<Collider>().bounds.max.y / 2;
     }
 

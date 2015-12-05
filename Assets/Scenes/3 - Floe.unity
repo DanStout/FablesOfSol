@@ -166,7 +166,7 @@ MonoBehaviour:
   downwardForce: -1.5
   visibleLayers:
     serializedVersion: 2
-    m_Bits: 305
+    m_Bits: 51
 --- !u!114 &57514218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,21 +194,6 @@ MonoBehaviour:
   fullHealth: 10
   damageFlashSeconds: .5
   damagedMaterial: {fileID: 2100000, guid: 42e2e97664c626740a401bcf9e30de75, type: 2}
---- !u!114 &57514220
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 57514212}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eff42c5bfc95dd649a3788c5d55b9e5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destroyAfterSeconds: 2
-  droppableItems: []
-  deathParticleSystem: {fileID: 19876540, guid: f8b43db4604bd6241bc3b35b429421b3,
-    type: 2}
 --- !u!4 &151663511 stripped
 Transform:
   m_PrefabParentObject: {fileID: 434426, guid: 9fbc5a317832b7c4ab9fcc3937001c66, type: 2}
@@ -360,15 +345,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400044, guid: 892d4f1236e5b884cb8114329a41fcda, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400062, guid: 892d4f1236e5b884cb8114329a41fcda, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400026, guid: 892d4f1236e5b884cb8114329a41fcda, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 100062, guid: 892d4f1236e5b884cb8114329a41fcda, type: 3}
       propertyPath: m_TagString

@@ -23,8 +23,10 @@ public class Hurtable : MonoBehaviour
 	
 	public void Die()
     {
-        meshRend.material = originalMaterial;
-        Destroy(this);
+		if (meshRend != null) {
+			meshRend.material = originalMaterial;
+			Destroy (this);
+		}
     }
 
     public void TakeDamage(float amount)
