@@ -185,6 +185,34 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ebaddb537c2380d4388ba36c1e94e497, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &498244405 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 111024, guid: c576f8409e19f9241aa01c155384ead6, type: 2}
+  m_PrefabInternal: {fileID: 527762515}
+--- !u!114 &498244408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 498244405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72cd512d77063bb40bd55bf8537afd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!136 &498244409
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 498244405}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.07000005
+  m_Height: 1
+  m_Direction: 0
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &519322981
 Prefab:
   m_ObjectHideFlags: 0
@@ -374,6 +402,10 @@ Prefab:
       propertyPath: m_Name
       value: ThrumTitan
       objectReference: {fileID: 0}
+    - target: {fileID: 11480790, guid: c576f8409e19f9241aa01c155384ead6, type: 2}
+      propertyPath: maxFire
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c576f8409e19f9241aa01c155384ead6, type: 2}
   m_IsPrefabParent: 0
@@ -479,6 +511,34 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &1014076724 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 182278, guid: c576f8409e19f9241aa01c155384ead6, type: 2}
+  m_PrefabInternal: {fileID: 527762515}
+--- !u!114 &1014076727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1014076724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72cd512d77063bb40bd55bf8537afd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!136 &1014076728
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1014076724}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.07000005
+  m_Height: 1
+  m_Direction: 0
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1170490387
 GameObject:
   m_ObjectHideFlags: 0
@@ -568,6 +628,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 477770, guid: 6f8daeab7390c1346a8bd5298578da79, type: 2}
       propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198514, guid: 6f8daeab7390c1346a8bd5298578da79, type: 2}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
