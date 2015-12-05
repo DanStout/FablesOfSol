@@ -36,7 +36,11 @@ public class AttacksPlayer : MonoBehaviour
         var playerLife = hit.gameObject.GetComponent<PlayerLife>();
         if (playerLife != null && Time.time - lastAttackTime > secondsBetweenAttacks)
         {
-            playerLife.TakeDamage(attackDamage);
+            var playerDied = playerLife.TakeDamage(attackDamage);
+            if (playerDied)
+            {
+                anim.SetTrigger("howl");
+            }
             lastAttackTime = Time.time;
         }
     }
