@@ -1,7 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEngine;
-using System.Collections;
 
 public class Iceman : MonoBehaviour, IEnemy
 {
@@ -14,7 +12,7 @@ public class Iceman : MonoBehaviour, IEnemy
 	private ChasesPlayer chaser;
 	private FacesPlayer faces;
 	private Hurtable hurt;
-	private AttacksPlayer attacks;
+    //private AttacksPlayer attacks;
 	
 	void Start()
 	{
@@ -26,7 +24,7 @@ public class Iceman : MonoBehaviour, IEnemy
 		hurt = GetComponent<Hurtable>();
 		hurt.onDeath += hurt_onDeath;
 		
-		attacks = GetComponent<AttacksPlayer>();
+        //attacks = GetComponent<AttacksPlayer>();
 		
 		tag = "enemy"; //For items to detect and deliver damage
 	}

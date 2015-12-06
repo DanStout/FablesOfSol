@@ -48,10 +48,13 @@ public class GameManager : MonoBehaviour
     {
         originalTimeScale = Time.timeScale;
         Time.timeScale = 0;
+        AudioListener.pause = true;
     }
 
     public static void Resume()
     {
         Time.timeScale = originalTimeScale;
+        AudioListener.pause = false;
     }
+
 }

@@ -27,6 +27,11 @@ public class Thrum : MonoBehaviour
         hurt.onDeath += hurt_onDeath;
     }
 
+    void OnDisable()
+    {
+        hurt.onDeath -= hurt_onDeath;
+    }
+
     void hurt_onDeath()
     {
         randMov.Die();

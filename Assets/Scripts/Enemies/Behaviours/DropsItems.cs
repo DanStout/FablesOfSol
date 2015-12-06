@@ -4,6 +4,8 @@ using System.Collections;
 public class DropsItems : MonoBehaviour
 {
     public float destroyAfterSeconds = 2;
+    public AudioClip explosionSound;
+
     public GameObject[] droppableItems;
     public ParticleSystem deathParticleSystem;
     private GameObject chosenItem;
@@ -23,17 +25,20 @@ public class DropsItems : MonoBehaviour
     private IEnumerator DestroyAfterTime()
     {
         yield return new WaitForSeconds(destroyAfterSeconds);
-        Destroy(this.gameObject);
 
         var system = Instantiate(deathParticleSystem);
         system.transform.position = transform.position;
         system.Play();
         Destroy(system.gameObject, system.duration);
 
+        AudioSource.PlayClipAtPoint(explosionSound, transform.position);
+
         var item = Instantiate<GameObject>(chosenItem);
         var itemHeightOffset = item.GetComponentInChildren<Renderer>().bounds.size.y / 2;
         var pos = transform.position;
         pos.y += itemHeightOffset + 0.1f;
         item.transform.position = pos;
+
+        Destroy(this.gameObject);
     }
 }

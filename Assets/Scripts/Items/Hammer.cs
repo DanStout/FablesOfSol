@@ -7,7 +7,7 @@ public class Hammer : MonoBehaviour, IItem
     public float damage = 5;
 
     private GameObject owner;
-    private bool attacking = false;
+    //private bool attacking = false;
 
     // Use this for initialization
     void Start()
@@ -42,7 +42,6 @@ public class Hammer : MonoBehaviour, IItem
         Collider[] cols = Physics.OverlapSphere(owner.transform.position, radius);
         foreach (Collider col in cols)
         {
-            print(col.gameObject.name);
             //If we are in range of an enemy
             if (col && col.tag == "enemy")
             {
@@ -53,7 +52,6 @@ public class Hammer : MonoBehaviour, IItem
                 //If enemy is in front of player, deal damage
                 if (Vector3.Dot(forward, toOther) > 0)
                 {
-                    print(col.gameObject.name);
                     var hurtable = col.GetComponent<Hurtable>();
                     if (hurtable != null)
                     {

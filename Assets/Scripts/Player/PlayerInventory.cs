@@ -22,10 +22,6 @@ public class PlayerInventory : MonoBehaviour
 		pickup (hammer);
     }
 
-    void Update()
-    {
-    }
-
     void OnControllerColliderHit(ControllerColliderHit hit)
     {
         //If we have collided with an item, add to inventory
@@ -73,7 +69,7 @@ public class PlayerInventory : MonoBehaviour
         //If we have no item equiped, equip item
         if (activeItem == null)
         {
-            print("equipped " + item.getName());
+            //print("equipped " + item.getName());
             activeItem = item;
         }
     }

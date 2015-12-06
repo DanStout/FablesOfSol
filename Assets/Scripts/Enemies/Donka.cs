@@ -31,6 +31,11 @@ public class Donka : MonoBehaviour, IEnemy
         activateOnDeath.SetActive(true);
     }
 
+    void OnDisable()
+    {
+        hurt.onDeath -= hurt_onDeath;
+    }
+
     void Update()
     {
         chaser.MoveTowardsPlayer();

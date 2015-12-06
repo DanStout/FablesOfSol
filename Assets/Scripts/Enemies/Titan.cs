@@ -38,6 +38,11 @@ public class Titan : MonoBehaviour
         isDead = true;
     }
 
+    void OnDisable()
+    {
+        hurt.onDeath -= hurt_onDeath;
+    }
+
     public void DeathAnimationDone()
     {
         drops.Die();
