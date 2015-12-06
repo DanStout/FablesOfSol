@@ -9,13 +9,11 @@ public class WaterDamage : MonoBehaviour
 
     void OnTriggerStay(Collider col)
     {
-		if(col.transform.tag == "Player"){
-	        var playLife = col.gameObject.GetComponent<PlayerLife>();
-	        if (Time.time - lastDamageTime >= damageDelaySeconds)
-	        {
-	            playLife.TakeDamage(damage);
-	            lastDamageTime = Time.time;
-	        }
-		}
+	    var playLife = col.gameObject.GetComponent<PlayerLife>();
+	    if (playLife != null && Time.time - lastDamageTime >= damageDelaySeconds)
+	    {
+	        playLife.TakeDamage(damage);
+	        lastDamageTime = Time.time;
+	    }
     }
 }

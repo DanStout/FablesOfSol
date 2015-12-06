@@ -14,19 +14,20 @@ public class Hurtable : MonoBehaviour
     public delegate void DeathHandler();
     public event DeathHandler onDeath;
 
-	void Start()
-	{
+    void Start()
+    {
         currHealth = fullHealth;
         meshRend = GetComponentInChildren<SkinnedMeshRenderer>();
         originalMaterial = meshRend.material;
-	}
-	
-	public void Die()
+    }
+
+    public void Die()
     {
-		if (meshRend != null) {
-			meshRend.material = originalMaterial;
-			Destroy (this);
-		}
+        if (meshRend != null)
+        {
+            meshRend.material = originalMaterial;
+            Destroy(this);
+        }
     }
 
     public void TakeDamage(float amount)
@@ -36,9 +37,7 @@ public class Hurtable : MonoBehaviour
         if (currHealth <= 0)
         {
             if (onDeath == null)
-            {
                 print("No event attached on {0}'s death..".FormatWith(gameObject.name));
-            }
             else
                 onDeath();
         }
@@ -46,10 +45,11 @@ public class Hurtable : MonoBehaviour
 
     private IEnumerator HurtFlashForTime(float seconds)
     {
-		if(meshRend != null){
-        	meshRend.material = damagedMaterial;
-        	yield return new WaitForSeconds(seconds);
-        	meshRend.material = originalMaterial;
-		}
+        if (meshRend != null)
+        {
+            meshRend.material = damagedMaterial;
+            yield return new WaitForSeconds(seconds);
+            meshRend.material = originalMaterial;
+        }
     }
 }
