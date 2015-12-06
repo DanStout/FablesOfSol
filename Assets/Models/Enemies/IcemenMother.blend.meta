@@ -93,6 +93,7 @@ ModelImporter:
     7400004: MOTHER_HIT
     7400006: MOTHER_JUMP
     7400008: MOTHER_SMASH
+    7400010: MOTHER_IDLE
     9500000: //RootNode
     13700000: IcemanMother
     13700002: Icosphere
@@ -116,7 +117,643 @@ ModelImporter:
     animationScaleError: .5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Default Take
+      takeName: Default Take
+      firstFrame: 0
+      lastFrame: 79
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/BackLegIK_L
+        weight: 1
+      - path: Armature/BackLegIK_R
+        weight: 1
+      - path: Armature/Bone
+        weight: 1
+      - path: Armature/Bone/BackLeg1_L
+        weight: 1
+      - path: Armature/Bone/BackLeg1_L/BackLeg2_L
+        weight: 1
+      - path: Armature/Bone/BackLeg1_L/BackLeg2_L/BackLeg3_L
+        weight: 1
+      - path: Armature/Bone/BackLeg1_L/BackLeg2_L/BackLeg3_L/BackLeg4_L
+        weight: 1
+      - path: Armature/Bone/BackLeg1_L/BackLeg2_L/BackLeg3_L/BackLeg4_L/BackLeg5_L
+        weight: 1
+      - path: Armature/Bone/BackLeg1_L/BackLeg2_L/BackLeg3_L/BackLeg4_L/BackLeg5_L/BackLeg6_L
+        weight: 1
+      - path: Armature/Bone/BackLeg1_R_001
+        weight: 1
+      - path: Armature/Bone/BackLeg1_R_001/BackLeg2_R
+        weight: 1
+      - path: Armature/Bone/BackLeg1_R_001/BackLeg2_R/BackLeg3_R
+        weight: 1
+      - path: Armature/Bone/BackLeg1_R_001/BackLeg2_R/BackLeg3_R/BackLeg4_R
+        weight: 1
+      - path: Armature/Bone/BackLeg1_R_001/BackLeg2_R/BackLeg3_R/BackLeg4_R/BackLeg5_R
+        weight: 1
+      - path: Armature/Bone/BackLeg1_R_001/BackLeg2_R/BackLeg3_R/BackLeg4_R/BackLeg5_R/BackLeg6_R
+        weight: 1
+      - path: Armature/Bone/Bone_001
+        weight: 1
+      - path: Armature/Bone/Bone_002
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_L
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_L/FrontLeg2_L
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_L/FrontLeg2_L/FrontLeg3_L
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_L/FrontLeg2_L/FrontLeg3_L/FrontLeg4_L
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_L/FrontLeg2_L/FrontLeg3_L/FrontLeg4_L/FrontLeg5_L
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_L/FrontLeg2_L/FrontLeg3_L/FrontLeg4_L/FrontLeg5_L/FrontLeg6_L
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_L/FrontLeg2_L/FrontLeg3_L/FrontLeg4_L/FrontLeg5_L/FrontLeg6_L/FrontLeg7_L
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_L/FrontLeg2_L/FrontLeg3_L/FrontLeg4_L/FrontLeg5_L/FrontLeg6_L/FrontLeg7_L/FrontLeg8_L
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_R
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_R/FrontLeg2_R
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_R/FrontLeg2_R/FrontLeg3_R
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_R/FrontLeg2_R/FrontLeg3_R/FrontLeg4_R
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_R/FrontLeg2_R/FrontLeg3_R/FrontLeg4_R/FrontLeg5_R
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_R/FrontLeg2_R/FrontLeg3_R/FrontLeg4_R/FrontLeg5_R/FrontLeg6_R
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_R/FrontLeg2_R/FrontLeg3_R/FrontLeg4_R/FrontLeg5_R/FrontLeg6_R/FrontLeg7_R
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_R/FrontLeg2_R/FrontLeg3_R/FrontLeg4_R/FrontLeg5_R/FrontLeg6_R/FrontLeg7_R/FrontLeg8_R
+        weight: 1
+      - path: Armature/FrontLegIK_L
+        weight: 1
+      - path: Armature/FrontLegIK_R
+        weight: 1
+      - path: IcemanMother
+        weight: 1
+      - path: Icosphere
+        weight: 1
+      - path: Sphere
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: MOTHER_DEATH
+      takeName: MOTHER_DEATH
+      firstFrame: 0
+      lastFrame: 79
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/BackLegIK_L
+        weight: 1
+      - path: Armature/BackLegIK_R
+        weight: 1
+      - path: Armature/Bone
+        weight: 1
+      - path: Armature/Bone/BackLeg1_L
+        weight: 1
+      - path: Armature/Bone/BackLeg1_L/BackLeg2_L
+        weight: 1
+      - path: Armature/Bone/BackLeg1_L/BackLeg2_L/BackLeg3_L
+        weight: 1
+      - path: Armature/Bone/BackLeg1_L/BackLeg2_L/BackLeg3_L/BackLeg4_L
+        weight: 1
+      - path: Armature/Bone/BackLeg1_L/BackLeg2_L/BackLeg3_L/BackLeg4_L/BackLeg5_L
+        weight: 1
+      - path: Armature/Bone/BackLeg1_L/BackLeg2_L/BackLeg3_L/BackLeg4_L/BackLeg5_L/BackLeg6_L
+        weight: 1
+      - path: Armature/Bone/BackLeg1_R_001
+        weight: 1
+      - path: Armature/Bone/BackLeg1_R_001/BackLeg2_R
+        weight: 1
+      - path: Armature/Bone/BackLeg1_R_001/BackLeg2_R/BackLeg3_R
+        weight: 1
+      - path: Armature/Bone/BackLeg1_R_001/BackLeg2_R/BackLeg3_R/BackLeg4_R
+        weight: 1
+      - path: Armature/Bone/BackLeg1_R_001/BackLeg2_R/BackLeg3_R/BackLeg4_R/BackLeg5_R
+        weight: 1
+      - path: Armature/Bone/BackLeg1_R_001/BackLeg2_R/BackLeg3_R/BackLeg4_R/BackLeg5_R/BackLeg6_R
+        weight: 1
+      - path: Armature/Bone/Bone_001
+        weight: 1
+      - path: Armature/Bone/Bone_002
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_L
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_L/FrontLeg2_L
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_L/FrontLeg2_L/FrontLeg3_L
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_L/FrontLeg2_L/FrontLeg3_L/FrontLeg4_L
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_L/FrontLeg2_L/FrontLeg3_L/FrontLeg4_L/FrontLeg5_L
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_L/FrontLeg2_L/FrontLeg3_L/FrontLeg4_L/FrontLeg5_L/FrontLeg6_L
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_L/FrontLeg2_L/FrontLeg3_L/FrontLeg4_L/FrontLeg5_L/FrontLeg6_L/FrontLeg7_L
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_L/FrontLeg2_L/FrontLeg3_L/FrontLeg4_L/FrontLeg5_L/FrontLeg6_L/FrontLeg7_L/FrontLeg8_L
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_R
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_R/FrontLeg2_R
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_R/FrontLeg2_R/FrontLeg3_R
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_R/FrontLeg2_R/FrontLeg3_R/FrontLeg4_R
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_R/FrontLeg2_R/FrontLeg3_R/FrontLeg4_R/FrontLeg5_R
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_R/FrontLeg2_R/FrontLeg3_R/FrontLeg4_R/FrontLeg5_R/FrontLeg6_R
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_R/FrontLeg2_R/FrontLeg3_R/FrontLeg4_R/FrontLeg5_R/FrontLeg6_R/FrontLeg7_R
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_R/FrontLeg2_R/FrontLeg3_R/FrontLeg4_R/FrontLeg5_R/FrontLeg6_R/FrontLeg7_R/FrontLeg8_R
+        weight: 1
+      - path: Armature/FrontLegIK_L
+        weight: 1
+      - path: Armature/FrontLegIK_R
+        weight: 1
+      - path: IcemanMother
+        weight: 1
+      - path: Icosphere
+        weight: 1
+      - path: Sphere
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: MOTHER_HIT
+      takeName: MOTHER_HIT
+      firstFrame: 0
+      lastFrame: 79
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/BackLegIK_L
+        weight: 1
+      - path: Armature/BackLegIK_R
+        weight: 1
+      - path: Armature/Bone
+        weight: 1
+      - path: Armature/Bone/BackLeg1_L
+        weight: 1
+      - path: Armature/Bone/BackLeg1_L/BackLeg2_L
+        weight: 1
+      - path: Armature/Bone/BackLeg1_L/BackLeg2_L/BackLeg3_L
+        weight: 1
+      - path: Armature/Bone/BackLeg1_L/BackLeg2_L/BackLeg3_L/BackLeg4_L
+        weight: 1
+      - path: Armature/Bone/BackLeg1_L/BackLeg2_L/BackLeg3_L/BackLeg4_L/BackLeg5_L
+        weight: 1
+      - path: Armature/Bone/BackLeg1_L/BackLeg2_L/BackLeg3_L/BackLeg4_L/BackLeg5_L/BackLeg6_L
+        weight: 1
+      - path: Armature/Bone/BackLeg1_R_001
+        weight: 1
+      - path: Armature/Bone/BackLeg1_R_001/BackLeg2_R
+        weight: 1
+      - path: Armature/Bone/BackLeg1_R_001/BackLeg2_R/BackLeg3_R
+        weight: 1
+      - path: Armature/Bone/BackLeg1_R_001/BackLeg2_R/BackLeg3_R/BackLeg4_R
+        weight: 1
+      - path: Armature/Bone/BackLeg1_R_001/BackLeg2_R/BackLeg3_R/BackLeg4_R/BackLeg5_R
+        weight: 1
+      - path: Armature/Bone/BackLeg1_R_001/BackLeg2_R/BackLeg3_R/BackLeg4_R/BackLeg5_R/BackLeg6_R
+        weight: 1
+      - path: Armature/Bone/Bone_001
+        weight: 1
+      - path: Armature/Bone/Bone_002
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_L
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_L/FrontLeg2_L
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_L/FrontLeg2_L/FrontLeg3_L
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_L/FrontLeg2_L/FrontLeg3_L/FrontLeg4_L
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_L/FrontLeg2_L/FrontLeg3_L/FrontLeg4_L/FrontLeg5_L
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_L/FrontLeg2_L/FrontLeg3_L/FrontLeg4_L/FrontLeg5_L/FrontLeg6_L
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_L/FrontLeg2_L/FrontLeg3_L/FrontLeg4_L/FrontLeg5_L/FrontLeg6_L/FrontLeg7_L
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_L/FrontLeg2_L/FrontLeg3_L/FrontLeg4_L/FrontLeg5_L/FrontLeg6_L/FrontLeg7_L/FrontLeg8_L
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_R
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_R/FrontLeg2_R
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_R/FrontLeg2_R/FrontLeg3_R
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_R/FrontLeg2_R/FrontLeg3_R/FrontLeg4_R
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_R/FrontLeg2_R/FrontLeg3_R/FrontLeg4_R/FrontLeg5_R
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_R/FrontLeg2_R/FrontLeg3_R/FrontLeg4_R/FrontLeg5_R/FrontLeg6_R
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_R/FrontLeg2_R/FrontLeg3_R/FrontLeg4_R/FrontLeg5_R/FrontLeg6_R/FrontLeg7_R
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_R/FrontLeg2_R/FrontLeg3_R/FrontLeg4_R/FrontLeg5_R/FrontLeg6_R/FrontLeg7_R/FrontLeg8_R
+        weight: 1
+      - path: Armature/FrontLegIK_L
+        weight: 1
+      - path: Armature/FrontLegIK_R
+        weight: 1
+      - path: IcemanMother
+        weight: 1
+      - path: Icosphere
+        weight: 1
+      - path: Sphere
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: MOTHER_IDLE
+      takeName: MOTHER_IDLE
+      firstFrame: 0
+      lastFrame: 79
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/BackLegIK_L
+        weight: 1
+      - path: Armature/BackLegIK_R
+        weight: 1
+      - path: Armature/Bone
+        weight: 1
+      - path: Armature/Bone/BackLeg1_L
+        weight: 1
+      - path: Armature/Bone/BackLeg1_L/BackLeg2_L
+        weight: 1
+      - path: Armature/Bone/BackLeg1_L/BackLeg2_L/BackLeg3_L
+        weight: 1
+      - path: Armature/Bone/BackLeg1_L/BackLeg2_L/BackLeg3_L/BackLeg4_L
+        weight: 1
+      - path: Armature/Bone/BackLeg1_L/BackLeg2_L/BackLeg3_L/BackLeg4_L/BackLeg5_L
+        weight: 1
+      - path: Armature/Bone/BackLeg1_L/BackLeg2_L/BackLeg3_L/BackLeg4_L/BackLeg5_L/BackLeg6_L
+        weight: 1
+      - path: Armature/Bone/BackLeg1_R_001
+        weight: 1
+      - path: Armature/Bone/BackLeg1_R_001/BackLeg2_R
+        weight: 1
+      - path: Armature/Bone/BackLeg1_R_001/BackLeg2_R/BackLeg3_R
+        weight: 1
+      - path: Armature/Bone/BackLeg1_R_001/BackLeg2_R/BackLeg3_R/BackLeg4_R
+        weight: 1
+      - path: Armature/Bone/BackLeg1_R_001/BackLeg2_R/BackLeg3_R/BackLeg4_R/BackLeg5_R
+        weight: 1
+      - path: Armature/Bone/BackLeg1_R_001/BackLeg2_R/BackLeg3_R/BackLeg4_R/BackLeg5_R/BackLeg6_R
+        weight: 1
+      - path: Armature/Bone/Bone_001
+        weight: 1
+      - path: Armature/Bone/Bone_002
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_L
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_L/FrontLeg2_L
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_L/FrontLeg2_L/FrontLeg3_L
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_L/FrontLeg2_L/FrontLeg3_L/FrontLeg4_L
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_L/FrontLeg2_L/FrontLeg3_L/FrontLeg4_L/FrontLeg5_L
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_L/FrontLeg2_L/FrontLeg3_L/FrontLeg4_L/FrontLeg5_L/FrontLeg6_L
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_L/FrontLeg2_L/FrontLeg3_L/FrontLeg4_L/FrontLeg5_L/FrontLeg6_L/FrontLeg7_L
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_L/FrontLeg2_L/FrontLeg3_L/FrontLeg4_L/FrontLeg5_L/FrontLeg6_L/FrontLeg7_L/FrontLeg8_L
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_R
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_R/FrontLeg2_R
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_R/FrontLeg2_R/FrontLeg3_R
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_R/FrontLeg2_R/FrontLeg3_R/FrontLeg4_R
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_R/FrontLeg2_R/FrontLeg3_R/FrontLeg4_R/FrontLeg5_R
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_R/FrontLeg2_R/FrontLeg3_R/FrontLeg4_R/FrontLeg5_R/FrontLeg6_R
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_R/FrontLeg2_R/FrontLeg3_R/FrontLeg4_R/FrontLeg5_R/FrontLeg6_R/FrontLeg7_R
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_R/FrontLeg2_R/FrontLeg3_R/FrontLeg4_R/FrontLeg5_R/FrontLeg6_R/FrontLeg7_R/FrontLeg8_R
+        weight: 1
+      - path: Armature/FrontLegIK_L
+        weight: 1
+      - path: Armature/FrontLegIK_R
+        weight: 1
+      - path: IcemanMother
+        weight: 1
+      - path: Icosphere
+        weight: 1
+      - path: Sphere
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: MOTHER_JUMP
+      takeName: MOTHER_JUMP
+      firstFrame: 0
+      lastFrame: 19
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/BackLegIK_L
+        weight: 1
+      - path: Armature/BackLegIK_R
+        weight: 1
+      - path: Armature/Bone
+        weight: 1
+      - path: Armature/Bone/BackLeg1_L
+        weight: 1
+      - path: Armature/Bone/BackLeg1_L/BackLeg2_L
+        weight: 1
+      - path: Armature/Bone/BackLeg1_L/BackLeg2_L/BackLeg3_L
+        weight: 1
+      - path: Armature/Bone/BackLeg1_L/BackLeg2_L/BackLeg3_L/BackLeg4_L
+        weight: 1
+      - path: Armature/Bone/BackLeg1_L/BackLeg2_L/BackLeg3_L/BackLeg4_L/BackLeg5_L
+        weight: 1
+      - path: Armature/Bone/BackLeg1_L/BackLeg2_L/BackLeg3_L/BackLeg4_L/BackLeg5_L/BackLeg6_L
+        weight: 1
+      - path: Armature/Bone/BackLeg1_R_001
+        weight: 1
+      - path: Armature/Bone/BackLeg1_R_001/BackLeg2_R
+        weight: 1
+      - path: Armature/Bone/BackLeg1_R_001/BackLeg2_R/BackLeg3_R
+        weight: 1
+      - path: Armature/Bone/BackLeg1_R_001/BackLeg2_R/BackLeg3_R/BackLeg4_R
+        weight: 1
+      - path: Armature/Bone/BackLeg1_R_001/BackLeg2_R/BackLeg3_R/BackLeg4_R/BackLeg5_R
+        weight: 1
+      - path: Armature/Bone/BackLeg1_R_001/BackLeg2_R/BackLeg3_R/BackLeg4_R/BackLeg5_R/BackLeg6_R
+        weight: 1
+      - path: Armature/Bone/Bone_001
+        weight: 1
+      - path: Armature/Bone/Bone_002
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_L
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_L/FrontLeg2_L
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_L/FrontLeg2_L/FrontLeg3_L
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_L/FrontLeg2_L/FrontLeg3_L/FrontLeg4_L
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_L/FrontLeg2_L/FrontLeg3_L/FrontLeg4_L/FrontLeg5_L
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_L/FrontLeg2_L/FrontLeg3_L/FrontLeg4_L/FrontLeg5_L/FrontLeg6_L
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_L/FrontLeg2_L/FrontLeg3_L/FrontLeg4_L/FrontLeg5_L/FrontLeg6_L/FrontLeg7_L
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_L/FrontLeg2_L/FrontLeg3_L/FrontLeg4_L/FrontLeg5_L/FrontLeg6_L/FrontLeg7_L/FrontLeg8_L
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_R
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_R/FrontLeg2_R
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_R/FrontLeg2_R/FrontLeg3_R
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_R/FrontLeg2_R/FrontLeg3_R/FrontLeg4_R
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_R/FrontLeg2_R/FrontLeg3_R/FrontLeg4_R/FrontLeg5_R
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_R/FrontLeg2_R/FrontLeg3_R/FrontLeg4_R/FrontLeg5_R/FrontLeg6_R
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_R/FrontLeg2_R/FrontLeg3_R/FrontLeg4_R/FrontLeg5_R/FrontLeg6_R/FrontLeg7_R
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_R/FrontLeg2_R/FrontLeg3_R/FrontLeg4_R/FrontLeg5_R/FrontLeg6_R/FrontLeg7_R/FrontLeg8_R
+        weight: 1
+      - path: Armature/FrontLegIK_L
+        weight: 1
+      - path: Armature/FrontLegIK_R
+        weight: 1
+      - path: IcemanMother
+        weight: 1
+      - path: Icosphere
+        weight: 1
+      - path: Sphere
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: MOTHER_SMASH
+      takeName: MOTHER_SMASH
+      firstFrame: 0
+      lastFrame: 19
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/BackLegIK_L
+        weight: 1
+      - path: Armature/BackLegIK_R
+        weight: 1
+      - path: Armature/Bone
+        weight: 1
+      - path: Armature/Bone/BackLeg1_L
+        weight: 1
+      - path: Armature/Bone/BackLeg1_L/BackLeg2_L
+        weight: 1
+      - path: Armature/Bone/BackLeg1_L/BackLeg2_L/BackLeg3_L
+        weight: 1
+      - path: Armature/Bone/BackLeg1_L/BackLeg2_L/BackLeg3_L/BackLeg4_L
+        weight: 1
+      - path: Armature/Bone/BackLeg1_L/BackLeg2_L/BackLeg3_L/BackLeg4_L/BackLeg5_L
+        weight: 1
+      - path: Armature/Bone/BackLeg1_L/BackLeg2_L/BackLeg3_L/BackLeg4_L/BackLeg5_L/BackLeg6_L
+        weight: 1
+      - path: Armature/Bone/BackLeg1_R_001
+        weight: 1
+      - path: Armature/Bone/BackLeg1_R_001/BackLeg2_R
+        weight: 1
+      - path: Armature/Bone/BackLeg1_R_001/BackLeg2_R/BackLeg3_R
+        weight: 1
+      - path: Armature/Bone/BackLeg1_R_001/BackLeg2_R/BackLeg3_R/BackLeg4_R
+        weight: 1
+      - path: Armature/Bone/BackLeg1_R_001/BackLeg2_R/BackLeg3_R/BackLeg4_R/BackLeg5_R
+        weight: 1
+      - path: Armature/Bone/BackLeg1_R_001/BackLeg2_R/BackLeg3_R/BackLeg4_R/BackLeg5_R/BackLeg6_R
+        weight: 1
+      - path: Armature/Bone/Bone_001
+        weight: 1
+      - path: Armature/Bone/Bone_002
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_L
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_L/FrontLeg2_L
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_L/FrontLeg2_L/FrontLeg3_L
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_L/FrontLeg2_L/FrontLeg3_L/FrontLeg4_L
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_L/FrontLeg2_L/FrontLeg3_L/FrontLeg4_L/FrontLeg5_L
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_L/FrontLeg2_L/FrontLeg3_L/FrontLeg4_L/FrontLeg5_L/FrontLeg6_L
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_L/FrontLeg2_L/FrontLeg3_L/FrontLeg4_L/FrontLeg5_L/FrontLeg6_L/FrontLeg7_L
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_L/FrontLeg2_L/FrontLeg3_L/FrontLeg4_L/FrontLeg5_L/FrontLeg6_L/FrontLeg7_L/FrontLeg8_L
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_R
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_R/FrontLeg2_R
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_R/FrontLeg2_R/FrontLeg3_R
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_R/FrontLeg2_R/FrontLeg3_R/FrontLeg4_R
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_R/FrontLeg2_R/FrontLeg3_R/FrontLeg4_R/FrontLeg5_R
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_R/FrontLeg2_R/FrontLeg3_R/FrontLeg4_R/FrontLeg5_R/FrontLeg6_R
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_R/FrontLeg2_R/FrontLeg3_R/FrontLeg4_R/FrontLeg5_R/FrontLeg6_R/FrontLeg7_R
+        weight: 1
+      - path: Armature/Bone/FrontLeg1_R/FrontLeg2_R/FrontLeg3_R/FrontLeg4_R/FrontLeg5_R/FrontLeg6_R/FrontLeg7_R/FrontLeg8_R
+        weight: 1
+      - path: Armature/FrontLegIK_L
+        weight: 1
+      - path: Armature/FrontLegIK_R
+        weight: 1
+      - path: IcemanMother
+        weight: 1
+      - path: Icosphere
+        weight: 1
+      - path: Sphere
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []
