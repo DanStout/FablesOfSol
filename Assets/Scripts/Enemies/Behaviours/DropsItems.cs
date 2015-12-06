@@ -7,6 +7,7 @@ public class DropsItems : MonoBehaviour
     public GameObject[] droppableItems;
     public ParticleSystem deathParticleSystem;
     private GameObject chosenItem;
+    private Hurtable hurt;
 
     void Start()
     {

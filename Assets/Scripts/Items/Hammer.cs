@@ -26,11 +26,11 @@ public class Hammer : MonoBehaviour, IItem
                 return;
             }
 
-            //var hurt = col.GetComponent<Hurtable>();
-            //if (hurt != null)
-            //{
-            //    hurt.TakeDamage(damage);
-            //}
+            var hurt = col.GetComponentInParent<Hurtable>();
+            if (hurt != null)
+            {
+                hurt.TakeDamage(damage);
+            }
         }
     }
 
@@ -42,6 +42,7 @@ public class Hammer : MonoBehaviour, IItem
         Collider[] cols = Physics.OverlapSphere(owner.transform.position, radius);
         foreach (Collider col in cols)
         {
+            print(col.gameObject.name);
             //If we are in range of an enemy
             if (col && col.tag == "enemy")
             {
@@ -52,6 +53,7 @@ public class Hammer : MonoBehaviour, IItem
                 //If enemy is in front of player, deal damage
                 if (Vector3.Dot(forward, toOther) > 0)
                 {
+                    print(col.gameObject.name);
                     var hurtable = col.GetComponent<Hurtable>();
                     if (hurtable != null)
                     {
