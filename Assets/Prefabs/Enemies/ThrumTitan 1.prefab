@@ -154,9 +154,10 @@ GameObject:
   - 95: {fileID: 9598406}
   - 114: {fileID: 11431586}
   - 114: {fileID: 11480790}
+  - 114: {fileID: 11461152}
   m_Layer: 0
   m_Name: ThrumTitan 1
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -370,7 +371,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 160262}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.4460001, y: 0, z: 2.81200004}
+  m_LocalPosition: {x: -10.1999998, y: 4.55532822e-20, z: -2.57999992}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 449222}
@@ -532,6 +533,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sightRange: 20
   rotationSpeed: 1
+--- !u!114 &11461152
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 160262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a55f6fa78e05454b9cb45bf3dbcac05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fullHealth: 10
+  damageFlashSeconds: .5
+  damagedMaterial: {fileID: 2100000, guid: 42e2e97664c626740a401bcf9e30de75, type: 2}
 --- !u!114 &11480264
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -555,6 +570,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a385c08bf3b421d4ab141bd31ec4e706, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  activateOnDeath: {fileID: 0}
   punchDamage: 3
   minFire: 3
   maxFire: 9
