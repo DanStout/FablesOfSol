@@ -25,6 +25,7 @@ public class DamagingParticleSystem : MonoBehaviour
         }
     }
 
+
     public void Deactivate()
     {
         if (active)
@@ -33,4 +34,9 @@ public class DamagingParticleSystem : MonoBehaviour
             active = false;
         }
     }
+
+	public void PlayOnce()
+	{
+			system.Play();
+	}
 }

@@ -29,7 +29,9 @@ public class IcemanMother : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(ice.gameObject.activeInHierarchy == true && !routineRunning){
-			StartCoroutine(attackPhase());
+			if(Vector3.Distance (transform.position, player.transform.position) < 12){
+				StartCoroutine(attackPhase());
+			}
 		}
 	}
 
@@ -59,7 +61,7 @@ public class IcemanMother : MonoBehaviour {
 	}
 
 	IEnumerator afterAttackPhase(){
-
+		transform.GetComponentInChildren<DamagingParticleSystem> ().PlayOnce ();
 		yield return new WaitForSeconds (3);
 		gameObject.GetComponent<FacesPlayer> ().enabled = true;
 		yield return new WaitForSeconds (5);
