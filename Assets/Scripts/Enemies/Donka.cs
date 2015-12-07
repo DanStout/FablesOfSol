@@ -28,7 +28,8 @@ public class Donka : MonoBehaviour, IEnemy
         faces.Die();
         drops.Die();
 
-        activateOnDeath.SetActive(true);
+        if (activateOnDeath != null)
+            activateOnDeath.SetActive(true);
     }
 
     void OnDisable()

@@ -5,7 +5,7 @@ public class RunAudioBehaviour : StateMachineBehaviour
 {
     private IRunAnimationTransition run;
 
-    public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         if (run == null)
         {
@@ -15,7 +15,7 @@ public class RunAudioBehaviour : StateMachineBehaviour
         run.OnRunStateEnter();
     }
 
-    public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         run.OnRunStateExit();
     }

@@ -858,6 +858,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyAfterSeconds: 2
+  explosionSound: {fileID: 8300000, guid: 4f22166b6ee498d47aeb66b25768c997, type: 3}
   droppableItems:
   - {fileID: 132876, guid: 1c383c555d38a584b95c20cedb8c180e, type: 2}
   deathParticleSystem: {fileID: 19876540, guid: f8b43db4604bd6241bc3b35b429421b3,
@@ -887,7 +888,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b15e18cb435ae6847bf440a9d4534846, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDamage: 5
+  attackDamage: 3
   secondsBetweenAttacks: 1
   attacksWithinRange: 2
 --- !u!114 &11421702

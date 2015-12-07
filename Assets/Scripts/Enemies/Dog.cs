@@ -19,8 +19,6 @@ public class Dog : MonoBehaviour, IEnemy, IRunAnimationTransition
     private Hurtable hurt;
     private AttacksPlayer attacks;
     private AudioSource audioSrc;
-    private bool playingRunAnim = false;
-
 
     void Start()
     {

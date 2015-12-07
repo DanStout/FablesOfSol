@@ -22,6 +22,7 @@ TagManager:
   - CrononTeleporter2
   - Ice
   - Hammer
+  - SceneManager
   layers:
   - Default
   - TransparentFX
