@@ -11,6 +11,9 @@ public class Hurtable : MonoBehaviour
     private Material originalMaterial;
     private SkinnedMeshRenderer meshRend;
 
+    public delegate void HurtHandler();
+    public event HurtHandler onHurt;
+
     public delegate void DeathHandler();
     public event DeathHandler onDeath;
 
@@ -26,8 +29,8 @@ public class Hurtable : MonoBehaviour
         if (meshRend != null)
         {
             meshRend.material = originalMaterial;
-            Destroy(this);
         }
+        Destroy(this);
     }
 
     public void TakeDamage(float amount)
@@ -40,6 +43,10 @@ public class Hurtable : MonoBehaviour
                 print("No event attached on {0}'s death..".FormatWith(gameObject.name));
             else
                 onDeath();
+        }
+        else if (onHurt != null)
+        {
+            onHurt();
         }
     }
 

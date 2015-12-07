@@ -8,8 +8,10 @@ public class Dog : MonoBehaviour, IEnemy, IRunAnimationTransition
 
     public AudioClip soundDie;
     public AudioClip soundHowl;
-    public AudioClip soundRun;
     public AudioClip soundAttack;
+    public AudioClip soundHurt;
+
+    public AudioSource runAudioSource;
 
     private Animator anim;
 
@@ -28,12 +30,18 @@ public class Dog : MonoBehaviour, IEnemy, IRunAnimationTransition
         faces = GetComponent<FacesPlayer>();
         hurt = GetComponent<Hurtable>();
         hurt.onDeath += hurt_onDeath;
+        hurt.onHurt += hurt_onHurt;
         audioSrc = GetComponent<AudioSource>();
 
         attacks = GetComponent<AttacksPlayer>();
         attacks.onPlayerDeath += attacks_onPlayerDeath;
 
         tag = "enemy"; //For items to detect and deliver damage
+    }
+
+    void hurt_onHurt()
+    {
+        audioSrc.PlayOneShot(soundHurt);
     }
 
     void Update()
@@ -44,6 +52,7 @@ public class Dog : MonoBehaviour, IEnemy, IRunAnimationTransition
     void attacks_onPlayerDeath()
     {
         anim.SetTrigger("howl");
+        audioSrc.PlayOneShot(soundHowl);
     }
 
     void OnDisable()
@@ -55,6 +64,7 @@ public class Dog : MonoBehaviour, IEnemy, IRunAnimationTransition
     void hurt_onDeath()
     {
         anim.SetTrigger("die");
+        audioSrc.PlayOneShot(soundDie);
 
         chaser.Die();
         faces.Die();
@@ -68,16 +78,6 @@ public class Dog : MonoBehaviour, IEnemy, IRunAnimationTransition
         return "flesh";
     }
 
-    public void OnDieAnimation()
-    {
-        audioSrc.PlayOneShot(soundDie);
-    }
-
-    public void OnHowlAnimation()
-    {
-        audioSrc.PlayOneShot(soundHowl);
-    }
-
     public void OnAttackAnimation()
     {
         audioSrc.PlayOneShot(soundAttack);
@@ -85,13 +85,11 @@ public class Dog : MonoBehaviour, IEnemy, IRunAnimationTransition
 
     public void OnRunStateEnter()
     {
-        audioSrc.clip = soundRun;
-        audioSrc.Play();
-        audioSrc.loop = true;
+        runAudioSource.Play();
     }
 
     public void OnRunStateExit()
     {
-        audioSrc.Stop();
+        runAudioSource.Stop();
     }
 }

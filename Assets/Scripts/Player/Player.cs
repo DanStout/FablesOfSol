@@ -1,9 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class DieBehaviour : StateMachineBehaviour
+public class Player : MonoBehaviour
 {
-    public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+	void Start()
+	{
+	
+	}
+	
+	void Update()
+	{
+	
+	}
+
+    public void OnDeathAnimationEnd()
     {
         var gameScreen = GameObject.FindGameObjectWithTag("GameOverScreen").GetComponent<GameOverScreen>();
         gameScreen.Show();

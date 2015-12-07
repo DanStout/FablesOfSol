@@ -46,7 +46,8 @@ public class Titan : MonoBehaviour
     public void DeathAnimationDone()
     {
         drops.Die();
-        activateOnDeath.SetActive(true);
+        if (activateOnDeath != null)
+            activateOnDeath.SetActive(true);
     }
 	
 	void Update()
