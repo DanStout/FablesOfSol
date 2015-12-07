@@ -55,7 +55,7 @@ public class PlayerLife : MonoBehaviour
         healthUI.UpdateHealth(currentHealth);
     }
 
-    private void Die()
+    public void Die()
     {
         anim.SetTrigger("die");
         playMove.Die();

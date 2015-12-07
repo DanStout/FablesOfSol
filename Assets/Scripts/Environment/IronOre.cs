@@ -15,6 +15,6 @@ public class IronOre : MonoBehaviour, IMagnetic {
 
 	public bool isHeavierThanPlayer()
 	{
-		return true;
+		return false;
 	}
 }

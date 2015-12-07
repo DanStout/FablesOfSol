@@ -1,23 +1,23 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
-public class MagnetGun : MonoBehaviour, IItem {
-
+public class SonicResonator : MonoBehaviour, IItem {
+	
 	private GameObject owner;
 	private bool isOn;
 	private ParticleSystem particleSys; 
-
-
+	
+	
 	// Use this for initialization
 	void Start(){
-
+		
 		owner = GameObject.FindGameObjectWithTag("Player");
 		isOn = false;
-
+		
 		ParticleSystem[] systems = owner.GetComponentsInChildren<ParticleSystem>();
 		foreach(ParticleSystem p in systems)
 		{
-			if(p.gameObject.name == "MagnetGunParticle")
+			if(p.gameObject.name == "SonicParticle")
 				particleSys = p;
 		}
 	}
@@ -31,30 +31,18 @@ public class MagnetGun : MonoBehaviour, IItem {
 			RaycastHit hit;
 			Vector3 fwd = owner.transform.TransformDirection(Vector3.forward);
 			Vector3 pos = new Vector3(0, 1, 0);
-
-
-			if(Physics.Raycast(owner.transform.position + pos, fwd, out hit, 20))
+			
+			if(Physics.Raycast(owner.transform.position + pos, fwd, out hit, 10))
 			{
-				IMagnetic mag = hit.collider.gameObject.GetComponentInChildren<IMagnetic>();
-				if(mag != null)
+				ISonic sonic = hit.collider.gameObject.GetComponentInChildren<ISonic>();
+				if(sonic != null)
 				{
-					Vector3 cur = hit.collider.transform.position;
-					if(Vector3.Distance(cur, owner.transform.position) > 3)
-					{
-						if(!mag.isHeavierThanPlayer())
-						{
-							hit.collider.transform.position =
-								Vector3.MoveTowards(cur, owner.transform.position, .15f);
-						}
-						else {
-							owner.transform.position = Vector3.MoveTowards(owner.transform.position, cur, .15f);
-						}
-					}
+					sonic.resonate();
 				}
 			}
 		}
 	}
-
+	
 	public void Use()
 	{
 		print ("Use!");
@@ -70,9 +58,9 @@ public class MagnetGun : MonoBehaviour, IItem {
 			particleSys.enableEmission = false;
 		}
 	}
-
+	
 	public string getName()
 	{
-		return "Magnet Gun";
+		return "Sonic Resonator";
 	}
 }
