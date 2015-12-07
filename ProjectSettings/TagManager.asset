@@ -22,9 +22,6 @@ TagManager:
   - Hammer
   - SceneManager
   - Iceman
-  - DialogText
-  - NpcNameText
-  - IceSurface
   layers:
   - Default
   - TransparentFX
