@@ -1,13 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Hammer : MonoBehaviour, IItem
+public class Hammer : BaseItem //, IItem
 {
     public float radius = 1;
     public float damage = 5;
 
     private GameObject owner;
-    //private bool attacking = false;
+    //private bool attacking = false;   
 
     // Use this for initialization
     void Start()
@@ -34,7 +34,7 @@ public class Hammer : MonoBehaviour, IItem
         }
     }
 
-    public void Use()
+    public override void Use()
     {
         //Trigger player animation
 
@@ -69,10 +69,5 @@ public class Hammer : MonoBehaviour, IItem
             }
         }
 
-    }
-
-    public string getName()
-    {
-        return "Hammer";
     }
 }
