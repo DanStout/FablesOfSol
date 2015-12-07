@@ -17,6 +17,7 @@ public class PlayerAudio : MonoBehaviour
 
     public void OnFootDown()
     {
+        print("footdown");
         var index = lastSoundIndex;
 
         if (footstepSounds.Length > 1)

@@ -58,7 +58,7 @@ public abstract class BaseOperable : MonoBehaviour
         }
     }
 
-    void OnGUI()
+    protected virtual void OnGUI()
     {
         if (isWithinRange)
         {

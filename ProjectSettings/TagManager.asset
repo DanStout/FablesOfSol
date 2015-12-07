@@ -7,8 +7,6 @@ TagManager:
   - enemy
   - BauLabEntrance
   - Dialog
-  - DialogText
-  - NpcNameText
   - PlayerAndCamera
   - GameManager
   - GameOverScreen
@@ -23,6 +21,7 @@ TagManager:
   - Ice
   - Hammer
   - SceneManager
+  - Iceman
   layers:
   - Default
   - TransparentFX
