@@ -3,9 +3,14 @@ guid: 5ca99170bd118bca11002b7b44295342
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
     2800000: __AssetImporterPreview
+    3300000: //RootNode
     4300000: Bush1
     4300002: Bush7
+    11100000: //RootNode
   materials:
     importMaterials: 1
     materialName: 3
@@ -29,7 +34,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: .200000003
+    globalScale: .5
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
