@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class MagnetGun : MonoBehaviour, IItem{
+public class MagnetGun : BaseItem {
 
 	private GameObject owner;
 	private bool isOn;
@@ -9,7 +9,7 @@ public class MagnetGun : MonoBehaviour, IItem{
 
 
 	// Use this for initialization
-	void Start(){
+	override void Start(){
 
 		owner = GameObject.FindGameObjectWithTag("Player");
 		isOn = false;
@@ -23,7 +23,7 @@ public class MagnetGun : MonoBehaviour, IItem{
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	override void Update () {
 		
 		//Check if the gun is on
 		if(isOn)
