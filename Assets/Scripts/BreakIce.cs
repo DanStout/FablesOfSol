@@ -3,7 +3,6 @@ using System.Collections;
 
 public class BreakIce : MonoBehaviour {
 
-	private int hammerHits;
 	private Animator parentAnim;
 	public GameObject damageSphere; 
 	
@@ -14,11 +13,13 @@ public class BreakIce : MonoBehaviour {
 
 	IEnumerator brokenIce(){
 		damageSphere.SetActive (true);
-		gameObject.SetActive(false);
+		gameObject.GetComponent<SkinnedMeshRenderer>().enabled = false;
+		gameObject.GetComponent<BoxCollider>().enabled = false;
 		parentAnim.SetTrigger("hit");
-			yield return new WaitForSeconds (5);
+		yield return new WaitForSeconds (8);
 		damageSphere.SetActive (false);
-		gameObject.SetActive(true);
+		gameObject.GetComponent<SkinnedMeshRenderer>().enabled = true;
+		gameObject.GetComponent<BoxCollider>().enabled = true;
 
 	}
 

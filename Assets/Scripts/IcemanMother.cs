@@ -55,7 +55,7 @@ public class IcemanMother : MonoBehaviour {
 			yield return null;
 		}
 		dist = Vector3.Distance (transform.position, playerLoc);
-		while(dist > 2){
+		while(dist > 0.1){
 			transform.position = Vector3.SmoothDamp (transform.position, playerLoc, ref velo, 0.3F);
 			dist = Vector3.Distance (transform.position, playerLoc);
 			yield return null;
