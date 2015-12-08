@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Titan : MonoBehaviour
+public class Titan : MonoBehaviour, IMagnetic
 {
     public GameObject activateOnDeath;
     public float punchDamage = 3;
@@ -18,6 +18,10 @@ public class Titan : MonoBehaviour
     private bool wasInPunchRange = false;
     private bool leftHandLast = true;
     private bool isDead = false;
+
+	private bool thrumSpawned = false;
+	private bool spawnedThrumDestroyed = false;
+	private GameObject spawnedThrum;
 
 	void Start()
 	{
@@ -52,6 +56,9 @@ public class Titan : MonoBehaviour
 	
 	void Update()
 	{
+		//Check if the spawned thrum has been initiated
+			//Check if the spawned thrum still exists
+				//If not, resume fighting
         if (isDead) return;
 
         var playerPos = playerTrans.position;
@@ -104,4 +111,26 @@ public class Titan : MonoBehaviour
             anim.SetTrigger("leftPunch");
         }
     }
+
+	//Method used by sonic resonator to pull a thrum
+	public void pullThrum()
+	{
+		print ("PULL THRUM");
+		//instantiate a thrum and store this in a variable
+		spawnedThrum = (GameObject)Instantiate (Resources.Load("Thrum"));
+		spawnedThrum.transform.position = this.transform.position;
+
+		//pause titan attacking
+	}
+
+	//Called from update when the spawned thrum has been destroyed
+	private void resumeAttack()
+	{
+
+	}
+
+	public bool isHeavierThanPlayer()
+	{
+		return true;
+	}
 }

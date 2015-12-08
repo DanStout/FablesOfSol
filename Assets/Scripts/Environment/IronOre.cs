@@ -17,4 +17,6 @@ public class IronOre : MonoBehaviour, IMagnetic {
 	{
 		return false;
 	}
+
+
 }
