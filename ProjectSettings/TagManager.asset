@@ -25,6 +25,9 @@ TagManager:
   - DialogText
   - NpcNameText
   - IceSurface
+  - Minion1
+  - Minion2
+  - Minion3
   layers:
   - Default
   - TransparentFX

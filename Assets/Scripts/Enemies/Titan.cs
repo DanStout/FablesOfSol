@@ -1,12 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Titan : MonoBehaviour
+public class Titan : MonoBehaviour, IMagnetic
 {
     public GameObject activateOnDeath;
     public float punchDamage = 3;
     public float minFire = 1;
     public float maxFire = 2;
+
 
     private DamagingParticleSystem fireBreath;
     private Transform playerTrans;
@@ -18,6 +19,11 @@ public class Titan : MonoBehaviour
     private bool wasInPunchRange = false;
     private bool leftHandLast = true;
     private bool isDead = false;
+
+	private bool isThrumSpawned = false;
+	private int numOfSpawns;
+	public GameObject curThrum;
+
 
 	void Start()
 	{
@@ -52,39 +58,49 @@ public class Titan : MonoBehaviour
 	
 	void Update()
 	{
-        if (isDead) return;
+		if (isDead) return;
 
-        var playerPos = playerTrans.position;
-        var playerDist = Vector3.Distance(transform.position, playerPos);
+		//Check if the spawned thrum has been initiated
+		if (isThrumSpawned && curThrum == null)
+		    print ("Spawned thrum has died");
 
-        if (playerDist >= minFire && playerDist <= maxFire)
-        {
-            anim.SetBool("isBreathingFire", true);
-            fireBreath.Activate();
-        }
-        else
-        {
-            fireBreath.Deactivate();
-            anim.SetBool("isBreathingFire", false);
+			//Check if the spawned thrum still exists
+				//If not, resume fighting
+		if(!isThrumSpawned)
+		{
+	        
+	        var playerPos = playerTrans.position;
+	        var playerDist = Vector3.Distance(transform.position, playerPos);
 
-            isInPunchRange = (playerDist < minFire);
+	        if (playerDist >= minFire && playerDist <= maxFire)
+	        {
+	            anim.SetBool("isBreathingFire", true);
+	            fireBreath.Activate();
+	        }
+	        else
+	        {
+	            fireBreath.Deactivate();
+	            anim.SetBool("isBreathingFire", false);
 
-            if (isInPunchRange && !wasInPunchRange)
-            {
-                wasInPunchRange = true;
+	            isInPunchRange = (playerDist < minFire);
 
-                if (leftHandLast)
-                {
-                    anim.SetTrigger("rightPunch");
-                }
-                else
-                {
-                    anim.SetTrigger("leftPunch");
-                }
-            }
-        }
+	            if (isInPunchRange && !wasInPunchRange)
+	            {
+	                wasInPunchRange = true;
 
-        wasInPunchRange = isInPunchRange;
+	                if (leftHandLast)
+	                {
+	                    anim.SetTrigger("rightPunch");
+	                }
+	                else
+	                {
+	                    anim.SetTrigger("leftPunch");
+	                }
+	            }
+	        }
+
+	        wasInPunchRange = isInPunchRange;
+		}
 	}
 
     public void LeftHandAnimationDone()
@@ -104,4 +120,34 @@ public class Titan : MonoBehaviour
             anim.SetTrigger("leftPunch");
         }
     }
+
+	//Method used by sonic resonator to pull a thrum
+	public void pullThrum()
+	{
+		print ("PULL THRUM");
+
+		//instantiate a thrum and store this in a variable
+		if(!isThrumSpawned && numOfSpawns != 3)
+		{
+			fireBreath.Deactivate();
+			anim.SetBool("isBreathingFire", false);
+
+			numOfSpawns ++;
+			isThrumSpawned = true;
+
+			curThrum = (GameObject)Instantiate(curThrum, this.transform.FindChild("SpawnPoint").transform.position, Quaternion.identity);
+
+		}
+	}
+
+	//Called from update when the spawned thrum has been destroyed
+	private void resumeAttack()
+	{
+
+	}
+
+	public bool isHeavierThanPlayer()
+	{
+		return true;
+	}
 }

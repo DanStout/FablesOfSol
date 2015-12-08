@@ -12,11 +12,6 @@ public class HeartItem : BaseItem
         playLife = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerLife>();
     }
 
-    //public override string Name
-    //{
-    //    get { return "Heart"; }
-    //}
-
     public override void Use()
     {
         playLife.Heal(healAmount);

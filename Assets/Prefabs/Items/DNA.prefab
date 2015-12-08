@@ -44,6 +44,7 @@ GameObject:
   - 4: {fileID: 445618}
   - 114: {fileID: 11413432}
   - 136: {fileID: 13657362}
+  - 114: {fileID: 11496362}
   m_Layer: 0
   m_Name: DNA
   m_TagString: Untagged
@@ -114,7 +115,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 132876}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -25.5098877, y: 2.55999994, z: -8.48926163}
+  m_LocalPosition: {x: -1.98000002, y: 1.42999995, z: 2.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 497500}
@@ -267,6 +268,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2eb870a25d49bf047b523aa9da697644, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryTile: {fileID: 21300000, guid: efcd31dc02493b64ab970a310d5ee7b2, type: 3}
+--- !u!114 &11496362
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 132876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c5342368ef53e646a08b99db5f8872e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rotate: {x: 0, y: 150, z: 0}

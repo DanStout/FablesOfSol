@@ -37,6 +37,7 @@ public class Thrum : MonoBehaviour
         randMov.Die();
         drops.Die();
         enabled = false;
+		Destroy (this);
     }
 
     void Update()

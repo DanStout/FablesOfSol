@@ -5,61 +5,89 @@ using UnityEngine.UI;
 
 public class PlayerInventory : MonoBehaviour
 {
-    //Variables to store current items and active items
-    //public List<IItem> inventory;
-    //private IItem activeItem;
-    public GameObject buttonPrefab;
+    [SerializeField]
+    private GameObject buttonPrefab;
+
+    [SerializeField]
+    private GameObject Hammer;
+
+    [SerializeField]
+    private GameObject MagnetGun;
+
+    [SerializeField]
+    private GameObject SonicResonator;
 
     private BaseItem activeItem;
-    private GameObject UI;
+    private GameObject buttonGrid;
     private List<BaseItem> inventory;
+
+    public enum WeaponType
+    {
+        Hammer,
+        MagnetGun,
+        SonicResonator
+    }
 
     void Start()
     {
-        UI = GameObject.FindGameObjectWithTag("InventoryUI");
+        buttonGrid = GameObject.FindGameObjectWithTag("InventoryUI");
         inventory = new List<BaseItem>();
-        Hammer hammer = gameObject.AddComponent<Hammer>();
-        PickupItem(hammer);
-    }
-
-    void OnControllerColliderHit(ControllerColliderHit hit)
-    {
-        var item = hit.gameObject.GetComponent<BaseItem>();
-        if (item != null)
-        {
-            if (item.IsDropped)
-            {
-                PickupItem(item);
-                Destroy(hit.gameObject);
-            }
-        }
     }
 
     public void PickupItem(BaseItem item)
     {
-        var button = Instantiate<GameObject>(buttonPrefab);
-        var buttonScript = button.GetComponent<Button>();
+        var buttonObj = Instantiate<GameObject>(buttonPrefab);
+        var addedItem = buttonObj.AddComponent(item.GetType()) as BaseItem;
+        buttonObj.transform.SetParent(buttonGrid.transform);
+
+        var image = buttonObj.transform.FindChild("Image").GetComponent<Image>();
+        image.sprite = item.inventoryTile;
+
+        var buttonScript = buttonObj.GetComponent<Button>();
         buttonScript.onClick.AddListener(() =>
         {
-            activeItem = buttonScript.GetComponent<BaseItem>();
+            var clickedItem = buttonScript.GetComponent<BaseItem>();
+
+            if (!EquipIfWeapon(clickedItem))
+                clickedItem.Use();
         });
 
-        button.AddComponent(item.GetType());
-        button.transform.SetParent(UI.transform);
-        inventory.Add(item);
+        inventory.Add(addedItem);
+        EquipIfWeapon(addedItem);
+    }
 
-        if (activeItem == null)
+
+    private bool EquipIfWeapon(BaseItem item)
+    {
+        var pickedupWeapon = item as Weapon;
+        if (pickedupWeapon != null)
         {
-            activeItem = item;
+            pickedupWeapon.Equip();
+            activeItem = pickedupWeapon;
+            return true;
+        }
+        return false;
+    }
+
+    public bool UseItem()
+    {
+        if (activeItem != null)
+        {
+            activeItem.Use();
+            return true;
+        }
+        else
+        {
+            print("Nothing equipped!");
+            return false;
         }
     }
 
-    //Used by attack script to trigger the active item
-    public void useItem()
+    public void Equip(WeaponType weap)
     {
-        if (activeItem != null)
-            activeItem.Use();
-        else
-            print("Nothing equipped!");
+        Hammer.SetActive(weap == WeaponType.Hammer);
+        MagnetGun.SetActive(weap == WeaponType.MagnetGun);
+        SonicResonator.SetActive(weap == WeaponType.SonicResonator);
     }
+
 }
