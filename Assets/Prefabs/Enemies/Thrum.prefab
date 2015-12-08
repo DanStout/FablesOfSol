@@ -91,7 +91,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 198514}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 45.7563477, y: .75, z: -69.9291687}
+  m_LocalPosition: {x: 7.4000001, y: .545000017, z: -2.4000001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 478990}
@@ -206,7 +206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyAfterSeconds: 2
-  explosionSound: {fileID: 0}
+  explosionSound: {fileID: 8300000, guid: 4f22166b6ee498d47aeb66b25768c997, type: 3}
   droppableItems:
   - {fileID: 179620, guid: 93edd76634863b142bd5d12b27999ff2, type: 2}
   deathParticleSystem: {fileID: 19876540, guid: f8b43db4604bd6241bc3b35b429421b3,

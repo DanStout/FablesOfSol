@@ -15,6 +15,7 @@ public class Thrum : MonoBehaviour
     private Animator anim;
     private DropsItems drops;
     private Hurtable hurt;
+    private bool isDead = false;
 
     void Start()
     {
@@ -23,6 +24,7 @@ public class Thrum : MonoBehaviour
         anim = GetComponent<Animator>();
         randMov = GetComponent<MovesRandomly>();
         drops = GetComponent<DropsItems>();
+
         hurt = GetComponent<Hurtable>();
         hurt.onDeath += hurt_onDeath;
     }
@@ -34,13 +36,15 @@ public class Thrum : MonoBehaviour
 
     void hurt_onDeath()
     {
-        randMov.Die();
+        isDead = true;
         drops.Die();
-		Destroy (this.transform.gameObject);
+        randMov.Die();
     }
 
     void Update()
     {
+        if (isDead) return;
+
         var playerPos = playerTrans.position;
         var playerDist = Vector3.Distance(playerPos, transform.position);
         if (playerDist <= chaseRange)

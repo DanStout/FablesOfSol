@@ -23,9 +23,10 @@ public class Titan : MonoBehaviour, IMagnetic
 	private bool isThrumSpawned = false;
 	private int numOfSpawns;
 
-	public GameObject thrum1;
-	public GameObject thrum2;
-	public GameObject thrum3;
+    public GameObject thrumPrefab;
+    //public GameObject thrum1;
+    //public GameObject thrum2;
+    //public GameObject thrum3;
 
 	private GameObject curThrum;
 
@@ -148,12 +149,7 @@ public class Titan : MonoBehaviour, IMagnetic
 			numOfSpawns ++;
 			isThrumSpawned = true;
 
-			if(numOfSpawns == 1)
-				curThrum = (GameObject)Instantiate(thrum1, this.transform.FindChild("SpawnPoint").transform.position, Quaternion.identity);
-			else if (numOfSpawns == 2)
-				curThrum = (GameObject)Instantiate(thrum2, this.transform.FindChild("SpawnPoint").transform.position, Quaternion.identity);
-			else if (numOfSpawns == 3)
-				curThrum = (GameObject)Instantiate(thrum3, this.transform.FindChild("SpawnPoint").transform.position, Quaternion.identity);
+            curThrum = (GameObject) Instantiate(thrumPrefab, this.transform.FindChild("SpawnPoint").transform.position, Quaternion.identity);
 
 		}
 	}
