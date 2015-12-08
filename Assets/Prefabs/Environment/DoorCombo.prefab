@@ -190,6 +190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ActionText: Toggle Door
   textBoxPadding: 10
+  reactOutsideDistance: 0
   otherDoors: []
   ownDoor: {fileID: 11482802}
 --- !u!114 &11482802

@@ -156,6 +156,48 @@ MeshCollider:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 0e7ff121ecc501841af549adac44a96c, type: 3}
   m_PrefabInternal: {fileID: 6967061}
+--- !u!1001 &8296274
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 440734, guid: 3b5d0895012da11429cc736460e40665, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440734, guid: 3b5d0895012da11429cc736460e40665, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440734, guid: 3b5d0895012da11429cc736460e40665, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440734, guid: 3b5d0895012da11429cc736460e40665, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440734, guid: 3b5d0895012da11429cc736460e40665, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440734, guid: 3b5d0895012da11429cc736460e40665, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440734, guid: 3b5d0895012da11429cc736460e40665, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 440734, guid: 3b5d0895012da11429cc736460e40665, type: 2}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 3b5d0895012da11429cc736460e40665, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &62183457
 Prefab:
   m_ObjectHideFlags: 0

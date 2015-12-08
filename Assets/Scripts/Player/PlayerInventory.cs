@@ -33,7 +33,7 @@ public class PlayerInventory : MonoBehaviour
         }
     }
 
-    public Dictionary<string, ItemEntry> Items { get; set; }
+    private static Dictionary<string, BaseItem> Items { get; set; }
 
     public enum WeaponType
     {
@@ -47,9 +47,13 @@ public class PlayerInventory : MonoBehaviour
         buttonGrid = GameObject.FindGameObjectWithTag("InventoryUI");
         if (inventory == null)
             inventory = new List<BaseItem>();
+        if (Items == null)
+            Items = new Dictionary<string, BaseItem>();
 
-        foreach (var item in inventory)
-            print(item);
+        foreach (var item in Items)
+        {
+            AddButtonForItem(item.Value);
+        }
     }
 
     /// <summary>
@@ -58,37 +62,45 @@ public class PlayerInventory : MonoBehaviour
     /// <param name="item">The script to pick up.</param>
     public void PickupItem(BaseItem item)
     {
-        print(item);
-        //if (Items.ContainsKey(item.Name))
-        //{
-        //    Items[item.Name].Quantity++;
-        //}
-        //else
-        //{
-        //    Items[item.Name] = new ItemEntry{Item = item.}
-        //}
-        
-        var buttonObj = Instantiate<GameObject>(buttonPrefab);
-        var addedItem = buttonObj.AddComponent(item.GetType()) as BaseItem;
-        buttonObj.transform.SetParent(buttonGrid.transform);
-
-        var image = buttonObj.transform.FindChild("Image").GetComponent<Image>();
-        image.sprite = item.inventoryTile;
-
-        var buttonScript = buttonObj.GetComponent<Button>();
-        buttonScript.onClick.AddListener(() =>
+        if (Items.ContainsKey(item.Name))
         {
-            var clickedItem = buttonScript.GetComponent<BaseItem>();
+            Items[item.Name].Quantity++;
+        }
+        else
+        {
+            var savedItem = GameManager.GetInstance().SaveItem(item);
+            AddButtonForItem(savedItem);
 
-            if (!EquipIfWeapon(clickedItem))
-                clickedItem.Use();
-        });
+            Items[savedItem.Name] = savedItem;
+            savedItem.Quantity = 1;
 
-        inventory.Add(addedItem);
-        EquipIfWeapon(addedItem);
+            if (activeItem == null)
+                EquipIfWeapon(savedItem);
+        }
+
     }
 
+    public void ItemButtonClicked(string itemName)
+    {
+        var storedItem = Items[itemName];
+        if (!EquipIfWeapon(storedItem))
+            storedItem.Use();
+    }
 
+    private void AddButtonForItem(BaseItem item)
+    {
+        var buttonObj = Instantiate<GameObject>(buttonPrefab);
+        buttonObj.transform.SetParent(buttonGrid.transform);
+        var invBtn = buttonObj.GetComponent<InventoryButton>();
+        invBtn.SetSprite(item.inventoryTile);
+        invBtn.ItemName = item.Name;
+    }
+
+    /// <summary>
+    /// Equips a weapon if it is an item
+    /// </summary>
+    /// <param name="item">The item</param>
+    /// <returns>Whether this item was equipped</returns>
     private bool EquipIfWeapon(BaseItem item)
     {
         var pickedupWeapon = item as Weapon;

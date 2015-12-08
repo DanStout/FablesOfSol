@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-
 /// <summary>
 /// Handles any information which needs to be retained between scenes
 /// </summary>
 public class GameManager : MonoBehaviour
 {
+    public GameObject itemScriptHolder;
     private static GameManager mgr;
     private static string _redirectTag;
     private static float originalTimeScale;
@@ -42,6 +42,22 @@ public class GameManager : MonoBehaviour
             player.transform.position = obj.transform.position;
             _redirectTag = null;
         }
+    }
+
+    /// <summary>
+    /// Persists an item script so it'll be retained across scenes
+    /// </summary>
+    /// <param name="item">The item script to retain. (The original will be deleted when its gameobject is deleted)</param>
+    public BaseItem SaveItem(BaseItem item)
+    {
+        var savedItem = itemScriptHolder.AddComponent(item.GetType()) as BaseItem;
+        savedItem.inventoryTile = item.inventoryTile;
+        return savedItem;
+    }
+
+    public static GameManager GetInstance()
+    {
+        return mgr;
     }
 
     public static void Pause()
