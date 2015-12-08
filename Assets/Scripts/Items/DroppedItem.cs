@@ -19,6 +19,10 @@ public class DroppedItem : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
+<<<<<<< HEAD
+=======
+        print("Triggeded!");
+>>>>>>> 5c874fbcd44fe2e8a0e88c9c8658823f3cc96609
         var invent = col.GetComponent<PlayerInventory>();
         if (invent != null)
         {
