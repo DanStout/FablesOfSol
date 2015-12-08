@@ -7,6 +7,7 @@ public class Titan : MonoBehaviour, IMagnetic
     public float punchDamage = 3;
     public float minFire = 1;
     public float maxFire = 2;
+	public GameObject thrum; 
 
     private DamagingParticleSystem fireBreath;
     private Transform playerTrans;
@@ -116,11 +117,17 @@ public class Titan : MonoBehaviour, IMagnetic
 	public void pullThrum()
 	{
 		print ("PULL THRUM");
-		//instantiate a thrum and store this in a variable
-		spawnedThrum = (GameObject)Instantiate (Resources.Load("Thrum"));
-		spawnedThrum.transform.position = this.transform.position;
 
-		//pause titan attacking
+		//instantiate a thrum and store this in a variable
+		if(!thrumSpawned)
+		{
+			thrumSpawned = true;
+			spawnedThrum = (GameObject)Instantiate(thrum);
+			spawnedThrum.transform.position = this.transform.position;
+		}
+
+
+
 
 	}
 
