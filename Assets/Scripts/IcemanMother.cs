@@ -28,10 +28,14 @@ public class IcemanMother : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(ice.gameObject.activeInHierarchy == true && !routineRunning){
-			if(Vector3.Distance (transform.position, player.transform.position) < 12){
-				StartCoroutine(attackPhase());
+		if (ice.gameObject.activeInHierarchy == true && !routineRunning) {
+			if (Vector3.Distance (transform.position, player.transform.position) < 12) {
+				StartCoroutine (attackPhase ());
 			}
+		} else if (ice.gameObject.activeInHierarchy == false) {
+			//When the ice has been broken, prevent ice mother from facing the player
+			gameObject.GetComponent<FacesPlayer> ().enabled = false;
+
 		}
 	}
 
@@ -73,4 +77,5 @@ public class IcemanMother : MonoBehaviour {
 	{
 		return "flesh";
 	}
+
 }

@@ -1963,6 +1963,10 @@ Prefab:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 148998, guid: ebaddb537c2380d4388ba36c1e94e497, type: 2}
+      propertyPath: m_Name
+      value: SonicParticle
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ebaddb537c2380d4388ba36c1e94e497, type: 2}
   m_IsPrefabParent: 0
@@ -3297,6 +3301,34 @@ Prefab:
     - target: {fileID: 413890, guid: 2abf8cf1d252179449e5e9c711733bcf, type: 2}
       propertyPath: m_LocalScale.x
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6587120, guid: 2abf8cf1d252179449e5e9c711733bcf, type: 2}
+      propertyPath: m_Size.x
+      value: 3.3499999
+      objectReference: {fileID: 0}
+    - target: {fileID: 6587120, guid: 2abf8cf1d252179449e5e9c711733bcf, type: 2}
+      propertyPath: m_Size.y
+      value: 3.23000002
+      objectReference: {fileID: 0}
+    - target: {fileID: 6587120, guid: 2abf8cf1d252179449e5e9c711733bcf, type: 2}
+      propertyPath: m_Center.y
+      value: -.209999993
+      objectReference: {fileID: 0}
+    - target: {fileID: 13591516, guid: 2abf8cf1d252179449e5e9c711733bcf, type: 2}
+      propertyPath: m_Radius
+      value: 1.25999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 13591516, guid: 2abf8cf1d252179449e5e9c711733bcf, type: 2}
+      propertyPath: m_Center.z
+      value: -3.32999992
+      objectReference: {fileID: 0}
+    - target: {fileID: 13591516, guid: 2abf8cf1d252179449e5e9c711733bcf, type: 2}
+      propertyPath: m_Center.y
+      value: -1.05999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 117458, guid: 2abf8cf1d252179449e5e9c711733bcf, type: 2}
+      propertyPath: m_TagString
+      value: enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2abf8cf1d252179449e5e9c711733bcf, type: 2}
