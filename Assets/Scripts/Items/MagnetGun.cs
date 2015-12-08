@@ -68,7 +68,6 @@ public class MagnetGun : Weapon
 
     public override void Use()
     {
-        print("Using magnet gun");
         //Spawn particle system
         if (particleSys != null && !isOn)
         {
@@ -107,16 +106,11 @@ public class MagnetGun : Weapon
     }
 
 
-    private void TurnOff()
+    public void TurnOff()
     {
         playerAudio.Stop();
         isOn = false;
         particleSys.enableEmission = false;
         anim.SetBool("gunAttack", false);
-    }
-
-    void OnDisable()
-    {
-        //TurnOff();
     }
 }
