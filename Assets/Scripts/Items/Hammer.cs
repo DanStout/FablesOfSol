@@ -25,7 +25,7 @@ public class Hammer : Weapon
     {
         anim.SetTrigger("attack");
         //Find all colliders in a given radius of the player
-        Collider[] cols = Physics.OverlapSphere(owner.transform.position, radius);
+        Collider[] cols = Physics.OverlapSphere(owner.transform.position + new Vector3(0, 1, 0), radius);
         foreach (Collider col in cols)
         {
 			print(col.name);
@@ -86,16 +86,6 @@ public class Hammer : Weapon
 
     }
 
-    //Used during hit to destroy thrum titan
-    private GameObject isParentTitan(GameObject g)
-    {
-        if (g.name == "ThrumTitan")
-            return g;
-        else if (g.transform.parent != null)
-            return isParentTitan(g.transform.parent.gameObject);
-        else
-            return null;
-    }
 
     public override void Equip()
     {
