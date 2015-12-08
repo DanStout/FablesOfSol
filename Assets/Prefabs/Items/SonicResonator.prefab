@@ -12,6 +12,7 @@ GameObject:
   - 23: {fileID: 2349686}
   - 135: {fileID: 13518862}
   - 114: {fileID: 11498936}
+  - 114: {fileID: 11465266}
   m_Layer: 0
   m_Name: SonicResonator
   m_TagString: Untagged
@@ -124,6 +125,18 @@ Light:
   m_ShadowRadius: 0
   m_ShadowAngle: 0
   m_AreaSize: {x: 1, y: 1}
+--- !u!114 &11465266
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 111992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c5342368ef53e646a08b99db5f8872e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotate: {x: 0, y: 150, z: 0}
 --- !u!114 &11498936
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -135,7 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27ffb4c254bb3de42a1c502d13101e51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventoryTile: {fileID: 0}
+  inventoryTile: {fileID: 21300000, guid: 6e2f0a6f8c92ebd4a93d706bffb32069, type: 3}
 --- !u!135 &13518862
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -70,7 +70,6 @@ public class Hammer : Weapon //, IItem
 
     public override void Equip()
     {
-        var hammer = owner.GetComponent<PlayerInventory>().Hammer;
-        hammer.SetActive(true);
+        owner.GetComponent<PlayerInventory>().Equip(PlayerInventory.WeaponType.Hammer);
     }
 }

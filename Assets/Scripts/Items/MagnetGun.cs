@@ -1,18 +1,20 @@
 using UnityEngine;
 using System.Collections;
 
-public class MagnetGun : BaseItem
+public class MagnetGun : Weapon
 {
     private GameObject owner;
-    private bool isOn;
+    private bool isOn = false;
     private ParticleSystem particleSys;
+    private Animator anim;
 
-    // Use this for initialization
-    void Start()
+    void Awake()
     {
         owner = GameObject.FindGameObjectWithTag("Player");
-        isOn = false;
+    }
 
+    void Start()
+    {
         ParticleSystem[] systems = owner.GetComponentsInChildren<ParticleSystem>();
         foreach (ParticleSystem p in systems)
         {
@@ -21,7 +23,6 @@ public class MagnetGun : BaseItem
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         //Check if the gun is on
@@ -89,5 +90,10 @@ public class MagnetGun : BaseItem
         }
 
         return false;
+    }
+
+    public override void Equip()
+    {
+        owner.GetComponent<PlayerInventory>().Equip(PlayerInventory.WeaponType.MagnetGun);
     }
 }

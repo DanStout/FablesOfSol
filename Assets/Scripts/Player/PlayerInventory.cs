@@ -5,14 +5,28 @@ using UnityEngine.UI;
 
 public class PlayerInventory : MonoBehaviour
 {
-    public GameObject buttonPrefab;
-    public GameObject Hammer;
-    public GameObject MagnetGun;
-    public GameObject SonicResonator;
+    [SerializeField]
+    private GameObject buttonPrefab;
+
+    [SerializeField]
+    private GameObject Hammer;
+
+    [SerializeField]
+    private GameObject MagnetGun;
+
+    [SerializeField]
+    private GameObject SonicResonator;
 
     private BaseItem activeItem;
     private GameObject buttonGrid;
     private List<BaseItem> inventory;
+
+    public enum WeaponType
+    {
+        Hammer,
+        MagnetGun,
+        SonicResonator
+    }
 
     void Start()
     {
@@ -67,4 +81,12 @@ public class PlayerInventory : MonoBehaviour
             return false;
         }
     }
+
+    public void Equip(WeaponType weap)
+    {
+        Hammer.SetActive(weap == WeaponType.Hammer);
+        MagnetGun.SetActive(weap == WeaponType.MagnetGun);
+        SonicResonator.SetActive(weap == WeaponType.SonicResonator);
+    }
+
 }

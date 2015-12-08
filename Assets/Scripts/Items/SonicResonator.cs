@@ -1,17 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SonicResonator : BaseItem
+public class SonicResonator : Weapon
 {
     private GameObject owner;
     private bool isOn;
     private ParticleSystem particleSys;
 
+    void Awake()
+    {
+        owner = GameObject.FindGameObjectWithTag("Player");
+    }
+
     // Use this for initialization
     void Start()
     {
-
-        owner = GameObject.FindGameObjectWithTag("Player");
         isOn = false;
 
         ParticleSystem[] systems = owner.GetComponentsInChildren<ParticleSystem>();
@@ -58,5 +61,10 @@ public class SonicResonator : BaseItem
             isOn = false;
             particleSys.enableEmission = false;
         }
+    }
+
+    public override void Equip()
+    {
+        owner.GetComponent<PlayerInventory>().Equip(PlayerInventory.WeaponType.SonicResonator);
     }
 }

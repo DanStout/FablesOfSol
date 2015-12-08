@@ -193,7 +193,9 @@ ModelImporter:
     7400008: RUN
     7400010: JUMPUP
     7400012: DEATH
-    7400014: GUN_ATTACK
+    7400014: GUN_UP
+    7400016: GUN_HOLD
+    7400018: GUN_DOWN
     9500000: //RootNode
     13700000: Body_M_GeoRndr
     13700002: GumsLower_M_GeoRndr
@@ -1386,9 +1388,385 @@ ModelImporter:
       maskType: 0
       maskSource: {instanceID: 0}
     - serializedVersion: 16
-      name: GUN_ATTACK
+      name: GUN_UP
       takeName: GUN_ATTACK
-      firstFrame: -1
+      firstFrame: 0
+      lastFrame: 4.4000001
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Body_M_GeoRndr
+        weight: 1
+      - path: GumsLower_M_GeoRndr
+        weight: 1
+      - path: GumsUpper_M_GeoRndr
+        weight: 1
+      - path: Hammer
+        weight: 1
+      - path: InnerEye_L_GeoRndr
+        weight: 1
+      - path: InnerEye_R_GeoRndr
+        weight: 1
+      - path: Magnet_gun
+        weight: 1
+      - path: OuterEye_L_GeoRndr
+        weight: 1
+      - path: OuterEye_R_GeoRndr
+        weight: 1
+      - path: Skeleton
+        weight: 1
+      - path: Skeleton/ArmIK_L
+        weight: 1
+      - path: Skeleton/ArmIK_R
+        weight: 1
+      - path: Skeleton/FootControl_L
+        weight: 1
+      - path: Skeleton/FootControl_L/FootRollCtrl_L
+        weight: 1
+      - path: Skeleton/FootControl_L/HeelRoll_L
+        weight: 1
+      - path: Skeleton/FootControl_L/HeelRoll_L/ToeRoll_L
+        weight: 1
+      - path: Skeleton/FootControl_L/HeelRoll_L/ToeRoll_L/FootIK_L
+        weight: 1
+      - path: Skeleton/FootControl_L/KneeCtrl_L
+        weight: 1
+      - path: Skeleton/FootControl_R
+        weight: 1
+      - path: Skeleton/FootControl_R/FootRollCtrl_R
+        weight: 1
+      - path: Skeleton/FootControl_R/HeelRoll_R
+        weight: 1
+      - path: Skeleton/FootControl_R/HeelRoll_R/ToeRoll_R
+        weight: 1
+      - path: Skeleton/FootControl_R/HeelRoll_R/ToeRoll_R/FootIK_R
+        weight: 1
+      - path: Skeleton/FootControl_R/KneeCtrl_R
+        weight: 1
+      - path: Skeleton/HipCtrl
+        weight: 1
+      - path: Skeleton/HipCtrl/Root
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_L
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_L/Arm_L
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_L/Arm_L/Arm1_L
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_L/Arm_L/Arm1_L/Hand_L
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_L/Arm_L/Arm1_L/Hand_L/MiddleFinger_L
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_L/Arm_L/Arm1_L/Hand_L/MiddleFinger_L/MiddleFinger1_L
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_L/Arm_L/Arm1_L/Hand_L/MiddleFinger_L/MiddleFinger1_L/MiddleFinger2_L
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_L/Arm_L/Arm1_L/Hand_L/Pinkey_L
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_L/Arm_L/Arm1_L/Hand_L/Pinkey_L/Pinkey1_L
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_L/Arm_L/Arm1_L/Hand_L/Pinkey_L/Pinkey1_L/Pinkey2_L
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_L/Arm_L/Arm1_L/Hand_L/PointingFinger_L
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_L/Arm_L/Arm1_L/Hand_L/PointingFinger_L/PointingFinger1_L
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_L/Arm_L/Arm1_L/Hand_L/PointingFinger_L/PointingFinger1_L/PointingFinger2_L
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_L/Arm_L/Arm1_L/Hand_L/RingFinger_L
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_L/Arm_L/Arm1_L/Hand_L/RingFinger_L/RingFinger1_L
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_L/Arm_L/Arm1_L/Hand_L/RingFinger_L/RingFinger1_L/RingFinger2_L
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_L/Arm_L/Arm1_L/Hand_L/Thumb_L
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_L/Arm_L/Arm1_L/Hand_L/Thumb_L/Thumb1_L
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_L/Arm_L/Arm1_L/Hand_L/Thumb_L/Thumb1_L/Thumb2_L
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_R
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_R/Arm_R
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_R/Arm_R/Arm1_R
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_R/Arm_R/Arm1_R/Hand_R
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_R/Arm_R/Arm1_R/Hand_R/MiddleFinger_R
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_R/Arm_R/Arm1_R/Hand_R/MiddleFinger_R/MiddleFinger1_R
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_R/Arm_R/Arm1_R/Hand_R/MiddleFinger_R/MiddleFinger1_R/MiddleFinger2_R
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_R/Arm_R/Arm1_R/Hand_R/Pinkey_R
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_R/Arm_R/Arm1_R/Hand_R/Pinkey_R/Pinkey1_R
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_R/Arm_R/Arm1_R/Hand_R/Pinkey_R/Pinkey1_R/Pinkey2_R
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_R/Arm_R/Arm1_R/Hand_R/PointingFinger_R
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_R/Arm_R/Arm1_R/Hand_R/PointingFinger_R/PointingFinger1_R
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_R/Arm_R/Arm1_R/Hand_R/PointingFinger_R/PointingFinger1_R/PointingFinger2_R
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_R/Arm_R/Arm1_R/Hand_R/RingFinger_R
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_R/Arm_R/Arm1_R/Hand_R/RingFinger_R/RingFinger1_R
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_R/Arm_R/Arm1_R/Hand_R/RingFinger_R/RingFinger1_R/RingFinger2_R
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_R/Arm_R/Arm1_R/Hand_R/Thumb_R
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_R/Arm_R/Arm1_R/Hand_R/Thumb_R/Thumb1_R
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_R/Arm_R/Arm1_R/Hand_R/Thumb_R/Thumb1_R/Thumb2_R
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Neck
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Neck/Head
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Thigh_L
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Thigh_L/Ankle_L
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Thigh_L/Ankle_L/Foot_L
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Thigh_L/Ankle_L/Foot_L/Toes_L
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Thigh_R
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Thigh_R/Ankle_R
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Thigh_R/Ankle_R/Foot_R
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Thigh_R/Ankle_R/Foot_R/Toes_R
+        weight: 1
+      - path: Sonic_Resonator
+        weight: 1
+      - path: TeethLower_M_GeoRndr
+        weight: 1
+      - path: TeethUpper_M_GeoRndr
+        weight: 1
+      - path: Tongue_M_GeoRndr
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: GUN_HOLD
+      takeName: GUN_ATTACK
+      firstFrame: 4.4000001
+      lastFrame: 11.8000002
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Body_M_GeoRndr
+        weight: 1
+      - path: GumsLower_M_GeoRndr
+        weight: 1
+      - path: GumsUpper_M_GeoRndr
+        weight: 1
+      - path: Hammer
+        weight: 1
+      - path: InnerEye_L_GeoRndr
+        weight: 1
+      - path: InnerEye_R_GeoRndr
+        weight: 1
+      - path: Magnet_gun
+        weight: 1
+      - path: OuterEye_L_GeoRndr
+        weight: 1
+      - path: OuterEye_R_GeoRndr
+        weight: 1
+      - path: Skeleton
+        weight: 1
+      - path: Skeleton/ArmIK_L
+        weight: 1
+      - path: Skeleton/ArmIK_R
+        weight: 1
+      - path: Skeleton/FootControl_L
+        weight: 1
+      - path: Skeleton/FootControl_L/FootRollCtrl_L
+        weight: 1
+      - path: Skeleton/FootControl_L/HeelRoll_L
+        weight: 1
+      - path: Skeleton/FootControl_L/HeelRoll_L/ToeRoll_L
+        weight: 1
+      - path: Skeleton/FootControl_L/HeelRoll_L/ToeRoll_L/FootIK_L
+        weight: 1
+      - path: Skeleton/FootControl_L/KneeCtrl_L
+        weight: 1
+      - path: Skeleton/FootControl_R
+        weight: 1
+      - path: Skeleton/FootControl_R/FootRollCtrl_R
+        weight: 1
+      - path: Skeleton/FootControl_R/HeelRoll_R
+        weight: 1
+      - path: Skeleton/FootControl_R/HeelRoll_R/ToeRoll_R
+        weight: 1
+      - path: Skeleton/FootControl_R/HeelRoll_R/ToeRoll_R/FootIK_R
+        weight: 1
+      - path: Skeleton/FootControl_R/KneeCtrl_R
+        weight: 1
+      - path: Skeleton/HipCtrl
+        weight: 1
+      - path: Skeleton/HipCtrl/Root
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_L
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_L/Arm_L
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_L/Arm_L/Arm1_L
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_L/Arm_L/Arm1_L/Hand_L
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_L/Arm_L/Arm1_L/Hand_L/MiddleFinger_L
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_L/Arm_L/Arm1_L/Hand_L/MiddleFinger_L/MiddleFinger1_L
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_L/Arm_L/Arm1_L/Hand_L/MiddleFinger_L/MiddleFinger1_L/MiddleFinger2_L
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_L/Arm_L/Arm1_L/Hand_L/Pinkey_L
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_L/Arm_L/Arm1_L/Hand_L/Pinkey_L/Pinkey1_L
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_L/Arm_L/Arm1_L/Hand_L/Pinkey_L/Pinkey1_L/Pinkey2_L
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_L/Arm_L/Arm1_L/Hand_L/PointingFinger_L
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_L/Arm_L/Arm1_L/Hand_L/PointingFinger_L/PointingFinger1_L
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_L/Arm_L/Arm1_L/Hand_L/PointingFinger_L/PointingFinger1_L/PointingFinger2_L
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_L/Arm_L/Arm1_L/Hand_L/RingFinger_L
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_L/Arm_L/Arm1_L/Hand_L/RingFinger_L/RingFinger1_L
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_L/Arm_L/Arm1_L/Hand_L/RingFinger_L/RingFinger1_L/RingFinger2_L
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_L/Arm_L/Arm1_L/Hand_L/Thumb_L
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_L/Arm_L/Arm1_L/Hand_L/Thumb_L/Thumb1_L
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_L/Arm_L/Arm1_L/Hand_L/Thumb_L/Thumb1_L/Thumb2_L
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_R
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_R/Arm_R
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_R/Arm_R/Arm1_R
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_R/Arm_R/Arm1_R/Hand_R
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_R/Arm_R/Arm1_R/Hand_R/MiddleFinger_R
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_R/Arm_R/Arm1_R/Hand_R/MiddleFinger_R/MiddleFinger1_R
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_R/Arm_R/Arm1_R/Hand_R/MiddleFinger_R/MiddleFinger1_R/MiddleFinger2_R
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_R/Arm_R/Arm1_R/Hand_R/Pinkey_R
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_R/Arm_R/Arm1_R/Hand_R/Pinkey_R/Pinkey1_R
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_R/Arm_R/Arm1_R/Hand_R/Pinkey_R/Pinkey1_R/Pinkey2_R
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_R/Arm_R/Arm1_R/Hand_R/PointingFinger_R
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_R/Arm_R/Arm1_R/Hand_R/PointingFinger_R/PointingFinger1_R
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_R/Arm_R/Arm1_R/Hand_R/PointingFinger_R/PointingFinger1_R/PointingFinger2_R
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_R/Arm_R/Arm1_R/Hand_R/RingFinger_R
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_R/Arm_R/Arm1_R/Hand_R/RingFinger_R/RingFinger1_R
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_R/Arm_R/Arm1_R/Hand_R/RingFinger_R/RingFinger1_R/RingFinger2_R
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_R/Arm_R/Arm1_R/Hand_R/Thumb_R
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_R/Arm_R/Arm1_R/Hand_R/Thumb_R/Thumb1_R
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Clavical_R/Arm_R/Arm1_R/Hand_R/Thumb_R/Thumb1_R/Thumb2_R
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Neck
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Spine1/Spine2/Neck/Head
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Thigh_L
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Thigh_L/Ankle_L
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Thigh_L/Ankle_L/Foot_L
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Thigh_L/Ankle_L/Foot_L/Toes_L
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Thigh_R
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Thigh_R/Ankle_R
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Thigh_R/Ankle_R/Foot_R
+        weight: 1
+      - path: Skeleton/HipCtrl/Root/Thigh_R/Ankle_R/Foot_R/Toes_R
+        weight: 1
+      - path: Sonic_Resonator
+        weight: 1
+      - path: TeethLower_M_GeoRndr
+        weight: 1
+      - path: TeethUpper_M_GeoRndr
+        weight: 1
+      - path: Tongue_M_GeoRndr
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: GUN_DOWN
+      takeName: GUN_ATTACK
+      firstFrame: 11.8000002
       lastFrame: 16
       wrapMode: 0
       orientationOffsetY: 0
