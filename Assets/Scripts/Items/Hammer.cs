@@ -8,16 +8,22 @@ public class Hammer : Weapon
 
     private GameObject owner;
     private Animator anim;
+    private AudioSource playerAudSrc;
+
+    public AudioClip[] swooshes;
+    public AudioClip[] thumps;
 
     protected override void InitialSetup()
     {
         if (owner == null) owner = GameObject.FindGameObjectWithTag("Player");
+        if (playerAudSrc == null) playerAudSrc = owner.GetComponent<AudioSource>();
         if (anim == null) anim = owner.GetComponent<Animator>();
     }
 
     public override void Use()
     {
         anim.SetTrigger("attack");
+        playerAudSrc.PlayOneShot(swooshes[Random.Range(0, swooshes.Length)]);
         //Find all colliders in a given radius of the player
         Collider[] cols = Physics.OverlapSphere(owner.transform.position + new Vector3(0, 1, 0), radius);
         foreach (Collider col in cols)
@@ -25,6 +31,7 @@ public class Hammer : Weapon
             //If we are in range of an enemy
             if (col.tag == "enemy" || col.tag == "destroyable")
             {   
+
 				print ("COLLIDED WITH " + col.gameObject.name);
                 //Find dot product of the vectors of player and enemy to determine direction
                 Vector3 forward = owner.transform.TransformDirection(Vector3.forward);
@@ -33,6 +40,7 @@ public class Hammer : Weapon
                 //If enemy is in front of player, deal damage
                 if (Vector3.Dot(forward, toOther) > 0)
                 {
+                    playerAudSrc.PlayOneShot(thumps[Random.Range(0, thumps.Length)]);
                     if (col.tag == "enemy")
                     {
                         Hurtable hurtable;

@@ -479,7 +479,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &171718
 GameObject:
   m_ObjectHideFlags: 1
@@ -1934,9 +1934,10 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "Your ship landed here on planet Bau in a solar system called Sol. All other
     humans who arrived on this planet have gone into cyrogenic sleep to stave off
-    a deathly infection. \n\nYou must travel between the three worlds of Sol to gather
-    the genetic components necessary to create a cure.\n\nYour first destination is
-    the laboratory under the nearby concrete entrance."
+    a deathly infection. \nYou must travel between the three worlds of Sol to gather
+    the genetic components necessary to create a cure.\nYour first destination is
+    the laboratory under the nearby concrete entrance.\nBasic controls: WASD for movement,
+    Q for attack, E for activate and space for jump"
 --- !u!114 &11455624
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3071,8 +3072,8 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 0, y: -42.5}
-  m_SizeDelta: {x: 896.400024, y: 298.200012}
+  m_AnchoredPosition: {x: 0, y: -44}
+  m_SizeDelta: {x: 896, y: 302}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22418204
 RectTransform:
@@ -3651,8 +3652,8 @@ RectTransform:
   m_RootOrder: 3
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -33}
-  m_SizeDelta: {x: -135, y: -192}
+  m_AnchoredPosition: {x: 0, y: .600000024}
+  m_SizeDelta: {x: -135, y: -124.800003}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22477920
 RectTransform:
