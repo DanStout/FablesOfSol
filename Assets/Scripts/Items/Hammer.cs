@@ -28,10 +28,9 @@ public class Hammer : Weapon
         Collider[] cols = Physics.OverlapSphere(owner.transform.position, radius);
         foreach (Collider col in cols)
         {
-			print(col.name);
             //If we are in range of an enemy
             if (col.tag == "enemy" || col.tag == "destroyable")
-            {
+            {   
 				print ("COLLIDED WITH " + col.gameObject.name);
                 //Find dot product of the vectors of player and enemy to determine direction
                 Vector3 forward = owner.transform.TransformDirection(Vector3.forward);

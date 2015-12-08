@@ -3,18 +3,28 @@ using System.Collections;
 
 public class ClickSound : MonoBehaviour
 {
-    private AudioSource audSrc;
+    public AudioSource audioSource;
     public AudioClip[] clickSounds;
 
     void Start()
     {
-        audSrc = GameObject.FindGameObjectWithTag("UI").GetComponent<AudioSource>();
     }
 
     public void OnClick()
     {
         var index = Random.Range(0, clickSounds.Length);
         var sound = clickSounds[index];
-        audSrc.PlayOneShot(sound);
+        PlayClip(sound, transform.position);
+    }
+
+    private void PlayClip(AudioClip clip, Vector3 position)
+    {
+        var obj = new GameObject("Persistent Audio Obj");
+        obj.AddComponent<DontDestroy>();
+        obj.transform.position = position;
+        var src = obj.AddComponent<AudioSource>();
+        src.clip = clip;
+        src.Play();
+        Destroy(obj, clip.length);
     }
 }
