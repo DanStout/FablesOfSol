@@ -56,6 +56,7 @@ public class PlayerInventory : MonoBehaviour
         EquipIfWeapon(addedItem);
     }
 
+
     private bool EquipIfWeapon(BaseItem item)
     {
         var pickedupWeapon = item as Weapon;

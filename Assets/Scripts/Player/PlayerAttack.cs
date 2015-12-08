@@ -3,30 +3,18 @@ using System.Collections;
 
 public class PlayerAttack : MonoBehaviour
 {
-    private Animator anim;
     private PlayerInventory inventory;
-    private bool attacking = false;
 
     void Start()
     {
-        anim = GetComponentInParent<Animator>();
         inventory = GetComponentInParent<PlayerInventory>();
     }
 
     void Update()
     {
-        if (Input.GetButtonDown("Attack"))// && !attacking)
+        if (Input.GetButtonDown("Attack"))
         {
-            if (inventory.UseItem())
-            {
-                anim.SetTrigger("attack");
-                //attacking = true;
-            }
+            inventory.UseItem();
         }
-    }
-
-    public void AttackAnimationDone()
-    {
-        attacking = false;
     }
 }

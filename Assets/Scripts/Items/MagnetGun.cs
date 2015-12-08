@@ -11,6 +11,7 @@ public class MagnetGun : Weapon
     void Awake()
     {
         owner = GameObject.FindGameObjectWithTag("Player");
+        anim = owner.GetComponent<Animator>();
     }
 
     void Start()
@@ -70,11 +71,13 @@ public class MagnetGun : Weapon
         {
             isOn = true;
             particleSys.enableEmission = true;
+            anim.SetBool("gunAttack", true);
         }
         else if (isOn)
         {
             isOn = false;
             particleSys.enableEmission = false;
+            anim.SetBool("gunAttack", false);
         }
     }
 

@@ -8,10 +8,12 @@ public class Hammer : Weapon //, IItem
 
     private GameObject owner;
     private GameObject hammer;
+    private Animator anim;
 
     void Awake()
     {
         owner = GameObject.FindGameObjectWithTag("Player");
+        anim = owner.GetComponent<Animator>();
     }
 
     void OnTriggerEnter(Collider col)
@@ -35,6 +37,7 @@ public class Hammer : Weapon //, IItem
 
     public override void Use()
     {
+        anim.SetTrigger("attack");
         //Find all colliders in a given radius of the player
         Collider[] cols = Physics.OverlapSphere(owner.transform.position, radius);
         foreach (Collider col in cols)
