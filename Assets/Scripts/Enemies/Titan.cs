@@ -121,14 +121,9 @@ public class Titan : MonoBehaviour, IMagnetic
 		//instantiate a thrum and store this in a variable
 		if(!thrumSpawned)
 		{
+			spawnedThrum = (GameObject) Instantiate(thrum, transform.position, Quaternion.identity);
 			thrumSpawned = true;
-			spawnedThrum = (GameObject)Instantiate(thrum);
-			spawnedThrum.transform.position = this.transform.position;
 		}
-
-
-
-
 	}
 
 	//Called from update when the spawned thrum has been destroyed

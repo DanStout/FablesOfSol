@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Hammer : Weapon //, IItem
+public class Hammer : Weapon
 {
     public float radius = 1;
     public float damage = 5;
@@ -27,11 +27,11 @@ public class Hammer : Weapon //, IItem
                 return;
             }
 
-            var hurt = col.GetComponentInParent<Hurtable>();
-            if (hurt != null)
-            {
-                hurt.TakeDamage(damage);
-            }
+            //var hurt = col.GetComponentInParent<Hurtable>();
+            //if (hurt != null)
+            //{
+            //    hurt.TakeDamage(damage);
+            //}
         }
     }
 
@@ -74,5 +74,10 @@ public class Hammer : Weapon //, IItem
     public override void Equip()
     {
         owner.GetComponent<PlayerInventory>().Equip(PlayerInventory.WeaponType.Hammer);
+    }
+
+    public override string Name
+    {
+        get { return "Hammer"; }
     }
 }

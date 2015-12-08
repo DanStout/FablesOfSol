@@ -96,4 +96,9 @@ public class MagnetGun : Weapon
     {
         owner.GetComponent<PlayerInventory>().Equip(PlayerInventory.WeaponType.MagnetGun);
     }
+
+    public override string Name
+    {
+        get { return "Magnet Gun"; }
+    }
 }

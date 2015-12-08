@@ -7,4 +7,9 @@ public class DnaItem : BaseItem
     {
         print("Using DNA");
     }
+
+    public override string Name
+    {
+        get { return "DNA"; }
+    }
 }

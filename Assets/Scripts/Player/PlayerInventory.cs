@@ -17,9 +17,23 @@ public class PlayerInventory : MonoBehaviour
     [SerializeField]
     private GameObject SonicResonator;
 
-    private BaseItem activeItem;
     private GameObject buttonGrid;
-    private List<BaseItem> inventory;
+    private static BaseItem activeItem;
+    private static List<BaseItem> inventory;
+
+    public class ItemEntry
+    {
+        public BaseItem Item { get; set; }
+        public int Quantity { get; set; }
+
+
+        public override string ToString()
+        {
+            return "({0} x {1})".FormatWith(Quantity, Item);
+        }
+    }
+
+    public Dictionary<string, ItemEntry> Items { get; set; }
 
     public enum WeaponType
     {
@@ -31,11 +45,29 @@ public class PlayerInventory : MonoBehaviour
     void Start()
     {
         buttonGrid = GameObject.FindGameObjectWithTag("InventoryUI");
-        inventory = new List<BaseItem>();
+        if (inventory == null)
+            inventory = new List<BaseItem>();
+
+        foreach (var item in inventory)
+            print(item);
     }
 
+    /// <summary>
+    /// Called from a DroppedItem when the character collides with it.
+    /// </summary>
+    /// <param name="item">The script to pick up.</param>
     public void PickupItem(BaseItem item)
     {
+        print(item);
+        //if (Items.ContainsKey(item.Name))
+        //{
+        //    Items[item.Name].Quantity++;
+        //}
+        //else
+        //{
+        //    Items[item.Name] = new ItemEntry{Item = item.}
+        //}
+        
         var buttonObj = Instantiate<GameObject>(buttonPrefab);
         var addedItem = buttonObj.AddComponent(item.GetType()) as BaseItem;
         buttonObj.transform.SetParent(buttonGrid.transform);

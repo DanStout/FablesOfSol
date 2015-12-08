@@ -6,10 +6,12 @@ public class SonicResonator : Weapon
     private GameObject owner;
     private bool isOn;
     private ParticleSystem particleSys;
+    private Animator anim;
 
     void Awake()
     {
         owner = GameObject.FindGameObjectWithTag("Player");
+        anim = owner.GetComponent<Animator>();
     }
 
     // Use this for initialization
@@ -55,16 +57,23 @@ public class SonicResonator : Weapon
         {
             isOn = true;
             particleSys.enableEmission = true;
+            anim.SetBool("gunAttack", true);
         }
         else if (isOn)
         {
             isOn = false;
             particleSys.enableEmission = false;
+            anim.SetBool("gunAttack", false);
         }
     }
 
     public override void Equip()
     {
         owner.GetComponent<PlayerInventory>().Equip(PlayerInventory.WeaponType.SonicResonator);
+    }
+
+    public override string Name
+    {
+        get { return "Sonic Resonator"; }
     }
 }

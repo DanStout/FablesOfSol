@@ -16,4 +16,9 @@ public class HeartItem : BaseItem
     {
         playLife.Heal(healAmount);
     }
+
+    public override string Name
+    {
+        get { return "Heart"; }
+    }
 }
