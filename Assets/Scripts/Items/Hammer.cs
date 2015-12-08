@@ -9,14 +9,8 @@ public class Hammer : Weapon
     private GameObject owner;
     private Animator anim;
 
-    void Start()
-    {
-        print("Hammerstart");
-    }
-
     void Awake()
     {
-        print("hammerawake");
         owner = GameObject.FindGameObjectWithTag("Player");
         anim = owner.GetComponent<Animator>();
     }

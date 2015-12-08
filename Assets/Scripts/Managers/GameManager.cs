@@ -49,6 +49,7 @@ public class GameManager : MonoBehaviour
     public BaseItem SaveItem(BaseItem item)
     {
         var savedItem = itemScriptHolder.AddComponent(item.GetType()) as BaseItem;
+        savedItem = savedItem.GetCopyOf(item);
         savedItem.inventoryTile = item.inventoryTile;
         return savedItem;
     }

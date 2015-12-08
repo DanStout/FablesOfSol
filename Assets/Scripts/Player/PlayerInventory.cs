@@ -39,7 +39,6 @@ public class PlayerInventory : MonoBehaviour
         {
             foreach (var item in Items)
             {
-                print(item.Key);
                 AddButtonForItem(item.Value);
             }
         }

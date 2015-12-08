@@ -7,11 +7,14 @@ public class MagnetGun : Weapon
     private bool isOn = false;
     private ParticleSystem particleSys;
     private Animator anim;
+    public AudioClip activeSound;
+    private AudioSource playerAudio;
 
     void Awake()
     {
         owner = GameObject.FindGameObjectWithTag("Player");
         anim = owner.GetComponent<Animator>();
+        playerAudio = owner.GetComponent<AudioSource>();
     }
 
     void Start()
@@ -69,15 +72,16 @@ public class MagnetGun : Weapon
         //Spawn particle system
         if (particleSys != null && !isOn)
         {
+            playerAudio.clip = activeSound;
+            playerAudio.Play();
+
             isOn = true;
             particleSys.enableEmission = true;
             anim.SetBool("gunAttack", true);
         }
         else if (isOn)
         {
-            isOn = false;
-            particleSys.enableEmission = false;
-            anim.SetBool("gunAttack", false);
+            TurnOff();
         }
     }
 
@@ -100,5 +104,19 @@ public class MagnetGun : Weapon
     public override string Name
     {
         get { return "Magnet Gun"; }
+    }
+
+
+    private void TurnOff()
+    {
+        playerAudio.Stop();
+        isOn = false;
+        particleSys.enableEmission = false;
+        anim.SetBool("gunAttack", false);
+    }
+
+    void OnDisable()
+    {
+        //TurnOff();
     }
 }

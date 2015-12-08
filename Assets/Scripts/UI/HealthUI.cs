@@ -58,6 +58,4 @@ public class HealthUI : MonoBehaviour
 
         healthSlider.value = newValue;
     }
-
-
 }

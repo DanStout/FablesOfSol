@@ -1428,8 +1428,8 @@ Transform:
   m_Children:
   - {fileID: 656561694}
   - {fileID: 140074339}
-  - {fileID: 120021995}
   - {fileID: 8374632}
+  - {fileID: 120021995}
   - {fileID: 1653172000}
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -2975,7 +2975,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 460358, guid: c48bb13a0e3cf6943afe3951ee49f280, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c48bb13a0e3cf6943afe3951ee49f280, type: 2}
@@ -3641,7 +3641,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 446750, guid: 93edd76634863b142bd5d12b27999ff2, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 93edd76634863b142bd5d12b27999ff2, type: 2}
