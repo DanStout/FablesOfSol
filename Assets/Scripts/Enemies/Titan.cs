@@ -22,7 +22,12 @@ public class Titan : MonoBehaviour, IMagnetic
 
 	private bool isThrumSpawned = false;
 	private int numOfSpawns;
-	public GameObject curThrum;
+
+	public GameObject thrum1;
+	public GameObject thrum2;
+	public GameObject thrum3;
+
+	private GameObject curThrum;
 
 
 	void Start()
@@ -61,8 +66,14 @@ public class Titan : MonoBehaviour, IMagnetic
 		if (isDead) return;
 
 		//Check if the spawned thrum has been initiated
-		if (isThrumSpawned && curThrum == null)
-		    print ("Spawned thrum has died");
+		if (isThrumSpawned && curThrum == null) 
+		{
+			isThrumSpawned = false;
+			if(numOfSpawns == 3)
+			{
+				hurt.TakeDamage(hurt.getCurHealth() - (hurt.getCurHealth() - 1));
+			}
+		}
 
 			//Check if the spawned thrum still exists
 				//If not, resume fighting
@@ -135,7 +146,12 @@ public class Titan : MonoBehaviour, IMagnetic
 			numOfSpawns ++;
 			isThrumSpawned = true;
 
-			curThrum = (GameObject)Instantiate(curThrum, this.transform.FindChild("SpawnPoint").transform.position, Quaternion.identity);
+			if(numOfSpawns == 1)
+				curThrum = (GameObject)Instantiate(thrum1, this.transform.FindChild("SpawnPoint").transform.position, Quaternion.identity);
+			else if (numOfSpawns == 2)
+				curThrum = (GameObject)Instantiate(thrum2, this.transform.FindChild("SpawnPoint").transform.position, Quaternion.identity);
+			else if (numOfSpawns == 3)
+				curThrum = (GameObject)Instantiate(thrum3, this.transform.FindChild("SpawnPoint").transform.position, Quaternion.identity);
 
 		}
 	}

@@ -7,6 +7,8 @@ using System.Collections;
 public class SceneManager : MonoBehaviour
 {
     public AudioClip[] footstepSounds;
+	public GameObject titan;
+	public GameObject FloeTeleport;
 
     void Start()
 	{
@@ -14,6 +16,10 @@ public class SceneManager : MonoBehaviour
 	
 	void Update()
 	{
-	
+		if(titan == null)
+		{
+			//Open portal to Floe
+			FloeTeleport.SetActive(true);
+		}
 	}
 }
