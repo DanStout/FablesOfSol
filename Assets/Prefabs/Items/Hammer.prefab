@@ -179,11 +179,13 @@ MonoBehaviour:
   inventoryTile: {fileID: 21300000, guid: a9ad41177a5b0024ea5dd7ad89b47ebc, type: 3}
   radius: 1
   damage: 7
+  attackDelaySeconds: .5
   swooshes:
   - {fileID: 8300000, guid: 3d45e212d6debbd4197786f7fb7733c7, type: 3}
   - {fileID: 8300000, guid: 58ae6b5c88a1b2a4db2c59eb41368f3b, type: 3}
   - {fileID: 8300000, guid: 9eee80ab28149f942927c91b15de1344, type: 3}
   - {fileID: 8300000, guid: a57adc890c2cf70408c340e73b043a83, type: 3}
+  - {fileID: 8300000, guid: 18062a514acef5a4d97de801dac01a86, type: 3}
   thumps:
   - {fileID: 8300000, guid: c9cb44f4e4e08c343a0f1bd5ccc54ac9, type: 3}
   - {fileID: 8300000, guid: 97b87fe700b10d9468a2cb5bf364e7b2, type: 3}

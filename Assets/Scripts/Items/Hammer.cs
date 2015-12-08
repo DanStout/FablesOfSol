@@ -5,13 +5,14 @@ public class Hammer : Weapon
 {
     public float radius = 1;
     public float damage = 5;
+    public float attackDelaySeconds = 0.5f;
+    public AudioClip[] swooshes;
+    public AudioClip[] thumps;
 
     private GameObject owner;
     private Animator anim;
     private AudioSource playerAudSrc;
-
-    public AudioClip[] swooshes;
-    public AudioClip[] thumps;
+    private float lastAttackTime;
 
     protected override void InitialSetup()
     {
@@ -22,16 +23,20 @@ public class Hammer : Weapon
 
     public override void Use()
     {
+        if (Time.time - lastAttackTime < attackDelaySeconds) return;
+        else lastAttackTime = Time.time;
+
+        var didHit = false;
+
         anim.SetTrigger("attack");
-        playerAudSrc.PlayOneShot(swooshes[Random.Range(0, swooshes.Length)]);
+
         //Find all colliders in a given radius of the player
         Collider[] cols = Physics.OverlapSphere(owner.transform.position + new Vector3(0, 1, 0), radius);
         foreach (Collider col in cols)
         {
             //If we are in range of an enemy
             if (col.tag == "enemy" || col.tag == "destroyable")
-            {   
-
+            {
 				print ("COLLIDED WITH " + col.gameObject.name);
                 //Find dot product of the vectors of player and enemy to determine direction
                 Vector3 forward = owner.transform.TransformDirection(Vector3.forward);
@@ -40,7 +45,7 @@ public class Hammer : Weapon
                 //If enemy is in front of player, deal damage
                 if (Vector3.Dot(forward, toOther) > 0)
                 {
-                    playerAudSrc.PlayOneShot(thumps[Random.Range(0, thumps.Length)]);
+                    didHit = true;
                     if (col.tag == "enemy")
                     {
                         Hurtable hurtable;
@@ -85,8 +90,9 @@ public class Hammer : Weapon
             }
         }
 
+        var soundSrc = didHit ? thumps : swooshes;
+        playerAudSrc.PlayOneShot(soundSrc[Random.Range(0, soundSrc.Length)]);
     }
-
 
     public override void Equip()
     {
@@ -97,6 +103,4 @@ public class Hammer : Weapon
     {
         get { return "Hammer"; }
     }
-
-
 }
