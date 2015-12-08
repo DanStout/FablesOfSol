@@ -42,6 +42,9 @@ public class PlayerInventory : MonoBehaviour
                 AddButtonForItem(item.Value);
             }
         }
+
+        if (activeItem != null)
+            EquipIfWeapon(activeItem);
     }
 
     /// <summary>

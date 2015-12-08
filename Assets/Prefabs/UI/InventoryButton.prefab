@@ -29,6 +29,7 @@ GameObject:
   - 114: {fileID: 11480784}
   - 114: {fileID: 11485252}
   - 114: {fileID: 11455882}
+  - 114: {fileID: 11456852}
   m_Layer: 5
   m_Name: InventoryButton
   m_TagString: Untagged
@@ -98,6 +99,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteImage: {fileID: 11486948}
   quantityText: {fileID: 11408182}
+--- !u!114 &11456852
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 146734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c28f0c70f66f113458e64509e324fa77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickSounds:
+  - {fileID: 8300000, guid: b95c961e2f9b4664baf5cbbb636a10d1, type: 3}
 --- !u!114 &11480784
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -166,6 +180,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 11455882}
         m_MethodName: OnClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11456852}
+        m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -26,7 +26,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 112518}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .424333334, y: .5, z: -.0753331557}
+  m_LocalPosition: {x: .469264328, y: .5, z: .0980000868}
   m_LocalScale: {x: .0333333351, y: 2, z: .0333333351}
   m_Children: []
   m_Father: {fileID: 0}
@@ -86,6 +86,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroySystem: {fileID: 19876540, guid: f8b43db4604bd6241bc3b35b429421b3, type: 2}
+  explosionSound: {fileID: 8300000, guid: 0b7d673fab84c0649aa1aadf123de683, type: 3}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
