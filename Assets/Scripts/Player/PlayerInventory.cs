@@ -18,10 +18,6 @@ public class PlayerInventory : MonoBehaviour
     {
         buttonGrid = GameObject.FindGameObjectWithTag("InventoryUI");
         inventory = new List<BaseItem>();
-<<<<<<< HEAD
-
-=======
->>>>>>> 5c874fbcd44fe2e8a0e88c9c8658823f3cc96609
     }
 
     public void PickupItem(BaseItem item)

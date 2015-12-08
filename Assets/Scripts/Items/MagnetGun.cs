@@ -10,7 +10,7 @@ public class MagnetGun : BaseItem
 
 
     // Use this for initialization
-    override void Awake()
+    public void Awake()
     {
         owner = GameObject.FindGameObjectWithTag("Player");
         isOn = false;
@@ -24,7 +24,7 @@ public class MagnetGun : BaseItem
     }
 	
 	// Update is called once per frame
-	override void Update () {
+	public void Update () {
 		
 		//Check if the gun is on
 		if(isOn)
