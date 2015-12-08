@@ -11,21 +11,20 @@ public class BreakIce : MonoBehaviour {
 	}
 
 
-	IEnumerator brokenIce(){
+
+	public void breakIce()
+	{
 		damageSphere.SetActive (true);
 		gameObject.GetComponent<SkinnedMeshRenderer>().enabled = false;
 		gameObject.GetComponent<BoxCollider>().enabled = false;
 		parentAnim.SetTrigger("hit");
-		yield return new WaitForSeconds (8);
+	}
+
+	public void replaceIce()
+	{
 		damageSphere.SetActive (false);
 		gameObject.GetComponent<SkinnedMeshRenderer>().enabled = true;
 		gameObject.GetComponent<BoxCollider>().enabled = true;
-
-	}
-
-	public void breakIce()
-	{
-		StartCoroutine(brokenIce());
 	}
 
 }
