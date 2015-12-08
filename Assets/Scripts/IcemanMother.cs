@@ -40,8 +40,8 @@ public class IcemanMother : MonoBehaviour {
 		routineRunning = true;
 		anim.SetTrigger("attack");
 		var bossLoc = transform.position;
-		var playerLoc = player.transform.localPosition;
-		var abovePlayerLoc = player.transform.localPosition + Vector3.up * 10;
+		var playerLoc = player.transform.position;
+		var abovePlayerLoc = player.transform.position + Vector3.up * 10;
 		Vector3 velo = Vector2.zero;
 		var dist = Vector3.Distance (transform.position, abovePlayerLoc);
 		gameObject.GetComponent<FacesPlayer> ().enabled = false;
