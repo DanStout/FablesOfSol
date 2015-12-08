@@ -28,10 +28,12 @@ public class Hammer : Weapon //, IItem
             }
 
             var hurt = col.GetComponentInParent<Hurtable>();
+
             if (hurt != null)
             {
                 hurt.TakeDamage(damage);
             }
+
         }
     }
 
@@ -45,6 +47,7 @@ public class Hammer : Weapon //, IItem
             //If we are in range of an enemy
             if (col && col.tag == "enemy")
             {
+				print ("COLLIDED WITH " + col.gameObject.name);
                 //Find dot product of the vectors of player and enemy to determine direction
                 Vector3 forward = owner.transform.TransformDirection(Vector3.forward);
                 Vector3 toOther = col.transform.position - owner.transform.position;
@@ -53,6 +56,14 @@ public class Hammer : Weapon //, IItem
                 if (Vector3.Dot(forward, toOther) > 0)
                 {
                     var hurtable = col.GetComponent<Hurtable>();
+					GameObject titan = isParentTitan(col.gameObject);
+					if(titan != null)
+					{
+						var hurt = titan.GetComponent<Hurtable>();
+						hurt.TakeDamage(damage);
+						return;
+					}
+
                     if (hurtable != null)
                     {
                         if (col.transform.childCount < 2 || col.transform.GetChild(1).tag != "Ice")
@@ -70,6 +81,17 @@ public class Hammer : Weapon //, IItem
         }
 
     }
+
+	//Used during hit to destroy thrum titan
+	private GameObject isParentTitan(GameObject g)
+	{
+		if (g.name == "ThrumTitan")
+			return g;
+		else if (g.transform.parent != null)
+			return isParentTitan(g.transform.parent.gameObject);
+		else
+			return null;
+	}
 
     public override void Equip()
     {
