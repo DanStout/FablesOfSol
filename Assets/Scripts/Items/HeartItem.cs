@@ -15,6 +15,7 @@ public class HeartItem : BaseItem
     public override void Use()
     {
         playLife.Heal(healAmount);
+        Quantity--;
     }
 
     public override string Name

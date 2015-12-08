@@ -7,10 +7,21 @@ public class Hammer : Weapon
     public float damage = 5;
 
     private GameObject owner;
-    private GameObject hammer;
     private Animator anim;
 
+    void Start()
+    {
+        print("Hammerstart");
+    }
+
     void Awake()
+    {
+        print("hammerawake");
+        owner = GameObject.FindGameObjectWithTag("Player");
+        anim = owner.GetComponent<Animator>();
+    }
+
+    void OnLevelWasLoaded()
     {
         owner = GameObject.FindGameObjectWithTag("Player");
         anim = owner.GetComponent<Animator>();
@@ -73,18 +84,6 @@ public class Hammer : Weapon
                             Destroy(col.transform.GetChild(1).gameObject);
                         }
                     }
-
-                    //GameObject titan = isParentTitan(col.gameObject);
-                    //if(titan != null)
-                    //{
-                    //    var hurt = titan.GetComponent<Hurtable>();
-                    //    hurt.TakeDamage(damage);
-                    //    return;
-                    //}
-
-                    //print(titan);
-
-                    
                 }
             }
         }

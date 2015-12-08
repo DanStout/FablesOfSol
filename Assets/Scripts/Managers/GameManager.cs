@@ -27,7 +27,6 @@ public class GameManager : MonoBehaviour
 
     public static void RelocatePlayerToTagOnNextLevel(string tag)
     {
-        print("Set redirect tag: {0}".FormatWith(tag));
         _redirectTag = tag;
     }
 
@@ -35,7 +34,6 @@ public class GameManager : MonoBehaviour
     {
         if (_redirectTag != null)
         {
-            print("Redirecting to tag '{0}'".FormatWith(_redirectTag));
             var player = GameObject.FindGameObjectWithTag("PlayerAndCamera");
             var obj = GameObject.FindGameObjectWithTag(_redirectTag);
             if (obj == null) print("Object with tag {0} was not found".FormatWith(_redirectTag));
