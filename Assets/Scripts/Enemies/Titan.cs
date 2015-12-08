@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class Titan : MonoBehaviour, IMagnetic
@@ -7,7 +7,7 @@ public class Titan : MonoBehaviour, IMagnetic
     public float punchDamage = 3;
     public float minFire = 1;
     public float maxFire = 2;
-	public GameObject thrum; 
+
 
     private DamagingParticleSystem fireBreath;
     private Transform playerTrans;
@@ -20,9 +20,16 @@ public class Titan : MonoBehaviour, IMagnetic
     private bool leftHandLast = true;
     private bool isDead = false;
 
-	private bool thrumSpawned = false;
-	private bool spawnedThrumDestroyed = false;
-	private GameObject spawnedThrum;
+	private bool isThrumSpawned = false;
+	private int numOfSpawns;
+
+	public GameObject thrum1;
+	public GameObject thrum2;
+	public GameObject thrum3;
+
+	private GameObject curThrum;
+
+	public GameObject FloeTeleport;
 
 	void Start()
 	{
@@ -38,6 +45,7 @@ public class Titan : MonoBehaviour, IMagnetic
 
     void hurt_onDeath()
     {
+		FloeTeleport.SetActive (true);
         hurt.Die();
         anim.SetTrigger("die");
         isDead = true;
@@ -57,42 +65,55 @@ public class Titan : MonoBehaviour, IMagnetic
 	
 	void Update()
 	{
+		if (isDead) return;
+
 		//Check if the spawned thrum has been initiated
+		if (isThrumSpawned && curThrum == null) 
+		{
+			isThrumSpawned = false;
+			if(numOfSpawns == 3)
+			{
+				hurt.TakeDamage(hurt.getCurHealth() - (hurt.getCurHealth() - 1));
+			}
+		}
+
 			//Check if the spawned thrum still exists
 				//If not, resume fighting
-        if (isDead) return;
+		if(!isThrumSpawned)
+		{
+	        
+	        var playerPos = playerTrans.position;
+	        var playerDist = Vector3.Distance(transform.position, playerPos);
 
-        var playerPos = playerTrans.position;
-        var playerDist = Vector3.Distance(transform.position, playerPos);
+	        if (playerDist >= minFire && playerDist <= maxFire)
+	        {
+	            anim.SetBool("isBreathingFire", true);
+	            fireBreath.Activate();
+	        }
+	        else
+	        {
+	            fireBreath.Deactivate();
+	            anim.SetBool("isBreathingFire", false);
 
-        if (playerDist >= minFire && playerDist <= maxFire)
-        {
-            anim.SetBool("isBreathingFire", true);
-            fireBreath.Activate();
-        }
-        else
-        {
-            fireBreath.Deactivate();
-            anim.SetBool("isBreathingFire", false);
+	            isInPunchRange = (playerDist < minFire);
 
-            isInPunchRange = (playerDist < minFire);
+	            if (isInPunchRange && !wasInPunchRange)
+	            {
+	                wasInPunchRange = true;
 
-            if (isInPunchRange && !wasInPunchRange)
-            {
-                wasInPunchRange = true;
+	                if (leftHandLast)
+	                {
+	                    anim.SetTrigger("rightPunch");
+	                }
+	                else
+	                {
+	                    anim.SetTrigger("leftPunch");
+	                }
+	            }
+	        }
 
-                if (leftHandLast)
-                {
-                    anim.SetTrigger("rightPunch");
-                }
-                else
-                {
-                    anim.SetTrigger("leftPunch");
-                }
-            }
-        }
-
-        wasInPunchRange = isInPunchRange;
+	        wasInPunchRange = isInPunchRange;
+		}
 	}
 
     public void LeftHandAnimationDone()
@@ -119,10 +140,21 @@ public class Titan : MonoBehaviour, IMagnetic
 		print ("PULL THRUM");
 
 		//instantiate a thrum and store this in a variable
-		if(!thrumSpawned)
+		if(!isThrumSpawned && numOfSpawns != 3)
 		{
-			spawnedThrum = (GameObject) Instantiate(thrum, transform.position, Quaternion.identity);
-			thrumSpawned = true;
+			fireBreath.Deactivate();
+			anim.SetBool("isBreathingFire", false);
+
+			numOfSpawns ++;
+			isThrumSpawned = true;
+
+			if(numOfSpawns == 1)
+				curThrum = (GameObject)Instantiate(thrum1, this.transform.FindChild("SpawnPoint").transform.position, Quaternion.identity);
+			else if (numOfSpawns == 2)
+				curThrum = (GameObject)Instantiate(thrum2, this.transform.FindChild("SpawnPoint").transform.position, Quaternion.identity);
+			else if (numOfSpawns == 3)
+				curThrum = (GameObject)Instantiate(thrum3, this.transform.FindChild("SpawnPoint").transform.position, Quaternion.identity);
+
 		}
 	}
 

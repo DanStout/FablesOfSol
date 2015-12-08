@@ -59,4 +59,9 @@ public class Hurtable : MonoBehaviour
             meshRend.material = originalMaterial;
         }
     }
+
+	public float getCurHealth()
+	{
+		return currHealth;
+	}
 }

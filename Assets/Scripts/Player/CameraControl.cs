@@ -7,6 +7,9 @@ public class CameraControl : MonoBehaviour
     private PlayerMovement playerMove;
     private Vector3 initialOffset;
     private float speed;
+	private Quaternion initialRot;
+	private Vector3 initialPos;
+	private Transform iceSurfPos;
 
     void Start()
     {
@@ -14,15 +17,17 @@ public class CameraControl : MonoBehaviour
         playerTransform = player.transform;
         playerMove = player.GetComponent<PlayerMovement>();
         speed = playerMove.moveSpeed;
+		initialRot = transform.rotation;
+		initialPos = transform.position;
         initialOffset = transform.position - playerTransform.position;
     }
 
     void Update()
     {
-		if (playerTransform.parent.tag != "IceSurface") {
+		if (playerTransform.GetComponent<PlayerMovement> ().enabled == true) {
 			//viewPos stores the position of the player relative to the viewscreens edges        
 			Vector3 viewPos = Camera.main.WorldToViewportPoint (playerTransform.position);
-
+			transform.rotation = initialRot;
 			//If the player is within the specified distance to any edge
 			//move the camera towards the player.
 			if (viewPos.x > 0.7F || viewPos.x < 0.3F || viewPos.y < 0.3F || viewPos.y > 0.7f) {
@@ -33,7 +38,12 @@ public class CameraControl : MonoBehaviour
 				transform.position = Vector3.MoveTowards (current, target, increment);
 			}
 		} else {
-			Vector3 iceViewPos = Camera.main.WorldToViewportPoint(playerTransform.parent.transform.position);
+			iceSurfPos = GameObject.FindGameObjectWithTag ("IceSurface").transform;
+			var current = transform.position;
+			var target = iceSurfPos.localPosition + Vector3.up * 50;
+			var increment = speed * Time.deltaTime;
+			transform.rotation = Quaternion.Euler(90, 0, 0);
+			transform.position = Vector3.MoveTowards (current, target, 5);
 		}
 
     }

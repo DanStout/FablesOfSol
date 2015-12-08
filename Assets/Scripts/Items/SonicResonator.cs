@@ -40,11 +40,11 @@ public class SonicResonator : Weapon
 
             if (Physics.Raycast(owner.transform.position + pos, fwd, out hit, 10))
             {
-                ISonic sonic = hit.collider.gameObject.GetComponentInChildren<ISonic>();
-                if (sonic != null)
-                {
-                    sonic.resonate();
-                }
+              	if(hit.collider.gameObject.name == "Ice")
+				{
+					print ("HIT THE ICE");
+					hit.collider.gameObject.GetComponent<BreakIce>().breakIce();
+				}
             }
         }
     }
@@ -66,6 +66,7 @@ public class SonicResonator : Weapon
             anim.SetBool("gunAttack", false);
         }
     }
+
 
     public override void Equip()
     {

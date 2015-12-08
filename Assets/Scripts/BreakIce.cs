@@ -11,11 +11,6 @@ public class BreakIce : MonoBehaviour {
 		parentAnim = gameObject.GetComponentInParent<Animator>();
 	}
 
-	void OnCollisonEnter(Collision col){
-		if(col.collider.tag == "Sound"){
-			StartCoroutine(brokenIce());
-		}
-	}
 
 	IEnumerator brokenIce(){
 		damageSphere.SetActive (true);
@@ -25,6 +20,11 @@ public class BreakIce : MonoBehaviour {
 		damageSphere.SetActive (false);
 		gameObject.SetActive(true);
 
+	}
+
+	public void breakIce()
+	{
+		StartCoroutine(brokenIce());
 	}
 
 }

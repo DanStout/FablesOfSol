@@ -8,12 +8,12 @@ public class SceneManager : MonoBehaviour
 {
     public AudioClip[] footstepSounds;
 
+
     void Start()
 	{
 	}
 	
 	void Update()
 	{
-	
 	}
 }

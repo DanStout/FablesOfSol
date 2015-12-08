@@ -3,11 +3,20 @@ using System.Collections;
 
 public class IceContact : MonoBehaviour {
 
-	void OnCollisionStay(Collision col){
-		if (col.collider.tag == "Player") {
-			col.collider.transform.SetParent(transform);
-			col.collider.GetComponent<PlayerMovement>().enabled = false;
-			col.collider.GetComponent<IceMovement>().enabled = true;
+	void OnTriggerEnter(Collider col){
+		if (col.tag == "IceSurface") {
+			if (gameObject.GetComponent<PlayerMovement> ().enabled == true){
+				gameObject.GetComponent<PlayerMovement> ().enabled = false;
+				gameObject.GetComponent<IceMovement> ().enabled = true;
+			}
+		}
+	}
+	void OnTriggerExit(Collider col){
+		if(col.tag == "IceSurface"){
+			if (gameObject.GetComponent<PlayerMovement> ().enabled == false){
+				gameObject.GetComponent<PlayerMovement>().enabled = true;
+				gameObject.GetComponent<IceMovement>().enabled = false;
+			}
 		}
 	}
 }
