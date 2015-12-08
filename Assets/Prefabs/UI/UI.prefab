@@ -336,6 +336,7 @@ GameObject:
   - 222: {fileID: 22236888}
   - 114: {fileID: 11442728}
   - 114: {fileID: 11498884}
+  - 114: {fileID: 11448898}
   m_Layer: 5
   m_Name: OkButton
   m_TagString: Untagged
@@ -678,6 +679,7 @@ GameObject:
   - 222: {fileID: 22241330}
   - 114: {fileID: 11490582}
   - 114: {fileID: 11483898}
+  - 114: {fileID: 11499918}
   m_Layer: 5
   m_Name: Restart
   m_TagString: Untagged
@@ -1533,6 +1535,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c28f0c70f66f113458e64509e324fa77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSource: {fileID: 8241810}
   clickSounds:
   - {fileID: 8300000, guid: dd71b20d9138a8f47b6046dbaee94b91, type: 3}
 --- !u!114 &11429732
@@ -1870,6 +1873,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ForceModuleActive: 0
+--- !u!114 &11448898
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 143632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c28f0c70f66f113458e64509e324fa77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 8241810}
+  clickSounds:
+  - {fileID: 8300000, guid: dd71b20d9138a8f47b6046dbaee94b91, type: 3}
 --- !u!114 &11449954
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1881,6 +1898,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c28f0c70f66f113458e64509e324fa77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
   clickSounds:
   - {fileID: 8300000, guid: b95c961e2f9b4664baf5cbbb636a10d1, type: 3}
 --- !u!114 &11454818
@@ -2268,6 +2286,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 11467690}
         m_MethodName: OnRestartClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11499918}
+        m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2691,8 +2720,33 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 11448898}
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &11499918
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 189894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c28f0c70f66f113458e64509e324fa77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 8241810}
+  clickSounds:
+  - {fileID: 8300000, guid: dd71b20d9138a8f47b6046dbaee94b91, type: 3}
 --- !u!222 &22202802
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -3087,11 +3141,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 22409864}
-  m_Father: {fileID: 22432196}
-  m_RootOrder: 2
+  m_Father: {fileID: 22464568}
+  m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 1.21590001e-05, y: -45.2999725}
+  m_AnchoredPosition: {x: 1.21590001e-05, y: -.999984741}
   m_SizeDelta: {x: 156.800003, y: 41.2000008}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22430918
@@ -3123,8 +3177,6 @@ RectTransform:
   m_Children:
   - {fileID: 22473116}
   - {fileID: 22464568}
-  - {fileID: 22428838}
-  - {fileID: 22449008}
   m_Father: {fileID: 22460572}
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
@@ -3339,11 +3391,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 22410728}
-  m_Father: {fileID: 22432196}
-  m_RootOrder: 3
+  m_Father: {fileID: 22464568}
+  m_RootOrder: 1
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 1.21590001e-05, y: -86.3000031}
+  m_AnchoredPosition: {x: 1.21590001e-05, y: -42}
   m_SizeDelta: {x: 156.800003, y: 41.2000008}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22449318
@@ -3428,7 +3480,9 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 22428838}
+  - {fileID: 22449008}
   m_Father: {fileID: 22432196}
   m_RootOrder: 1
   m_AnchorMin: {x: .5, y: .5}

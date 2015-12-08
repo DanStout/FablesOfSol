@@ -12,4 +12,9 @@ public class DnaItem : BaseItem
     {
         get { return "DNA"; }
     }
+
+    protected override void InitialSetup()
+    {
+
+    }
 }

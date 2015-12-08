@@ -8,15 +8,10 @@ public class SonicResonator : Weapon
     private ParticleSystem particleSys;
     private Animator anim;
 
-    void Awake()
+    protected override void InitialSetup()
     {
         owner = GameObject.FindGameObjectWithTag("Player");
         anim = owner.GetComponent<Animator>();
-    }
-
-    // Use this for initialization
-    void Start()
-    {
         isOn = false;
 
         ParticleSystem[] systems = owner.GetComponentsInChildren<ParticleSystem>();

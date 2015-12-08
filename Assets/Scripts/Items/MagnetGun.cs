@@ -10,15 +10,12 @@ public class MagnetGun : Weapon
     public AudioClip activeSound;
     private AudioSource playerAudio;
 
-    void Awake()
+    protected override void InitialSetup()
     {
         owner = GameObject.FindGameObjectWithTag("Player");
         anim = owner.GetComponent<Animator>();
         playerAudio = owner.GetComponent<AudioSource>();
-    }
 
-    void Start()
-    {
         ParticleSystem[] systems = owner.GetComponentsInChildren<ParticleSystem>();
         foreach (ParticleSystem p in systems)
         {

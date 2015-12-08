@@ -7,9 +7,10 @@ public class HeartItem : BaseItem
 
     private PlayerLife playLife;
 
-    void Start()
+    protected override void InitialSetup()
     {
-        playLife = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerLife>();
+        if (playLife == null)
+            playLife = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerLife>();
     }
 
     public override void Use()
@@ -22,4 +23,6 @@ public class HeartItem : BaseItem
     {
         get { return "Heart"; }
     }
+
+
 }

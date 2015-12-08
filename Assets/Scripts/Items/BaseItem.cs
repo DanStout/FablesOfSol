@@ -10,6 +10,16 @@ public abstract class BaseItem : MonoBehaviour
 
     private int _quantity;
 
+    protected virtual void Awake()
+    {
+        InitialSetup();
+    }
+
+    protected virtual void OnLevelWasLoaded()
+    {
+        InitialSetup();
+    }
+
     public int Quantity
     {
         get
@@ -24,6 +34,11 @@ public abstract class BaseItem : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Called in both Awake() and OnLevelWasLoaded(), which is necessary to maintain references between scene loads
+    /// </summary>
+    protected abstract void InitialSetup();
     public abstract void Use();
+
     public abstract string Name { get; }
 }

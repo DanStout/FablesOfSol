@@ -9,16 +9,10 @@ public class Hammer : Weapon
     private GameObject owner;
     private Animator anim;
 
-    void Awake()
+    protected override void InitialSetup()
     {
-        owner = GameObject.FindGameObjectWithTag("Player");
-        anim = owner.GetComponent<Animator>();
-    }
-
-    void OnLevelWasLoaded()
-    {
-        owner = GameObject.FindGameObjectWithTag("Player");
-        anim = owner.GetComponent<Animator>();
+        if (owner == null) owner = GameObject.FindGameObjectWithTag("Player");
+        if (anim == null) anim = owner.GetComponent<Animator>();
     }
 
     public override void Use()
@@ -95,4 +89,6 @@ public class Hammer : Weapon
     {
         get { return "Hammer"; }
     }
+
+
 }

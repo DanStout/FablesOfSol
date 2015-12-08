@@ -14,10 +14,10 @@ public class ClickSound : MonoBehaviour
     {
         var index = Random.Range(0, clickSounds.Length);
         var sound = clickSounds[index];
-        PlayClip(sound, transform.position);
+        PlayClipKeepBetweenScenes(sound, transform.position);
     }
 
-    private void PlayClip(AudioClip clip, Vector3 position)
+    private void PlayClipKeepBetweenScenes(AudioClip clip, Vector3 position)
     {
         var obj = new GameObject("Persistent Audio Obj");
         obj.AddComponent<DontDestroy>();
