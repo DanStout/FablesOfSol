@@ -4,10 +4,11 @@ using System.Collections;
 public class Titan : MonoBehaviour, IMagnetic
 {
     public GameObject activateOnDeath;
-    public float punchDamage = 3;
-    public float minFire = 1;
-    public float maxFire = 2;
+    public float punchDamage = 3; //used by the scripts attached to hands
+    public float minFire = 1; //minimum range to use fire breath
+    public float maxFire = 2; //max range
 
+    public int numThrumsToSpawn;
 
     private DamagingParticleSystem fireBreath;
     private Transform playerTrans;
@@ -24,13 +25,7 @@ public class Titan : MonoBehaviour, IMagnetic
 	private int numOfSpawns;
 
     public GameObject thrumPrefab;
-    //public GameObject thrum1;
-    //public GameObject thrum2;
-    //public GameObject thrum3;
-
 	private GameObject curThrum;
-
-	public GameObject FloeTeleport;
 
 	void Start()
 	{
@@ -46,7 +41,6 @@ public class Titan : MonoBehaviour, IMagnetic
 
     void hurt_onDeath()
     {
-		FloeTeleport.SetActive (true);
         hurt.Die();
         anim.SetTrigger("die");
         isDead = true;
@@ -54,7 +48,8 @@ public class Titan : MonoBehaviour, IMagnetic
 
     void OnDisable()
     {
-        hurt.onDeath -= hurt_onDeath;
+        if (hurt != null)
+            hurt.onDeath -= hurt_onDeath;
     }
 
     public void DeathAnimationDone()
@@ -72,9 +67,9 @@ public class Titan : MonoBehaviour, IMagnetic
 		if (isThrumSpawned && curThrum == null) 
 		{
 			isThrumSpawned = false;
-			if(numOfSpawns == 3)
+			if(numOfSpawns == numThrumsToSpawn)
 			{
-				hurt.TakeDamage(hurt.getCurHealth() - (hurt.getCurHealth() - 1));
+                hurt.SetHealthToLevel(1);
 			}
 		}
 
@@ -135,13 +130,13 @@ public class Titan : MonoBehaviour, IMagnetic
         }
     }
 
-	//Method used by sonic resonator to pull a thrum
+	//Method used by magnet gunto pull a thrum
 	public void pullThrum()
 	{
 		print ("PULL THRUM");
 
 		//instantiate a thrum and store this in a variable
-		if(!isThrumSpawned && numOfSpawns != 3)
+		if(!isThrumSpawned && numOfSpawns != numThrumsToSpawn)
 		{
 			fireBreath.Deactivate();
 			anim.SetBool("isBreathingFire", false);
@@ -152,12 +147,6 @@ public class Titan : MonoBehaviour, IMagnetic
             curThrum = (GameObject) Instantiate(thrumPrefab, this.transform.FindChild("SpawnPoint").transform.position, Quaternion.identity);
 
 		}
-	}
-
-	//Called from update when the spawned thrum has been destroyed
-	private void resumeAttack()
-	{
-
 	}
 
 	public bool isHeavierThanPlayer()

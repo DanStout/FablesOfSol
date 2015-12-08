@@ -50,6 +50,11 @@ public class Hurtable : MonoBehaviour
         }
     }
 
+    public void SetHealthToLevel(float level)
+    {
+        currHealth = level;
+    }
+
     private IEnumerator HurtFlashForTime(float seconds)
     {
         if (meshRend != null)
@@ -59,9 +64,4 @@ public class Hurtable : MonoBehaviour
             meshRend.material = originalMaterial;
         }
     }
-
-	public float getCurHealth()
-	{
-		return currHealth;
-	}
 }

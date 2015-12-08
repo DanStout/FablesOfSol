@@ -26,12 +26,6 @@ public class Hammer : Weapon
                 dest.TakeHit();
                 return;
             }
-
-            //var hurt = col.GetComponentInParent<Hurtable>();
-            //if (hurt != null)
-            //{
-            //    hurt.TakeDamage(damage);
-            //}
         }
     }
 
@@ -53,14 +47,18 @@ public class Hammer : Weapon
                 //If enemy is in front of player, deal damage
                 if (Vector3.Dot(forward, toOther) > 0)
                 {
-                    var hurtable = col.GetComponent<Hurtable>();
-					GameObject titan = isParentTitan(col.gameObject);
-					if(titan != null)
-					{
-						var hurt = titan.GetComponent<Hurtable>();
-						hurt.TakeDamage(damage);
-						return;
-					}
+                    Hurtable hurtable;
+                    var childCol = col.GetComponent<CollisionChild>();
+                    if (childCol != null)
+                    {
+                        print(childCol);
+                        hurtable = childCol.parent.GetComponent<Hurtable>();
+                    }
+                    else
+                    {
+                        hurtable = col.GetComponent<Hurtable>();
+                    }
+
 
                     if (hurtable != null)
                     {
@@ -74,6 +72,18 @@ public class Hammer : Weapon
                             Destroy(col.transform.GetChild(1).gameObject);
                         }
                     }
+
+                    //GameObject titan = isParentTitan(col.gameObject);
+                    //if(titan != null)
+                    //{
+                    //    var hurt = titan.GetComponent<Hurtable>();
+                    //    hurt.TakeDamage(damage);
+                    //    return;
+                    //}
+
+                    //print(titan);
+
+                    
                 }
             }
         }

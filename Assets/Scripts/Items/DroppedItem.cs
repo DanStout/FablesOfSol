@@ -22,9 +22,8 @@ public class DroppedItem : MonoBehaviour
         var invent = col.GetComponent<PlayerInventory>();
         if (invent != null)
         {
-            Destroy(gameObject);
             invent.PickupItem(itemScript);
-            print(itemScript);
+            Destroy(gameObject);
         }
     }
 }
