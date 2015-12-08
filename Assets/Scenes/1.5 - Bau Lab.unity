@@ -6216,18 +6216,6 @@ Prefab:
       propertyPath: m_Name
       value: TallDestroyableRock (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 419742, guid: 1fa8e1bc5cb8c214190f5add53a6de46, type: 2}
-      propertyPath: m_LocalScale.x
-      value: .0333333351
-      objectReference: {fileID: 0}
-    - target: {fileID: 419742, guid: 1fa8e1bc5cb8c214190f5add53a6de46, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 419742, guid: 1fa8e1bc5cb8c214190f5add53a6de46, type: 2}
-      propertyPath: m_LocalScale.z
-      value: .0333333351
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1fa8e1bc5cb8c214190f5add53a6de46, type: 2}
   m_IsPrefabParent: 0

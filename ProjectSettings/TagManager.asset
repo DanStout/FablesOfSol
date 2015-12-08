@@ -28,6 +28,7 @@ TagManager:
   - Minion1
   - Minion2
   - Minion3
+  - destroyable
   layers:
   - Default
   - TransparentFX

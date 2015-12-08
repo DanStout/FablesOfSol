@@ -14,7 +14,7 @@ GameObject:
   - 114: {fileID: 11498138}
   m_Layer: 0
   m_Name: TallDestroyableRock
-  m_TagString: Untagged
+  m_TagString: destroyable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25,9 +25,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 112518}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.0500002, y: -5.76200342, z: -64.3399963}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .424333334, y: .5, z: -.0753331557}
+  m_LocalScale: {x: .0333333351, y: 2, z: .0333333351}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0

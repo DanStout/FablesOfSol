@@ -21,19 +21,6 @@ public class Hammer : Weapon
         anim = owner.GetComponent<Animator>();
     }
 
-    void OnTriggerEnter(Collider col)
-    {
-        if (Input.GetButton("Attack"))
-        {
-            var dest = col.gameObject.GetComponent<Destroyable>();
-            if (dest != null)
-            {
-                dest.TakeHit();
-                return;
-            }
-        }
-    }
-
     public override void Use()
     {
         anim.SetTrigger("attack");
@@ -43,7 +30,7 @@ public class Hammer : Weapon
         {
 			print(col.name);
             //If we are in range of an enemy
-            if (col && col.tag == "enemy")
+            if (col.tag == "enemy" || col.tag == "destroyable")
             {
 				print ("COLLIDED WITH " + col.gameObject.name);
                 //Find dot product of the vectors of player and enemy to determine direction
@@ -53,47 +40,62 @@ public class Hammer : Weapon
                 //If enemy is in front of player, deal damage
                 if (Vector3.Dot(forward, toOther) > 0)
                 {
-                    Hurtable hurtable;
-                    var childCol = col.GetComponent<CollisionChild>();
-                    if (childCol != null)
+                    if (col.tag == "enemy")
                     {
-                        print(childCol);
-                        hurtable = childCol.parent.GetComponent<Hurtable>();
-                    }
-                    else
-                    {
-                        hurtable = col.GetComponent<Hurtable>();
-                    }
-
-
-                    if (hurtable != null)
-                    {
-                        if (col.transform.childCount < 2 || col.transform.GetChild(1).tag != "Ice")
+                        Hurtable hurtable;
+                        var childCol = col.GetComponent<CollisionChild>();
+                        if (childCol != null)
                         {
-                            hurtable.TakeDamage(damage);
+                            print(childCol);
+                            hurtable = childCol.parent.GetComponent<Hurtable>();
                         }
                         else
                         {
-                            col.transform.GetChild(1).GetComponent<ParticleSystem>().Play();
-                            Destroy(col.transform.GetChild(1).gameObject);
+                            hurtable = col.GetComponent<Hurtable>();
+                        }
+
+
+                        if (hurtable != null)
+                        {
+                            if (col.transform.childCount < 2 || col.transform.GetChild(1).tag != "Ice")
+                            {
+                                hurtable.TakeDamage(damage);
+                            }
+                            else
+                            {
+                                col.transform.GetChild(1).GetComponent<ParticleSystem>().Play();
+                                Destroy(col.transform.GetChild(1).gameObject);
+                            }
                         }
                     }
+                    else if (col.tag == "destroyable")
+                    {
+                        var dest = col.gameObject.GetComponent<Destroyable>();
+                        if (dest != null)
+                        {
+                            dest.TakeHit();
+                            return;
+                        }
+                        else
+                            print("Object with destroyable tag does not have destroyable component");
+                    }
+
                 }
             }
         }
 
     }
 
-	//Used during hit to destroy thrum titan
-	private GameObject isParentTitan(GameObject g)
-	{
-		if (g.name == "ThrumTitan")
-			return g;
-		else if (g.transform.parent != null)
-			return isParentTitan(g.transform.parent.gameObject);
-		else
-			return null;
-	}
+    //Used during hit to destroy thrum titan
+    private GameObject isParentTitan(GameObject g)
+    {
+        if (g.name == "ThrumTitan")
+            return g;
+        else if (g.transform.parent != null)
+            return isParentTitan(g.transform.parent.gameObject);
+        else
+            return null;
+    }
 
     public override void Equip()
     {
