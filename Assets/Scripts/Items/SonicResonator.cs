@@ -36,7 +36,7 @@ public class SonicResonator : Weapon
         {
             RaycastHit hit;
             Vector3 fwd = owner.transform.TransformDirection(Vector3.forward);
-            Vector3 pos = new Vector3(0, 1, 0);
+            Vector3 pos = new Vector3(0, 3, 0);
 
             if (Physics.Raycast(owner.transform.position + pos, fwd, out hit, 10))
             {
