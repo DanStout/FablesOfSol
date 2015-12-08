@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class MagnetGun : MonoBehaviour, IItem {
+public class MagnetGun : MonoBehaviour, IItem{
 
 	private GameObject owner;
 	private bool isOn;
@@ -35,21 +35,21 @@ public class MagnetGun : MonoBehaviour, IItem {
 
 			if(Physics.Raycast(owner.transform.position + pos, fwd, out hit, 20))
 			{
-				IMagnetic mag = hit.collider.gameObject.GetComponentInChildren<IMagnetic>();
 
+				Titan titan = isParentTitan(hit.collider.gameObject);
+				if(titan != null)
+				{
+					print ("found titan!");
+					titan.pullThrum();
+					return;
+				}
+
+				IMagnetic mag = hit.collider.gameObject.GetComponentInChildren<IMagnetic>();
 				if(mag != null)
 				{
 					Vector3 cur = hit.collider.transform.position;
 					if(Vector3.Distance(cur, owner.transform.position) > 3)
 					{
-						//If we have hit the mega thrum, trigger special logic
-						if(hit.collider.gameObject.name == "ThrumTitan")
-						{
-							print ("Found thrum titan");
-							Titan titan = hit.collider.gameObject.GetComponent<Titan>();
-							titan.pullThrum();
-							return;
-						}
 
 						if(!mag.isHeavierThanPlayer())
 						{
@@ -81,14 +81,17 @@ public class MagnetGun : MonoBehaviour, IItem {
 		}
 	}
 
-	private bool isParentMagnetic(GameObject g)
+	//Used during raycast hit to determine if we have hit a child of a magnetic object
+	private Titan isParentTitan(GameObject g)
 	{
-		return false;
-		if(g.GetComponent<IMagnetic>() != null)
-		{
-
-		}
+		if (g.name == "ThrumTitan")
+			return g.GetComponent<Titan>();
+		else if (g.transform.parent != null)
+			return isParentTitan (g.transform.parent.gameObject);
+		else
+			return null;
 	}
+
 	public string getName()
 	{
 		return "Magnet Gun";

@@ -24,6 +24,7 @@ public class PlayerInventory : MonoBehaviour
 
     void OnControllerColliderHit(ControllerColliderHit hit)
     {
+
         var item = hit.gameObject.GetComponent<BaseItem>();
         if (item != null)
         {
