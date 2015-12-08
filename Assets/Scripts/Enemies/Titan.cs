@@ -29,6 +29,7 @@ public class Titan : MonoBehaviour, IMagnetic
 
 	private GameObject curThrum;
 
+	public GameObject FloeTeleport;
 
 	void Start()
 	{
@@ -44,6 +45,7 @@ public class Titan : MonoBehaviour, IMagnetic
 
     void hurt_onDeath()
     {
+		FloeTeleport.SetActive (true);
         hurt.Die();
         anim.SetTrigger("die");
         isDead = true;
