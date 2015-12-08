@@ -1,16 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Hammer : BaseItem //, IItem
+public class Hammer : Weapon //, IItem
 {
     public float radius = 1;
     public float damage = 5;
 
     private GameObject owner;
-    //private bool attacking = false;   
+    private GameObject hammer;
 
-    // Use this for initialization
-    void Start()
+    void Awake()
     {
         owner = GameObject.FindGameObjectWithTag("Player");
     }
@@ -36,8 +35,6 @@ public class Hammer : BaseItem //, IItem
 
     public override void Use()
     {
-        //Trigger player animation
-
         //Find all colliders in a given radius of the player
         Collider[] cols = Physics.OverlapSphere(owner.transform.position, radius);
         foreach (Collider col in cols)
@@ -69,5 +66,11 @@ public class Hammer : BaseItem //, IItem
             }
         }
 
+    }
+
+    public override void Equip()
+    {
+        var hammer = owner.GetComponent<PlayerInventory>().Hammer;
+        hammer.SetActive(true);
     }
 }
