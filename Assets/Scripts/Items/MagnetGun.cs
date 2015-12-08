@@ -23,43 +23,39 @@ public class MagnetGun : Weapon
         }
     }
 
-    void Update()
+    public void Update()
     {
-        //Check if the gun is on
-        if (isOn)
+        if (!isOn) return;
+        RaycastHit hit;
+        Vector3 fwd = owner.transform.TransformDirection(Vector3.forward);
+        Vector3 pos = new Vector3(0, 1, 0);
+
+        if (Physics.Raycast(owner.transform.position + pos, fwd, out hit, 20))
         {
-            RaycastHit hit;
-            Vector3 fwd = owner.transform.TransformDirection(Vector3.forward);
-            Vector3 pos = new Vector3(0, 1, 0);
 
-
-            if (Physics.Raycast(owner.transform.position + pos, fwd, out hit, 20))
+            Titan titan = isParentTitan(hit.collider.gameObject);
+            if (titan != null)
             {
-                IMagnetic mag = hit.collider.gameObject.GetComponentInChildren<IMagnetic>();
+                print("found titan!");
+                titan.pullThrum();
+                return;
+            }
 
-                if (mag != null)
+            IMagnetic mag = hit.collider.gameObject.GetComponentInChildren<IMagnetic>();
+            if (mag != null)
+            {
+                Vector3 cur = hit.collider.transform.position;
+                if (Vector3.Distance(cur, owner.transform.position) > 3)
                 {
-                    Vector3 cur = hit.collider.transform.position;
-                    if (Vector3.Distance(cur, owner.transform.position) > 3)
-                    {
-                        //If we have hit the mega thrum, trigger special logic
-                        if (hit.collider.gameObject.name == "ThrumTitan")
-                        {
-                            print("Found thrum titan");
-                            Titan titan = hit.collider.gameObject.GetComponent<Titan>();
-                            titan.pullThrum();
-                            return;
-                        }
 
-                        if (!mag.isHeavierThanPlayer())
-                        {
-                            hit.collider.transform.position =
-                                Vector3.MoveTowards(cur, owner.transform.position, .15f);
-                        }
-                        else
-                        {
-                            owner.transform.position = Vector3.MoveTowards(owner.transform.position, cur, .15f);
-                        }
+                    if (!mag.isHeavierThanPlayer())
+                    {
+                        hit.collider.transform.position =
+                            Vector3.MoveTowards(cur, owner.transform.position, .15f);
+                    }
+                    else
+                    {
+                        owner.transform.position = Vector3.MoveTowards(owner.transform.position, cur, .15f);
                     }
                 }
             }
@@ -82,14 +78,15 @@ public class MagnetGun : Weapon
         }
     }
 
-    private bool isParentMagnetic(GameObject g)
+    //Used during raycast hit to determine if we have hit a child of a magnetic object
+    private Titan isParentTitan(GameObject g)
     {
-        if (g.GetComponent<IMagnetic>() != null)
-        {
-
-        }
-
-        return false;
+        if (g.name == "ThrumTitan")
+            return g.GetComponent<Titan>();
+        else if (g.transform.parent != null)
+            return isParentTitan(g.transform.parent.gameObject);
+        else
+            return null;
     }
 
     public override void Equip()

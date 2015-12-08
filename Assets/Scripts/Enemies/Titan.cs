@@ -121,6 +121,7 @@ public class Titan : MonoBehaviour, IMagnetic
 		spawnedThrum.transform.position = this.transform.position;
 
 		//pause titan attacking
+
 	}
 
 	//Called from update when the spawned thrum has been destroyed
