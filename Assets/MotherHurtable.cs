@@ -59,4 +59,9 @@ public class MotherHurtable : MonoBehaviour
 			meshRend.material = originalMaterial;
 		}
 	}
+
+	public float getHealth()
+	{
+		return currHealth;
+	}
 }
