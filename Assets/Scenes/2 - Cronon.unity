@@ -299,8 +299,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 57f98e68b4770594a8a2609795adb413, type: 3}
   - {fileID: 8300000, guid: 946c08af58e20c94c9a61c45fd24db15, type: 3}
   - {fileID: 8300000, guid: 0d15262184940fc4ab68ee87d54f73d1, type: 3}
-  titan: {fileID: 1767355243}
-  FloeTeleport: {fileID: 1751309517}
 --- !u!4 &448983379
 Transform:
   m_ObjectHideFlags: 0
@@ -995,6 +993,10 @@ Prefab:
       propertyPath: fullHealth
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 11480790, guid: c576f8409e19f9241aa01c155384ead6, type: 2}
+      propertyPath: FloeTeleport
+      value: 
+      objectReference: {fileID: 1751309517}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c576f8409e19f9241aa01c155384ead6, type: 2}
   m_IsPrefabParent: 0
@@ -1296,10 +1298,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6f8daeab7390c1346a8bd5298578da79, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1767355243 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 160262, guid: c576f8409e19f9241aa01c155384ead6, type: 2}
-  m_PrefabInternal: {fileID: 1327857914}
 --- !u!4 &1788623005 stripped
 Transform:
   m_PrefabParentObject: {fileID: 429926, guid: c576f8409e19f9241aa01c155384ead6, type: 2}
