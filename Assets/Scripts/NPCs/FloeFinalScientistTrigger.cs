@@ -11,5 +11,18 @@ public class FloeFinalScientistTrigger : ScientistTrigger {
 		dialog.AddLine("Through your efforts, the human population on Sol shall be restored to its former glory!");
 
 		didOperate = true;
+
+		StartCoroutine(showGameOverScreen ());
+	}
+
+	protected IEnumerator showGameOverScreen()
+	{
+		while(!dialog.IsDoneDisplaying())
+	    {
+			yield return new WaitForSeconds(5);
+		}
+
+		var gameScreen = GameObject.FindGameObjectWithTag("GameOverScreen").GetComponent<GameOverScreen>();
+		gameScreen.Show();
 	}
 }
