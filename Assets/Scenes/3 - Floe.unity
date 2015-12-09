@@ -260,6 +260,33 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: d94f72e4a2abaad478411126d4d84068, type: 2}
   m_PrefabInternal: {fileID: 62183457}
+--- !u!1 &77980640
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 77980641}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &77980641
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 77980640}
+  m_LocalRotation: {x: 0, y: -.438809037, z: 0, w: .898580372}
+  m_LocalPosition: {x: -49.6399994, y: 39.457428, z: -161.089996}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
 --- !u!1 &90624154
 GameObject:
   m_ObjectHideFlags: 0
@@ -2232,6 +2259,7 @@ GameObject:
   - 4: {fileID: 709808693}
   - 114: {fileID: 709808692}
   - 82: {fileID: 709808694}
+  - 114: {fileID: 709808695}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: SceneManager
@@ -2337,6 +2365,20 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!114 &709808695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 709808691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d0ff449e126cd141bce88c34cd12a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iceMother: {fileID: 1069129654}
+  scientist: {fileID: 148980, guid: a419f33d8fe422b409f90b8f88aa9cd3, type: 2}
+  scientistSpawn: {fileID: 0}
 --- !u!1001 &755754273
 Prefab:
   m_ObjectHideFlags: 0
@@ -3460,6 +3502,10 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2abf8cf1d252179449e5e9c711733bcf, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1069129654 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 183762, guid: 2abf8cf1d252179449e5e9c711733bcf, type: 2}
+  m_PrefabInternal: {fileID: 1069129653}
 --- !u!1 &1094847143
 GameObject:
   m_ObjectHideFlags: 0
