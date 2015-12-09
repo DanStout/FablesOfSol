@@ -8,7 +8,7 @@ public class CameraControl : MonoBehaviour
     private Vector3 initialOffset;
     private float speed;
 	private Quaternion initialRot;
-	private Vector3 initialPos;
+    //private Vector3 initialPos;
 	private Transform iceSurfPos;
 
     void Start()
@@ -18,7 +18,7 @@ public class CameraControl : MonoBehaviour
         playerMove = player.GetComponent<PlayerMovement>();
         speed = playerMove.moveSpeed;
 		initialRot = transform.rotation;
-		initialPos = transform.position;
+        //initialPos = transform.position;
         initialOffset = transform.position - playerTransform.position;
     }
 
@@ -41,7 +41,7 @@ public class CameraControl : MonoBehaviour
 			iceSurfPos = GameObject.FindGameObjectWithTag ("IceSurface").transform;
 			var current = transform.position;
 			var target = iceSurfPos.localPosition + Vector3.up * 50;
-			var increment = speed * Time.deltaTime;
+            //var increment = speed * Time.deltaTime;
 			transform.rotation = Quaternion.Euler(90, 0, 0);
 			transform.position = Vector3.MoveTowards (current, target, 5);
 		}

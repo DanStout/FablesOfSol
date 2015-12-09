@@ -4,6 +4,7 @@ using System.Collections;
 public class Destroyable : MonoBehaviour
 {
     public ParticleSystem destroySystem;
+    public AudioClip explosionSound;
 
     public void TakeHit()
     {
@@ -12,6 +13,7 @@ public class Destroyable : MonoBehaviour
         system.Play();
         Destroy(system.gameObject, system.duration);
         Destroy(gameObject);
+        AudioSource.PlayClipAtPoint(explosionSound, transform.position);
     }
 
     

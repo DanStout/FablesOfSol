@@ -682,6 +682,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 448983379}
   - 114: {fileID: 448983378}
+  - 82: {fileID: 448983380}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: SceneManager
@@ -746,6 +747,48 @@ Transform:
   - {fileID: 766913330}
   m_Father: {fileID: 927052144}
   m_RootOrder: 0
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1001 &471570436
 Prefab:
   m_ObjectHideFlags: 0

@@ -7,9 +7,9 @@ public class Hurtable : MonoBehaviour
     public float damageFlashSeconds = 0.5f;
     public Material damagedMaterial;
 
-    private float currHealth;
-    private Material originalMaterial;
-    private SkinnedMeshRenderer meshRend;
+    protected float currHealth;
+    protected Material originalMaterial;
+    protected SkinnedMeshRenderer meshRend;
 
     public delegate void HurtHandler();
     public event HurtHandler onHurt;
@@ -24,7 +24,7 @@ public class Hurtable : MonoBehaviour
         originalMaterial = meshRend.material;
     }
 
-    public void Die()
+    public virtual void Die()
     {
         if (meshRend != null)
         {
@@ -33,7 +33,7 @@ public class Hurtable : MonoBehaviour
         Destroy(this);
     }
 
-    public void TakeDamage(float amount)
+    public virtual void TakeDamage(float amount)
     {
         StartCoroutine(HurtFlashForTime(damageFlashSeconds));
         currHealth -= amount;
@@ -55,7 +55,7 @@ public class Hurtable : MonoBehaviour
         currHealth = level;
     }
 
-    private IEnumerator HurtFlashForTime(float seconds)
+    protected IEnumerator HurtFlashForTime(float seconds)
     {
         if (meshRend != null)
         {
@@ -64,4 +64,19 @@ public class Hurtable : MonoBehaviour
             meshRend.material = originalMaterial;
         }
     }
+
+	protected void raiseDeathEvent()
+	{
+		if (onDeath != null)
+			onDeath ();
+		else print("No event attached on {0}'s death..".FormatWith(gameObject.name));
+	}
+
+	protected void raiseOnHurtEvent()
+	{
+		if (onHurt != null)
+			onHurt ();
+		else
+			print ("No hurt handler event attached...");
+	}
 }

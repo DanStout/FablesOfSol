@@ -7,16 +7,16 @@ public class IceMovement : MonoBehaviour {
 	public float rotationSpeed = 10f;
 	
 	private CharacterController _charController;
-	private PlayerLife _playerLife;
-	private Animator _animator;
+    //private PlayerLife _playerLife;
+    //private Animator _animator;
 	private Vector3 movement;
 	
 	void Start()
 	{
 		movement = Vector3.zero;
 		_charController = GetComponent<CharacterController>();
-		_animator = GetComponent<Animator>();
-		_playerLife = GetComponent<PlayerLife>();
+        //_animator = GetComponent<Animator>();
+        //_playerLife = GetComponent<PlayerLife>();
 	}
 
 	// Update is called once per frame

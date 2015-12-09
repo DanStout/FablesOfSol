@@ -1,30 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MotherHurtable : MonoBehaviour
+public class MotherHurtable : Hurtable
 {
-	public float fullHealth = 10;
-	public float damageFlashSeconds = 0.5f;
-	public Material damagedMaterial;
+
+	private int numHits = 0;
+
+
 	
-	private float currHealth;
-	private Material originalMaterial;
-	private SkinnedMeshRenderer meshRend;
-	
-	public delegate void HurtHandler();
-	public event HurtHandler onHurt;
-	
-	public delegate void DeathHandler();
-	public event DeathHandler onDeath;
-	
-	void Start()
-	{
-		currHealth = fullHealth;
-		meshRend = GetComponentInChildren<SkinnedMeshRenderer>();
-		originalMaterial = meshRend.material;
-	}
-	
-	public void Die()
+	public override void Die()
 	{
 		if (meshRend != null)
 		{
@@ -33,30 +17,33 @@ public class MotherHurtable : MonoBehaviour
 		Destroy(transform.parent.gameObject);
 	}
 	
-	public void TakeDamage(float amount)
+	public override void TakeDamage(float amount)
 	{
 		StartCoroutine(HurtFlashForTime(damageFlashSeconds));
 		currHealth -= amount;
+
+		
 		if (currHealth <= 0)
-		{
-			if (onDeath == null)
-				print("No event attached on {0}'s death..".FormatWith(gameObject.name));
-			else
-				onDeath();
-		}
-		else if (onHurt != null)
-		{
-			onHurt();
-		}
-	}
+			raiseDeathEvent();
+		else
+			raiseOnHurtEvent();
 	
-	private IEnumerator HurtFlashForTime(float seconds)
-	{
-		if (meshRend != null)
-		{
-			meshRend.material = damagedMaterial;
-			yield return new WaitForSeconds(seconds);
-			meshRend.material = originalMaterial;
+
+		print ("HIT COUNT: " + numHits);
+		//Count number of hits and reduce health drastically after the second hit
+		if (numHits < 2) {
+			//Increment hit count and replace the ice
+			numHits ++;
+			BreakIce ice = gameObject.transform.parent.FindChild ("Ice").GetComponent<BreakIce> ();
+			ice.replaceIce ();
+		} else {
+			//If this is the third hit, set health to 1.
+			SetHealthToLevel(1);
+
+			//Replace ice for the final time
+			BreakIce ice = gameObject.transform.parent.FindChild ("Ice").GetComponent<BreakIce> ();
+			ice.replaceIce ();
 		}
 	}
+
 }

@@ -7,8 +7,8 @@ public class IcemanMother : MonoBehaviour {
 	public float damageFlashSeconds = 0.5f;
 
 
-	private FacesPlayer faces;
-	private DropsItems dropper;
+    //private FacesPlayer faces;
+    //private DropsItems dropper;
 	private Hurtable hurt;
 	private Animator anim;
 	private GameObject player;
@@ -22,8 +22,8 @@ public class IcemanMother : MonoBehaviour {
 		ice = transform.FindChild("Ice").gameObject;
 		player = GameObject.FindGameObjectWithTag("Player");
 		anim = GetComponent<Animator>();
-		faces = GetComponent<FacesPlayer>();
-		dropper = GetComponent<DropsItems>();
+        //faces = GetComponent<FacesPlayer>();
+        //dropper = GetComponent<DropsItems>();
 	}
 	
 	// Update is called once per frame
@@ -43,7 +43,7 @@ public class IcemanMother : MonoBehaviour {
 	IEnumerator attackPhase(){
 		routineRunning = true;
 		anim.SetTrigger("attack");
-		var bossLoc = transform.position;
+        //var bossLoc = transform.position;
 		var playerLoc = player.transform.position;
 		var abovePlayerLoc = player.transform.position + Vector3.up * 10;
 		Vector3 velo = Vector2.zero;

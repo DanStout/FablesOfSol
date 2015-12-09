@@ -7,18 +7,22 @@ public class HeartItem : BaseItem
 
     private PlayerLife playLife;
 
-    void Start()
+    protected override void InitialSetup()
     {
-        playLife = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerLife>();
+        if (playLife == null)
+            playLife = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerLife>();
     }
 
     public override void Use()
     {
         playLife.Heal(healAmount);
+        Quantity--;
     }
 
     public override string Name
     {
         get { return "Heart"; }
     }
+
+
 }

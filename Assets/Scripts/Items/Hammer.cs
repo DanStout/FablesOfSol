@@ -5,40 +5,37 @@ public class Hammer : Weapon
 {
     public float radius = 1;
     public float damage = 5;
+    public float attackDelaySeconds = 0.5f;
+    public AudioClip[] swooshes;
+    public AudioClip[] thumps;
 
     private GameObject owner;
-    private GameObject hammer;
     private Animator anim;
+    private AudioSource playerAudSrc;
+    private float lastAttackTime;
 
-    void Awake()
+    protected override void InitialSetup()
     {
-        owner = GameObject.FindGameObjectWithTag("Player");
-        anim = owner.GetComponent<Animator>();
-    }
-
-    void OnTriggerEnter(Collider col)
-    {
-        if (Input.GetButton("Attack"))
-        {
-            var dest = col.gameObject.GetComponent<Destroyable>();
-            if (dest != null)
-            {
-                dest.TakeHit();
-                return;
-            }
-        }
+        if (owner == null) owner = GameObject.FindGameObjectWithTag("Player");
+        if (playerAudSrc == null) playerAudSrc = owner.GetComponent<AudioSource>();
+        if (anim == null) anim = owner.GetComponent<Animator>();
     }
 
     public override void Use()
     {
+        if (Time.time - lastAttackTime < attackDelaySeconds) return;
+        else lastAttackTime = Time.time;
+
+        var didHit = false;
+
         anim.SetTrigger("attack");
+
         //Find all colliders in a given radius of the player
-        Collider[] cols = Physics.OverlapSphere(owner.transform.position, radius);
+        Collider[] cols = Physics.OverlapSphere(owner.transform.position + new Vector3(0, 1, 0), radius);
         foreach (Collider col in cols)
         {
-			print(col.name);
             //If we are in range of an enemy
-            if (col && col.tag == "enemy")
+            if (col.tag == "enemy" || col.tag == "destroyable")
             {
 				print ("COLLIDED WITH " + col.gameObject.name);
                 //Find dot product of the vectors of player and enemy to determine direction
@@ -48,59 +45,54 @@ public class Hammer : Weapon
                 //If enemy is in front of player, deal damage
                 if (Vector3.Dot(forward, toOther) > 0)
                 {
-                    Hurtable hurtable;
-                    var childCol = col.GetComponent<CollisionChild>();
-                    if (childCol != null)
+                    didHit = true;
+                    if (col.tag == "enemy")
                     {
-                        print(childCol);
-                        hurtable = childCol.parent.GetComponent<Hurtable>();
-                    }
-                    else
-                    {
-                        hurtable = col.GetComponent<Hurtable>();
-                    }
-
-
-                    if (hurtable != null)
-                    {
-                        if (col.transform.childCount < 2 || col.transform.GetChild(1).tag != "Ice")
+                        Hurtable hurtable;
+                        var childCol = col.GetComponent<CollisionChild>();
+                        if (childCol != null)
                         {
-                            hurtable.TakeDamage(damage);
+                            print(childCol);
+                            hurtable = childCol.parent.GetComponent<Hurtable>();
                         }
                         else
                         {
-                            col.transform.GetChild(1).GetComponent<ParticleSystem>().Play();
-                            Destroy(col.transform.GetChild(1).gameObject);
+                            hurtable = col.GetComponent<Hurtable>();
+                        }
+
+
+                        if (hurtable != null)
+                        {
+                            if (col.transform.childCount < 2 || col.transform.GetChild(1).tag != "Ice")
+                            {
+                                hurtable.TakeDamage(damage);
+                            }
+                            else
+                            {
+                                col.transform.GetChild(1).GetComponent<ParticleSystem>().Play();
+                                Destroy(col.transform.GetChild(1).gameObject);
+                            }
                         }
                     }
+                    else if (col.tag == "destroyable")
+                    {
+                        var dest = col.gameObject.GetComponent<Destroyable>();
+                        if (dest != null)
+                        {
+                            dest.TakeHit();
+                            return;
+                        }
+                        else
+                            print("Object with destroyable tag does not have destroyable component");
+                    }
 
-                    //GameObject titan = isParentTitan(col.gameObject);
-                    //if(titan != null)
-                    //{
-                    //    var hurt = titan.GetComponent<Hurtable>();
-                    //    hurt.TakeDamage(damage);
-                    //    return;
-                    //}
-
-                    //print(titan);
-
-                    
                 }
             }
         }
 
+        var soundSrc = didHit ? thumps : swooshes;
+        playerAudSrc.PlayOneShot(soundSrc[Random.Range(0, soundSrc.Length)]);
     }
-
-	//Used during hit to destroy thrum titan
-	private GameObject isParentTitan(GameObject g)
-	{
-		if (g.name == "ThrumTitan")
-			return g;
-		else if (g.transform.parent != null)
-			return isParentTitan(g.transform.parent.gameObject);
-		else
-			return null;
-	}
 
     public override void Equip()
     {

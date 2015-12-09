@@ -29,6 +29,7 @@ TagManager:
   - Minion2
   - Minion3
   - MagnetGun
+  - destroyable
   layers:
   - Default
   - TransparentFX

@@ -19,19 +19,6 @@ public class PlayerInventory : MonoBehaviour
 
     private GameObject buttonGrid;
     private static BaseItem activeItem;
-    private static List<BaseItem> inventory;
-
-    public class ItemEntry
-    {
-        public BaseItem Item { get; set; }
-        public int Quantity { get; set; }
-
-
-        public override string ToString()
-        {
-            return "({0} x {1})".FormatWith(Quantity, Item);
-        }
-    }
 
     private static Dictionary<string, BaseItem> Items { get; set; }
 
@@ -45,15 +32,19 @@ public class PlayerInventory : MonoBehaviour
     void Start()
     {
         buttonGrid = GameObject.FindGameObjectWithTag("InventoryUI");
-        if (inventory == null)
-            inventory = new List<BaseItem>();
+
         if (Items == null)
             Items = new Dictionary<string, BaseItem>();
-
-        foreach (var item in Items)
+        else
         {
-            AddButtonForItem(item.Value);
+            foreach (var item in Items)
+            {
+                AddButtonForItem(item.Value);
+            }
         }
+
+        if (activeItem != null)
+            EquipIfWeapon(activeItem);
     }
 
     /// <summary>
@@ -69,10 +60,11 @@ public class PlayerInventory : MonoBehaviour
         else
         {
             var savedItem = GameManager.GetInstance().SaveItem(item);
+            savedItem.onQuantityChanged += savedItem_onQuantityChanged;
+            savedItem.Quantity = 1;
             AddButtonForItem(savedItem);
 
             Items[savedItem.Name] = savedItem;
-            savedItem.Quantity = 1;
 
             if (activeItem == null)
                 EquipIfWeapon(savedItem);
@@ -80,24 +72,36 @@ public class PlayerInventory : MonoBehaviour
 
     }
 
-    public void ItemButtonClicked(string itemName)
+    void savedItem_onQuantityChanged(BaseItem item)
     {
-        var storedItem = Items[itemName];
-        if (!EquipIfWeapon(storedItem))
-            storedItem.Use();
+        if (item.Quantity <= 0)
+        {
+            Items.Remove(item.Name);
+            Destroy(item);
+        }
     }
 
+    public void ItemButtonClicked(BaseItem item)
+    {
+        if (!EquipIfWeapon(item))
+            item.Use();
+    }
+
+
+    /// <summary>
+    /// Add a button for a BaseItem. The BaseItem MUST already be persisted.
+    /// </summary>
+    /// <param name="item"></param>
     private void AddButtonForItem(BaseItem item)
     {
         var buttonObj = Instantiate<GameObject>(buttonPrefab);
         buttonObj.transform.SetParent(buttonGrid.transform);
         var invBtn = buttonObj.GetComponent<InventoryButton>();
-        invBtn.SetSprite(item.inventoryTile);
-        invBtn.ItemName = item.Name;
+        invBtn.AssignItem(item);
     }
 
     /// <summary>
-    /// Equips a weapon if it is an item
+    /// Equips an item if it is a weapon
     /// </summary>
     /// <param name="item">The item</param>
     /// <returns>Whether this item was equipped</returns>
@@ -107,6 +111,11 @@ public class PlayerInventory : MonoBehaviour
         if (pickedupWeapon != null)
         {
             pickedupWeapon.Equip();
+
+            var magActive = activeItem as MagnetGun;
+            if (magActive != null)
+                magActive.TurnOff();
+
             activeItem = pickedupWeapon;
             return true;
         }
@@ -131,7 +140,7 @@ public class PlayerInventory : MonoBehaviour
     {
         Hammer.SetActive(weap == WeaponType.Hammer);
         MagnetGun.SetActive(weap == WeaponType.MagnetGun);
-        SonicResonator.SetActive(weap == WeaponType.SonicResonator);
+		SonicResonator.SetActive (weap == WeaponType.SonicResonator);
     }
 
 	public WeaponType returnCurrent(){
