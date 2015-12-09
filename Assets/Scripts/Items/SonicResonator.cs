@@ -38,7 +38,11 @@ public class SonicResonator : Weapon, IGun
             if (hit.collider.gameObject.name == "Ice")
             {
                 print("HIT THE ICE");
-                hit.collider.gameObject.GetComponent<BreakIce>().breakIce();
+				if(hit.collider.gameObject.GetComponent<BreakIce>() != null){
+                	hit.collider.gameObject.GetComponent<BreakIce>().breakIce();
+				} else {
+					hit.collider.gameObject.GetComponent<IceBreak>().breakIce();
+				}
             }
         }
 

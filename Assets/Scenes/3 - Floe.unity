@@ -362,8 +362,9 @@ GameObject:
   - 33: {fileID: 90624156}
   - 23: {fileID: 90624155}
   - 114: {fileID: 90624158}
+  - 64: {fileID: 90624159}
   m_Layer: 0
-  m_Name: Iceblock
+  m_Name: Ice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -423,7 +424,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0204d11afad71048819034f15c006b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particle: {fileID: 0}
+  particle: {fileID: 734652930}
+--- !u!64 &90624159
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 90624154}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_Mesh: {fileID: 4300004, guid: 393d7d131eba8104597f5251d51e4ecc, type: 3}
 --- !u!1 &97182649
 GameObject:
   m_ObjectHideFlags: 0
@@ -1579,6 +1592,11 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!198 &734652930 stripped
+ParticleSystem:
+  m_PrefabParentObject: {fileID: 19886174, guid: 9c4748266fc487f43bcc0d19dad2bf80,
+    type: 2}
+  m_PrefabInternal: {fileID: 1619657371}
 --- !u!1001 &755754273
 Prefab:
   m_ObjectHideFlags: 0
@@ -3012,6 +3030,10 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: f40666ed4bc09584985d5f886badafd6, type: 2}
+    - target: {fileID: 472276, guid: 2abf8cf1d252179449e5e9c711733bcf, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2abf8cf1d252179449e5e9c711733bcf, type: 2}
   m_IsPrefabParent: 0
@@ -4379,11 +4401,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22406468, guid: c967252d01273b84a92d42fed67b96dc, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22406468, guid: c967252d01273b84a92d42fed67b96dc, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c967252d01273b84a92d42fed67b96dc, type: 2}

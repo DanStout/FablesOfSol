@@ -19,6 +19,7 @@ public class ScientistTrigger2 : BaseOperable
         dialog.ActiveNpcName = DisplayName;
         dialog.AddLine("Haha! I'm saved!");
         dialog.AddLine("I've been stuck here for hours. I can't figure out how to get back to the entrance of this maze.");
+		dialog.AddLine("I was trying to find that cave, but it must be back on that other island...");
         dialog.AddLine("Tell you what. You can have this sonic resonator and then you can help me out of this damn m...");
         dialog.AddLine("Wait! Where are you going?! Come back!");
 		if(GameObject.FindGameObjectWithTag("SonicResonator") == null){
