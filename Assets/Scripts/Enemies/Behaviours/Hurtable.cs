@@ -17,17 +17,19 @@ public class Hurtable : MonoBehaviour
     public delegate void DeathHandler();
     public event DeathHandler onDeath;
 
-    void Start()
+    protected virtual void Start()
     {
         currHealth = fullHealth;
         meshRend = GetComponentInChildren<SkinnedMeshRenderer>();
         originalMaterial = meshRend.material;
+
     }
 
     public virtual void Die()
     {
         if (meshRend != null)
         {
+            //ensure the death material doesn't get stuck as damaged
             meshRend.material = originalMaterial;
         }
         Destroy(this);
@@ -69,7 +71,8 @@ public class Hurtable : MonoBehaviour
 	{
 		if (onDeath != null)
 			onDeath ();
-		else print("No event attached on {0}'s death..".FormatWith(gameObject.name));
+		else 
+			print("No event attached on {0}'s death..".FormatWith(gameObject.name));
 	}
 
 	protected void raiseOnHurtEvent()

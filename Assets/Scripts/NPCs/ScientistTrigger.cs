@@ -3,9 +3,9 @@ using System.Collections;
 
 public class ScientistTrigger : BaseOperable
 {
-    private Dialog dialog;
+    protected Dialog dialog;
     public string DisplayName;
-    private bool didOperate;
+    protected bool didOperate;
 
     protected override void Start()
     {

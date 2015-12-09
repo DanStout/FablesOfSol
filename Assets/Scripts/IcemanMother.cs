@@ -7,9 +7,6 @@ public class IcemanMother : MonoBehaviour {
 	public float damageFlashSeconds = 0.5f;
 
 
-    //private FacesPlayer faces;
-    //private DropsItems dropper;
-	private Hurtable hurt;
 	private Animator anim;
 	private GameObject player;
 	private GameObject ice;

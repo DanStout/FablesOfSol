@@ -35,8 +35,6 @@ public class Dog : MonoBehaviour, IEnemy, IRunAnimationTransition
 
         attacks = GetComponent<AttacksPlayer>();
         attacks.onPlayerDeath += attacks_onPlayerDeath;
-
-        tag = "enemy"; //For items to detect and deliver damage
     }
 
     void hurt_onHurt()
@@ -57,6 +55,7 @@ public class Dog : MonoBehaviour, IEnemy, IRunAnimationTransition
 
     void OnDisable()
     {
+        hurt.onHurt -= hurt_onHurt;
         hurt.onDeath -= hurt_onDeath;
         attacks.onPlayerDeath -= attacks_onPlayerDeath;
     }

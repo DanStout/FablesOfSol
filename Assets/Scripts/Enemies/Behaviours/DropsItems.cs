@@ -24,6 +24,7 @@ public class DropsItems : MonoBehaviour
 
     private IEnumerator DestroyAfterTime()
     {
+		print ("DESTROYING AFTER TIME");
         yield return new WaitForSeconds(destroyAfterSeconds);
 
         var system = Instantiate(deathParticleSystem);

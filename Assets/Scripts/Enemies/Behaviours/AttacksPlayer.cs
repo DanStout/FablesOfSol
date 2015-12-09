@@ -31,7 +31,7 @@ public class AttacksPlayer : MonoBehaviour
 
     public void Die()
     {
-        enabled = false;
+        Destroy(this);
     }
 
     void OnControllerColliderHit(ControllerColliderHit hit)
