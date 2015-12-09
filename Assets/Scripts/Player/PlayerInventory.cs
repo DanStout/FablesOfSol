@@ -142,5 +142,4 @@ public class PlayerInventory : MonoBehaviour
         MagnetGun.SetActive(weap == WeaponType.MagnetGun);
 		SonicResonator.SetActive (weap == WeaponType.SonicResonator);
     }
-
 }
