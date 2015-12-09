@@ -595,6 +595,7 @@ GameObject:
   - 114: {fileID: 11458180}
   - 114: {fileID: 11495456}
   - 114: {fileID: 11420020}
+  - 82: {fileID: 8244546}
   m_Layer: 0
   m_Name: IcemanMother
   m_TagString: Untagged
@@ -1204,6 +1205,76 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.3499999, y: 3.23000002, z: 3.59684968}
   m_Center: {x: -.0650581792, y: -.209999993, z: -3.14883471}
+--- !u!82 &8244546
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 183762}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!95 &9528990
 Animator:
   serializedVersion: 3
@@ -1244,7 +1315,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eff42c5bfc95dd649a3788c5d55b9e5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyAfterSeconds: 2
+  destroyAfterSeconds: 4
   explosionSound: {fileID: 8300000, guid: 4f22166b6ee498d47aeb66b25768c997, type: 3}
   droppableItems:
   - {fileID: 132876, guid: 1c383c555d38a584b95c20cedb8c180e, type: 2}
@@ -1276,6 +1347,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 10
   damageFlashSeconds: .5
+  soundAttackIceShatter: {fileID: 8300000, guid: 0a8cac1a692a4a24f9b88977ecdbe44a,
+    type: 3}
+  soundButtIceShatter: {fileID: 8300000, guid: 882061ed415f12846b8ed3695f87d35a, type: 3}
+  soundDeath: {fileID: 8300000, guid: 55a15daf637f6304db4eeb60f62d59c1, type: 3}
+  soundHurt: {fileID: 8300000, guid: ac713883ac8dc1d45aadee9b25a0e40f, type: 3}
 --- !u!114 &11460522
 MonoBehaviour:
   m_ObjectHideFlags: 1

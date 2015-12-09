@@ -6,22 +6,49 @@ public class IcemanMother : MonoBehaviour
     public float maxHealth = 10;
     public float damageFlashSeconds = 0.5f;
 
+    public AudioClip soundAttackIceShatter;
+    public AudioClip soundButtIceShatter;
+    public AudioClip soundDeath;
+    public AudioClip soundHurt;
 
     private Animator anim;
     private GameObject player;
     private GameObject ice;
+    private Hurtable motherHurtable;
+    private AudioSource audSrc;
 
     //Private variables for attack phases.
     private bool routineRunning;
 
-    // Use this for initialization
     void Start()
     {
         ice = transform.FindChild("Ice").gameObject;
         player = GameObject.FindGameObjectWithTag("Player");
         anim = GetComponent<Animator>();
+        motherHurtable = GetComponentInChildren<Hurtable>();
+        audSrc = GetComponentInChildren<AudioSource>();
+
+        motherHurtable.onHurt += motherHurtable_onHurt;
+        motherHurtable.onDeath += motherHurtable_onDeath;
+
         //faces = GetComponent<FacesPlayer>();
         //dropper = GetComponent<DropsItems>();
+    }
+
+    void motherHurtable_onDeath()
+    {
+        audSrc.PlayOneShot(soundDeath);
+    }
+
+    void motherHurtable_onHurt()
+    {
+        audSrc.PlayOneShot(soundHurt);
+    }
+
+    void OnDisable()
+    {
+        motherHurtable.onHurt -= motherHurtable_onHurt;
+        motherHurtable.onDeath -= motherHurtable_onDeath;
     }
 
     // Update is called once per frame
@@ -47,7 +74,7 @@ public class IcemanMother : MonoBehaviour
     {
         routineRunning = true;
         anim.SetTrigger("attack");
-        //var bossLoc = transform.position;
+
         var playerLoc = player.transform.position;
         var abovePlayerLoc = player.transform.position + Vector3.up * 10;
         Vector3 velo = Vector2.zero;
@@ -85,4 +112,19 @@ public class IcemanMother : MonoBehaviour
         return "flesh";
     }
 
+    /// <summary>
+    /// Animation event
+    /// </summary>
+    public void JumpAnimationDone()
+    {
+        audSrc.PlayOneShot(soundAttackIceShatter);
+    }
+
+    /// <summary>
+    /// Played when the butt-ice breaks
+    /// </summary>
+    public void BreakIceSound()
+    {
+        audSrc.PlayOneShot(soundButtIceShatter);
+    }
 }

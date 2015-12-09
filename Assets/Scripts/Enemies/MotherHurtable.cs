@@ -30,16 +30,13 @@ public class MotherHurtable : Hurtable
 
     public override void TakeDamage(float amount)
     {
-        StartCoroutine(HurtFlashForTime(damageFlashSeconds));
+        //StartCoroutine(HurtFlashForTime(damageFlashSeconds));
         currHealth -= amount;
 
         if (currHealth <= 0)
             raiseDeathEvent();
         else
             raiseOnHurtEvent();
-
-
-        print("HIT COUNT: " + numHits);
 
         //Count number of hits and reduce health drastically after the second hit
         if (numHits < 2)
