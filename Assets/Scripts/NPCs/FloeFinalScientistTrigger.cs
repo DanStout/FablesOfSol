@@ -19,7 +19,7 @@ public class FloeFinalScientistTrigger : ScientistTrigger {
 	{
 		while(!dialog.IsDoneDisplaying())
 	    {
-			yield return new WaitForSeconds(5);
+			yield return new WaitForSeconds(10);
 		}
 
 		var gameScreen = GameObject.FindGameObjectWithTag("GameOverScreen").GetComponent<GameOverScreen>();
