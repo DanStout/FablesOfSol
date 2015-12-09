@@ -11,7 +11,7 @@ GameObject:
   - 198: {fileID: 19876942}
   - 199: {fileID: 19917198}
   m_Layer: 0
-  m_Name: SonicResParticle
+  m_Name: SonicParticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

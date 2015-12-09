@@ -11,7 +11,7 @@ GameObject:
   - 198: {fileID: 19885444}
   - 199: {fileID: 19957786}
   m_Layer: 0
-  m_Name: MagGunParticle
+  m_Name: MagnetGunParticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
