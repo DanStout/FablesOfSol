@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     void Update()
     {
     }
+
     public void OnDeathAnimationEnd()
     {
         var gameScreen = GameObject.FindGameObjectWithTag("GameOverScreen").GetComponent<GameOverScreen>();

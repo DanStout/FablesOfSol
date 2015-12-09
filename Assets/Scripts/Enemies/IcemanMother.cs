@@ -7,7 +7,6 @@ public class IcemanMother : MonoBehaviour
     public float damageFlashSeconds = 0.5f;
 
     public AudioClip soundAttackIceShatter;
-    public AudioClip soundButtIceShatter;
     public AudioClip soundDeath;
     public AudioClip soundHurt;
 
@@ -118,13 +117,5 @@ public class IcemanMother : MonoBehaviour
     public void JumpAnimationDone()
     {
         audSrc.PlayOneShot(soundAttackIceShatter);
-    }
-
-    /// <summary>
-    /// Played when the butt-ice breaks
-    /// </summary>
-    public void BreakIceSound()
-    {
-        audSrc.PlayOneShot(soundButtIceShatter);
     }
 }

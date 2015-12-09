@@ -10,6 +10,7 @@ public class SonicResonator : Weapon, IGun
     private Animator anim;
     private AudioSource playerAud;
     public AudioClip activeSound;
+    public AudioClip breakIceSound;
 
     protected override void InitialSetup()
     {
@@ -37,16 +38,17 @@ public class SonicResonator : Weapon, IGun
         {
             if (hit.collider.gameObject.name == "Ice")
             {
-                hit.collider.gameObject.GetComponentInParent<IcemanMother>().BreakIceSound();
-                print("HIT THE ICE");
-				if(hit.collider.gameObject.GetComponent<BreakIce>() != null){
-                	hit.collider.gameObject.GetComponent<BreakIce>().breakIce();
-				} else {
-					hit.collider.gameObject.GetComponent<IceBreak>().breakIce();
-				}
+                playerAud.PlayOneShot(breakIceSound);
+                if (hit.collider.gameObject.GetComponent<BreakIce>() != null)
+                {
+                    hit.collider.gameObject.GetComponent<BreakIce>().breakIce();
+                }
+                else
+                {
+                    hit.collider.gameObject.GetComponent<IceBreak>().breakIce();
+                }
             }
         }
-
     }
 
     public override void Use()

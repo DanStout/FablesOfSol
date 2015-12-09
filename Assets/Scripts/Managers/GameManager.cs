@@ -36,7 +36,11 @@ public class GameManager : MonoBehaviour
         {
             var player = GameObject.FindGameObjectWithTag("PlayerAndCamera");
             var obj = GameObject.FindGameObjectWithTag(_redirectTag);
-            if (obj == null) print("Object with tag {0} was not found".FormatWith(_redirectTag));
+            if (obj == null)
+            {
+                print("Object with tag {0} was not found".FormatWith(_redirectTag));
+                return;
+            }
             player.transform.position = obj.transform.position;
             _redirectTag = null;
         }

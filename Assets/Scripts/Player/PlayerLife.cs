@@ -11,6 +11,12 @@ public class PlayerLife : MonoBehaviour
     private PlayerMovement playMove;
     private float currentHealth;
 
+    public delegate void OnHurtHandler();
+    public event OnHurtHandler onHurt;
+
+    public delegate void OnHealHandler();
+    public event OnHealHandler onHeal;
+
     private bool isDead;
     private HealthUI healthUI;
 
@@ -37,13 +43,23 @@ public class PlayerLife : MonoBehaviour
             Die();
             return true;
         }
+        else
+        {
+            onHurt();
+        }
 
         return false;
     }
 
-    public void Heal(float amount)
+
+    /// <summary>
+    /// Heals the player, and returns whether healing did anything
+    /// </summary>
+    /// <param name="amount">Amount by which to heal</param>
+    /// <returns>Whether healing did anything (I.e. whether player was NOT already at full health)</returns>
+    public bool Heal(float amount)
     {
-        if (currentHealth.Within(fullHealth, 0.001f)) return; //if they're roughly equal (accounts for floating point math)
+        if (currentHealth.Within(fullHealth, 0.001f)) return false; //if they're roughly equal (accounts for floating point math)
 
         currentHealth += amount;
 
@@ -53,6 +69,10 @@ public class PlayerLife : MonoBehaviour
         }
 
         healthUI.UpdateHealth(currentHealth);
+
+        onHeal();
+
+        return true;
     }
 
     public void Die()
