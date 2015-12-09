@@ -21,7 +21,7 @@ public class MagnetGun : Weapon, IGun
         {
             particleSys = owner
                 .GetComponentsInChildren<ParticleSystem>()
-                .First(x => x.name == "SonicParticle");
+                .First(x => x.name == "MagnetGunParticle");
         }
     }
 
