@@ -64,6 +64,7 @@ ModelImporter:
     7400002: DONKA_ATTACK
     7400004: DONKA_IDLE
     7400006: DONKA_RUN
+    7400008: DONKA_DIE
     9500000: //RootNode
     13700000: Donka
   materials:
@@ -89,7 +90,7 @@ ModelImporter:
     - serializedVersion: 16
       name: DONKA_ATTACK
       takeName: DONKA_ATTACK
-      firstFrame: 0
+      firstFrame: -1
       lastFrame: 34
       wrapMode: 0
       orientationOffsetY: 0
@@ -108,7 +109,15 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: .62145108
+        functionName: OnAttackAnimation
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: dad468b7dd75f264296e908e7444b253,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask:
       - path: 
         weight: 1
@@ -269,6 +278,94 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Donka
+        weight: 1
+      - path: Skeleton
+        weight: 1
+      - path: Skeleton/Bone
+        weight: 1
+      - path: Skeleton/Bone/Bone_001
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Bone_003
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Bone_003/Bone_004
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Bone_003/Bone_004/Bone_005
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Thigh_L
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Thigh_L/Ankle_L
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Thigh_L/Ankle_L/Foot2_L
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Thigh_L/Ankle_L/Foot2_L/Foot2_L_001
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Thigh_L/Ankle_L/Foot3_L
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Thigh_L/Ankle_L/Foot3_L/Foot3_L_001
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Thigh_L/Ankle_L/Foot_L
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Thigh_L/Ankle_L/Foot_L/Foot_L_001
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Thigh_R
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Thigh_R/Ankle_R
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Thigh_R/Ankle_R/Foot2_R
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Thigh_R/Ankle_R/Foot2_R/Foot2_R_001
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Thigh_R/Ankle_R/Foot3_R
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Thigh_R/Ankle_R/Foot3_R/Foot3_R_001
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Thigh_R/Ankle_R/Foot_R
+        weight: 1
+      - path: Skeleton/Bone/Bone_001/Bone_002/Thigh_R/Ankle_R/Foot_R/Foot_R_001
+        weight: 1
+      - path: Skeleton/LegIK_L
+        weight: 1
+      - path: Skeleton/LegIK_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: DONKA_DIE
+      takeName: DONKA_IDLE
+      firstFrame: 0
+      lastFrame: 25
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 1
+        functionName: DeathAnimationDone
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: dad468b7dd75f264296e908e7444b253,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask:
       - path: 
         weight: 1

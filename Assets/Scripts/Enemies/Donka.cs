@@ -1,14 +1,21 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Donka : MonoBehaviour, IEnemy
+public class Donka : MonoBehaviour, IRunAnimationTransition
 {
+    public GameObject activateOnDeath;
+    public AudioClip soundHurt;
+    public AudioClip soundDie;
+    public AudioClip soundAttack;
+    public AudioSource oneShotSource;
+    public AudioSource loopingSource;
+
     private ChasesPlayer chaser;
     private Hurtable hurt;
     private FacesPlayer faces;
     private DropsItems drops;
-
-    public GameObject activateOnDeath;
+    private Animator anim;
+    private AttacksPlayer attacks;
 
     void Start()
     {
@@ -16,25 +23,33 @@ public class Donka : MonoBehaviour, IEnemy
         hurt = GetComponent<Hurtable>();
         faces = GetComponent<FacesPlayer>();
         drops = GetComponent<DropsItems>();
+        attacks = GetComponent<AttacksPlayer>();
+        anim = GetComponent<Animator>();
 
         hurt.onDeath += hurt_onDeath;
-        tag = "enemy";
+        hurt.onHurt += hurt_onHurt;
+    }
+
+    void hurt_onHurt()
+    {
+        oneShotSource.PlayOneShot(soundHurt);
     }
 
     void hurt_onDeath()
     {
+        oneShotSource.PlayOneShot(soundDie);
+        anim.SetTrigger("die");
+
+        attacks.Die();
         chaser.Die();
         hurt.Die();
         faces.Die();
-        drops.Die();
-
-        if (activateOnDeath != null)
-            activateOnDeath.SetActive(true);
     }
 
     void OnDisable()
     {
         hurt.onDeath -= hurt_onDeath;
+        hurt.onHurt -= hurt_onHurt;
     }
 
     void Update()
@@ -42,8 +57,27 @@ public class Donka : MonoBehaviour, IEnemy
         chaser.MoveTowardsPlayer();
     }
 
-    public string getMaterial()
+    public void DeathAnimationDone()
     {
-        throw new System.NotImplementedException();
+        drops.Die();
+
+        if (activateOnDeath != null)
+            activateOnDeath.SetActive(true);
     }
+
+    public void OnAttackAnimation()
+    {
+        oneShotSource.PlayOneShot(soundAttack);
+    }
+
+    public void OnRunStateEnter()
+    {
+        loopingSource.Play();
+    }
+
+    public void OnRunStateExit()
+    {
+        loopingSource.Stop();
+    }
+
 }

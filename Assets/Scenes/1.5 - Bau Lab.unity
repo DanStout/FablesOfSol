@@ -3785,7 +3785,7 @@ GameObject:
   - 65: {fileID: 1339644204}
   - 23: {fileID: 1339644203}
   m_Layer: 0
-  m_Name: Ramp (3)
+  m_Name: Ramp To Teleporter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

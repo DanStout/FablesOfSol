@@ -28,6 +28,7 @@ public class Hurtable : MonoBehaviour
     {
         if (meshRend != null)
         {
+            //ensure the death material doesn't get stuck as damaged
             meshRend.material = originalMaterial;
         }
         Destroy(this);
