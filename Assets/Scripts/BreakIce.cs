@@ -4,6 +4,7 @@ using System.Collections;
 public class BreakIce : MonoBehaviour {
 
 	private Animator parentAnim;
+	public ParticleSystem particle;
 	public GameObject damageSphere; 
 	
 	void Start(){

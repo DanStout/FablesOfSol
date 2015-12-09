@@ -112,9 +112,9 @@ public class PlayerInventory : MonoBehaviour
         {
             pickedupWeapon.Equip();
 
-            var magActive = activeItem as MagnetGun;
-            if (magActive != null)
-                magActive.TurnOff();
+            var gun = activeItem as IGun;
+            if (gun != null)
+                gun.TurnOff();
 
             activeItem = pickedupWeapon;
             return true;
@@ -142,5 +142,4 @@ public class PlayerInventory : MonoBehaviour
         MagnetGun.SetActive(weap == WeaponType.MagnetGun);
 		SonicResonator.SetActive (weap == WeaponType.SonicResonator);
     }
-
 }

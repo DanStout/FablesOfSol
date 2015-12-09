@@ -29,9 +29,26 @@ public class SonicResonator : Weapon, IGun
     {
         if (!isOn) return;
 
+<<<<<<< HEAD
         RaycastHit hit;
         Vector3 fwd = owner.transform.TransformDirection(Vector3.forward);
         Vector3 pos = new Vector3(0, 3, 0);
+=======
+        //Check if the gun is on
+		if (owner.GetComponent<PlayerInventory> ().returnCurrent () != PlayerInventory.WeaponType.SonicResonator) {
+			if(isOn){
+				isOn = false;
+				particleSys.enableEmission = false;
+				anim.SetBool("gunAttack", false);
+			}
+		}
+
+        if (isOn)
+        {
+            RaycastHit hit;
+            Vector3 fwd = owner.transform.TransformDirection(Vector3.forward);
+            Vector3 pos = new Vector3(0, 3, 0);
+>>>>>>> 080312d96dd9f117b80c4bc2c41605c36bf17320
 
         if (Physics.Raycast(owner.transform.position + pos, fwd, out hit, 10))
         {
