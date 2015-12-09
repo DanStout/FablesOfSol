@@ -134,4 +134,17 @@ public class PlayerInventory : MonoBehaviour
         SonicResonator.SetActive(weap == WeaponType.SonicResonator);
     }
 
+	public WeaponType returnCurrent(){
+
+		WeaponType w = WeaponType.Hammer;
+
+		if (SonicResonator.activeInHierarchy == true) {
+			w = WeaponType.SonicResonator;
+		}else if(MagnetGun.activeInHierarchy == true){
+			w = WeaponType.MagnetGun;
+		}
+		return w;
+
+	}
+
 }

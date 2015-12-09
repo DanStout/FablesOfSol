@@ -66,7 +66,7 @@ public class IcemanMother : MonoBehaviour {
 
 	IEnumerator afterAttackPhase(){
 		transform.GetComponentInChildren<DamagingParticleSystem> ().PlayOnce ();
-		yield return new WaitForSeconds (3);
+		yield return new WaitForSeconds (5);
 		gameObject.GetComponent<FacesPlayer> ().enabled = true;
 		yield return new WaitForSeconds (5);
 		routineRunning = false;

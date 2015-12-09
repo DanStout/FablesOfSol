@@ -32,6 +32,14 @@ public class SonicResonator : Weapon
     {
 
         //Check if the gun is on
+		if (owner.GetComponent<PlayerInventory> ().returnCurrent () != PlayerInventory.WeaponType.SonicResonator) {
+			if(isOn){
+				isOn = false;
+				particleSys.enableEmission = false;
+				anim.SetBool("gunAttack", false);
+			}
+		}
+
         if (isOn)
         {
             RaycastHit hit;

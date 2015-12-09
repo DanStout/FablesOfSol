@@ -26,6 +26,15 @@ public class MagnetGun : Weapon
 
     public void Update()
     {
+		if (owner.GetComponent<PlayerInventory> ().returnCurrent () == PlayerInventory.WeaponType.MagnetGun) {
+			if (isOn)
+			{
+				isOn = false;
+				particleSys.enableEmission = false;
+				anim.SetBool("gunAttack", false);
+			}
+		}
+
         if (!isOn) return;
         RaycastHit hit;
         Vector3 fwd = owner.transform.TransformDirection(Vector3.forward);
