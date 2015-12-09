@@ -25,15 +25,19 @@ public class CameraControl : MonoBehaviour
     void Update()
     {
 		if (playerTransform.GetComponent<PlayerMovement> ().enabled == true) {
-			//viewPos stores the position of the player relative to the viewscreens edges        
+			//viewPos stores the position of the player relative to the viewscreens edges
+			var cameraSpd = speed;
 			Vector3 viewPos = Camera.main.WorldToViewportPoint (playerTransform.position);
 			transform.rotation = initialRot;
+			if(Vector3.Distance(Camera.main.transform.position, playerTransform.position) > initialOffset.y + 10f){
+				cameraSpd = cameraSpd*10;
+			}
 			//If the player is within the specified distance to any edge
 			//move the camera towards the player.
 			if (viewPos.x > 0.7F || viewPos.x < 0.3F || viewPos.y < 0.3F || viewPos.y > 0.7f) {
 				var current = transform.position;
 				var target = playerTransform.position + initialOffset;
-				var increment = speed * Time.deltaTime;
+				var increment = cameraSpd * Time.deltaTime;
 
 				transform.position = Vector3.MoveTowards (current, target, increment);
 			}
