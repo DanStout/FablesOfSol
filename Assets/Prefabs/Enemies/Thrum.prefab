@@ -77,6 +77,7 @@ GameObject:
   - 135: {fileID: 13550452}
   - 114: {fileID: 11415400}
   - 114: {fileID: 11470774}
+  - 82: {fileID: 8233188}
   m_Layer: 0
   m_Name: Thrum
   m_TagString: enemy
@@ -91,7 +92,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 198514}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.4000001, y: .545000017, z: -2.4000001}
+  m_LocalPosition: {x: .863596201, y: -.150000006, z: 3.3079195}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 478990}
@@ -163,6 +164,76 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!82 &8233188
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 198514}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!95 &9561154
 Animator:
   serializedVersion: 3
@@ -241,6 +312,8 @@ MonoBehaviour:
   attackDamage: 3
   secondsBetweenAttacks: .5
   attacksWithinRange: 2
+  soundDeath: {fileID: 8300000, guid: 6cd5685414d3eec4c939ca2a820663df, type: 3}
+  soundMove: {fileID: 8300000, guid: c1a5dc5ae27f177458d83e3aaf1196ef, type: 3}
 --- !u!135 &13550452
 SphereCollider:
   m_ObjectHideFlags: 1

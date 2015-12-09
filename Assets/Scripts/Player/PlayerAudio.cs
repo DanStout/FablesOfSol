@@ -1,8 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerAudio : MonoBehaviour
+public class PlayerAudio : MonoBehaviour, IStateListener
 {
+    public AudioClip soundDeath;
+    public AudioClip soundJump;
+
     private AudioSource audioSrc;
     private AudioClip[] footstepSounds;
     private int lastSoundIndex;
@@ -29,5 +32,22 @@ public class PlayerAudio : MonoBehaviour
         audioSrc.PlayOneShot(footstepSounds[index]);
 
         lastSoundIndex = index;
+    }
+
+    public void StateEntered(string name)
+    {
+        switch(name)
+        {
+            case "Death":
+                audioSrc.PlayOneShot(soundDeath);
+                break;
+            case "JumpUp":
+                audioSrc.PlayOneShot(soundJump);
+                break;
+        }
+    }
+
+    public void StateExited(string name)
+    {
     }
 }

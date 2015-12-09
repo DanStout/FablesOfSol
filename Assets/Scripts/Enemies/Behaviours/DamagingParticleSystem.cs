@@ -37,6 +37,6 @@ public class DamagingParticleSystem : MonoBehaviour
 
 	public void PlayOnce()
 	{
-			system.Play();
+		system.Play();
 	}
 }

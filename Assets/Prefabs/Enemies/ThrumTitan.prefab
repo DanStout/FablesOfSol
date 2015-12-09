@@ -174,6 +174,7 @@ GameObject:
   - 114: {fileID: 11480790}
   - 114: {fileID: 11461152}
   - 114: {fileID: 11499872}
+  - 82: {fileID: 8266758}
   m_Layer: 0
   m_Name: ThrumTitan
   m_TagString: enemy
@@ -391,8 +392,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 160262}
-  m_LocalRotation: {x: 0, y: .983105779, z: 0, w: -.183038473}
-  m_LocalPosition: {x: 47.4000015, y: 18.0499992, z: 151.399994}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.55521059, y: -.545000017, z: -3.07745838}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 449222}
@@ -526,6 +527,76 @@ Transform:
   - {fileID: 459852}
   m_Father: {fileID: 418796}
   m_RootOrder: 0
+--- !u!82 &8266758
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 160262}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!95 &9598406
 Animator:
   serializedVersion: 3
@@ -669,6 +740,11 @@ MonoBehaviour:
   minFire: 3
   maxFire: 9
   numThrumsToSpawn: 3
+  soundThrumPull: {fileID: 8300000, guid: 1d340cf9b7cbd804db1179c934e1a16a, type: 3}
+  soundDeath: {fileID: 8300000, guid: f2733cb4c43485e4ba405b0179544512, type: 3}
+  soundFireEnter: {fileID: 8300000, guid: ee34408369ad6bb4692acc67d0a3d770, type: 3}
+  soundFireStay: {fileID: 8300000, guid: 865cb5e5d2a3cea498e89cafd37709d5, type: 3}
+  soundFireExit: {fileID: 8300000, guid: 142280e9d77c09848b2023d4b0611be6, type: 3}
   thrumPrefab: {fileID: 198514, guid: 6f8daeab7390c1346a8bd5298578da79, type: 2}
 --- !u!114 &11494686
 MonoBehaviour:
