@@ -169,7 +169,6 @@ MonoBehaviour:
   reactOutsideDistance: 0
   respawnDestinationTag: CrononTeleporter1
   sceneToLoad: 2 - Cronon
-  teleportSound: {fileID: 0}
 --- !u!136 &13611390
 CapsuleCollider:
   m_ObjectHideFlags: 1

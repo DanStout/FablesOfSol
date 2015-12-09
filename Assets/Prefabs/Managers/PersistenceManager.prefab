@@ -26,7 +26,7 @@ GameObject:
   - 4: {fileID: 414726}
   m_Layer: 0
   m_Name: ItemScriptHolder
-  m_TagString: Untagged
+  m_TagString: ItemHolder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
