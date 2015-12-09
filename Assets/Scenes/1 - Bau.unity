@@ -4037,10 +4037,6 @@ Prefab:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 168254, guid: c967252d01273b84a92d42fed67b96dc, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c967252d01273b84a92d42fed67b96dc, type: 2}
   m_IsPrefabParent: 0
@@ -4479,25 +4475,25 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 136898, guid: ebaddb537c2380d4388ba36c1e94e497, type: 2}
-      propertyPath: m_Name
-      value: PlayerAndCamera
-      objectReference: {fileID: 0}
     - target: {fileID: 439462, guid: ebaddb537c2380d4388ba36c1e94e497, type: 2}
       propertyPath: m_LocalRotation.x
-      value: .611691356
+      value: .611691415
       objectReference: {fileID: 0}
     - target: {fileID: 439462, guid: ebaddb537c2380d4388ba36c1e94e497, type: 2}
       propertyPath: m_LocalRotation.y
-      value: .60042423
+      value: .60042429
       objectReference: {fileID: 0}
     - target: {fileID: 439462, guid: ebaddb537c2380d4388ba36c1e94e497, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -.513649821
+      value: -.513649881
       objectReference: {fileID: 0}
     - target: {fileID: 439462, guid: ebaddb537c2380d4388ba36c1e94e497, type: 2}
       propertyPath: m_LocalRotation.w
-      value: -.0385783948
+      value: -.0385783985
+      objectReference: {fileID: 0}
+    - target: {fileID: 136898, guid: ebaddb537c2380d4388ba36c1e94e497, type: 2}
+      propertyPath: m_Name
+      value: PlayerAndCamera
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ebaddb537c2380d4388ba36c1e94e497, type: 2}
