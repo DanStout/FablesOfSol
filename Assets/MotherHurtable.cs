@@ -65,6 +65,10 @@ public class MotherHurtable : Hurtable
 	protected void TimedDestroy()
 	{
 		print ("timed destroy");
+		DropsItems drops = transform.parent.GetComponent<DropsItems> ();
+		if (drops != null)
+			print ("found drops");
+		drops.Die ();
 		Destroy(transform.parent.gameObject);
 	}
 }
