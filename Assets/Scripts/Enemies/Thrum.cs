@@ -1,12 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Thrum : MonoBehaviour
+public class Thrum : MonoBehaviour, IRunAnimationTransition
 {
     public float chaseRange = 4;
     public float attackDamage = 5;
     public float secondsBetweenAttacks = 1;
     public float attacksWithinRange = 2f;
+    public AudioClip soundDeath;
+    public AudioClip soundMove;
 
     private float lastAttackTime;
     private MovesRandomly randMov;
@@ -16,6 +18,7 @@ public class Thrum : MonoBehaviour
     private DropsItems drops;
     private Hurtable hurt;
     private bool isDead = false;
+    private AudioSource audSrc;
 
     void Start()
     {
@@ -24,6 +27,7 @@ public class Thrum : MonoBehaviour
         anim = GetComponent<Animator>();
         randMov = GetComponent<MovesRandomly>();
         drops = GetComponent<DropsItems>();
+        audSrc = GetComponent<AudioSource>();
 
         hurt = GetComponent<Hurtable>();
         hurt.onDeath += hurt_onDeath;
@@ -39,6 +43,7 @@ public class Thrum : MonoBehaviour
         isDead = true;
         drops.Die();
         randMov.Die();
+        audSrc.PlayOneShot(soundDeath);
     }
 
     void Update()
@@ -70,4 +75,17 @@ public class Thrum : MonoBehaviour
         }
     }
 
+
+    public void OnRunStateEnter()
+    {
+        audSrc.clip = soundMove;
+        audSrc.loop = true;
+        audSrc.Play();
+    }
+
+    public void OnRunStateExit()
+    {
+        audSrc.loop = false;
+        audSrc.Stop();
+    }
 }

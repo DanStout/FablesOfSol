@@ -1631,7 +1631,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 438870713}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 42.7000008, y: 35.8800011, z: 42}
+  m_LocalPosition: {x: 29.9400005, y: 38.1199989, z: 35.7000008}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1316844279}
@@ -1674,6 +1674,7 @@ Transform:
   - {fileID: 112310625}
   - {fileID: 926865773}
   - {fileID: 1657284167}
+  - {fileID: 1867496046}
   m_Father: {fileID: 0}
   m_RootOrder: 3
 --- !u!1 &499332374
@@ -2383,6 +2384,7 @@ GameObject:
   - 4: {fileID: 709808693}
   - 114: {fileID: 709808692}
   - 82: {fileID: 709808694}
+  - 114: {fileID: 709808695}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: SceneManager
@@ -2488,6 +2490,20 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!114 &709808695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 709808691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d0ff449e126cd141bce88c34cd12a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iceMother: {fileID: 2050396648}
+  scientist: {fileID: 148980, guid: a419f33d8fe422b409f90b8f88aa9cd3, type: 2}
+  scientistSpawn: {fileID: 1867496045}
 --- !u!198 &734652930 stripped
 ParticleSystem:
   m_PrefabParentObject: {fileID: 19886174, guid: 9c4748266fc487f43bcc0d19dad2bf80,
@@ -2797,7 +2813,7 @@ Transform:
   m_PrefabParentObject: {fileID: 439462, guid: ebaddb537c2380d4388ba36c1e94e497, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 817092308}
-  m_LocalRotation: {x: .611691356, y: .60042423, z: -.513649821, w: -.0385783948}
+  m_LocalRotation: {x: .611691415, y: .60042429, z: -.513649881, w: -.0385783985}
   m_LocalPosition: {x: -.302710146, y: -1.19209291e-08, z: 8.34465013e-08}
   m_LocalScale: {x: 1.00000048, y: 1.00000024, z: 1.00000012}
   m_Children:
@@ -6554,6 +6570,8 @@ GameObject:
   - 4: {fileID: 1360096074}
   - 218: {fileID: 1360096076}
   - 154: {fileID: 1360096075}
+  - 114: {fileID: 1360096078}
+  - 114: {fileID: 1360096077}
   m_Layer: 0
   m_Name: FloeTerrain
   m_TagString: Untagged
@@ -6616,6 +6634,36 @@ Terrain:
   m_BakeLightProbesForTrees: 1
   m_ScaleInLightmap: .0511999987
   m_LightmapParameters: {fileID: 15203, guid: 0000000000000000f000000000000000, type: 0}
+--- !u!114 &1360096077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1360096073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27ffb4c254bb3de42a1c502d13101e51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryTile: {fileID: 0}
+  activeSound: {fileID: 0}
+--- !u!114 &1360096078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1360096073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 901c3a8b6f44d9a4b9f34c2b48b2ed01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryTile: {fileID: 0}
+  radius: 1
+  damage: 5
+  attackDelaySeconds: .5
+  swooshes: []
+  thumps: []
 --- !u!1001 &1374872061
 Prefab:
   m_ObjectHideFlags: 0
@@ -10024,6 +10072,33 @@ Transform:
   - {fileID: 269377883}
   m_Father: {fileID: 633967456}
   m_RootOrder: 1
+--- !u!1 &1867496045
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1867496046}
+  m_Layer: 0
+  m_Name: ScientistSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1867496046
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1867496045}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -56.7269592, y: 38.25, z: -162.210007}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 476079722}
+  m_RootOrder: 11
 --- !u!1 &1868381737
 GameObject:
   m_ObjectHideFlags: 0
@@ -10510,6 +10585,10 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.62571347, y: 1.70128, z: 2.00000048}
   m_Center: {x: -.0815683976, y: 0, z: 0}
+--- !u!1 &2050396648 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 183762, guid: 2abf8cf1d252179449e5e9c711733bcf, type: 2}
+  m_PrefabInternal: {fileID: 1069129653}
 --- !u!1 &2054168509
 GameObject:
   m_ObjectHideFlags: 0
@@ -10782,3 +10861,20 @@ Transform:
   - {fileID: 1266897773}
   m_Father: {fileID: 1851377347}
   m_RootOrder: 0
+--- !u!1 &2137348016 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 132360, guid: c967252d01273b84a92d42fed67b96dc, type: 2}
+  m_PrefabInternal: {fileID: 1374872061}
+--- !u!114 &2137348019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2137348016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27ffb4c254bb3de42a1c502d13101e51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryTile: {fileID: 0}
+  activeSound: {fileID: 0}

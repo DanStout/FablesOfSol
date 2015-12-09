@@ -1,49 +1,58 @@
 using UnityEngine;
 using System.Collections;
 
-public class Titan : MonoBehaviour, IMagnetic
+public class Titan : MonoBehaviour, IMagnetic, IStateListener
 {
     public GameObject activateOnDeath;
     public float punchDamage = 3; //used by the scripts attached to hands
     public float minFire = 1; //minimum range to use fire breath
     public float maxFire = 2; //max range
-
     public int numThrumsToSpawn;
+
+    public AudioClip soundThrumPull;
+    public AudioClip soundDeath;
+    public AudioClip soundFireEnter;
+    public AudioClip soundFireStay;
+    public AudioClip soundFireExit;
+    public AudioClip soundPunch;
 
     private DamagingParticleSystem fireBreath;
     private Transform playerTrans;
     private DropsItems drops;
     private Animator anim;
     private Hurtable hurt;
+    private AudioSource audSrc;
 
     private bool isInPunchRange = false;
     private bool wasInPunchRange = false;
     private bool leftHandLast = true;
     private bool isDead = false;
 
-	private bool isThrumSpawned = false;
-	private int numOfSpawns;
+    private bool isThrumSpawned = false;
+    private int numOfSpawns;
 
     public GameObject thrumPrefab;
-	private GameObject curThrum;
+    private GameObject curThrum;
 
-	void Start()
-	{
+    void Start()
+    {
         playerTrans = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         fireBreath = GetComponentInChildren<DamagingParticleSystem>();
         anim = GetComponent<Animator>();
+        audSrc = GetComponent<AudioSource>();
 
         drops = GetComponent<DropsItems>();
 
         hurt = GetComponent<Hurtable>();
         hurt.onDeath += hurt_onDeath;
-	}
+    }
 
     void hurt_onDeath()
     {
         hurt.Die();
         anim.SetTrigger("die");
         isDead = true;
+        audSrc.PlayOneShot(soundDeath);
     }
 
     void OnDisable()
@@ -58,60 +67,62 @@ public class Titan : MonoBehaviour, IMagnetic
         if (activateOnDeath != null)
             activateOnDeath.SetActive(true);
     }
-	
-	void Update()
-	{
-		if (isDead) return;
 
-		//Check if the spawned thrum has been initiated
-		if (isThrumSpawned && curThrum == null) 
-		{
-			isThrumSpawned = false;
-			if(numOfSpawns == numThrumsToSpawn)
-			{
+    void Update()
+    {
+        if (isDead) return;
+
+        //Check if the spawned thrum has been initiated
+        if (isThrumSpawned && curThrum == null)
+        {
+            isThrumSpawned = false;
+            if (numOfSpawns == numThrumsToSpawn)
+            {
                 hurt.SetHealthToLevel(1);
-			}
-		}
+            }
+        }
 
-			//Check if the spawned thrum still exists
-				//If not, resume fighting
-		if(!isThrumSpawned)
-		{
-	        
-	        var playerPos = playerTrans.position;
-	        var playerDist = Vector3.Distance(transform.position, playerPos);
+        //Check if the spawned thrum still exists
+        //If not, resume fighting
+        if (!isThrumSpawned)
+        {
+            var playerPos = playerTrans.position;
+            var playerDist = Vector3.Distance(transform.position, playerPos);
 
-	        if (playerDist >= minFire && playerDist <= maxFire)
-	        {
-	            anim.SetBool("isBreathingFire", true);
-	            fireBreath.Activate();
-	        }
-	        else
-	        {
-	            fireBreath.Deactivate();
-	            anim.SetBool("isBreathingFire", false);
+            if (playerDist >= minFire && playerDist <= maxFire)
+            {
+                anim.SetBool("isBreathingFire", true);
+                fireBreath.Activate();
+            }
+            else
+            {
+                fireBreath.Deactivate();
+                anim.SetBool("isBreathingFire", false);
 
-	            isInPunchRange = (playerDist < minFire);
+                isInPunchRange = (playerDist < minFire);
 
-	            if (isInPunchRange && !wasInPunchRange)
-	            {
-	                wasInPunchRange = true;
+                if (isInPunchRange && !wasInPunchRange)
+                {
+                    wasInPunchRange = true;
 
-	                if (leftHandLast)
-	                {
-	                    anim.SetTrigger("rightPunch");
-	                }
-	                else
-	                {
-	                    anim.SetTrigger("leftPunch");
-	                }
-	            }
-	        }
+                    if (leftHandLast)
+                    {
+                        anim.SetTrigger("rightPunch");
+                    }
+                    else
+                    {
+                        anim.SetTrigger("leftPunch");
+                    }
+                }
+            }
 
-	        wasInPunchRange = isInPunchRange;
-		}
-	}
+            wasInPunchRange = isInPunchRange;
+        }
+    }
 
+    /// <summary>
+    /// Animation event method
+    /// </summary>
     public void LeftHandAnimationDone()
     {
         leftHandLast = true;
@@ -121,6 +132,9 @@ public class Titan : MonoBehaviour, IMagnetic
         }
     }
 
+    /// <summary>
+    /// Animation event method
+    /// </summary>
     public void RightHandAnimationDone()
     {
         leftHandLast = false;
@@ -130,29 +144,62 @@ public class Titan : MonoBehaviour, IMagnetic
         }
     }
 
-	//Method used by magnet gunto pull a thrum
-	public void pullThrum()
-	{
-		print ("PULL THRUM");
+    /// <summary>
+    /// Animation event method
+    /// </summary>
+    public void OnPunch()
+    {
+        audSrc.PlayOneShot(soundPunch);
+    }
 
-		//instantiate a thrum and store this in a variable
-		if(!isThrumSpawned && numOfSpawns != numThrumsToSpawn)
-		{
-			fireBreath.Deactivate();
-			anim.SetBool("isBreathingFire", false);
+    //Method used by magnet gun to pull a thrum
+    public void pullThrum()
+    {
+        print("PULL THRUM");
 
-			numOfSpawns ++;
-			isThrumSpawned = true;
+        //instantiate a thrum and store this in a variable
+        if (!isThrumSpawned && numOfSpawns != numThrumsToSpawn)
+        {
+            fireBreath.Deactivate();
+            anim.SetBool("isBreathingFire", false);
 
-            curThrum = (GameObject) Instantiate(thrumPrefab, 
-			                                    this.transform.FindChild("SpawnPoint").transform.position, 
-			                                    Quaternion.identity);
+            numOfSpawns++;
+            isThrumSpawned = true;
 
-		}
-	}
+            var spawnPt = this.transform.FindChild("SpawnPoint").transform.position;
+            curThrum = Instantiate(thrumPrefab, spawnPt, Quaternion.identity) as GameObject;
+            audSrc.PlayOneShot(soundThrumPull);
+        }
+    }
 
-	public bool isHeavierThanPlayer()
-	{
-		return true;
-	}
+    public bool isHeavierThanPlayer()
+    {
+        return true;
+    }
+
+    public void StateEntered(string name)
+    {
+        switch (name)
+        {
+            case "FireBreathEnter":
+                audSrc.PlayOneShot(soundFireEnter);
+                break;
+            case "FireBreathExit":
+                audSrc.Stop();
+                audSrc.PlayOneShot(soundFireExit);
+                break;
+        }
+    }
+
+    public void StateExited(string name)
+    {
+        switch (name)
+        {
+            case "FireBreathEnter":
+                audSrc.clip = soundFireStay;
+                audSrc.loop = true;
+                audSrc.Play();
+                break;
+        }
+    }
 }
