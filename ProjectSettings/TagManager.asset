@@ -31,6 +31,7 @@ TagManager:
   - MagnetGun
   - destroyable
   - SonicResonator
+  - ItemHolder
   layers:
   - Default
   - TransparentFX
