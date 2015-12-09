@@ -27,7 +27,7 @@ public class ScientistTrigger1 : BaseOperable
             dialog.AddLine("Oh, you already did it? Fantastic. Little bastards...");
             dialog.AddLine("Here's the magnet gun I promised! You can use it to pull heavy metal objects towards yourself.");
             dialog.AddLine("Good luck ahead. You'll need it...");
-            if (GameObject.FindGameObjectWithTag("MagnetGun") != null)
+            if (GameObject.FindGameObjectWithTag("MagnetGun") == null)
             {
                 var item = Instantiate<GameObject>(magGun);
                 item.transform.position = transform.position + Vector3.forward;
