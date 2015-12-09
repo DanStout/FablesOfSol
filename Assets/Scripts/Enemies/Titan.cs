@@ -14,6 +14,7 @@ public class Titan : MonoBehaviour, IMagnetic, IStateListener
     public AudioClip soundFireEnter;
     public AudioClip soundFireStay;
     public AudioClip soundFireExit;
+    public AudioClip soundPunch;
 
     private DamagingParticleSystem fireBreath;
     private Transform playerTrans;
@@ -119,6 +120,9 @@ public class Titan : MonoBehaviour, IMagnetic, IStateListener
         }
     }
 
+    /// <summary>
+    /// Animation event method
+    /// </summary>
     public void LeftHandAnimationDone()
     {
         leftHandLast = true;
@@ -128,6 +132,9 @@ public class Titan : MonoBehaviour, IMagnetic, IStateListener
         }
     }
 
+    /// <summary>
+    /// Animation event method
+    /// </summary>
     public void RightHandAnimationDone()
     {
         leftHandLast = false;
@@ -135,6 +142,14 @@ public class Titan : MonoBehaviour, IMagnetic, IStateListener
         {
             anim.SetTrigger("leftPunch");
         }
+    }
+
+    /// <summary>
+    /// Animation event method
+    /// </summary>
+    public void OnPunch()
+    {
+        audSrc.PlayOneShot(soundPunch);
     }
 
     //Method used by magnet gun to pull a thrum

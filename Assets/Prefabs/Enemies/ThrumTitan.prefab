@@ -745,6 +745,7 @@ MonoBehaviour:
   soundFireEnter: {fileID: 8300000, guid: ee34408369ad6bb4692acc67d0a3d770, type: 3}
   soundFireStay: {fileID: 8300000, guid: 865cb5e5d2a3cea498e89cafd37709d5, type: 3}
   soundFireExit: {fileID: 8300000, guid: 142280e9d77c09848b2023d4b0611be6, type: 3}
+  soundPunch: {fileID: 8300000, guid: d5d1490aa300f4e4594135769a3e802a, type: 3}
   thrumPrefab: {fileID: 198514, guid: 6f8daeab7390c1346a8bd5298578da79, type: 2}
 --- !u!114 &11494686
 MonoBehaviour:
@@ -809,7 +810,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: .699999988
+  m_Radius: .800000012
   m_Height: 1
   m_Direction: 0
   m_Center: {x: -.25, y: 0, z: 0}
@@ -822,7 +823,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: .699999988
+  m_Radius: .800000012
   m_Height: 1
   m_Direction: 0
   m_Center: {x: -.25, y: 0, z: 0}
