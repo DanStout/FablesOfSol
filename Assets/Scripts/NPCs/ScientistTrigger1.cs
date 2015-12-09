@@ -29,7 +29,7 @@ public class ScientistTrigger1 : BaseOperable
 			if(GameObject.FindGameObjectWithTag("MagnetGun") != null){
 				var item = Instantiate<GameObject> (magGun);
 				item.transform.position = transform.position + Vector3.forward;
-				var itemHeightOffset = item.GetComponentInChildren<Renderer> ().bounds.size.y / 2;
+
 			}
 
 		} else {

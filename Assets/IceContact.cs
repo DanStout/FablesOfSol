@@ -21,6 +21,7 @@ public class IceContact : MonoBehaviour {
             if (gameObject.GetComponent<PlayerMovement>().enabled == false)
             {
                 gameObject.GetComponent<PlayerMovement>().enabled = true;
+				gameObject.GetComponent<PlayerMovement>().DoIgnoreNextFall = true;
                 gameObject.GetComponent<IceMovement>().enabled = false;
             }
         }

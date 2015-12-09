@@ -16,6 +16,7 @@ public class BreakIce : MonoBehaviour {
 	public void breakIce()
 	{
 		damageSphere.SetActive (true);
+		particle.Play ();
 		gameObject.GetComponent<SkinnedMeshRenderer>().enabled = false;
 		gameObject.GetComponent<BoxCollider>().enabled = false;
 		parentAnim.SetTrigger("hit");
