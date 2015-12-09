@@ -130,32 +130,24 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 434248, guid: 2abf8cf1d252179449e5e9c711733bcf, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -.555196166
+      value: -.555196226
       objectReference: {fileID: 0}
     - target: {fileID: 434248, guid: 2abf8cf1d252179449e5e9c711733bcf, type: 2}
       propertyPath: m_LocalRotation.y
-      value: -.564392328
+      value: -.564392388
       objectReference: {fileID: 0}
     - target: {fileID: 434248, guid: 2abf8cf1d252179449e5e9c711733bcf, type: 2}
       propertyPath: m_LocalRotation.z
-      value: .588409007
+      value: .588409066
       objectReference: {fileID: 0}
     - target: {fileID: 434248, guid: 2abf8cf1d252179449e5e9c711733bcf, type: 2}
       propertyPath: m_LocalRotation.w
-      value: -.164296493
+      value: -.164296508
       objectReference: {fileID: 0}
-    - target: {fileID: 183762, guid: 2abf8cf1d252179449e5e9c711733bcf, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 117458, guid: 2abf8cf1d252179449e5e9c711733bcf, type: 2}
-      propertyPath: m_TagString
-      value: enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 100772, guid: 2abf8cf1d252179449e5e9c711733bcf, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
+    - target: {fileID: 11420020, guid: 2abf8cf1d252179449e5e9c711733bcf, type: 2}
+      propertyPath: explosionSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 4f22166b6ee498d47aeb66b25768c997, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2abf8cf1d252179449e5e9c711733bcf, type: 2}
   m_IsPrefabParent: 0
@@ -659,10 +651,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8211454, guid: d64cb98187d2eba4ebce4c7942f9e8a1, type: 2}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 29183b20336825e4391c51aa2dc3aeec, type: 3}
+    - target: {fileID: 141308, guid: d64cb98187d2eba4ebce4c7942f9e8a1, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d64cb98187d2eba4ebce4c7942f9e8a1, type: 2}
   m_IsPrefabParent: 0
