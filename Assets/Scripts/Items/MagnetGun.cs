@@ -1,26 +1,27 @@
 using UnityEngine;
 using System.Collections;
+using System.Linq;
 
-public class MagnetGun : Weapon
+public class MagnetGun : Weapon, IGun
 {
     private GameObject owner;
     private bool isOn = false;
     private ParticleSystem particleSys;
     private Animator anim;
     public AudioClip activeSound;
-    private AudioSource playerAudio;
+    private AudioSource playerAud;
 
     protected override void InitialSetup()
     {
-        owner = GameObject.FindGameObjectWithTag("Player");
-        anim = owner.GetComponent<Animator>();
-        playerAudio = owner.GetComponent<AudioSource>();
+        if (owner == null) owner = GameObject.FindGameObjectWithTag("Player");
+        if (playerAud == null) playerAud = owner.GetComponent<AudioSource>();
+        if (anim == null) anim = owner.GetComponent<Animator>();
 
-        ParticleSystem[] systems = owner.GetComponentsInChildren<ParticleSystem>();
-        foreach (ParticleSystem p in systems)
+        if (particleSys == null)
         {
-            if (p.gameObject.name == "MagnetGunParticle")
-                particleSys = p;
+            particleSys = owner
+                .GetComponentsInChildren<ParticleSystem>()
+                .First(x => x.name == "SonicParticle");
         }
     }
 
@@ -65,11 +66,10 @@ public class MagnetGun : Weapon
 
     public override void Use()
     {
-        //Spawn particle system
         if (particleSys != null && !isOn)
         {
-            playerAudio.clip = activeSound;
-            playerAudio.Play();
+            playerAud.clip = activeSound;
+            playerAud.Play();
 
             isOn = true;
             particleSys.enableEmission = true;
@@ -102,10 +102,9 @@ public class MagnetGun : Weapon
         get { return "Magnet Gun"; }
     }
 
-
     public void TurnOff()
     {
-        playerAudio.Stop();
+        playerAud.Stop();
         isOn = false;
         particleSys.enableEmission = false;
         anim.SetBool("gunAttack", false);
