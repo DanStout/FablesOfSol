@@ -11,7 +11,7 @@ public abstract class BaseOperable : MonoBehaviour
     private bool isWithinRange = false;
     private Vector3 _screenPoint;
     private bool wasWithinRange = false;
-    private GameObject player;
+    protected GameObject player;
 
     protected virtual void Start()
     {
