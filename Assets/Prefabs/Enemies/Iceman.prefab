@@ -214,6 +214,7 @@ GameObject:
   - 114: {fileID: 11444802}
   - 114: {fileID: 11428088}
   - 114: {fileID: 11437482}
+  - 82: {fileID: 8240274}
   m_Layer: 0
   m_Name: Iceman
   m_TagString: Iceman
@@ -725,7 +726,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 135032}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -18.8999996, y: 0, z: -1.10000002}
+  m_LocalPosition: {x: -7.3716445, y: -.545000017, z: -6.32364321}
   m_LocalScale: {x: .300000012, y: .300000012, z: .300000012}
   m_Children:
   - {fileID: 478862}
@@ -1142,6 +1143,76 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 189276}
   m_Mesh: {fileID: 4300008, guid: 892d4f1236e5b884cb8114329a41fcda, type: 3}
+--- !u!82 &8240274
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 135032}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!95 &9522230
 Animator:
   serializedVersion: 3
@@ -1202,6 +1273,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 10
   damageFlashSeconds: .5
+  soundDeath: {fileID: 8300000, guid: 39999034787773747bef163e1f541a4a, type: 3}
+  soundAttack: {fileID: 8300000, guid: 98e96c7418f7fc849a35e3fc9f6d336f, type: 3}
+  soundHurt: {fileID: 8300000, guid: e08e371aa216f6c43b789b21af133c7c, type: 3}
+  soundShatter:
+  - {fileID: 8300000, guid: b863ebb97b9637445ac439b503a351e9, type: 3}
+  - {fileID: 8300000, guid: 8000ff75e9d64f247ae8ff9820d7dc81, type: 3}
+  - {fileID: 8300000, guid: 83352fcffa6573341aa7ffb7fb7e7c67, type: 3}
 --- !u!114 &11437482
 MonoBehaviour:
   m_ObjectHideFlags: 1

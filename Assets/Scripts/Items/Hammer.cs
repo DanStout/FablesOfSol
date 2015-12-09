@@ -69,6 +69,10 @@ public class Hammer : Weapon
                             }
                             else
                             {
+                                var iceman = col.GetComponent<Iceman>();
+                                if (iceman != null)
+                                    iceman.IceShatterSound();
+
                                 col.transform.GetChild(1).GetComponent<ParticleSystem>().Play();
                                 Destroy(col.transform.GetChild(1).gameObject);
                             }

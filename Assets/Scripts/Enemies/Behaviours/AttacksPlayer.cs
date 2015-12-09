@@ -14,6 +14,9 @@ public class AttacksPlayer : MonoBehaviour
     public delegate void PlayerDeathHandler();
     public event PlayerDeathHandler onPlayerDeath;
 
+    public delegate void PlayerHitHandler();
+    public event PlayerHitHandler onPlayerHit;
+
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -44,6 +47,10 @@ public class AttacksPlayer : MonoBehaviour
             {
                 if (onPlayerDeath != null)
                     onPlayerDeath();
+            }
+            else if (onPlayerHit != null)
+            {
+                onPlayerHit();
             }
             lastAttackTime = Time.time;
         }
