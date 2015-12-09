@@ -6,15 +6,30 @@ public class MotherHurtable : Hurtable
 
 	private int numHits = 0;
 
-
-	
-	public override void Die()
+	protected override void Start()
 	{
+		currHealth = fullHealth;
+		meshRend = GetComponentInChildren<SkinnedMeshRenderer>();
+		originalMaterial = meshRend.material;
+		onDeath += Die;
+	}
+
+	public override void  Die()
+	{
+		print ("Death");
+
+		//Death animation
+		this.transform.parent.GetComponent<Animator>().SetTrigger("die");
+
 		if (meshRend != null)
 		{
 			meshRend.material = originalMaterial;
 		}
-		Destroy(transform.parent.gameObject);
+	
+
+		Invoke ("TimedDestroy", 2);
+
+
 	}
 	
 	public override void TakeDamage(float amount)
@@ -30,6 +45,7 @@ public class MotherHurtable : Hurtable
 	
 
 		print ("HIT COUNT: " + numHits);
+
 		//Count number of hits and reduce health drastically after the second hit
 		if (numHits < 2) {
 			//Increment hit count and replace the ice
@@ -46,4 +62,13 @@ public class MotherHurtable : Hurtable
 		}
 	}
 
+	protected void TimedDestroy()
+	{
+		print ("timed destroy");
+		DropsItems drops = transform.parent.GetComponent<DropsItems> ();
+		if (drops != null)
+			print ("found drops");
+		drops.Die ();
+		Destroy(transform.parent.gameObject);
+	}
 }

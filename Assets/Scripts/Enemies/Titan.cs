@@ -144,7 +144,9 @@ public class Titan : MonoBehaviour, IMagnetic
 			numOfSpawns ++;
 			isThrumSpawned = true;
 
-            curThrum = (GameObject) Instantiate(thrumPrefab, this.transform.FindChild("SpawnPoint").transform.position, Quaternion.identity);
+            curThrum = (GameObject) Instantiate(thrumPrefab, 
+			                                    this.transform.FindChild("SpawnPoint").transform.position, 
+			                                    Quaternion.identity);
 
 		}
 	}
