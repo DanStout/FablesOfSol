@@ -4856,7 +4856,7 @@ MonoBehaviour:
   textBoxPadding: 10
   reactOutsideDistance: 0
   locationObject: {fileID: 1657284166}
-  teleportee: {fileID: 1447100942}
+  teleportee: {fileID: 1496498418}
 --- !u!54 &1094847149
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8331,6 +8331,10 @@ Transform:
   - {fileID: 405442358}
   m_Father: {fileID: 97587706}
   m_RootOrder: 0
+--- !u!1 &1496498418 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 132650, guid: ebaddb537c2380d4388ba36c1e94e497, type: 2}
+  m_PrefabInternal: {fileID: 464945916}
 --- !u!1 &1531837988
 GameObject:
   m_ObjectHideFlags: 0

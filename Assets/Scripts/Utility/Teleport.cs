@@ -8,6 +8,7 @@ public class Teleport : BaseOperable
 	
 	public override void Operate()
 	{
+        print("Operate");
 		teleportee.transform.position = locationObject.transform.position;
 	}
 }
